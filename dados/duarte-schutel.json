@@ -1053,7 +1053,9 @@
      "texto": "ARQ prever as VPs nas esquadrias das áreas de serviço e, no final 07, aberturas na alvenaria junto à área técnica"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "MAG"
+   ],
    "analiseEm": "2026-10-06",
    "anexos": [
     {
@@ -1095,8 +1097,7 @@
    "dataCriacao": "2026-09-14",
    "direcionadas": [
     "PCI",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "disciplinas": [
     {
@@ -1115,12 +1116,12 @@
      "c": "MAG",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
-   "etapaConferencia": null,
-   "etapaOrigem": null,
+   "etapaConferencia": "AP",
+   "etapaOrigem": "etiqueta",
    "etapaResolucao": null,
    "fonte": "Construflow",
    "numero": 2062,
@@ -1131,14 +1132,13 @@
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "realizadas": [
     "06/10 Definidas as posições das ventilações permanentes"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-09T19:25:32.691Z",
+   "sincronizadoEm": "2026-10-13T12:10:00.000Z",
    "status": "aberto",
    "titulo": "VENTILAÇÃO PERMANENTE",
    "ultimoComentario": "2026-10-06"
@@ -8274,22 +8274,22 @@
    "fim": "2026-11-27",
    "geradoEm": "2026-10-07"
   },
-  "sincronizadoEm": "2026-10-13T09:59:06.000Z",
-  "ultimaSync": "2026-10-13T09:59:06.000Z",
+  "sincronizadoEm": "2026-10-13T12:11:00.000Z",
+  "ultimaSync": "2026-10-13T12:11:00.000Z",
   "ultimaSyncResumo": {
-   "alterados": 0,
+   "alterados": 1,
    "analisados": 0,
    "analisePendente": 0,
    "comentarios": 0,
    "novos": 0,
-   "origem": "agendada",
-   "resumoSemanal": false,
+   "origem": "manual",
+   "resumoSemanal": true,
    "reunioes": [],
    "statusAtualizados": 0,
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-10-13T11:07:19+00:00",
+ "geradoEm": "2026-10-13T12:07:04+00:00",
  "resumos": {
   "2026-10-05": {
    "disciplinas": {
@@ -8317,13 +8317,13 @@
     "EST": "#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)",
     "HID": "#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)\n#2508 A documentação da rede de esgoto da CASAN foi viabilizada em 30/09. HID está em Validar; falta a coordenação validar e encerrar.\n#3470 responder qual o modelo de caixa sifonada especial e como funcionaria\n#3230 prever medidores de água e gás pré-equipados para telemetria\n#8592 Sem comentários públicos na Construflow. Aguardando a MAG validar o padrão de apresentação das pranchas de hidrossanitário (Opção 1 ou 2).",
     "INT": "#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)",
-    "MAG": "#2062 Validado em 06/10: VPs na alvenaria nas áreas comuns; nas unidades, na esquadria da área de serviço, e no final 07 com aberturas na alvenaria junto à área técnica das condensadoras.\n#8592 validar o padrão de apresentação das pranchas de hidrossanitário (Opção 1 ou 2)\n#8958 indicar ciência da limitação de população no pavimento e incluir o layout da academia da cobertura conforme sugestão do PCI\n#9899 Sem comentários na Construflow. Aguardando a ARQ confirmar, com Interiores, que os materiais de acabamento e revestimento atendem ao CMAR (Classe II-A, Dm ≤ 100 em poços e shafts).",
+    "MAG": "#8592 validar o padrão de apresentação das pranchas de hidrossanitário (Opção 1 ou 2)\n#8958 indicar ciência da limitação de população no pavimento e incluir o layout da academia da cobertura conforme sugestão do PCI\n#9899 Sem comentários na Construflow. Aguardando a ARQ confirmar, com Interiores, que os materiais de acabamento e revestimento atendem ao CMAR (Classe II-A, Dm ≤ 100 em poços e shafts).",
     "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)\n#3264 conferir o enchimento previsto pela arquitetura\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4923 conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33\n#5996 incorporar os materiais de gás e SHP validados pela MAG e ajustar o caminhamento da rede primária após a definição da nova localização da ERPM\n#9300 conferir se a tipologia atende às espessuras indicadas\n#2062 incorporar as posições das ventilações permanentes\n#2323 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#3230 prever medidores de água e gás pré-equipados para telemetria\n#3426 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#7614 Sem comentários na Construflow. Item de conferência contínua: a ARQ deve manter a largura de circulação e corredores em todas as etapas do projeto.\n#8197 Na reunião de 01/10 a arquitetura ficou de verificar e ajustar a escada do barrilete em projeto. Aguardando o retorno da ARQ.\n#8958 Sem comentários na Construflow. Aguardando ARQ e MAG darem ciência da limitação de público no pavimento de lazer e incluírem o layout da academia da cobertura conforme sugestão do PCI.\n#9899 Sem comentários na Construflow. Aguardando a ARQ confirmar, com Interiores, que os materiais de acabamento e revestimento atendem ao CMAR (Classe II-A, Dm ≤ 100 em poços e shafts).",
     "SPDA": "#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)\n#7521 confirmar a integração das antenas ao sistema de proteção contra descargas atmosféricas na posição validada\n#9477 incorporar a captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação",
     "TEL": "#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)\n#3230 prever a infraestrutura correspondente\n#7521 prever a infraestrutura (eletrodutos, caixas de passagem e quadro de proteção) conforme a localização validada"
    },
-   "geradoEm": "2026-10-12T10:08:00.000Z",
-   "geral": "Na semana de 12/10 há 25 apontamentos na pauta: 15 vencem até 16/10 e 10 estão atrasados (prazo meta em 09/10); #7618 e #8386 ficaram fora por aguardarem a etapa de AP. O #2140 (numeração de blocos e apartamentos) é o que envolve mais disciplinas (ARQ, CLI, ELT, EST, HID, PCI, SPDA, TEL e INT, além da validação da COORD), seguido do #3230 (ELT, HID, PCI e TEL) e do #7521 (ARQ, SPDA e TEL). As respostas se concentram em ARQ (19 apontamentos) e PCI (17); a COORD tem 6 validações de respostas da MAG, HID tem 5 itens e a MAG tem 4.",
+   "geradoEm": "2026-10-13T12:10:00.000Z",
+   "geral": "Na semana de 12/10 há 25 apontamentos na pauta: 15 vencem até 16/10 e 10 estão atrasados (prazo meta em 09/10); #7618 e #8386 ficaram fora por aguardarem a etapa de AP. O #2140 (numeração de blocos e apartamentos) é o que envolve mais disciplinas (ARQ, CLI, ELT, EST, HID, PCI, SPDA, TEL e INT, além da validação da COORD), seguido do #3230 (ELT, HID, PCI e TEL) e do #7521 (ARQ, SPDA e TEL). As respostas se concentram em ARQ (19 apontamentos) e PCI (17); a COORD tem 6 validações de respostas da MAG, HID tem 5 itens e a MAG tem 3.",
    "semana": "2026-10-12"
   }
  },
