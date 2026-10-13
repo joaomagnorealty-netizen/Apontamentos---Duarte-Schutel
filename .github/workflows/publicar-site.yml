@@ -1,0 +1,39 @@
+name: Publicar site
+
+# Publica o site no GitHub Pages a cada mudança na main, depois de cada cópia de dados
+# feita pelo workflow "Copiar dados da tarefa", ou manualmente (Actions > Run workflow).
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: ["Copiar dados da tarefa"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deploy
+        uses: actions/deploy-pages@v4
