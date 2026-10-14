@@ -95,7 +95,7 @@
     "01/10 Alinhada a retirada do elevador de emergência dos subsolos"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "ESCADA PROTEGIDA SEM VENTILAÇÃO COM P90 – SUBSOLO",
    "ultimoComentario": "2026-10-01"
@@ -109,7 +109,9 @@
      "texto": "MAG confirmar se haverá projeto específico de drenagem ou se faz parte do escopo de contenções"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "EST"
+   ],
    "analiseEm": "2026-10-07",
    "anexos": [
     {
@@ -128,7 +130,6 @@
    "dataCriacao": "2026-09-16",
    "direcionadas": [
     "HID",
-    "EST",
     "MAG"
    ],
    "disciplinas": [
@@ -142,7 +143,7 @@
      "c": "EST",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -164,12 +165,11 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "EST",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "DRENAGEM DE CONTENÇÕES E TERRENO",
    "ultimoComentario": "2026-09-16"
@@ -284,7 +284,7 @@
     "06/10 Magno definiu que vai operar a loja, com infra para alimentação"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "LOJAS DE ALIMENTAÇÃO - CONSIDERAÇÕES",
    "ultimoComentario": "2026-10-06"
@@ -298,7 +298,9 @@
      "texto": "ARQ avaliar a viabilidade do recuo para o caminhão de coleta"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "MAG"
+   ],
    "analiseEm": "2026-10-07",
    "anexos": [
     {
@@ -337,8 +339,7 @@
    "dataCriacao": "2026-09-15",
    "direcionadas": [
     "HID",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "disciplinas": [
     {
@@ -357,7 +358,7 @@
      "c": "MAG",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
@@ -373,12 +374,11 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "DEPÓSITO DE LIXO",
    "ultimoComentario": "2026-09-15"
@@ -495,7 +495,7 @@
     "22/09 MAG decidiu seguir com a viabilidade de GN"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -595,7 +595,7 @@
     "07/10 MAG definiu ponto de gás na sala comercial, demanda com aquecedores de passagem e manutenção da proposta das áreas comuns"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -742,7 +742,7 @@
     "01/10 Magno definiu infraestrutura de recarga em todas as vagas (simples e duplas)"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "NOVA NORMA CBMSC IN23 - SISTEMAS PARA ALIMENTAÇÃO DE VEÍCULOS ELÉTRICOS (SAVE)",
    "ultimoComentario": "2026-10-01"
@@ -762,7 +762,13 @@
      "texto": "FUR seguir as premissas e entregar modelo 3D + prancha 2D executiva cotada"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "PCI",
+    "ELT",
+    "CLI",
+    "TEL",
+    "FUR"
+   ],
    "analiseEm": "2026-10-06",
    "anexos": [
     {
@@ -796,12 +802,7 @@
    "dataCriacao": "2026-09-16",
    "direcionadas": [
     "HID",
-    "PCI",
-    "ELT",
-    "CLI",
     "EST",
-    "TEL",
-    "FUR",
     "MAG"
    ],
    "disciplinas": [
@@ -815,19 +816,19 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "CLI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "EST",
@@ -839,13 +840,13 @@
      "c": "TEL",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "FUR",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -867,19 +868,14 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "PCI",
-    "ELT",
-    "CLI",
     "EST",
-    "TEL",
-    "FUR",
     "COORD"
    ],
    "realizadas": [
     "01/10 MAG definiu as premissas de furação"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -914,7 +910,10 @@
      "texto": "PCI / SPK detalhar as adaptações do sistema (sifão, sem filtro) se a piscina for adotada"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "PCI",
+    "SPK"
+   ],
    "analiseEm": "2026-10-06",
    "anexos": [
     {
@@ -967,8 +966,6 @@
     "HID",
     "ARQ",
     "EST",
-    "PCI",
-    "SPK",
     "MAG"
    ],
    "disciplinas": [
@@ -994,13 +991,13 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "SPK",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -1024,8 +1021,6 @@
     "HID",
     "ARQ",
     "EST",
-    "PCI",
-    "SPK",
     "MAG"
    ],
    "realizadas": [
@@ -1033,7 +1028,7 @@
     "01/10 Definido que sprinklers são necessários só nas garagens e nos locais das bombas"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "RESERVATÓRIO INFERIOR - CHUVEIROS AUTOMÁTICOS",
    "ultimoComentario": "2026-10-01"
@@ -1138,7 +1133,7 @@
     "06/10 Definidas as posições das ventilações permanentes"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "VENTILAÇÃO PERMANENTE",
    "ultimoComentario": "2026-10-06"
@@ -1147,21 +1142,21 @@
    "acoes": [
     {
      "disciplinas": [
-      "ARQ",
-      "CLI",
-      "ELT",
-      "EST",
-      "HID",
-      "PCI",
-      "SPDA",
-      "TEL",
-      "INT"
+      "ARQ"
      ],
-     "texto": "ARQ / CLI / ELT / EST / HID / PCI / SPDA / TEL / INT adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)"
+     "texto": "ARQ validar a nomenclatura de apartamentos indicada na Figura 01 (a MAG já validou em 07/10)"
     }
    ],
-   "acompanhar": [],
-   "analiseEm": "2026-10-07",
+   "acompanhar": [
+    "CLI",
+    "ELT",
+    "EST",
+    "PCI",
+    "SPDA",
+    "TEL",
+    "INT"
+   ],
+   "analiseEm": "2026-10-14",
    "anexos": [
     {
      "legenda": "Planta baixa do pavimento tipo identificando numeração de aptos.",
@@ -1189,14 +1184,7 @@
    "dataCriacao": "2026-09-16",
    "direcionadas": [
     "ARQ",
-    "CLI",
-    "ELT",
-    "EST",
     "HID",
-    "PCI",
-    "SPDA",
-    "TEL",
-    "INT",
     "MAG"
    ],
    "disciplinas": [
@@ -1210,19 +1198,19 @@
      "c": "CLI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "EST",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "HID",
@@ -1234,25 +1222,25 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "SPDA",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "TEL",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "INT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -1267,28 +1255,21 @@
    "etapaResolucao": null,
    "fonte": "Construflow",
    "numero": 2140,
-   "observacao": "Em 07/10 a Magno validou a nomenclatura dos apartamentos proposta pela Arquitetura. Faltam as demais disciplinas confirmarem a mesma numeração (inclusive para a CELESC).",
+   "observacao": "Em 07/10 a Magno validou a nomenclatura dos apartamentos proposta pela Arquitetura. Falta a Arquitetura validar; as demais disciplinas só acompanham e adotam a numeração definida.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-09",
    "prioridade": "Média",
    "proximas": [
     "ARQ",
-    "CLI",
-    "ELT",
-    "EST",
     "HID",
-    "PCI",
-    "SPDA",
-    "TEL",
-    "INT",
     "COORD"
    ],
    "realizadas": [
     "07/10 MAG validou a nomenclatura proposta pela ARQ"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -1379,7 +1360,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "PROTEÇÃO CONTRA QUEDAS DE VEÍCULOS",
    "ultimoComentario": "2026-09-14"
@@ -1485,7 +1466,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "COMPARTIMENTAÇÃO VERTICAL",
    "ultimoComentario": "2026-10-06"
@@ -1569,7 +1550,7 @@
     "30/09 MAG viabilizou a documentação da rede de esgoto junto à CASAN"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "[HID] VIABILIDADES E APROVAÇÃO DE PROJETO",
    "ultimoComentario": "2026-09-30"
@@ -1692,7 +1673,7 @@
     "01/10 CLI validou a área técnica de insuflamento abaixo do térreo"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "ESCADA PRESSURIZADA",
    "ultimoComentario": "2026-10-01"
@@ -1772,7 +1753,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "DISTÂNCIAS MÁXIMAS",
    "ultimoComentario": "2026-09-14"
@@ -1891,7 +1872,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.796Z",
    "status": "aberto",
    "titulo": "GERADOR - DEFINIÇÃO CARGAS E ESPAÇO",
    "ultimoComentario": "2026-10-06"
@@ -1913,7 +1894,11 @@
      "texto": "ELT / TEL prever a infraestrutura correspondente"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ELT",
+    "PCI",
+    "TEL"
+   ],
    "analiseEm": "2026-10-06",
    "anexos": [
     {
@@ -1956,10 +1941,7 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-16",
    "direcionadas": [
-    "ELT",
     "HID",
-    "PCI",
-    "TEL",
     "MAG"
    ],
    "disciplinas": [
@@ -1967,7 +1949,7 @@
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "HID",
@@ -1979,13 +1961,13 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "TEL",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -2006,17 +1988,14 @@
    "prazoMeta": "2026-10-16",
    "prioridade": "Média",
    "proximas": [
-    "ELT",
     "HID",
-    "PCI",
-    "TEL",
     "COORD"
    ],
    "realizadas": [
     "01/10 MAG definiu medidores de água e gás pré-equipados para telemetria"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -2100,7 +2079,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "INSTALAÇÕES NAS PAREDES DA ESCADA",
    "ultimoComentario": "2026-09-14"
@@ -2176,7 +2155,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "CARACTERÍSTICAS DAS ESCADAS",
    "ultimoComentario": "2026-09-14"
@@ -2284,7 +2263,7 @@
     "07/10 MAG pediu detalhes da caixa sifonada especial"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -2305,7 +2284,12 @@
      "texto": "MAG solicitar novo levantamento topográfico com cotas de fundo e topo, caixas e infraestruturas, incluindo os postes (ver #4756)"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ELT",
+    "EST",
+    "TEL",
+    "ARQ"
+   ],
    "analiseEm": "2026-10-06",
    "anexos": [],
    "categoria": "Definição",
@@ -2326,10 +2310,6 @@
    "dataCriacao": "2026-09-16",
    "direcionadas": [
     "HID",
-    "ELT",
-    "EST",
-    "TEL",
-    "ARQ",
     "MAG"
    ],
    "disciplinas": [
@@ -2343,25 +2323,25 @@
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "EST",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "TEL",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -2383,15 +2363,11 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ELT",
-    "EST",
-    "TEL",
-    "ARQ",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "LEVANTAMENTO PLANIALTIMÉTRICO / TOPOGRAFIA",
    "ultimoComentario": "2026-10-01"
@@ -2499,7 +2475,7 @@
     "06/10 Magno confirmou SAVE em todos os pavimentos de garagem"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "EXAUSTÃO E VENTILAÇÃO MECÂNICA - SUBSOLOS",
    "ultimoComentario": "2026-10-06"
@@ -2517,7 +2493,8 @@
     "HID",
     "ELT",
     "EST",
-    "TEL"
+    "TEL",
+    "ARQ"
    ],
    "analiseEm": "2026-10-07",
    "anexos": [
@@ -2541,7 +2518,6 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-16",
    "direcionadas": [
-    "ARQ",
     "MAG"
    ],
    "disciplinas": [
@@ -2573,7 +2549,7 @@
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -2594,12 +2570,11 @@
    "prazoMeta": "2026-10-30",
    "prioridade": "Média",
    "proximas": [
-    "ARQ",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "IRRIGAÇÃO E PAISAGISMO",
    "ultimoComentario": "2026-09-16"
@@ -2706,7 +2681,7 @@
     "02/10 MAG definiu SDAI da loja pela opção 02 e eletroduto flexível embutido / rígido aparente"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "ALARME E DETECÇÃO DE INCÊNDIO",
    "ultimoComentario": "2026-10-02"
@@ -2795,7 +2770,7 @@
     "01/10 MAG definiu corrimão de madeira em verniz com suporte em alumínio preto"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "CORRIMÃO",
    "ultimoComentario": "2026-10-01"
@@ -2863,7 +2838,7 @@
     "06/10 Definidos os materiais e caminhamentos dos eletrodutos"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.796Z",
    "status": "aberto",
    "titulo": "CLASSIFICAÇÃO DOS ELETRODUTOS QUANTO À ROTA DE FUGA",
    "ultimoComentario": "2026-10-06"
@@ -2883,7 +2858,10 @@
      "texto": "HID estudar os traçados para validar a saída da drenagem por gravidade para a rede"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "EST",
+    "AMB"
+   ],
    "analiseEm": "2026-10-06",
    "anexos": [
     {
@@ -2955,8 +2933,6 @@
    "direcionadas": [
     "HID",
     "ARQ",
-    "EST",
-    "AMB",
     "MAG"
    ],
    "disciplinas": [
@@ -2976,13 +2952,13 @@
      "c": "EST",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "AMB",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -3005,8 +2981,6 @@
    "proximas": [
     "HID",
     "ARQ",
-    "EST",
-    "AMB",
     "MAG"
    ],
    "realizadas": [
@@ -3014,7 +2988,7 @@
     "01/10 HID informou que a solução não tem implicação técnica a princípio"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "APROVEITAMENTO PLUVIAL E TANQUE DE DETENÇÃO PLUVIAL",
    "ultimoComentario": "2026-10-01"
@@ -3028,7 +3002,9 @@
      "texto": "ELT prever infraestrutura de recarga em todas as vagas com gerenciador de demanda"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ARQ"
+   ],
    "analiseEm": "2026-10-06",
    "anexos": [
     {
@@ -3070,7 +3046,6 @@
    "dataCriacao": "2026-09-14",
    "direcionadas": [
     "ELT",
-    "ARQ",
     "TEL",
     "MAG"
    ],
@@ -3085,7 +3060,7 @@
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "TEL",
@@ -3113,7 +3088,6 @@
    "prioridade": "Média",
    "proximas": [
     "ELT",
-    "ARQ",
     "TEL",
     "MAG"
    ],
@@ -3121,7 +3095,7 @@
     "06/10 Validado atendimento de todas as vagas com gerenciador de demanda"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "TOMADAS DE VEÍCULOS ELÉTRICOS",
    "ultimoComentario": "2026-10-06"
@@ -3217,7 +3191,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "GUARDA-CORPOS E GUARDA-CORPOS DE VIDRO",
    "ultimoComentario": "2026-09-14"
@@ -3335,7 +3309,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "DEFINIÇÃO DA POSIÇÃO DOS QUADROS DE DISTRIBUIÇÃO ELÉTRICA E VDI DAS ÁREAS COMUNS",
    "ultimoComentario": "2026-09-14"
@@ -3410,7 +3384,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "ESCADA MEZANINO",
    "ultimoComentario": "2026-09-14"
@@ -3556,7 +3530,7 @@
     "06/10 MAG informou a contratação de consultoria de climatização para as unidades"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "ÁREA TÉCNICA CONDENSADORAS - UNIDADES HABITACIONAIS",
    "ultimoComentario": "2026-10-06"
@@ -3572,7 +3546,11 @@
      "texto": "HID / PCI / ELT avaliar ERPM, hidrômetro e HR na entrada de veículos do subsolo na revisão do EP"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "PCI",
+    "ELT",
+    "TEL"
+   ],
    "analiseEm": "2026-10-06",
    "anexos": [
     {
@@ -3654,10 +3632,7 @@
    "dataCriacao": "2026-09-16",
    "direcionadas": [
     "HID",
-    "PCI",
     "ARQ",
-    "ELT",
-    "TEL",
     "MAG"
    ],
    "disciplinas": [
@@ -3671,7 +3646,7 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ARQ",
@@ -3683,13 +3658,13 @@
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "TEL",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -3711,17 +3686,14 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "PCI",
     "ARQ",
-    "ELT",
-    "TEL",
     "MAG"
    ],
    "realizadas": [
     "01/10 Descartada a subestação na praça"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "LOCAÇÃO MEDIDORES, CONTENTORES, CENTRAL DE GÁS, HIDRÔMETRO",
    "ultimoComentario": "2026-10-01"
@@ -3811,7 +3783,7 @@
     "07/10 MAG informou que o projeto topográfico já tem a localização do poste"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.796Z",
    "status": "aberto",
    "titulo": "PONTO DE CONEXÃO COM A REDE DA CONCESSIONÁRIA",
    "ultimoComentario": "2026-10-07"
@@ -3826,7 +3798,14 @@
      "texto": "ARQ / MAG avaliar a revisão dos níveis dos pavimentos necessários, considerando o impacto no número de degraus das escadas"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ELT",
+    "EST",
+    "TEL",
+    "PCI",
+    "SPDA",
+    "CLI"
+   ],
    "analiseEm": "2026-10-07",
    "anexos": [
     {
@@ -3845,12 +3824,6 @@
    "dataCriacao": "2026-09-16",
    "direcionadas": [
     "HID",
-    "ELT",
-    "EST",
-    "TEL",
-    "PCI",
-    "SPDA",
-    "CLI",
     "ARQ",
     "MAG"
    ],
@@ -3865,37 +3838,37 @@
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "EST",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "TEL",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "SPDA",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "CLI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ARQ",
@@ -3923,18 +3896,12 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ELT",
-    "EST",
-    "TEL",
-    "PCI",
-    "SPDA",
-    "CLI",
     "ARQ",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "ENTREPISO E ENTREFORROS",
    "ultimoComentario": "2026-09-16"
@@ -3954,7 +3921,11 @@
      "texto": "ARQ absorver as definições no modelo"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ELT",
+    "PCI",
+    "TEL"
+   ],
    "analiseEm": "2026-10-07",
    "anexos": [
     {
@@ -3982,10 +3953,7 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-16",
    "direcionadas": [
-    "ELT",
     "HID",
-    "PCI",
-    "TEL",
     "ARQ",
     "MAG"
    ],
@@ -3994,7 +3962,7 @@
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "HID",
@@ -4006,13 +3974,13 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "TEL",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ARQ",
@@ -4039,16 +4007,13 @@
    "prazoMeta": "2026-11-27",
    "prioridade": "Média",
    "proximas": [
-    "ELT",
     "HID",
-    "PCI",
-    "TEL",
     "ARQ",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "CONSTRUÇÃO SHAFTS",
    "ultimoComentario": "2026-09-16"
@@ -4125,7 +4090,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "PISCINAS E ÁREA DE BANHO",
    "ultimoComentario": "2026-09-14"
@@ -4139,7 +4104,10 @@
      "texto": "ARQ validar e prever os shafts sanitários sugeridos (Figuras 01 a 07)"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "EST",
+    "MAG"
+   ],
    "analiseEm": "2026-10-07",
    "anexos": [
     {
@@ -4188,9 +4156,7 @@
    "dataCriacao": "2026-09-15",
    "direcionadas": [
     "HID",
-    "ARQ",
-    "EST",
-    "MAG"
+    "ARQ"
    ],
    "disciplinas": [
     {
@@ -4209,13 +4175,13 @@
      "c": "EST",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
@@ -4231,13 +4197,11 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ARQ",
-    "EST",
-    "MAG"
+    "ARQ"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "SHAFTS SANITÁRIOS",
    "ultimoComentario": "2026-09-15"
@@ -4263,7 +4227,9 @@
      "texto": "ARQ ajustar o layout da subestação com trafos no mesmo nível e circulação de 1,30 m"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "PCI"
+   ],
    "analiseEm": "2026-10-06",
    "anexos": [
     {
@@ -4311,7 +4277,6 @@
     "ELT",
     "ARQ",
     "EST",
-    "PCI",
     "MAG"
    ],
    "disciplinas": [
@@ -4337,7 +4302,7 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -4361,7 +4326,6 @@
     "ELT",
     "ARQ",
     "EST",
-    "PCI",
     "MAG"
    ],
    "realizadas": [
@@ -4370,7 +4334,7 @@
     "06/10 Validada circulação interna de 1,30 m"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "SUBESTAÇÃO (SE)",
    "ultimoComentario": "2026-10-06"
@@ -4458,7 +4422,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "DEFINIÇÕES CHUVEIROS AUTOMÁTICOS",
    "ultimoComentario": "2026-09-14"
@@ -4473,6 +4437,7 @@
     }
    ],
    "acompanhar": [
+    "ARQ",
     "ELT"
    ],
    "analiseEm": "2026-10-06",
@@ -4496,7 +4461,6 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-15",
    "direcionadas": [
-    "ARQ",
     "CLI",
     "MAG"
    ],
@@ -4505,7 +4469,7 @@
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "CLI",
@@ -4538,7 +4502,6 @@
    "prazoMeta": "2026-10-09",
    "prioridade": "Média",
    "proximas": [
-    "ARQ",
     "CLI",
     "COORD"
    ],
@@ -4546,7 +4509,7 @@
     "30/09 MAG definiu ponto elétrico somente na evaporadora"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -4661,7 +4624,7 @@
     "09/10 MAG aprovou os materiais das tubulações de gás e SHP; caminhamento aguarda nova localização da ERPM"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "ESPECIFICAÇÃO DA TUBULAÇÃO DE GÁS E SHP",
    "ultimoComentario": "2026-10-09"
@@ -4731,7 +4694,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "COMPARTIMENTAÇÃO ENTRE OCUPAÇÕES",
    "ultimoComentario": "2026-09-14"
@@ -4757,7 +4720,8 @@
     "ELT",
     "CLI",
     "EST",
-    "TEL"
+    "TEL",
+    "ARQ"
    ],
    "analiseEm": "2026-10-09",
    "anexos": [
@@ -4775,7 +4739,6 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-16",
    "direcionadas": [
-    "ARQ",
     "INT",
     "MAG"
    ],
@@ -4820,7 +4783,7 @@
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "INT",
@@ -4847,13 +4810,12 @@
    "prazoMeta": "2026-11-13",
    "prioridade": "Média",
    "proximas": [
-    "ARQ",
     "INT",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "PROJETO DE INTERIORES E LUMINOTÉCNICO",
    "ultimoComentario": "2026-09-16"
@@ -4872,6 +4834,7 @@
     "ELT",
     "EST",
     "TEL",
+    "ARQ",
     "CLI",
     "PCI"
    ],
@@ -4891,7 +4854,6 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-16",
    "direcionadas": [
-    "ARQ",
     "MAG"
    ],
    "disciplinas": [
@@ -4923,7 +4885,7 @@
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "CLI",
@@ -4956,12 +4918,11 @@
    "prazoMeta": "2026-10-23",
    "prioridade": "Média",
    "proximas": [
-    "ARQ",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "PROJETO DE DESEMPENHO",
    "ultimoComentario": "2026-09-16"
@@ -4975,7 +4936,12 @@
      "texto": "MAG (Renato) confirmar com o Luiz a definição de uso e se a loja poderá ser subdividida"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ELT",
+    "PCI",
+    "TEL",
+    "CLI"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -5006,12 +4972,8 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-16",
    "direcionadas": [
-    "ELT",
     "HID",
-    "PCI",
-    "TEL",
     "ARQ",
-    "CLI",
     "INT",
     "MAG"
    ],
@@ -5020,7 +4982,7 @@
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "HID",
@@ -5032,13 +4994,13 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "TEL",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ARQ",
@@ -5050,7 +5012,7 @@
      "c": "CLI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "INT",
@@ -5077,12 +5039,8 @@
    "prazoMeta": "2026-11-13",
    "prioridade": "Média",
    "proximas": [
-    "ELT",
     "HID",
-    "PCI",
-    "TEL",
     "ARQ",
-    "CLI",
     "INT",
     "MAG"
    ],
@@ -5090,7 +5048,7 @@
     "06/10 Magno informou que vai operar a loja (ver #1274)"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "INFRAS DAS LOJAS/SALAS COMERCIAIS",
    "ultimoComentario": "2026-10-01"
@@ -5173,7 +5131,7 @@
     "06/10 Validado com a Magno o registro de corte próximo à entrada, se a ERPM ficar no SS1"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "REGISTRO DE CORTE GERAL DE GÁS",
    "ultimoComentario": "2026-10-06"
@@ -5240,7 +5198,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "TEMPO DE RESISTÊNCIA AO FOGO",
    "ultimoComentario": "2026-09-14"
@@ -5345,7 +5303,7 @@
     "22/09 Magno decidiu solicitar viabilidade de GN"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "VIABILIDADE DE GÁS NATURAL (GN) E ERPM",
    "ultimoComentario": "2026-10-01"
@@ -5360,7 +5318,10 @@
      "texto": "PCI / ELT considerar iluminação de emergência por blocos autônomos"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ARQ",
+    "ELT"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [],
    "categoria": "Definição",
@@ -5381,8 +5342,6 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-14",
    "direcionadas": [
-    "ARQ",
-    "ELT",
     "PCI",
     "MAG"
    ],
@@ -5391,13 +5350,13 @@
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "PCI",
@@ -5424,8 +5383,6 @@
    "prazoMeta": "2026-10-23",
    "prioridade": "Média",
    "proximas": [
-    "ARQ",
-    "ELT",
     "PCI",
     "COORD"
    ],
@@ -5433,7 +5390,7 @@
     "01/10 MAG definiu blocos autônomos"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -5588,7 +5545,7 @@
     "06/10 Magno confirmou SAVE em todos os pavimentos de garagem"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "RENOVAÇÃO DE AR NAS GARAGENS",
    "ultimoComentario": "2026-10-06"
@@ -5621,6 +5578,7 @@
     }
    ],
    "acompanhar": [
+    "ARQ",
     "MAG"
    ],
    "analiseEm": "2026-10-09",
@@ -5650,7 +5608,6 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-14",
    "direcionadas": [
-    "ARQ",
     "SPDA",
     "TEL"
    ],
@@ -5659,7 +5616,7 @@
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "SPDA",
@@ -5692,7 +5649,6 @@
    "prazoMeta": "2026-10-16",
    "prioridade": "Média",
    "proximas": [
-    "ARQ",
     "SPDA",
     "TEL"
    ],
@@ -5700,7 +5656,7 @@
     "30/09 MAG apresentou a proposta de localização das esperas das antenas, na face norte e dentro do cone de proteção do SPDA"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "ANTENAS VIA SATÉLITE NA COBERTURA",
    "ultimoComentario": "2026-09-30"
@@ -5759,7 +5715,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "LARGURA CIRCULAÇÃO E CORREDORES",
    "ultimoComentario": "2026-09-14"
@@ -5842,7 +5798,7 @@
     "01/10 Alinhada a retirada do elevador de emergência dos subsolos"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "ELEVADOR DE EMERGÊNCIA",
    "ultimoComentario": "2026-10-01"
@@ -5932,7 +5888,7 @@
     "22/09 MAG definiu a passagem da tubulação de gás pelo vão da porta (Figura 01)"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "CAMINHAMENTO DE GÁS - REDE SECUNDÁRIA",
    "ultimoComentario": "2026-10-07"
@@ -6039,7 +5995,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.796Z",
    "status": "aberto",
    "titulo": "DEFINIÇÃO DA POSIÇÃO DOS QUADROS DE DISTRIBUIÇÃO ELÉTRICA E VDI NAS UNIDADES PRIVATIVAS",
    "ultimoComentario": "2026-09-14"
@@ -6120,7 +6076,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "ESCADA BARRILETE",
    "ultimoComentario": "2026-10-01"
@@ -6134,7 +6090,13 @@
      "texto": "MAG realizar a sondagem e validar a necessidade de laje de subpressão até o início da revisão do AP"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ELT",
+    "TEL",
+    "SPDA",
+    "ARQ",
+    "PCI"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -6166,12 +6128,7 @@
    "dataCriacao": "2026-09-16",
    "direcionadas": [
     "HID",
-    "ELT",
     "EST",
-    "TEL",
-    "SPDA",
-    "ARQ",
-    "PCI",
     "MAG"
    ],
    "disciplinas": [
@@ -6185,7 +6142,7 @@
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "EST",
@@ -6197,25 +6154,25 @@
      "c": "TEL",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "SPDA",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -6237,17 +6194,12 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ELT",
     "EST",
-    "TEL",
-    "SPDA",
-    "ARQ",
-    "PCI",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "LAJE DE SUBPRESSÃO E DRENAGEM DE SUBSOLOS",
    "ultimoComentario": "2026-10-01"
@@ -6333,7 +6285,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "PORTAS",
    "ultimoComentario": "2026-09-14"
@@ -6443,7 +6395,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "REDUTORAS DE PRESSÃO",
    "ultimoComentario": "2026-10-01"
@@ -6457,7 +6409,11 @@
      "texto": "ARQ avaliar os shafts propostos e retornar no apontamento"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ELT",
+    "PCI",
+    "TEL"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -6523,10 +6479,7 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-16",
    "direcionadas": [
-    "ELT",
     "HID",
-    "PCI",
-    "TEL",
     "ARQ",
     "MAG"
    ],
@@ -6535,7 +6488,7 @@
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "HID",
@@ -6547,13 +6500,13 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "TEL",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ARQ",
@@ -6580,16 +6533,13 @@
    "prazoMeta": "2026-11-20",
    "prioridade": "Média",
    "proximas": [
-    "ELT",
     "HID",
-    "PCI",
-    "TEL",
     "ARQ",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "SHAFTS NA CIRCULAÇÃO DOS PAVIMENTOS",
    "ultimoComentario": "2026-10-01"
@@ -6668,7 +6618,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "RENOVAÇÃO DE AR MECÂNICA",
    "ultimoComentario": "2026-09-15"
@@ -6682,7 +6632,9 @@
      "texto": "MAG validar o padrão de apresentação das pranchas de hidrossanitário (Opção 1 ou 2)"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ARQ"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -6725,7 +6677,6 @@
    "dataCriacao": "2026-09-15",
    "direcionadas": [
     "HID",
-    "ARQ",
     "MAG"
    ],
    "disciplinas": [
@@ -6739,7 +6690,7 @@
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -6761,12 +6712,11 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ARQ",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "[HID] PADRÃO DE DOCUMENTAÇÃO DE HIDRÁULICA E SANITÁRIO",
    "ultimoComentario": "2026-09-15"
@@ -6780,7 +6730,10 @@
      "texto": "ARQ definir as áreas comuns do 4º pavimento"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ELT",
+    "PCI"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -6810,9 +6763,7 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-16",
    "direcionadas": [
-    "ELT",
     "HID",
-    "PCI",
     "MAG"
    ],
    "disciplinas": [
@@ -6820,7 +6771,7 @@
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "HID",
@@ -6832,7 +6783,7 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -6853,14 +6804,12 @@
    "prazoMeta": "2026-10-23",
    "prioridade": "Média",
    "proximas": [
-    "ELT",
     "HID",
-    "PCI",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "AQUECIMENTO DE ÁGUA ÁREAS COMUNS",
    "ultimoComentario": "2026-10-01"
@@ -6973,7 +6922,7 @@
     "02/10 MAG sugeriu área técnica ao lado do acesso de veículos do SS1 com brise"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "ÁREA TÉCNICA CONDENSADORAS - ÁREAS COMUNS E COMERCIAL",
    "ultimoComentario": "2026-10-06"
@@ -7047,7 +6996,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.796Z",
    "status": "aberto",
    "titulo": "DEMANDA DE ENERGIA ELÉTRICA",
    "ultimoComentario": "2026-10-06"
@@ -7175,7 +7124,7 @@
     "01/10 ARQ sugeriu reservatório inferior em 2 níveis"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "RESERVATÓRIO INFERIOR DE ÁGUA POTÁVEL",
    "ultimoComentario": "2026-10-01"
@@ -7278,7 +7227,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "ESCADA À PROVA DE FUMAÇA (EPF) - PRESSURIZADA",
    "ultimoComentario": "2026-10-01"
@@ -7352,7 +7301,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "LIMITAÇÃO PÚBLICO LAZER",
    "ultimoComentario": "2026-09-14"
@@ -7366,7 +7315,9 @@
      "texto": "EST validar o acréscimo do volume de SPK no reservatório superior (ver #2005)"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "PCI"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -7417,7 +7368,6 @@
    "dataCriacao": "2026-09-16",
    "direcionadas": [
     "HID",
-    "PCI",
     "ARQ",
     "EST",
     "MAG"
@@ -7433,7 +7383,7 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ARQ",
@@ -7467,7 +7417,6 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "PCI",
     "ARQ",
     "EST",
     "MAG"
@@ -7476,7 +7425,7 @@
     "01/10 Validado manter os acessos superiores"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "RESERVATÓRIO SUPERIOR",
    "ultimoComentario": "2026-10-01"
@@ -7496,7 +7445,12 @@
      "texto": "MAG confirmar e validar as informações, e obter do fornecedor da piscina a infraestrutura e a potência dos equipamentos"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ELT",
+    "EST",
+    "TEL",
+    "PCI"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -7519,11 +7473,7 @@
    "dataCriacao": "2026-09-16",
    "direcionadas": [
     "HID",
-    "ELT",
-    "EST",
-    "TEL",
     "ARQ",
-    "PCI",
     "MAG"
    ],
    "disciplinas": [
@@ -7537,19 +7487,19 @@
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "EST",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "TEL",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ARQ",
@@ -7561,7 +7511,7 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -7583,16 +7533,12 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ELT",
-    "EST",
-    "TEL",
     "ARQ",
-    "PCI",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "PISCINAS E SAUNA",
    "ultimoComentario": "2026-09-16"
@@ -7606,7 +7552,9 @@
      "texto": "ARQ considerar a compartimentação horizontal junto com o reposicionamento das áreas técnicas"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "MAG"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -7642,8 +7590,7 @@
    "dataCriacao": "2026-09-14",
    "direcionadas": [
     "PCI",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "disciplinas": [
     {
@@ -7662,7 +7609,7 @@
      "c": "MAG",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
@@ -7678,12 +7625,11 @@
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "COMPARTIMENTAÇÃO HORIZONTAL OU DE ÁREAS",
    "ultimoComentario": "2026-10-06"
@@ -7767,7 +7713,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "VEDAÇÃO DA ESCADA",
    "ultimoComentario": "2026-09-14"
@@ -7844,7 +7790,7 @@
     "01/10 MAG definiu captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.796Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -7967,7 +7913,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T13:38:28.797Z",
    "status": "aberto",
    "titulo": "EXAUSTÃO E VENTILAÇÃO MECÂNICA - BANHEIROS E COIFAS",
    "ultimoComentario": "2026-10-06"
@@ -7994,7 +7940,10 @@
      "texto": "HID prever recirculação interna nos aptos de 3 e 4 quartos"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "PCI",
+    "ELT"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -8038,9 +7987,7 @@
    "dataCriacao": "2026-09-16",
    "direcionadas": [
     "HID",
-    "PCI",
     "ARQ",
-    "ELT",
     "MAG"
    ],
    "disciplinas": [
@@ -8054,7 +8001,7 @@
      "c": "PCI",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "ARQ",
@@ -8066,7 +8013,7 @@
      "c": "ELT",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -8088,9 +8035,7 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "PCI",
     "ARQ",
-    "ELT",
     "MAG"
    ],
    "realizadas": [
@@ -8099,7 +8044,7 @@
     "06/10 Definida recirculação interna nos aptos de 3 e 4 quartos"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.650Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "SISTEMA DE AQUECIMENTO CENTRAL",
    "ultimoComentario": "2026-10-06"
@@ -8113,7 +8058,9 @@
      "texto": "ARQ confirmar, com Interiores, que a especificação dos materiais de acabamento e revestimento atende ao CMAR (Classe II-A, Dm ≤ 100 em poços e shafts)"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "MAG"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -8136,8 +8083,7 @@
    "dataCriacao": "2026-09-14",
    "direcionadas": [
     "PCI",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "disciplinas": [
     {
@@ -8156,7 +8102,7 @@
      "c": "MAG",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
@@ -8172,12 +8118,11 @@
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-13T12:12:56.649Z",
+   "sincronizadoEm": "2026-10-14T15:09:31.000Z",
    "status": "aberto",
    "titulo": "CONTROLE MATERIAIS DE ACABAMENTO E REVESTIMENTO",
    "ultimoComentario": "2026-09-14"
@@ -8274,22 +8219,18 @@
    "fim": "2026-11-27",
    "geradoEm": "2026-10-07"
   },
-  "sincronizadoEm": "2026-10-14T09:59:40.000Z",
-  "ultimaSync": "2026-10-14T09:59:40.000Z",
+  "sincronizadoEm": "2026-10-14T15:10:32.000Z",
+  "ultimaSync": "2026-10-14T15:10:32.000Z",
   "ultimaSyncResumo": {
-   "alterados": 0,
-   "analisados": 0,
-   "analisePendente": 0,
+   "alterados": 30,
    "comentarios": 0,
    "novos": 0,
-   "origem": "agendada",
-   "resumoSemanal": true,
-   "reunioes": [],
+   "origem": "manual",
    "statusAtualizados": 0,
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-10-14T10:28:35+00:00",
+ "geradoEm": "2026-10-14T15:19:45+00:00",
  "resumos": {
   "2026-10-05": {
    "disciplinas": {
@@ -8310,20 +8251,18 @@
   },
   "2026-10-12": {
    "disciplinas": {
-    "ARQ": "#1775 validar a quantidade de pontos de gás nas áreas comuns, considerando os estudos do 4º pavimento e da cobertura\n#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)\n#3264 prever enchimento de cerca de 8 cm nas paredes da escada com instalações (Figuras 01 e 02)\n#3470 aumentar os shafts conforme indicado, depois da escolha da MAG\n#4050 validar a posição sugerida para a central de alarme (Figuras 01 e 02) e depois validar com Interiores\n#4923 prever barreira física no entorno da piscina descoberta da cobertura (Figuras 01 e 02)\n#5870 considerar a definição da Construtora de 30/09: ponto elétrico somente na evaporadora nas áreas indicadas\n#9300 definir a tipologia das paredes da escada: TRRF de 2 h nos subsolos -03 a -01 e 3 h nos demais pavimentos\n#2062 prever as VPs nas esquadrias das áreas de serviço e, no final 07, aberturas na alvenaria junto à área técnica\n#2323 prever bate-rodas de concreto nas vagas indicadas, se necessário (Figuras 02 e 03)\n#3426 atender aos itens das escadas apontados e manter a conferência em todas as etapas (Figuras 01 a 03)\n#4252 especificar o corrimão conforme a definição da Construtora\n#4532 prever os guarda-corpos conforme indicado no apontamento (Figuras 01 a 07)\n#7521 incluir a reserva de espaço das antenas na cobertura conforme a posição validada\n#7614 manter a conferência da largura de circulação e corredores em todas as etapas\n#8197 verificar e ajustar a escada do barrilete em projeto\n#8592 aguardando a MAG validar o padrão de pranchas de hidrossanitário (Opção 1 ou 2)\n#8958 com a MAG, indicar ciência da limitação de população no pavimento e incluir o layout da academia da cobertura conforme sugestão do PCI\n#9899 confirmar com Interiores que os acabamentos e revestimentos atendem ao CMAR (Classe II-A, Dm ≤ 100 em poços e shafts)",
-    "CLI": "#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)\n#5870 incorporar a definição de ponto elétrico somente na evaporadora",
+    "ARQ": "#1775 validar a quantidade de pontos de gás nas áreas comuns, considerando os estudos do 4º pavimento e da cobertura\n#2140 validar a nomenclatura de apartamentos indicada na Figura 01 (a MAG já validou em 07/10)\n#3264 prever enchimento de cerca de 8 cm nas paredes da escada com instalações (Figuras 01 e 02)\n#3470 aumentar os shafts conforme indicado, depois da escolha da MAG\n#4050 validar a posição sugerida para a central de alarme (Figuras 01 e 02), depois validar com Interiores\n#4923 prever barreira física no entorno da piscina descoberta da cobertura (Figuras 01 e 02)\n#9300 definir a tipologia das paredes da escada: TRRF de 2 h nos subsolos -03 a -01 e 3 h nos demais pavimentos\n#2062 prever as VPs nas esquadrias das áreas de serviço e, no final 07, aberturas na alvenaria junto à área técnica\n#2323 prever bate-rodas de concreto nas vagas indicadas, se necessário (Figuras 02 e 03)\n#3426 atender aos itens das escadas apontados e manter a conferência em todas as etapas (Figuras 01 a 03)\n#4252 especificar o corrimão conforme a definição da Construtora\n#4532 prever os guarda-corpos conforme indicado no apontamento (Figuras 01 a 07)\n#7614 manter a conferência da largura de circulação e corredores em todas as etapas do projeto\n#8197 verificar e ajustar a escada do barrilete em projeto\n#8958 indicar ciência da limitação de população no pavimento e incluir o layout da academia da cobertura conforme sugestão do PCI\n#9899 confirmar, com Interiores, que a especificação dos materiais de acabamento e revestimento atende ao CMAR (Classe II-A, Dm ≤ 100 em poços e shafts)",
+    "CLI": "#5870 incorporar a definição de ponto elétrico somente na evaporadora",
     "COORD": "#1775 validar a resposta da MAG\n#2140 validar a resposta da MAG\n#3470 validar a resposta da MAG\n#5870 validar a resposta da MAG\n#3230 validar a resposta da MAG\n#9477 validar a resposta da MAG",
-    "ELT": "#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)\n#3230 com TEL, prever a infraestrutura correspondente\n#4308 incorporar: embutido em PVC nas áreas comuns e halls; aparente em aço nas garagens e alimentadores acima de Ø32 mm\n#8672 aguardando a MAG validar a demanda de energia elétrica (apresentada em 06/10, sem dúvidas)",
-    "EST": "#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)",
-    "HID": "#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)\n#2508 documentação da rede de esgoto da CASAN viabilizada em 30/09; HID está em Validar, falta a coordenação validar e encerrar\n#3470 responder qual o modelo de caixa sifonada especial e como funcionaria\n#3230 com PCI, prever medidores de água e gás pré-equipados para telemetria\n#8592 aguardando a MAG validar o padrão de pranchas de hidrossanitário (Opção 1 ou 2)",
-    "INT": "#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)",
-    "MAG": "#8592 validar o padrão de apresentação das pranchas de hidrossanitário (Opção 1 ou 2)\n#8958 com a ARQ, indicar ciência da limitação de população no pavimento e incluir o layout da academia da cobertura conforme sugestão do PCI\n#9899 aguardando a ARQ confirmar com Interiores que os acabamentos e revestimentos atendem ao CMAR (Classe II-A, Dm ≤ 100 em poços e shafts)",
-    "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)\n#3264 conferir o enchimento previsto pela arquitetura\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4923 conferir barreira, ralos de sucção, tampas e botoeira exigidos pela IN33\n#5996 incorporar os materiais de gás e SHP validados pela MAG e ajustar o caminhamento da rede primária após a nova localização da ERPM\n#9300 conferir se a tipologia atende às espessuras indicadas\n#2062 incorporar as posições das ventilações permanentes\n#2323 aguardando a primeira resposta das disciplinas pendentes (sem comentários na Construflow até 06/10)\n#3230 com HID, prever medidores de água e gás pré-equipados para telemetria\n#3426 aguardando a primeira resposta das disciplinas pendentes (sem comentários na Construflow até 06/10)\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 aguardando a primeira resposta das disciplinas pendentes (sem comentários na Construflow até 06/10)\n#7614 item de conferência contínua: ARQ deve manter a largura de circulação e corredores em todas as etapas\n#8197 aguardando o retorno da ARQ sobre a verificação e ajuste da escada do barrilete (reunião de 01/10)\n#8958 aguardando ARQ e MAG darem ciência da limitação de público no lazer e incluírem o layout da academia da cobertura\n#9899 aguardando a ARQ confirmar com Interiores o atendimento ao CMAR (Classe II-A, Dm ≤ 100 em poços e shafts)",
-    "SPDA": "#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)\n#7521 confirmar a integração das antenas ao SPDA na posição validada\n#9477 incorporar a captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação",
-    "TEL": "#2140 adotar a nomenclatura de apartamentos validada (mesma numeração para a CELESC)\n#3230 com ELT, prever a infraestrutura correspondente\n#7521 prever a infraestrutura (eletrodutos, caixas de passagem e quadro de proteção) conforme a localização validada"
+    "ELT": "#4308 incorporar: embutido em PVC nas áreas comuns e halls; aparente em aço nas garagens e alimentadores acima de Ø32 mm\n#8672 apresentado na reunião de 06/10, sem dúvidas. Aguardando a MAG validar a demanda de energia elétrica",
+    "HID": "#2140 em 07/10 a Magno validou a nomenclatura dos apartamentos proposta pela Arquitetura. Falta a Arquitetura validar; as demais disciplinas só acompanham e adotam a numeração definida\n#2508 a documentação da rede de esgoto da CASAN foi viabilizada em 30/09. HID está em Validar; falta a coordenação validar e encerrar\n#3470 responder qual o modelo de caixa sifonada especial e como funcionaria\n#3230 prever medidores de água e gás pré-equipados para telemetria\n#8592 sem comentários públicos na Construflow. Aguardando a MAG validar o padrão de apresentação das pranchas de hidrossanitário (Opção 1 ou 2)",
+    "MAG": "#8592 validar o padrão de apresentação das pranchas de hidrossanitário (Opção 1 ou 2)\n#8958 indicar ciência da limitação de população no pavimento e incluir o layout da academia da cobertura conforme sugestão do PCI",
+    "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#3264 conferir o enchimento previsto pela arquitetura\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4923 conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33\n#5996 incorporar os materiais de gás e SHP validados pela MAG e ajustar o caminhamento da rede primária após a definição da nova localização da ERPM\n#9300 conferir se a tipologia atende às espessuras indicadas\n#2062 incorporar as posições das ventilações permanentes\n#2323 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes\n#3426 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes\n#7614 sem comentários na Construflow. Item de conferência contínua: a ARQ deve manter a largura de circulação e corredores em todas as etapas do projeto\n#8197 na reunião de 01/10 a arquitetura ficou de verificar e ajustar a escada do barrilete em projeto. Aguardando o retorno da ARQ\n#8958 sem comentários na Construflow. Aguardando ARQ e MAG darem ciência da limitação de público no pavimento de lazer e incluírem o layout da academia da cobertura conforme sugestão do PCI\n#9899 sem comentários na Construflow. Aguardando a ARQ confirmar, com Interiores, que os materiais de acabamento e revestimento atendem ao CMAR (Classe II-A, Dm ≤ 100 em poços e shafts)",
+    "SPDA": "#7521 confirmar a integração das antenas ao sistema de proteção contra descargas atmosféricas na posição validada\n#9477 incorporar a captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação",
+    "TEL": "#7521 prever a infraestrutura (eletrodutos, caixas de passagem e quadro de proteção) conforme a localização validada"
    },
-   "geradoEm": "2026-10-14T09:59:40.000Z",
-   "geral": "Vencem 25 apontamentos na semana de 12/10 a 16/10, dos quais 10 já estão atrasados (prazo meta 09/10). O #2140 (numeração de blocos e apartamentos) envolve mais disciplinas (ARQ, CLI, ELT, EST, HID, PCI, SPDA, TEL e INT), seguido do #3230 (telemetria de gás e água: HID, PCI, ELT, TEL e COORD) e do #7521 (antenas na cobertura: ARQ, SPDA e TEL). Os #1775, #3470, #4050, #4923, #5870, #3264 e #9300 também mobilizam mais de uma disciplina. A ARQ concentra o maior número de ações (18), seguida da PCI (16); a MAG tem 3 validações pendentes e a COORD 6 validações de respostas já recebidas.",
+   "geradoEm": "2026-10-14T15:09:31.000Z",
+   "geral": "Vencem 25 apontamentos na semana de 12/10 a 16/10, dos quais 10 estão atrasados (prazo meta 09/10); #7618 e #8386 ficam de fora por aguardarem o AP. Depois da revisão de status de 14/10 (disciplinas sem ação passaram para Acompanhar), nenhum apontamento da semana tem mais de três disciplinas pendentes: #8958 (ARQ, PCI e MAG), #1775 (PCI e ARQ, além da validação da COORD), #2140 (ARQ e HID, além da COORD) e #3470 (HID e ARQ, além da COORD). As respostas se concentram na ARQ, com 16 apontamentos, e na PCI, com 15; a HID tem 5, a MAG 2 e a COORD tem 6 validações de respostas já dadas.",
    "semana": "2026-10-12"
   }
  },
