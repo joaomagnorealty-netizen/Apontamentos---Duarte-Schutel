@@ -2026,7 +2026,7 @@ async function sincronizar(origem){
    Se a página não puder usar o Construflow (sem conector, sem permissão, bloqueio da organização),
    dispara a tarefa agendada na nuvem como antes. Depois de sincronizar, pede a publicação do site. */
 var SEM_ACESSO_CF={no_mcp:1,server_not_connected:1,not_granted:1,capability_disabled:1,not_in_manifest:1,blocked_by_policy:1,approval_required:1};
-var TAREFA_SITE_ID="trig_01V17FTEhyXe4sWZWg87zobB";
+var TAREFA_SITE_ID="trig_01EZTqJFjAiESWGcrP3sw7eu"; /* gatilho criado pelo conector: manda "EXECUÇÃO MANUAL" à sessão de publicação do site */
 async function sincronizarAgora(){
   if(SYNC.on||!S.db)return;
   var cfg=S.cfg||{}, now=new Date(), em=cfg.syncEmAndamento?new Date(cfg.syncEmAndamento):null;
