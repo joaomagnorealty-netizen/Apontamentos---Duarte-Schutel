@@ -79,7 +79,6 @@ button,select,input,textarea{font:inherit;color:inherit}
 .card:hover{border-color:var(--ink)}
 .metaline{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;max-width:560px;margin:8px 0 4px;font-size:14px}
 .novos{background:var(--sheet);border-left:4px solid var(--focus);padding:8px 12px;margin:10px 0 0;font-size:14px;max-width:80ch}
-.tag.novo{color:var(--focus);border-color:var(--focus)}
 details.blk{margin-top:22px;border-top:1px solid var(--rule);padding-top:10px}
 details.blk>summary{cursor:pointer;font-family:var(--title);font-weight:600;font-size:17px;margin-bottom:8px}
 details.blk>summary .n{font-weight:500;color:var(--ink-3);font-size:14px}
@@ -91,12 +90,8 @@ details.blk>summary .n{font-weight:500;color:var(--ink-3);font-size:14px}
 .burn .xl{font-size:11px;fill:var(--ink-3);text-anchor:middle}
 .burn .rl{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round}
 .burn .rp{fill:var(--ink)}
-.burn .rv{font-size:12px;font-weight:700;fill:var(--ink)}
 .burn .pl{fill:none;stroke:var(--warn);stroke-width:2;stroke-dasharray:6 5}
 .burn .hoje{stroke:var(--focus);stroke-width:1;stroke-dasharray:3 3}
-.burn .hl{font-size:11px;fill:var(--focus)}
-.burn .ap{stroke:var(--crit);stroke-width:1}
-.burn .apl{font-size:11px;fill:var(--crit);text-anchor:end}
 .cmts li.new{background:color-mix(in srgb,var(--focus) 8%,transparent)}
 .cmts li.new .who::after{content:" · novo";color:var(--focus);font-weight:600}
 .reu-head{margin:16px 0 10px;border-bottom:1.5px solid var(--ink);padding-bottom:8px}
@@ -171,7 +166,6 @@ details.blk>summary .n{font-weight:500;color:var(--ink-3);font-size:14px}
 }
 .cap{display:grid;grid-template-columns:136px minmax(0,1fr) auto;gap:18px;align-items:center;background:var(--sheet);border:1px solid var(--rule);padding:14px 18px;cursor:pointer}
 .cap:hover{border-color:var(--ink-2)}
-.cap.alta{box-shadow:inset 4px 0 0 var(--brand)}
 .cp{display:flex;flex-direction:column;gap:1px}
 .cp span{font-size:12.5px;color:var(--ink-3)}
 .cp b{font-size:16px;font-weight:700}
@@ -270,21 +264,10 @@ h3 .n{font-weight:500;color:var(--ink-3);font-size:14px}
 .f-atencao{color:var(--warn);background:var(--warn-bg)}
 .f-normal{color:var(--ok);background:var(--ok-bg)}
 .tag{font-size:12px;font-weight:600;padding:1px 6px;border-radius:3px;border:1px solid currentColor}
-.tag.alta{color:var(--crit)}
 .tag.prazo{color:var(--ink-2)}
 .tag.prazo.vencido{color:var(--crit);background:var(--crit-bg);border-color:transparent}
 .tag.res{color:var(--ok)}
 
-/* Apontamento rows */
-.list{background:var(--sheet);border:1px solid var(--rule)}
-.ap{display:grid;grid-template-columns:64px 1fr auto;gap:4px 14px;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--rule-2);padding:11px 14px;cursor:pointer;align-items:start}
-.ap:first-child{border-top:0}
-.ap:hover{background:var(--hover)}
-.ap .num{font-weight:650;color:var(--ink-2);padding-top:1px}
-.ap .tit{font-weight:560}
-.ap .side{display:flex;gap:6px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
-.ap .meta{grid-column:2/4;display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--ink-3)}
-.ap .acao{grid-column:2/4;font-size:13.5px;color:var(--ink-2);border-left:3px solid var(--c,var(--rule));padding:2px 0 2px 9px;margin-top:2px;max-width:90ch}
 .empty{padding:22px 16px;color:var(--ink-2);background:var(--sheet);border:1px dashed var(--rule)}
 
 /* Panel */
@@ -320,7 +303,6 @@ table.mx tfoot td{border-top:1.5px solid var(--ink);font-weight:650}
 .bar .b1{background:var(--ok)} .bar .b2{background:var(--warn)} .bar .b3{background:var(--crit)}
 .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-2);margin-top:8px}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 
 /* Filters */
 .filters{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:end;margin:14px 0 12px}
@@ -335,10 +317,6 @@ table.mx tfoot td{border-top:1.5px solid var(--ink);font-weight:650}
 
 /* Disc chooser */
 .chooser{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;margin-top:14px}
-.chooser button{display:flex;gap:10px;align-items:center;text-align:left;background:var(--sheet);border:1px solid var(--rule);padding:10px 12px;border-radius:3px;cursor:pointer}
-.chooser button:hover{border-color:var(--ink)}
-.chooser .sw{width:10px;height:28px;background:var(--c);border-radius:2px;flex:none}
-.chooser small{display:block;color:var(--ink-3)}
 
 /* Drawer */
 .scrim{position:fixed;inset:0;background:rgba(15,20,22,.38);z-index:20}
@@ -388,14 +366,10 @@ form.ed textarea{min-height:84px;resize:vertical}
   .kpis{grid-template-columns:1fr 1fr}
   .kpis>div:nth-child(3){border-left:0}
   .kpis>div:nth-child(n+3){border-top:1px solid var(--rule)}
-  .two{grid-template-columns:1fr}
   .emp{font-size:24px}
 }
 @media (max-width:560px){
   .wrap{padding:12px 12px 48px}
-  .ap{grid-template-columns:52px 1fr;padding:10px 10px}
-  .ap .side{grid-column:2;justify-content:flex-start}
-  .ap .meta,.ap .acao{grid-column:2}
   dl.f{grid-template-columns:1fr}
   dl.f dt{padding-top:6px}
   form.ed{grid-template-columns:1fr}
@@ -583,7 +557,7 @@ var S = {
   aps: [], cfg: null, loaded: false, dbOk: null,
   view: null, myDiscs: [], lastVisit: null, isAdmin: false, uid: null,
   f: {disc:"", faixa:"", prio:"", status:"aberto", q:"", sort:"dias", group:false, prazo:""},
-  interno: {}, resumos: {}, reunioes: {}, openId: null, db: null, comments: null, user: null, editing: false, creating: false
+  interno: {}, resumos: {}, reunioes: {}, openId: null, db: null, user: null, editing: false, creating: false
 };
 
 /* ---------- helpers ---------- */
@@ -654,19 +628,6 @@ function semanaBox(){
       DISC.filter(function(d){return d.c!=="COORD";}).map(function(d){return '<label>'+esc(d.c)+' (por semana)<input type="number" min="0" data-meta="'+esc(d.c)+'" value="'+(pd[d.c]!=null?esc(pd[d.c]):'')+'" placeholder="auto"></label>';}).join("")+
       '<button class="btn ghost" type="button" id="mSave">Salvar metas</button><span class="msg" id="mMsg"></span></div></details>';}
   return h+'</div>';
-}
-function viewSemana(){
-  var w=semanaAt();
-  return '<section class="view"><h2>Resumo semanal</h2><p class="lede">Semana de '+fmtD(isoD(w.ini))+' a '+fmtD(isoD(w.fim))+'. Metas, apontamentos resolvidos e resumo do que ficou com cada disciplina.</p>'+
-    (S.myDisc&&S.myDisc!=="COORD"&&DMAP[S.myDisc]?minhaSemana(S.myDisc):'')+semanaBox()+'</section>';
-}
-function minhaSemana(c){
-  if(c==="COORD")return "";
-  var w=semanaAt(),st=statsDisc(c,w),rs=resumoSem(w.id),tx=rs&&rs.disciplinas&&rs.disciplinas[c];
-  return '<div class="wk"><h3>'+chip(c,true)+' Sua disciplina nesta semana</h3>'+
-    '<div style="display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:center;max-width:560px"><span>Meta da semana</span><span><strong>'+st.res+' de '+st.meta+'</strong> resolvidos</span><span></span>'+mbar(st.res,st.meta)+
-    '<span>Pendentes agora</span><span>'+st.pend+(st.novos?' ('+st.novos+' novos nesta semana)':'')+'</span><span>'+(plano()?'Situação no plano':'Previsão para zerar')+'</span><span>'+esc(st.prev)+'</span>'+(plano()?'<span>Prazo final</span><span>zerar até '+fmtD(plano().fim)+' (início do '+esc(plano().fase)+')</span>':'')+'</div>'+
-    (tx?'<p class="geral" style="margin-top:10px">'+esc(tx)+'</p>':'')+'</div>';
 }
 function ordEsp(x,y){return idxFase(espera(x).c)-idxFase(espera(y).c)||x.numero-y.numero;}
 function ativo(a){return isOpen(a)&&!aguardando(a);}
@@ -864,7 +825,7 @@ async function emBaixar(i,m){
   try{
     var dl=null;try{dl=await claude.use("downloads");}catch(e){}
     if(dl){var r=await dl.save({filename:nome,data:data.buffer});emSay(i,r&&r.status==="saved"?"Rascunho salvo. Abra o arquivo para editar e enviar no Outlook.":"Rascunho gerado.");}
-    else{var url=URL.createObjectURL(new Blob([data],{type:"message/rfc822"}));var aEl=document.createElement("a");aEl.href=url;aEl.download=nome;document.body.appendChild(aEl);aEl.click();aEl.remove();emSay(i,"Rascunho gerado.");}
+    else{var url=URL.createObjectURL(new Blob([data],{type:"message/rfc822"}));var aEl=document.createElement("a");aEl.href=url;aEl.download=nome;document.body.appendChild(aEl);aEl.click();aEl.remove();setTimeout(function(){URL.revokeObjectURL(url);},4000);emSay(i,"Rascunho gerado.");}
   }catch(e){emSay(i,e&&(e.code==="cancelled"||e.code==="declined")?"Download cancelado.":"Não foi possível gerar o rascunho ("+((e&&(e.code||e.message))||"erro")+").",true);}
 }
 var EM_CRC=null;
@@ -922,10 +883,13 @@ function bindEmails(){
 /* ---------- tabs ---------- */
 var tabs=[].slice.call(document.querySelectorAll("nav.tabs button"));
 tabs.forEach(function(b){b.addEventListener("click",function(){go(b.getAttribute("data-v"));});});
+/* Várias atualizações do banco em sequência (ex.: durante a sincronização) viram um só redesenho. */
+var RD={t:null,dr:false};
+function agendarRender(comDrawer){if(comDrawer)RD.dr=true;if(RD.t)return;RD.t=setTimeout(function(){var d=RD.dr;RD.t=null;RD.dr=false;
+  render();if(d&&dr.innerHTML&&!S.editing&&!S.creating)renderDrawer();},40);}
 function go(v){S.view=v;render();window.scrollTo(0,0);}
 
 /* ---------- discipline choice ---------- */
-function setMyDisc(c){setMyDiscs(c?[c]:[]);}
 function setMyDiscs(arr){
   arr=(arr||[]).filter(function(c){return DMAP[c];});
   if(S.preview){S.myDiscs=arr;render();return;}
@@ -973,64 +937,7 @@ function tabsSombra(){var w=document.getElementById("tabsw"),n=document.getEleme
   var mq=window.matchMedia?window.matchMedia("(max-width:560px)"):null,last=mq?mq.matches:false;
   window.addEventListener("resize",function(){tabsSombra();if(mq&&mq.matches!==last){last=mq.matches;if(S.loaded)render();}});})();
 
-function apRow(a,hl){
-  var n=dias(a), f=faixa(n), hls=hl?(Array.isArray(hl)?hl:[hl]):[];
-  var side='';
-  (D.length?D:proxEf(a)).forEach(function(c){if(semRespPublica(a,c))extras.push('<b style="color:var(--warn)">'+esc(c)+' está em Validar, mas a resposta ainda não está pública</b>');});
-  var rl=isOpen(a)?respLista(a):[];
-  if(rl.length)side+='<span class="tag" style="color:var(--ok)" title="O último comentário é da disciplina, que continua Pendente no Construflow">'+esc(rl.join(", "))+' respondeu, falta atualizar o status</span>';
-  if(isOpen(a)&&ehNovo(a))side+='<span class="tag novo">Novo</span>';else if(isOpen(a)&&comentNovos(a))side+='<span class="tag novo">Comentário novo</span>';
-  if(!isOpen(a)) side+='<span class="tag res">'+esc(STL[a.status]||a.status)+'</span>';
-  if(S.isAdmin&&S.interno[String(a.numero)]) side+='<span class="tag" style="color:var(--warn)" title="Comentário interno aguardando validação">Interno</span>';
-  if(a.prioridade==="Alta") side+='<span class="tag alta">Alta</span>';
-  if(!S.isAdmin){var ew0=espera(a),pi=prazoItem(a);
-    if(ew0)side+='<span class="tag" style="color:var(--ink-2)">'+esc(ew0.lb)+'</span>';
-    else if(isOpen(a))side+=pi?'<span class="tag prazo'+(parseD(pi)<today()?' vencido':'')+'">Prazo '+fmtD(pi).slice(0,5)+'</span>':(S.metaSel[a.numero]?'<span class="tag prazo" style="color:var(--warn)">Meta da semana</span>':'<span class="tag prazo">Sem prazo</span>');
-  } else {
-  if(a.prazoMeta&&ativo(a)) side+='<span class="tag prazo'+(parseD(a.prazoMeta)<today()?' vencido':'')+'" title="Prazo do plano de resolução (complexidade '+esc((CX[a.complexidade]||"média").toLowerCase())+')">Meta '+fmtD(a.prazoMeta).slice(0,5)+'</span>';
-  if(prazoEf(a)) side+='<span class="tag prazo'+(prazoVencido(a)&&isOpen(a)?' vencido':'')+'">Prazo '+fmtD(prazoEf(a))+'</span>';
-  var ew=espera(a);
-  if(ew) side+='<span class="tag" style="color:var(--ink-2)" title="Aguardando etapa">'+esc(ew.lb)+'</span>';
-  if(!ew) side+='<span class="dias f-'+f+'" title="Dias sem movimentação">'+n+' d</span>';
-  }
-  var nc=(a.comentarios||[]).length;
-  var meta='<span>Próxima a agir</span> '+(chips(proxEf(a))||'<span>—</span>')+(nc?'<span style="margin-left:6px">'+nc+(nc===1?' comentário':' comentários')+'</span>':'');
-  var acao='';
-  if(hls.length){
-    var lines=(a.acoes||[]).filter(function(x){return (x.disciplinas||[]).some(function(c){return hls.indexOf(c)>=0;});});
-    if(lines.length){acao=lines.map(function(x){var c=(x.disciplinas||[]).filter(function(c){return hls.indexOf(c)>=0;})[0];return '<div class="acao" style="--c:'+(DMAP[c]?DMAP[c].cor:'')+'">'+esc(x.texto)+'</div>';}).join("");}
-  }
-  return '<button class="ap" data-id="'+esc(a.numero)+'"><span class="num">#'+esc(a.numero)+'</span><span class="tit">'+esc(a.titulo)+'</span><span class="side">'+side+'</span><span class="meta">'+meta+'</span>'+acao+'</button>';
-}
-function listHtml(arr,hl,emptyMsg){
-  if(!arr.length) return '<div class="empty">'+esc(emptyMsg)+'</div>';
-  return '<div class="list">'+arr.map(function(a){return apRow(a,hl);}).join("")+'</div>';
-}
 
-function viewMinha(){
-  var c=S.myDisc;
-  if(!c){
-    return '<section class="view"><h2>Qual é a sua disciplina?</h2><p class="lede">Escolha a disciplina pela qual você responde neste empreendimento. A tela inicial vai mostrar primeiro os apontamentos em que ela está envolvida. Dá para trocar a qualquer momento no topo da página.</p><div class="chooser">'+
-      DISC.map(function(d){return '<button data-pick="'+esc(d.c)+'"><span class="sw" style="--c:'+d.cor+'"></span><span><strong>'+esc(d.c)+'</strong><small>'+esc(d.n)+'</small></span></button>';}).join("")+'</div></section>';
-  }
-  var open=S.aps.filter(ativo);
-  var esp=S.aps.filter(function(a){return aguardando(a)&&involves(a,c);}).sort(ordEsp);
-  var vez=open.filter(function(a){return (a.proximas||[]).indexOf(c)>=0;}).sort(byDias);
-  var dir=open.filter(function(a){return (a.proximas||[]).indexOf(c)<0&&(a.direcionadas||[]).indexOf(c)>=0;}).sort(byDias);
-  var acp=open.filter(function(a){return (a.proximas||[]).indexOf(c)<0&&(a.direcionadas||[]).indexOf(c)<0&&((a.acompanhar||[]).indexOf(c)>=0||(a.criadoPor||[]).indexOf(c)>=0);}).sort(byDias);
-  var crit=vez.filter(function(a){return dias(a)>30;}).length;
-  var venc=vez.filter(prazoVencido).length;
-  var d=DMAP[c];
-  var resumo = vez.length
-    ? (vez.length===1?'1 apontamento aguarda':vez.length+' apontamentos aguardam')+' ação de '+esc(c)+'.'+(crit?' '+crit+(crit===1?' está':' estão')+' há mais de 30 dias sem movimentação.':'')+(venc?' '+venc+' com prazo vencido.':'')
-    : 'Nenhum apontamento aguarda ação de '+esc(c)+' no momento.';
-  return '<section class="view"><h2>'+chip(c,true)+' '+esc(d?d.n:c)+'</h2><p class="lede">'+resumo+'</p>'+
-    '<h3>Aguardando sua ação <span class="n">'+vez.length+'</span></h3>'+listHtml(vez,c,"Nada pendente com a sua disciplina.")+
-    '<h3>Direcionados à sua disciplina, aguardando outra <span class="n">'+dir.length+'</span></h3>'+listHtml(dir,c,"Nenhum apontamento nesta situação.")+
-    '<h3>Acompanhando <span class="n">'+acp.length+'</span></h3>'+listHtml(acp,null,"Nenhum apontamento em acompanhamento.")+
-    (esp.length?'<h3>Aguardando etapa (resolução ou conferência) <span class="n">'+esp.length+'</span></h3><p class="count">Marcados para serem resolvidos ou conferidos numa etapa futura. Não contam como sem movimentação até a etapa começar.</p>'+listHtml(esp,c,""):'')+
-    '<p class="count" style="margin-top:18px">Para ver o quadro completo do empreendimento, use as abas Painel geral e Todos os apontamentos.</p></section>';
-}
 
 function etapaBox(){
   var fa=faseAtual(), ini=fasesIni(), proj=fasesProj();
@@ -1154,11 +1061,9 @@ function viewLista(){
 }
 
 function bindView(){
-  [].forEach.call(main.querySelectorAll(".ap"),function(b){b.addEventListener("click",function(){openAp(b.getAttribute("data-id"));});});
   [].forEach.call(main.querySelectorAll(".cap"),function(b){b.addEventListener("click",function(e){if(e.target.closest("a")||e.target.closest("label.mk"))return;openAp(b.getAttribute("data-id"));});});
   [].forEach.call(main.querySelectorAll("input[data-mk]"),function(i){i.addEventListener("change",function(){mkToggle(i.getAttribute("data-mk"),i.checked);});});
   var ob=document.getElementById("onbOk");if(ob)ob.addEventListener("click",function(){lsSet("ap-onb-"+EMP,"1");render();});
-  [].forEach.call(main.querySelectorAll("[data-pick]"),function(b){b.addEventListener("click",function(){setMyDisc(b.getAttribute("data-pick"));});});
   [].forEach.call(main.querySelectorAll("table.apt tr[data-id]"),function(tr){
     var fn=function(){openAp(tr.getAttribute("data-id"));};
     tr.addEventListener("click",fn);tr.addEventListener("keydown",function(e){if(e.key==="Enter")fn();});
@@ -1231,9 +1136,6 @@ function closeDrawer(){S.openId=null;S.editing=false;S.creating=false;dr.innerHT
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&dr.innerHTML)closeDrawer();});
 function findAp(id){for(var i=0;i<S.aps.length;i++)if(String(S.aps[i].numero)===String(id))return S.aps[i];return null;}
 
-function discChecks(name,selected){
-  return '<div class="discs">'+DISC.map(function(d){return '<label><input type="checkbox" name="'+name+'" value="'+esc(d.c)+'"'+((selected||[]).indexOf(d.c)>=0?' checked':'')+'> '+esc(d.c)+'</label>';}).join("")+'</div>';
-}
 function editForm(a){
   return '<form class="ed" id="edForm"><p class="full msg" style="margin:0">Situação, prioridade e status das disciplinas vêm do Construflow e são atualizados a cada sincronização. Aqui você ajusta o que é controle interno.</p>'+
     '<label>Complexidade<select name="complexidade">'+["baixa","media","alta"].map(function(k){return '<option value="'+k+'"'+((a.complexidade||"media")===k?' selected':'')+'>'+CX[k]+'</option>';}).join('')+'</select></label>'+
@@ -1252,7 +1154,6 @@ function parseAcoes(txt){
     var m=l.match(codeRe());return {disciplinas:m?m[1].split("/").map(function(s){return s.trim();}).filter(Boolean):[],texto:l};
   });
 }
-function checked(form,name){return [].map.call(form.querySelectorAll('input[name="'+name+'"]:checked'),function(i){return i.value;});}
 
 function renderDrawer(){
   var a=S.creating?null:findAp(S.openId);
@@ -1380,30 +1281,6 @@ function chooserHtml(){
   return '<section class="view"><h2>Quais disciplinas são suas?</h2><p class="lede">Marque as disciplinas pelas quais você responde neste empreendimento. A tela inicial vai mostrar o que cada uma precisa entregar na semana. Dá para mudar a qualquer momento no topo da página.</p><div class="chooser">'+
     DISC.map(function(d){return '<label class="chk2"><input type="checkbox" value="'+esc(d.c)+'"'+(S.myDiscs.indexOf(d.c)>=0?' checked':'')+'><span class="sw" style="--c:'+d.cor+'"></span><span><strong>'+esc(d.c)+'</strong><small>'+esc(d.n)+'</small></span></label>';}).join("")+
     '</div><div class="row-btns" style="margin-top:12px"><button class="btn" type="button" id="chooseOk">Confirmar</button></div></section>';
-}
-function viewMinhaSemana(){
-  var D=S.myDiscs.filter(function(c){return DMAP[c];});
-  if(!D.length)return chooserHtml();
-  var w=semanaAt(),r=classificar(D),pl=plano(),tot={res:0,meta:0};
-  D.forEach(function(c){if(c==="COORD")return;var st=statsDisc(c,w);tot.res+=st.res;tot.meta+=st.meta;});
-  var mine=function(a){return D.some(function(c){return involves(a,c);});};
-  var nv=S.aps.filter(function(a){return isOpen(a)&&mine(a)&&ehNovo(a);}).length, nc=S.aps.filter(function(a){return isOpen(a)&&mine(a)&&!ehNovo(a)&&comentNovos(a);}).length;
-  var h='<section class="view"><h2>Minha semana <span style="font-size:15px;">'+D.map(function(c){return chip(c,true);}).join(" ")+'</span></h2>'+
-    '<p class="lede">Semana de '+fmtD(isoD(w.ini))+' a '+fmtD(isoD(w.fim))+(pl?'. Meta final: zerar as pendências até '+fmtD(pl.fim)+', início do '+esc(pl.fase)+'.':'.')+'</p>';
-  if(S.lastVisit)h+='<p class="novos">'+((nv||nc)?'Desde sua última visita, em '+fmtD(S.lastVisit)+': '+[nv?nv+(nv>1?' apontamentos novos':' apontamento novo'):'',nc?nc+(nc>1?' apontamentos com comentários novos':' apontamento com comentário novo'):''].filter(Boolean).join(' e ')+'.':'Nada novo desde sua última visita, em '+fmtD(S.lastVisit)+'.')+'</p>';
-  h+='<div class="cards">'+card("atras","Atrasados",r.atras.length,"crit")+card("semana","Para esta semana",r.semana.length,"warn")+card("prox","Próximas semanas",r.prox.length,"")+card("espera","Aguardando etapa",r.espera.length,"mute")+'</div>';
-  if(tot.meta)h+='<div class="metaline"><span>Meta da semana: <strong>'+tot.res+' de '+tot.meta+'</strong> resolvidos</span>'+mbar(tot.res,tot.meta)+'</div>';
-  h+='<h3 id="b-atras">Atrasados <span class="n">'+r.atras.length+'</span></h3>'+listHtml(r.atras,D,"Nenhum apontamento atrasado.");
-  h+='<h3 id="b-semana">Para esta semana <span class="n">'+r.semana.length+'</span></h3>'+(pl?'':'<p class="count">Ainda não há plano de prazos. A lista mostra a meta da semana, começando pelos apontamentos de menor complexidade.</p>')+listHtml(r.semana,D,"Nada previsto para esta semana.");
-  h+='<details class="blk" id="b-prox"'+(DET_ABERTO["b-prox"]?' open':'')+'><summary>Próximas semanas <span class="n">'+r.prox.length+'</span></summary>'+listHtml(r.prox,D,"Nada nas próximas semanas.")+'</details>';
-  if(r.resp.length)h+='<details class="blk" id="b-resp" open><summary>Respondidos, falta atualizar o status no Construflow <span class="n">'+r.resp.length+'</span></summary><p class="count">O último comentário destes apontamentos é da sua disciplina, mas ela continua como Pendente no Construflow. Eles já contam como resolvidos na meta. Atualize o status no Construflow para que a coordenação valide.</p>'+listHtml(r.resp,D,"")+'</details>';
-  h+='<details class="blk" id="b-espera"'+(DET_ABERTO["b-espera"]?' open':'')+'><summary>Aguardando etapa <span class="n">'+r.espera.length+'</span></summary><p class="count">Marcados para serem resolvidos ou conferidos numa etapa futura.</p>'+listHtml(r.espera,D,"Nenhum apontamento aguardando etapa.")+'</details>';
-  var bs=burnSVG(D.filter(function(c){return c!=="COORD";}));
-  if(bs)h+='<h3>Evolução das pendências</h3>'+bs;
-  var rs=resumoSem(w.id);
-  if(rs&&rs.disciplinas){var tx=D.filter(function(c){return rs.disciplinas[c];});if(tx.length)h+='<h3>Resumo das ações da semana</h3><div class="dtx2">'+tx.map(function(c){return '<p>'+chip(c)+' '+esc(rs.disciplinas[c])+'</p>';}).join("")+'</div>';}
-  h+='<details class="blk"><summary>Visão geral da semana: todas as disciplinas</summary>'+semanaBox()+'</details>';
-  return h+'</section>';
 }
 function pendEm(a,D,E){
   if(String(a.dataCriacao||"")>E)return false;
@@ -1536,8 +1413,8 @@ async function gerarPdfPauta(){
     var nome="pauta-"+EMP+"-"+hojeIso()+(reuTem()?"-"+REU.discs.join("-").replace(/[^A-Za-z0-9-]+/g,""):"")+".pdf";
     var dl=null;try{dl=await claude.use("downloads");}catch(e){}
     if(dl){var r=await dl.save({filename:nome,data:doc.output("arraybuffer")});say(r&&r.status==="saved"?"PDF salvo.":"PDF gerado.");}
-    else{var url=URL.createObjectURL(doc.output("blob"));var aEl=document.createElement("a");aEl.href=url;aEl.download=nome;document.body.appendChild(aEl);aEl.click();aEl.remove();say("PDF gerado.");}
-  }catch(e){say(e&&e.code==="cancelled"||e&&e.code==="declined"?"Download cancelado.":"Não foi possível gerar o PDF ("+((e&&(e.code||e.message))||"erro")+").",true);}
+    else{var url=URL.createObjectURL(doc.output("blob"));var aEl=document.createElement("a");aEl.href=url;aEl.download=nome;document.body.appendChild(aEl);aEl.click();aEl.remove();setTimeout(function(){URL.revokeObjectURL(url);},4000);say("PDF gerado.");}
+  }catch(e){say(e&&(e.code==="cancelled"||e.code==="declined")?"Download cancelado.":"Não foi possível gerar o PDF ("+((e&&(e.code||e.message))||"erro")+").",true);}
   btn.disabled=false;
 }
 function viewReuniao(){
@@ -1619,6 +1496,10 @@ function etapaDoComentario(t,complementar){
   return null;
 }
 var TN={};
+/* Paginação segura: no máximo 100 páginas e nunca o mesmo cursor duas vezes. */
+function pagina(ctl,cursor,etapa){if(!cursor)return null;ctl.n=(ctl.n||0)+1;ctl.vistos=ctl.vistos||{};
+  if(ctl.n>100||ctl.vistos[cursor])throw {code:"paginacao",etapa:etapa,message:"o Construflow repetiu a página de resultados"};
+  ctl.vistos[cursor]=1;return cursor;}
 async function prepararMcp(){
   var mcp=await claude.use("mcp"); if(!mcp)throw {code:"no_mcp",etapa:"conexão"};
   var lt; try{lt=await mcp.listTools();}catch(e){e.etapa="lista de conectores";throw e;}
@@ -1824,20 +1705,25 @@ async function sincronizar(origem){
     var DID={};(pr.disciplines||[]).forEach(function(d){DID[d.id]=String(d.abbreviation||"").trim();});
     var USR={},N2D={};(pr.users||[]).forEach(function(u){var nm=((u.name||"").trim()+" "+(u.lastName||"").trim()).replace(/\s+/g," ").trim();USR[u.id]=nm;N2D[nm]=discsAutor(nm,u.email);});
     var LB={};((pr.labels&&pr.labels.flatten)||[]).forEach(function(l){var m=String(l.abbreviationTree||"").match(/^(RES|CONF)\/(EV|EP|PL|AP|PE|EX)$/);if(m)LB[l.id]={t:m[1]==="RES"?"res":"conf",c:m[2]};});
-    var rows=[],after=null,dict=null;
-    do{var inp={projectId:pid,first:200,include:["disciplineDates"]};if(after)inp.after=after;var p=await cf("list_issues_data",inp);rows=rows.concat(p.rows||[]);dict=dict||p.dict;after=p.next&&p.next.after;}while(after);
+    var rows=[],after=null,dict=null,pg1={};
+    do{var inp={projectId:pid,first:200,include:["disciplineDates"]};if(after)inp.after=after;var p=await cf("list_issues_data",inp);
+      if(!p||!Array.isArray(p.rows))throw {code:"formato",etapa:"leitura dos apontamentos"};
+      rows=rows.concat(p.rows);dict=dict||p.dict;after=pagina(pg1,p.next&&p.next.after,"leitura dos apontamentos");}while(after);
+    // F3: confere o formato das linhas antes de gravar qualquer coisa
+    var ruins=rows.filter(function(r){return !Array.isArray(r)||r[0]==null||!(+r[1]>0)||typeof r[2]!=="string"||(r[8]!=null&&!Array.isArray(r[8]));});
+    if(ruins.length)throw {code:"formato",etapa:"leitura dos apontamentos",message:ruins.length+" linha(s) em formato inesperado"};
     var ID2N={};rows.forEach(function(r){ID2N[r[0]]=r[1];});
     var labs={};for(var lid in LB){var q=await cf("list_issues_data",{projectId:pid,first:200,filter:{labelIds:[+lid]}});(q.rows||[]).forEach(function(r){(labs[r[0]]=labs[r[0]]||[]).push(LB[lid]);});}
     var desde=S.cfg.ultimaSync?new Date(new Date(S.cfg.ultimaSync).getTime()-36*3600000).toISOString():null;
     setSync(true,"Lendo anexos e descrições…");
-    var ANX={},DESC={};try{var ia=null,more2=true;while(more2){var li={projectId:pid,first:40,exclude:["users","locals","labels"]};if(ia)li.after=ia;var lp=await cfTexto("list_issues",li);var iss=(lp&&lp.project&&lp.project.issues)||{};
+    var ANX={},DESC={};try{var ia=null,more2=true,pg2={};while(more2){var li={projectId:pid,first:40,exclude:["users","locals","labels"]};if(ia)li.after=ia;var lp=await cfTexto("list_issues",li);var iss=(lp&&lp.project&&lp.project.issues)||{};
       (iss.issues||[]).forEach(function(i){DESC[i.id]=txtHtml(i.description||"");var lg=legendas(i.description);ANX[i.id]=(i.images||[]).slice().sort(function(a,b){return (a.index||0)-(b.index||0);}).map(function(im){var t=String(im.title||"").trim(),mm=t.match(/^(FIGURA|IMAGEM|TABELA)\s*0*(\d+)/i),k=mm?mm[1].toUpperCase()+" "+parseInt(mm[2],10):null;return {titulo:t||"Imagem",url:im.markedUp||im.url||"",legenda:(k&&lg[k])||""};}).filter(function(x){return x.url;});});
-      more2=!!(iss.pageInfo&&iss.pageInfo.hasNextPage);ia=iss.pageInfo&&iss.pageInfo.endCursor;}}catch(e){ANX=null;}
+      more2=!!(iss.pageInfo&&iss.pageInfo.hasNextPage);ia=more2?pagina(pg2,iss.pageInfo.endCursor,"anexos"):null;more2=!!ia;}}catch(e){ANX=null;}
     setSync(true,"Lendo comentários…");
-    var cms=[],cur=null,more=true;
-    while(more){var ci={projectId:pid,first:50,exclude:["images","users"]};if(desde)ci.filter={updatedAtFrom:desde};if(cur)ci.after=cur;var cp=await cf("list_project_comments",ci);var cc=cp&&cp.project&&cp.project.comments||{};cms=cms.concat(cc.comments||[]);more=!!(cc.pageInfo&&cc.pageInfo.hasNextPage);cur=cc.pageInfo&&cc.pageInfo.endCursor;}
+    var cms=[],cur=null,more=true,pg3={};
+    while(more){var ci={projectId:pid,first:50,exclude:["images","users"]};if(desde)ci.filter={updatedAtFrom:desde};if(cur)ci.after=cur;var cp=await cf("list_project_comments",ci);var cc=cp&&cp.project&&cp.project.comments||{};cms=cms.concat(cc.comments||[]);more=!!(cc.pageInfo&&cc.pageInfo.hasNextPage);cur=more?pagina(pg3,cc.pageInfo.endCursor,"comentários"):null;more=!!cur;}
     var byIssue={};cms.forEach(function(c){if(c.deletedAt)return;(byIssue[c.issueId]=byIssue[c.issueId]||[]).push(c);});
-    var exist={};S.aps.forEach(function(a){if(a.construflowId)exist[a.construflowId]=a;});
+    var exist={},existN={};S.aps.forEach(function(a){if(a.construflowId)exist[a.construflowId]=a;existN[a.numero]=a;});
     var sairInterno={};
     var writes=[], internos=[], novos=0, mud=0, built=[], autoOk=0, autoFalha=[], novosComent=0;
     var CATS=(dict&&dict.categories)||{};
@@ -1849,7 +1735,7 @@ async function sincronizar(origem){
       discs.forEach(function(x){var c=DID[x[0]]||String(x[0]);var s=x[1];ds.push({c:c,status:s,prazo:x[2]?dayBrt(x[2]):null,concluidoEm:x[3]?dayBrt(x[3]):null});
         if(s==="follow")acomp.push(c);else if(s!=="participate")direc.push(c);
         if(PENDST[s]&&x[2])prz.push(dayBrt(x[2]));});
-      var old=exist[iid]||null, oldIds={};((old&&old.comentarios)||[]).forEach(function(c){oldIds[c.id]=1;});
+      var old=exist[iid]||existN[code]||null, oldIds={};((old&&old.comentarios)||[]).forEach(function(c){oldIds[c.id]=1;});
       var intOld=((S.interno[String(code)]&&S.interno[String(code)].comentarios)||[]), intIds={};intOld.forEach(function(c){intIds[c.id]=1;});
       var com=desde?(old&&old.comentarios||[]).slice():[], seen={};com.forEach(function(c){seen[c.id||(c.d+"|"+String(c.t).slice(0,60))]=1;});
       var mov=[cday].concat(ds.map(function(d){return d.concluidoEm;})).filter(Boolean);
@@ -2014,7 +1900,9 @@ async function sincronizar(origem){
       approval_required:"A organização exige aprovação para cada uso do Construflow.",
       selection_required:"Há mais de uma conexão do Construflow. Escolha qual usar quando o Claude perguntar.",
       server_unavailable:"O Construflow não respondeu. Tente de novo em alguns minutos.",
-      tool_error:"O Construflow recusou a consulta."};
+      tool_error:"O Construflow recusou a consulta.",
+      formato:"O Construflow devolveu os dados num formato diferente do esperado. Nada foi gravado; tente de novo mais tarde.",
+      paginacao:"O Construflow devolveu a lista de forma incompleta. Nada foi gravado; tente de novo em alguns minutos."};
     var det=e&&e.message?String(e.message).slice(0,160):(e instanceof Error?String(e):"");
     setSync(false,(MSG[c]||"Não foi possível sincronizar"+(c?" ("+c+")":"")+".")+et+(det&&!MSG[c]?" Detalhe: "+det:""),true);
     try{console.error("Sync Construflow",e);}catch(x){}
@@ -2055,11 +1943,8 @@ async function dispararTarefa(tid,text){
     var c=(e&&e.code)||"erro", m=e&&e.message?String(e.message).slice(0,160):"";
     return c+(m?": "+m:"");}
 }
-/* ---------- sincronização: só pela tarefa agendada (automática ou manual) ---------- */
-/* O app não sincroniza ao abrir. O botão Sincronizar dispara a tarefa agendada na nuvem
-   (conector Claude Code Remote, fire_trigger); a tarefa grava no banco e o app se atualiza sozinho. */
+/* ---------- tarefa agendada de sincronização (alternativa quando a página não acessa o Construflow) ---------- */
 var TAREFA_ID_PADRAO="trig_01HWJ2eP8z37jtXbhx6UfgyK";
-function talvezSincronizar(){}
 var ORIG_SYNC={agendada:"tarefa automática",manual:"tarefa manual",abertura:"app",manual_app:"app"};
 function statusSync(cfg){
   var now=new Date(), em=cfg.syncEmAndamento?new Date(cfg.syncEmAndamento):null, sol=cfg.syncSolicitadaEm?new Date(cfg.syncSolicitadaEm):null, u=cfg.ultimaSync?new Date(cfg.ultimaSync):null;
@@ -2256,7 +2141,6 @@ function mkLoad(){try{S.marks=JSON.parse(lsGet("ap-mk-"+EMP)||"{}")||{};}catch(e
 function mkSave(){lsSet("ap-mk-"+EMP,JSON.stringify(S.marks));
   if(S.db&&S.uid){try{S.db.doc("data/users/"+S.uid+"/marcados").set({empreendimento:EMP,marcas:S.marks}).catch(function(){});}catch(e){}}}
 function mkData(a){var m=S.marks[String(a.numero)];return m&&m.d?m.d:null;}
-function mkAtivo(a){var d=mkData(a);if(!d||!isOpen(a))return false;var dd=parseD(d);return (today()-dd)<=7*86400000;}
 function mkToggle(n,on){if(on)S.marks[String(n)]={d:hojeIso()};else delete S.marks[String(n)];mkSave();render();if(dr.innerHTML&&!S.editing)renderDrawer();}
 function dataResposta(a,D){var ds=[];D.forEach(function(c){(a.disciplinas||[]).forEach(function(x){if(x.c===c&&discResp(a,x)&&x.concluidoEm)ds.push(x.concluidoEm);});if(a.respondidas&&a.respondidas[c]&&resp(a,c))ds.push(a.respondidas[c]);});return ds.sort().pop()||"";}
 function respondidosSemana(D){
@@ -2306,18 +2190,16 @@ function boot(){
   }).then(function(db){
     if(!db){S.dbOk=false;render();return;}
     S.db=db;S.dbOk=true;
-    db.doc("empreendimentos/"+EMP).onSnapshot(function(s){S.cfg=s.exists?s.data():null;if(S.cfg&&S.cfg.disciplinas&&S.cfg.disciplinas.length){setDisc(S.cfg.disciplinas);}if(S.loaded)render();else renderHeader();if(S.loaded)setTimeout(talvezSincronizar,300);},function(){});
-    db.collection("empreendimentos/"+EMP+"/reunioes").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.reunioes=m;if(S.loaded)render();},function(){});
-    db.collection("empreendimentos/"+EMP+"/resumos").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.resumos=m;if(S.loaded)render();},function(){});
+    db.doc("empreendimentos/"+EMP).onSnapshot(function(s){S.cfg=s.exists?s.data():null;if(S.cfg&&S.cfg.disciplinas&&S.cfg.disciplinas.length){setDisc(S.cfg.disciplinas);}if(S.loaded)agendarRender();else renderHeader();},function(){});
+    db.collection("empreendimentos/"+EMP+"/reunioes").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.reunioes=m;if(S.loaded)agendarRender();},function(){});
+    db.collection("empreendimentos/"+EMP+"/resumos").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.resumos=m;if(S.loaded)agendarRender();},function(){});
     db.collection("empreendimentos/"+EMP+"/apontamentos").onSnapshot(function(snap){
       S.aps=snap.docs.map(function(d){return d.data();}).filter(Boolean);
-      S.loaded=true;setTimeout(talvezSincronizar,500);
-      var dOpen=!!dr.innerHTML, editingNow=S.editing||S.creating;
-      render();
-      if(dOpen&&!editingNow)renderDrawer();
+      S.loaded=true;
+      agendarRender(true);
     },function(e){S.dbOk=false;S.loaded=false;render();});
     if(S.isAdmin){
-      db.collection("interno").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.interno=m;if(S.loaded)render();if(dr.innerHTML&&!S.editing)renderDrawer();},function(){});
+      db.collection("interno").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.interno=m;if(S.loaded)agendarRender(true);},function(){});
     }
     if(S.uid){db.doc("data/users/"+S.uid+"/marcados").get().then(function(s){var d=s.exists?s.data():null;if(d&&d.marcas){var ch=false;for(var k in d.marcas)if(!S.marks[k]){S.marks[k]=d.marcas[k];ch=true;}if(ch){lsSet("ap-mk-"+EMP,JSON.stringify(S.marks));render();}}}).catch(function(){});}
     if(S.uid&&!S.myDiscs.length){
