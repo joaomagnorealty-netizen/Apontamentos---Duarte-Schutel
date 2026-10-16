@@ -8219,22 +8219,22 @@
    "fim": "2026-11-27",
    "geradoEm": "2026-10-07"
   },
-  "sincronizadoEm": "2026-10-16T09:59:34.000Z",
-  "ultimaSync": "2026-10-16T09:59:34.000Z",
+  "sincronizadoEm": "2026-10-16T16:28:56.000Z",
+  "ultimaSync": "2026-10-16T16:28:56.000Z",
   "ultimaSyncResumo": {
    "alterados": 0,
    "analisados": 0,
    "analisePendente": 0,
    "comentarios": 0,
    "novos": 0,
-   "origem": "agendada",
+   "origem": "manual",
    "resumoSemanal": true,
    "reunioes": [],
    "statusAtualizados": 0,
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-10-16T10:28:21+00:00",
+ "geradoEm": "2026-10-16T16:31:12+00:00",
  "resumos": {
   "2026-10-05": {
    "disciplinas": {
@@ -8265,7 +8265,7 @@
     "SPDA": "#7521 confirmar a integração das antenas ao sistema de proteção contra descargas atmosféricas na posição validada\n#9477 incorporar a captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação",
     "TEL": "#7521 prever a infraestrutura (eletrodutos, caixas de passagem e quadro de proteção) conforme a localização validada"
    },
-   "geradoEm": "2026-10-16T09:59:34.000Z",
+   "geradoEm": "2026-10-16T16:28:56.000Z",
    "geral": "Vencem 25 apontamentos na semana de 12/10 a 16/10, dos quais 10 já estão atrasados (prazo meta 09/10). Os que envolvem mais disciplinas são #2140 (ARQ, COORD e HID), #1775 (PCI, ARQ e COORD), #3470 (ARQ, COORD e HID), #5870 (COORD e CLI), #3230 (COORD e HID), #8958 (PCI, ARQ e MAG), #9477 (COORD e SPDA), #7521 (SPDA e TEL) e #8592 (HID e MAG). A ARQ concentra as respostas, com 16 apontamentos e 7 atrasados, seguida da PCI, com 15 apontamentos e 6 atrasados. A COORD tem 6 validações, 4 delas atrasadas, e a MAG tem 2 validações pendentes.",
    "semana": "2026-10-12"
   }
