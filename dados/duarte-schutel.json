@@ -3003,7 +3003,8 @@
     }
    ],
    "acompanhar": [
-    "ARQ"
+    "ARQ",
+    "MAG"
    ],
    "analiseEm": "2026-10-06",
    "anexos": [
@@ -3046,8 +3047,7 @@
    "dataCriacao": "2026-09-14",
    "direcionadas": [
     "ELT",
-    "TEL",
-    "MAG"
+    "TEL"
    ],
    "disciplinas": [
     {
@@ -3072,7 +3072,7 @@
      "c": "MAG",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
@@ -3088,14 +3088,13 @@
    "prioridade": "Média",
    "proximas": [
     "ELT",
-    "TEL",
-    "MAG"
+    "TEL"
    ],
    "realizadas": [
     "06/10 Validado atendimento de todas as vagas com gerenciador de demanda"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-14T19:53:41.365Z",
+   "sincronizadoEm": "2026-10-19T10:00:26.000Z",
    "status": "aberto",
    "titulo": "TOMADAS DE VEÍCULOS ELÉTRICOS",
    "ultimoComentario": "2026-10-06"
@@ -5062,7 +5061,9 @@
      "texto": "PCI prever o registro de corte geral de gás próximo à entrada do subsolo 01 (ver #4727)"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "MAG"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -5088,8 +5089,7 @@
    "dataCriacao": "2026-09-14",
    "direcionadas": [
     "PCI",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "disciplinas": [
     {
@@ -5108,7 +5108,7 @@
      "c": "MAG",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
@@ -5124,14 +5124,13 @@
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "realizadas": [
     "06/10 Validado com a Magno o registro de corte próximo à entrada, se a ERPM ficar no SS1"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-14T19:53:41.365Z",
+   "sincronizadoEm": "2026-10-19T10:00:26.000Z",
    "status": "aberto",
    "titulo": "REGISTRO DE CORTE GERAL DE GÁS",
    "ultimoComentario": "2026-10-06"
@@ -6299,7 +6298,9 @@
      "texto": "HID apresentar o estudo comparativo de custo entre VRPs de ação direta e pilotadas e, se inviável, a alternativa com tubulação resistente à pressão + válvula pilotada (Figura 01)"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "MAG"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -6354,8 +6355,7 @@
    "dataCriacao": "2026-09-15",
    "direcionadas": [
     "HID",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "disciplinas": [
     {
@@ -6374,7 +6374,7 @@
      "c": "MAG",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
@@ -6390,12 +6390,11 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-14T19:53:41.365Z",
+   "sincronizadoEm": "2026-10-19T10:00:26.000Z",
    "status": "aberto",
    "titulo": "REDUTORAS DE PRESSÃO",
    "ultimoComentario": "2026-10-01"
@@ -6627,15 +6626,15 @@
    "acoes": [
     {
      "disciplinas": [
-      "MAG"
+      "HID"
      ],
-     "texto": "MAG validar o padrão de apresentação das pranchas de hidrossanitário (Opção 1 ou 2)"
+     "texto": "HID adotar a Opção 01 (divisão mais detalhada, por apartamento e por pavimento nas áreas comuns) na apresentação das pranchas de hidrossanitário"
     }
    ],
    "acompanhar": [
     "ARQ"
    ],
-   "analiseEm": "2026-10-09",
+   "analiseEm": "2026-10-19",
    "anexos": [
     {
      "legenda": "Detalhes hidráulicos apartamento - Separação por apartamento",
@@ -6669,7 +6668,17 @@
     }
    ],
    "categoria": "Definição",
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "João Victor da Silva",
+     "d": "2026-09-30",
+     "ds": [
+      "MAG"
+     ],
+     "id": 2933405,
+     "t": "Podemos seguir pela Opção 01 - Divisão mais detalhada (Padrão recomendado)"
+    }
+   ],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
    "construflowId": 1749322,
@@ -6694,9 +6703,9 @@
     },
     {
      "c": "MAG",
-     "concluidoEm": null,
+     "concluidoEm": "2026-10-16",
      "prazo": null,
-     "status": "todo"
+     "status": "done"
     }
    ],
    "etapaAlertas": [],
@@ -6705,21 +6714,22 @@
    "etapaResolucao": null,
    "fonte": "Construflow",
    "numero": 8592,
-   "observacao": "Sem comentários públicos na Construflow. Aguardando a MAG validar o padrão de apresentação das pranchas de hidrossanitário (Opção 1 ou 2).",
+   "observacao": "A MAG definiu em 30/09 seguir pela Opção 01 (divisão mais detalhada: uma prancha por apartamento e, nas áreas comuns, por pavimento); o comentário foi tornado público e a MAG concluída em 16/10. Falta a HID adotar esse padrão nas pranchas.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-16",
    "prioridade": "Média",
    "proximas": [
-    "HID",
-    "MAG"
+    "HID"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "30/09 MAG escolheu a Opção 01 (divisão mais detalhada) para as pranchas de hidrossanitário"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-14T19:53:41.365Z",
+   "sincronizadoEm": "2026-10-19T10:00:26.000Z",
    "status": "aberto",
    "titulo": "[HID] PADRÃO DE DOCUMENTAÇÃO DE HIDRÁULICA E SANITÁRIO",
-   "ultimoComentario": "2026-09-15"
+   "ultimoComentario": "2026-10-16"
   },
   "8613": {
    "acoes": [
@@ -6829,7 +6839,9 @@
      "texto": "CLI avaliar a viabilidade técnica da proposta"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "MAG"
+   ],
    "analiseEm": "2026-10-09",
    "anexos": [
     {
@@ -6879,8 +6891,7 @@
    "dataCriacao": "2026-09-15",
    "direcionadas": [
     "CLI",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "disciplinas": [
     {
@@ -6899,7 +6910,7 @@
      "c": "MAG",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
@@ -6915,14 +6926,13 @@
    "prioridade": "Média",
    "proximas": [
     "CLI",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "realizadas": [
     "02/10 MAG sugeriu área técnica ao lado do acesso de veículos do SS1 com brise"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-14T19:53:41.365Z",
+   "sincronizadoEm": "2026-10-19T10:00:26.000Z",
    "status": "aberto",
    "titulo": "ÁREA TÉCNICA CONDENSADORAS - ÁREAS COMUNS E COMERCIAL",
    "ultimoComentario": "2026-10-06"
@@ -7236,14 +7246,21 @@
    "acoes": [
     {
      "disciplinas": [
-      "ARQ",
-      "MAG"
+      "ARQ"
      ],
-     "texto": "ARQ / MAG indicar ciência da limitação de população no pavimento e incluir o layout da academia da cobertura conforme sugestão do PCI"
+     "texto": "ARQ propor o layout da academia da cobertura, a ser validado depois com Interiores"
+    },
+    {
+     "disciplinas": [
+      "PCI"
+     ],
+     "texto": "PCI redistribuir a população dos ambientes com base no layout da academia, mantendo o limite de 90 pessoas no pavimento"
     }
    ],
-   "acompanhar": [],
-   "analiseEm": "2026-10-09",
+   "acompanhar": [
+    "MAG"
+   ],
+   "analiseEm": "2026-10-19",
    "anexos": [
     {
      "legenda": "Tabela cálculo das saídas pavimento Cobertura",
@@ -7252,7 +7269,17 @@
     }
    ],
    "categoria": "Definição",
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "João Victor da Silva",
+     "d": "2026-10-16",
+     "ds": [
+      "MAG"
+     ],
+     "id": 2989273,
+     "t": "Cientes em relação a limitação de população para as áreas comuns do empreendimento. Está sendo discutida uma possível criação de área comum no 4° pavimento.\n\nEm relação ao layout da academia, este pode ser proposto pela arquitetura e posteriormente validado com interiores."
+    }
+   ],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
    "construflowId": 1746143,
@@ -7260,8 +7287,7 @@
    "dataCriacao": "2026-09-14",
    "direcionadas": [
     "ARQ",
-    "PCI",
-    "MAG"
+    "PCI"
    ],
    "disciplinas": [
     {
@@ -7280,31 +7306,32 @@
      "c": "MAG",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
-   "etapaConferencia": null,
-   "etapaOrigem": null,
+   "etapaConferencia": "AP",
+   "etapaOrigem": "etiqueta",
    "etapaResolucao": null,
    "fonte": "Construflow",
    "numero": 8958,
-   "observacao": "Sem comentários na Construflow. Aguardando ARQ e MAG darem ciência da limitação de público no pavimento de lazer e incluírem o layout da academia da cobertura conforme sugestão do PCI.",
+   "observacao": "A MAG deu ciência em 16/10 da limitação de população nas áreas comuns e informou que se discute criar área comum no 4º pavimento; o layout da academia pode ser proposto pela ARQ e validado depois com Interiores. Falta a ARQ apresentar o layout e o PCI redistribuir a população.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-16",
    "prioridade": "Média",
    "proximas": [
     "ARQ",
-    "PCI",
-    "MAG"
+    "PCI"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "16/10 MAG deu ciência da limitação de população e indicou que a ARQ proponha o layout da academia"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-14T19:53:41.365Z",
+   "sincronizadoEm": "2026-10-19T10:00:26.000Z",
    "status": "aberto",
    "titulo": "LIMITAÇÃO PÚBLICO LAZER",
-   "ultimoComentario": "2026-09-14"
+   "ultimoComentario": "2026-10-16"
   },
   "9098": {
    "acoes": [
@@ -8219,22 +8246,23 @@
    "fim": "2026-11-27",
    "geradoEm": "2026-10-07"
   },
-  "sincronizadoEm": "2026-10-16T16:28:56.000Z",
-  "ultimaSync": "2026-10-16T16:28:56.000Z",
+  "sincronizadoEm": "2026-10-19T10:00:53.000Z",
+  "ultimaSync": "2026-10-19T10:00:53.000Z",
   "ultimaSyncResumo": {
-   "alterados": 0,
-   "analisados": 0,
+   "alterados": 6,
+   "analisados": 2,
    "analisePendente": 0,
-   "comentarios": 0,
+   "comentarios": 2,
    "novos": 0,
-   "origem": "manual",
+   "origem": "agendada",
+   "prazosMetaAtribuidos": 0,
    "resumoSemanal": true,
    "reunioes": [],
    "statusAtualizados": 0,
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-10-16T16:31:12+00:00",
+ "geradoEm": "2026-10-19T10:28:40+00:00",
  "resumos": {
   "2026-10-05": {
    "disciplinas": {
@@ -8268,6 +8296,24 @@
    "geradoEm": "2026-10-16T16:28:56.000Z",
    "geral": "Vencem 25 apontamentos na semana de 12/10 a 16/10, dos quais 10 já estão atrasados (prazo meta 09/10). Os que envolvem mais disciplinas são #2140 (ARQ, COORD e HID), #1775 (PCI, ARQ e COORD), #3470 (ARQ, COORD e HID), #5870 (COORD e CLI), #3230 (COORD e HID), #8958 (PCI, ARQ e MAG), #9477 (COORD e SPDA), #7521 (SPDA e TEL) e #8592 (HID e MAG). A ARQ concentra as respostas, com 16 apontamentos e 7 atrasados, seguida da PCI, com 15 apontamentos e 6 atrasados. A COORD tem 6 validações, 4 delas atrasadas, e a MAG tem 2 validações pendentes.",
    "semana": "2026-10-12"
+  },
+  "2026-10-19": {
+   "disciplinas": {
+    "ARQ": "#1775 validar a quantidade de pontos de gás nas áreas comuns, considerando os estudos do 4º pavimento e da cobertura\n#2140 validar a nomenclatura de apartamentos indicada na Figura 01 (a MAG já validou em 07/10)\n#3264 prever enchimento de cerca de 8 cm nas paredes da escada com instalações (Figuras 01 e 02)\n#3470 aumentar os shafts conforme indicado, depois da escolha da MAG\n#4050 validar a posição sugerida para a central de alarme (Figuras 01 e 02), depois validar com Interiores\n#4923 prever barreira física no entorno da piscina descoberta da cobertura (Figuras 01 e 02)\n#9300 definir a tipologia das paredes da escada: TRRF de 2 h nos subsolos -03 a -01 e 3 h nos demais pavimentos\n#2062 prever as VPs nas esquadrias das áreas de serviço e, no final 07, aberturas na alvenaria junto à área técnica\n#2323 prever bate-rodas de concreto nas vagas indicadas, se necessário (Figuras 02 e 03)\n#3426 atender aos itens das escadas apontados e manter a conferência em todas as etapas (Figuras 01 a 03)\n#4252 especificar o corrimão conforme a definição da Construtora\n#4532 prever os guarda-corpos conforme indicado no apontamento (Figuras 01 a 07)\n#7614 manter a conferência da largura de circulação e corredores em todas as etapas do projeto\n#8197 verificar e ajustar a escada do barrilete em projeto\n#8958 propor o layout da academia da cobertura, a ser validado depois com Interiores\n#9899 confirmar, com Interiores, que a especificação dos materiais de acabamento e revestimento atende ao CMAR (Classe II-A, Dm ≤ 100 em poços e shafts)\n#1436 avaliar a viabilidade do recuo para o caminhão de coleta\n#4549 com a MAG, validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI das áreas comuns (Figuras 01 a 07)\n#5862 acompanhar as definições da MAG\n#6003 prever paredes com TRRF de 2 h e portas corta-fogo nos locais indicados (Figuras 01 e 02)\n#6984 validado com a Magno na reunião de 06/10 que, se a ERPM ficar na entrada do subsolo 01 (ver #4727), o registro de corte geral de gás será previsto próximo dessa entrada. Falta o PCI incorporar em projeto.\n#7671 MAG definiu em 22/09 que a tubulação de gás da rede secundária passará pelo vão da porta (Figura 01). Falta o PCI incorporar em projeto e a coordenação validar a resposta da MAG.\n#8430 MAG pediu em 30/09 um estudo comparativo de custo entre VRPs de ação direta e pilotadas (ou tubulação resistente à pressão com válvula pilotada). Na reunião de 01/10 o assunto ficou para ser aprofundado em outra reunião; aguardando o estudo da HID.\n#8547 incorporar as sugestões conforme a opção escolhida pela MAG\n#9292 considerar a compartimentação horizontal junto com o reposicionamento das áreas técnicas",
+    "CLI": "#5870 incorporar a definição de ponto elétrico somente na evaporadora\n#8547 sem comentários na Construflow. Aguardando a MAG validar as sugestões de renovação de ar mecânica, para a ARQ incorporar a opção escolhida.",
+    "COORD": "#1775 validar a resposta da MAG\n#2140 validar a resposta da MAG\n#3470 validar a resposta da MAG\n#5870 validar a resposta da MAG\n#3230 validar a resposta da MAG\n#9477 validar a resposta da MAG\n#1888 validar a resposta da MAG\n#7400 validar a resposta da MAG\n#7671 validar a resposta da MAG",
+    "ELT": "#4308 incorporar: embutido em PVC nas áreas comuns e halls; aparente em aço nas garagens e alimentadores acima de Ø32 mm\n#8672 apresentado na reunião de 06/10, sem dúvidas. Aguardando a MAG validar a demanda de energia elétrica.\n#4549 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
+    "EST": "#1888 validar a viabilidade das posições dos furos antes do projeto cotado",
+    "HID": "#2140 em 07/10 a Magno validou a nomenclatura dos apartamentos proposta pela Arquitetura. Falta a Arquitetura validar; as demais disciplinas só acompanham e adotam a numeração definida.\n#2508 a documentação da rede de esgoto da CASAN foi viabilizada em 30/09. HID está em Validar; falta a coordenação validar e encerrar.\n#3470 responder qual o modelo de caixa sifonada especial e como funcionaria\n#3230 com a PCI, prever medidores de água e gás pré-equipados para telemetria\n#8592 adotar a Opção 01 (divisão mais detalhada, por apartamento e por pavimento nas áreas comuns) na apresentação das pranchas de hidrossanitário\n#1269 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#1436 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#1888 a Construtora definiu em 01/10 as premissas de furação: furos redondos (retangulares só para múltiplas tubulações), validação estrutural antes do projeto cotado e entrega de modelo 3D + prancha 2D.\n#8430 apresentar o estudo comparativo de custo entre VRPs de ação direta e pilotadas e, se inviável, a alternativa com tubulação resistente à pressão + válvula pilotada (Figura 01)\n#8613 na reunião de 01/10 a ARQ confirmou que haverá áreas comuns também no 4º pavimento, ainda não definidas. A definição será tratada junto com o sistema de aquecimento das áreas privativas (#9636).",
+    "MAG": "#1269 confirmar se haverá projeto específico de drenagem ou se faz parte do escopo de contenções\n#4549 com a ARQ, validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI das áreas comuns (Figuras 01 a 07)\n#5862 indicar se os sprinklers serão adotados para o SAVE ou para aumentar o caminhamento nos subsolos -03 e -02, e informar preferência de tipo de bomba\n#6298 confirmar se haverá contratação do projeto de desempenho\n#8547 validar as sugestões para o sistema de renovação de ar em todos os locais indicados\n#8613 na reunião de 01/10 a ARQ confirmou que haverá áreas comuns também no 4º pavimento, ainda não definidas. A definição será tratada junto com o sistema de aquecimento das áreas privativas (#9636).",
+    "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#3264 conferir o enchimento previsto pela arquitetura\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4923 conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33\n#5996 incorporar os materiais de gás e SHP validados pela MAG e ajustar o caminhamento da rede primária após a definição da nova localização da ERPM\n#9300 conferir se a tipologia atende às espessuras indicadas\n#2062 incorporar as posições das ventilações permanentes\n#2323 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#3426 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#7614 sem comentários na Construflow. Item de conferência contínua: a ARQ deve manter a largura de circulação e corredores em todas as etapas do projeto.\n#8197 na reunião de 01/10 a arquitetura ficou de verificar e ajustar a escada do barrilete em projeto. Aguardando o retorno da ARQ.\n#8958 redistribuir a população dos ambientes com base no layout da academia, mantendo o limite de 90 pessoas no pavimento\n#9899 sem comentários na Construflow. Aguardando a ARQ confirmar, com Interiores, que os materiais de acabamento e revestimento atendem ao CMAR (Classe II-A, Dm ≤ 100 em poços e shafts).\n#5862 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#6003 sem comentários na Construflow. Aguardando a ARQ prever paredes com TRRF de 2 h e portas corta-fogo nos locais indicados (Figuras 01 e 02).\n#6984 prever o registro de corte geral de gás próximo à entrada do subsolo 01 (ver #4727)\n#7400 com a ELT, considerar iluminação de emergência por blocos autônomos\n#7671 incorporar no projeto o caminhamento da rede secundária pelo vão da porta (Figura 01)\n#9292 na reunião de 06/10 a arquitetura ficou de considerar a compartimentação horizontal em projeto, junto com o reposicionamento das áreas técnicas (sala de insuflamento, gerador etc.).",
+    "SPDA": "#7521 confirmar a integração das antenas ao sistema de proteção contra descargas atmosféricas na posição validada\n#9477 incorporar a captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação",
+    "SPK": "#5862 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
+    "TEL": "#7521 prever a infraestrutura (eletrodutos, caixas de passagem e quadro de proteção) conforme a localização validada\n#4549 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes."
+   },
+   "geradoEm": "2026-10-19T10:00:26.000Z",
+   "geral": "Na semana de 19/10 a 23/10 há 39 apontamentos com prazo meta até sexta-feira: 14 vencem nesta semana e 25 já estão atrasados (prazos meta de 09/10 e 16/10). Os que envolvem mais disciplinas são #4549 (ELT, ARQ, TEL e MAG) e #5862 (ARQ, PCI, SPK e MAG), seguidos de #1775, #2140, #3470, #7671, #1888 e #8547, com três disciplinas cada. A ARQ concentra as respostas, com 25 apontamentos (16 atrasados), seguida da PCI, com 21 (15 atrasados), e da HID, com 10 (5 atrasados). A COORD tem 9 validações (6 atrasadas) e a MAG tem 6 apontamentos, nenhum atrasado.",
+   "semana": "2026-10-19"
   }
  },
  "reunioes": {
