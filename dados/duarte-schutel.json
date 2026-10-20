@@ -1246,7 +1246,7 @@
      "c": "MAG",
      "concluidoEm": "2026-10-07",
      "prazo": null,
-     "status": "validate"
+     "status": "done"
     }
    ],
    "etapaAlertas": [],
@@ -1262,14 +1262,13 @@
    "prioridade": "Média",
    "proximas": [
     "ARQ",
-    "HID",
-    "COORD"
+    "HID"
    ],
    "realizadas": [
     "07/10 MAG validou a nomenclatura proposta pela ARQ"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-19T19:18:05.544Z",
+   "sincronizadoEm": "2026-10-20T09:59:13.000Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -8246,23 +8245,18 @@
    "fim": "2026-11-30",
    "geradoEm": "2026-10-19"
   },
-  "sincronizadoEm": "2026-10-19T19:22:29.860Z",
-  "ultimaSync": "2026-10-19T19:22:29.860Z",
+  "sincronizadoEm": "2026-10-20T09:59:28.000Z",
+  "ultimaSync": "2026-10-20T09:59:28.000Z",
   "ultimaSyncResumo": {
-   "alterados": 0,
-   "analisados": 0,
-   "analisePendente": 0,
+   "alterados": 1,
    "comentarios": 0,
    "novos": 0,
-   "origem": "manual_app",
-   "prazosMetaAtribuidos": 0,
-   "resumoSemanal": false,
-   "reunioes": [],
+   "origem": "agendada",
    "statusAtualizados": 0,
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-10-19T19:23:03+00:00",
+ "geradoEm": "2026-10-20T10:28:00+00:00",
  "resumos": {
   "2026-10-05": {
    "disciplinas": {
@@ -8301,18 +8295,13 @@
    "disciplinas": {
     "ARQ": "#1775 validar a quantidade de pontos de gás nas áreas comuns, considerando os estudos do 4º pavimento e da cobertura\n#2062 prever as VPs nas esquadrias das áreas de serviço e, no final 07, aberturas na alvenaria junto à área técnica\n#2140 validar a nomenclatura de apartamentos indicada na Figura 01 (a MAG já validou em 07/10)\n#2323 prever bate-rodas de concreto nas vagas indicadas, se necessário (Figuras 02 e 03)\n#3264 prever enchimento de cerca de 8 cm nas paredes da escada com instalações (Figuras 01 e 02)\n#3426 atender aos itens das escadas apontados e manter a conferência em todas as etapas (Figuras 01 a 03)\n#4050 validar a posição sugerida para a central de alarme (Figuras 01 e 02), depois validar com Interiores\n#4252 especificar o corrimão conforme a definição da Construtora\n#4532 prever os guarda-corpos conforme indicado no apontamento (Figuras 01 a 07)\n#4923 prever barreira física no entorno da piscina descoberta da cobertura (Figuras 01 e 02)",
     "CLI": "#5870 incorporar a definição de ponto elétrico somente na evaporadora",
-    "COORD": "#1775 validar a resposta da MAG\n#2140 validar a resposta da MAG\n#3230 validar a resposta da MAG\n#5870 validar a resposta da MAG",
-    "ELT": "#4308 incorporar: eletroduto embutido em PVC nas áreas comuns e halls; aparente em aço nas garagens e alimentadores acima de Ø32 mm",
-    "EST": "#1888 validar a viabilidade das posições dos furos antes do projeto cotado",
-    "HID": "#2140 acompanhar: a Magno validou a nomenclatura em 07/10; falta a Arquitetura validar, e as demais disciplinas adotam a numeração definida\n#2508 HID já está em Validar (esgoto CASAN viabilizado em 30/09); falta a coordenação validar e encerrar\n#3230 PCI prever medidores de água e gás pré-equipados para telemetria",
-    "MAG": "#1269 confirmar se haverá projeto específico de drenagem ou se faz parte do escopo de contenções\n#4549 com a ARQ, validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI das áreas comuns (Figuras 01 a 07)\n#5862 indicar se os sprinklers serão adotados para o SAVE ou para aumentar o caminhamento nos subsolos -03 e -02, e informar preferência de tipo de bomba\n#6298 confirmar se haverá contratação do projeto de desempenho\n#8547 validar as sugestões para o sistema de renovação de ar em todos os locais indicados\n#8613 na reunião de 01/10 a ARQ confirmou que haverá áreas comuns também no 4º pavimento, ainda não definidas. A definição será tratada junto com o sistema de aquecimento das áreas privativas (#9636).",
-    "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#2062 incorporar as posições das ventilações permanentes\n#2323 sem comentários na Construflow até 06/10/2026; aguardar a primeira resposta das disciplinas pendentes\n#3264 conferir o enchimento previsto pela arquitetura\n#3426 sem comentários na Construflow até 06/10/2026; aguardar a primeira resposta das disciplinas pendentes\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 sem comentários na Construflow até 06/10/2026; aguardar a primeira resposta das disciplinas pendentes\n#4923 conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33",
-    "SPDA": "#7521 confirmar a integração das antenas ao sistema de proteção contra descargas atmosféricas na posição validada\n#9477 incorporar a captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação",
-    "SPK": "#5862 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
-    "TEL": "#7521 prever a infraestrutura (eletrodutos, caixas de passagem e quadro de proteção) conforme a localização validada\n#4549 sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes."
+    "COORD": "#1775 validar a resposta da MAG\n#3230 validar a resposta da MAG\n#5870 validar a resposta da MAG",
+    "ELT": "#4308 incorporar: embutido em PVC nas áreas comuns e halls; aparente em aço nas garagens e alimentadores acima de Ø32 mm",
+    "HID": "#2140 a Magno validou a nomenclatura em 07/10; falta a Arquitetura validar, e as demais disciplinas adotam a numeração definida\n#2508 HID já está em Validar (esgoto CASAN viabilizado em 30/09), sem comentário da HID registrado; falta a coordenação validar e encerrar\n#3230 prever medidores de água e gás pré-equipados para telemetria",
+    "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#2062 incorporar as posições das ventilações permanentes\n#2323 sem comentários na Construflow até 06/10/2026; aguardar a primeira resposta das disciplinas pendentes\n#3264 conferir o enchimento previsto pela arquitetura\n#3426 sem comentários na Construflow até 06/10/2026; aguardar a primeira resposta das disciplinas pendentes\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 sem comentários na Construflow até 06/10/2026; aguardar a primeira resposta das disciplinas pendentes\n#4923 conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33"
    },
-   "geradoEm": "2026-10-19T19:18:36.840Z",
-   "geral": "São 14 apontamentos com prazo meta até sexta (23/10), nenhum atrasado. Os que envolvem mais disciplinas são #1775 (gás), #2062 (ventilação permanente), #2323 (quedas de veículos), #3264 (instalações nas paredes da escada), #3426 (escadas), #4050 (alarme e detecção de incêndio), #4252 (corrimão), #4532 (guarda-corpos) e #4923 (piscinas), todos com PCI e ARQ, e #2140 e #5870 e #3230 também aparecem com COORD. PCI (9 apontamentos) e ARQ (10) concentram as respostas, enquanto COORD tem 4 validações, HID 3, e ELT e CLI 1 cada.",
+   "geradoEm": "2026-10-20T09:59:13.000Z",
+   "geral": "São 14 apontamentos com prazo meta até sexta (23/10), nenhum atrasado (#7618 e #8386, com prazo meta 09/10, aguardam a etapa AP e ficam fora). O que envolve mais disciplinas é #1775 (gás: PCI, ARQ e validação da COORD); #2140 (ARQ e HID), #3230 (HID e COORD) e #5870 (CLI e COORD) vêm em seguida, e os demais reúnem PCI e ARQ. ARQ (10 apontamentos) e PCI (9) concentram as respostas; HID tem 3, COORD 3 validações (#1775, #3230 e #5870), e ELT e CLI 1 cada.",
    "semana": "2026-10-19"
   }
  },
