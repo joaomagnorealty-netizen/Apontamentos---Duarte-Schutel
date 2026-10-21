@@ -1009,26 +1009,29 @@ function filtered(){
     if(f.status==="resolvido"&&a.status!=="resolvido")return false;
     if(f.status==="reprovado"&&a.status!=="reprovado")return false;
     if(f.disc&&proxEf(a).indexOf(f.disc)<0&&!(f.discAll&&involves(a,f.disc)))return false;
-    if(f.faixa==="quase"){if(!quaseCritico(a))return false;}else if(f.faixa&&faixa(dias(a))!==f.faixa)return false;
+    if(S.isAdmin){if(f.faixa==="quase"){if(!quaseCritico(a))return false;}else if(f.faixa&&faixa(dias(a))!==f.faixa)return false;}
     if(f.prazo==="atrasado"&&!atrasadoPlano(a))return false;
     if(f.prio&&a.prioridade!==f.prio)return false;
     if(q){var hay=(a.numero+" "+a.titulo+" "+(a.observacao||"")+" "+(a.acoes||[]).map(function(x){return x.texto;}).join(" ")+" "+(a.comentarios||[]).map(function(x){return x.t;}).join(" ")).toLowerCase();if(hay.indexOf(q)<0)return false;}
     return true;
   }).sort(function(a,b){
-    if(f.sort==="numero")return a.numero-b.numero;
-    if(f.sort==="criacao")return String(a.dataCriacao).localeCompare(String(b.dataCriacao));
-    if(f.sort==="prazo"){var pa=prazoItem(a)||"9999",pb=prazoItem(b)||"9999";return pa.localeCompare(pb)||byDias(a,b);}
+    var srt=sortEf();
+    if(srt==="numero")return a.numero-b.numero;
+    if(srt==="criacao")return String(a.dataCriacao).localeCompare(String(b.dataCriacao));
+    if(srt==="prazo"){var pa=prazoItem(a)||"9999",pb=prazoItem(b)||"9999";return pa.localeCompare(pb)||byDias(a,b);}
     return byDias(a,b);
   });
 }
+/* Fornecedor não vê dias sem movimentação: sem filtro de inatividade e ordenação padrão por prazo. */
+function sortEf(){return (!S.isAdmin&&(!S.f.sort||S.f.sort==="dias"))?"prazo":S.f.sort;}
 function sel(id,label,opts,val){return '<label>'+label+'<select id="'+id+'">'+opts.map(function(o){return '<option value="'+esc(o[0])+'"'+(o[0]===val?' selected':'')+'>'+esc(o[1])+'</option>';}).join("")+'</select></label>';}
 function listMode(){var v=lsGet("ap-listmode-"+EMP);return (v==="tabela"||v==="cards")?v:(S.isAdmin?"tabela":"cards");}
 function apTable(arr,hl,emptyMsg){
   if(!arr.length)return emptyMsg?'<div class="empty">'+esc(emptyMsg)+'</div>':'';
-  return '<table class="apt"><thead><tr><th>Nº</th><th>Título</th><th>Pendentes</th><th>Prazo</th><th class="r">Sem movimentação</th></tr></thead><tbody>'+arr.map(function(a){
+  return '<table class="apt"><thead><tr><th>Nº</th><th>Título</th><th>Pendentes</th><th>Prazo</th><th class="r">'+(S.isAdmin?'Sem movimentação':'Situação')+'</th></tr></thead><tbody>'+arr.map(function(a){
     var p=prazoItem(a),pi=prazoInfo(a),ew=espera(a),n=dias(a),pend=proxEf(a);
     var pz=ew?'<span class="sub">'+esc(ew.lb)+'</span>':(p?'<span class="pz '+(pi.cls==="neu"?'':pi.cls)+'">'+fmtD(p).slice(0,5)+'</span><span class="sub">'+esc(pi.rel)+'</span>':'<span class="sub">Sem prazo</span>');
-    var dd=!isOpen(a)?'<span class="sub">'+esc(STL[a.status]||a.status)+'</span>':(ew?'<span class="sub">aguardando etapa</span>':'<span class="dias f-'+faixa(n)+'" title="'+esc(FAIXA[faixa(n)])+'">'+n+' d</span>');
+    var dd=!isOpen(a)?'<span class="sub">'+esc(STL[a.status]||a.status)+'</span>':(ew?'<span class="sub">aguardando etapa</span>':(S.isAdmin?'<span class="dias f-'+faixa(n)+'" title="'+esc(FAIXA[faixa(n)])+'">'+n+' d</span>':'<span class="sub">ativo</span>'));
     return '<tr data-id="'+esc(a.numero)+'" tabindex="0"><td class="n">#'+esc(a.numero)+'</td><td class="t">'+esc(tituloFmt(a.titulo))+(a.prioridade==="Alta"&&isOpen(a)?' <span class="pri" title="Prioridade alta">▲ Alta</span>':'')+'</td><td class="c">'+(pend.length?chips(pend):'<span class="sub">ninguém pendente</span>')+'</td><td class="d">'+pz+'</td><td class="r">'+dd+'</td></tr>';
   }).join("")+'</tbody></table>';
 }
@@ -1039,11 +1042,11 @@ function viewLista(){
     '<div class="filters">'+
     '<label>Buscar<input type="search" id="fq" placeholder="Número, título ou texto" value="'+esc(f.q)+'"></label>'+
     sel("fd","Disciplina a agir",dOpts,f.disc)+
-    sel("ff","Inatividade",[["","Todas"],["critico",FAIXA.critico],["atencao",FAIXA.atencao],["normal",FAIXA.normal],["quase","Viram críticos em 7 dias"]],f.faixa)+
+    (S.isAdmin?sel("ff","Inatividade",[["","Todas"],["critico",FAIXA.critico],["atencao",FAIXA.atencao],["normal",FAIXA.normal],["quase","Viram críticos em 7 dias"]],f.faixa):"")+
     sel("fz","Prazo",[["","Todos"],["atrasado","Atrasados"]],f.prazo||"")+
     sel("fp","Prioridade",[["","Todas"],["Alta","Alta"],["Média","Média"],["Baixa","Baixa"]],f.prio)+
     sel("fs","Situação",[["aberto","Ativos"],["aguardando","Aguardando etapa"],["resolvido","Resolvidos"],["reprovado","Reprovados"],["todos","Todos"]],f.status)+
-    sel("fo","Ordenar por",[["dias","Dias sem movimentação"],["prazo","Prazo"],["numero","Número"],["criacao","Data de criação"]],f.sort)+
+    sel("fo","Ordenar por",(S.isAdmin?[["dias","Dias sem movimentação"]]:[]).concat([["prazo","Prazo"],["numero","Número"],["criacao","Data de criação"]]),sortEf())+
     '<label class="chk"><input type="checkbox" id="fg"'+(f.group?' checked':'')+'> Separar por disciplina</label>'+
     (f.disc?'<label class="chk"><input type="checkbox" id="fa"'+(f.discAll?' checked':'')+'> Incluir onde só acompanha</label>':'')+
     '<div class="vmode" role="group" aria-label="Forma de exibição"><button type="button" data-lm="cards" aria-pressed="'+(lm==="cards")+'">Cartões</button><button type="button" data-lm="tabela" aria-pressed="'+(lm==="tabela")+'">Tabela</button></div>'+
@@ -1235,7 +1238,12 @@ function saveForm(form,a){
   var msg=document.getElementById("edMsg"), btn=form.querySelector('button[type=submit]');
   var fd={};[].forEach.call(form.elements,function(el){if(el.name)fd[el.name]=el.value;});
   if(fd.prazo){var pzIso=isoDe(fd.prazo);if(!pzIso){msg.className="msg err";msg.textContent="Informe o prazo no formato dd/mm/aaaa.";return;}fd.prazo=pzIso;}
-  var data={complexidade:fd.complexidade||"media",complexidadeOrigem:"manual",etapaOrigem:(fd.etapaResolucao||fd.etapaConferencia)?"manual":null,etapaResolucao:fd.etapaResolucao||null,etapaConferencia:fd.etapaConferencia||null,prazo:fd.prazo||null,observacao:fd.observacao||"",acoes:parseAcoes(fd.acoes),realizadas:String(fd.realizadas||"").split("\n").map(function(l){return l.trim();}).filter(Boolean),atualizadoEm:new Date().toISOString()};
+  var data={prazo:fd.prazo||null,observacao:fd.observacao||"",acoes:parseAcoes(fd.acoes),realizadas:String(fd.realizadas||"").split("\n").map(function(l){return l.trim();}).filter(Boolean),atualizadoEm:new Date().toISOString()};
+  // Só vira "manual" o que o usuário mudou: assim a análise e as etiquetas continuam valendo para o resto.
+  var cx=fd.complexidade||"media";
+  if(cx!==(a.complexidade||"media")){data.complexidade=cx;data.complexidadeOrigem="manual";}
+  var er=fd.etapaResolucao||null, ec=fd.etapaConferencia||null;
+  if(er!==(a.etapaResolucao||null)||ec!==(a.etapaConferencia||null)){data.etapaResolucao=er;data.etapaConferencia=ec;data.etapaOrigem=(er||ec)?"manual":null;}
   if(!S.db){msg.textContent="Sem conexão com o banco nesta visualização.";msg.className="msg err";return;}
   btn.disabled=true;msg.className="msg";msg.textContent="Salvando…";
   S.db.collection("empreendimentos/"+EMP+"/apontamentos").doc(String(a.numero)).update(data).then(function(){S.editing=false;renderDrawer();}).catch(function(e){
@@ -1712,6 +1720,8 @@ async function sincronizar(origem){
     // F3: confere o formato das linhas antes de gravar qualquer coisa
     var ruins=rows.filter(function(r){return !Array.isArray(r)||r[0]==null||!(+r[1]>0)||typeof r[2]!=="string"||(r[8]!=null&&!Array.isArray(r[8]));});
     if(ruins.length)throw {code:"formato",etapa:"leitura dos apontamentos",message:ruins.length+" linha(s) em formato inesperado"};
+    // Lista vazia com apontamentos ativos no app = falha da Construflow: não avança ultimaSync (perderia comentários).
+    if(!rows.length&&(S.aps||[]).some(isOpen))throw {code:"vazio",etapa:"leitura dos apontamentos"};
     var ID2N={};rows.forEach(function(r){ID2N[r[0]]=r[1];});
     var labs={};for(var lid in LB){var q=await cf("list_issues_data",{projectId:pid,first:200,filter:{labelIds:[+lid]}});(q.rows||[]).forEach(function(r){(labs[r[0]]=labs[r[0]]||[]).push(LB[lid]);});}
     var desde=S.cfg.ultimaSync?new Date(new Date(S.cfg.ultimaSync).getTime()-36*3600000).toISOString():null;
@@ -1902,7 +1912,8 @@ async function sincronizar(origem){
       server_unavailable:"O Construflow não respondeu. Tente de novo em alguns minutos.",
       tool_error:"O Construflow recusou a consulta.",
       formato:"O Construflow devolveu os dados num formato diferente do esperado. Nada foi gravado; tente de novo mais tarde.",
-      paginacao:"O Construflow devolveu a lista de forma incompleta. Nada foi gravado; tente de novo em alguns minutos."};
+      paginacao:"O Construflow devolveu a lista de forma incompleta. Nada foi gravado; tente de novo em alguns minutos.",
+      vazio:"O Construflow não devolveu nenhum apontamento. Nada foi gravado; tente de novo em alguns minutos."};
     var det=e&&e.message?String(e.message).slice(0,160):(e instanceof Error?String(e):"");
     setSync(false,(MSG[c]||"Não foi possível sincronizar"+(c?" ("+c+")":"")+".")+et+(det&&!MSG[c]?" Detalhe: "+det:""),true);
     try{console.error("Sync Construflow",e);}catch(x){}
