@@ -2274,6 +2274,180 @@
    "titulo": "VENTILAÇÃO SECUNDÁRIA COZINHA/ÁREA DE SERVIÇO",
    "ultimoComentario": "2026-10-07"
   },
+  "3616": {
+   "acoes": [
+    {
+     "disciplinas": [
+      "ARQ"
+     ],
+     "texto": "ARQ avaliar o uso dos espaços indicados nos anexos (1PAV, SS1 e 3PAV) como hobby boxes, mantendo-os como área técnica só se necessário"
+    },
+    {
+     "disciplinas": [
+      "ARQ"
+     ],
+     "texto": "ARQ retirar a alvenaria que separa as vagas próximas ao depósito de lixo temporário (anexo ALV)"
+    }
+   ],
+   "acompanhar": [
+    "CLI",
+    "ELT",
+    "EST",
+    "HID",
+    "MAG",
+    "PCI",
+    "EXT",
+    "INT",
+    "SPDA",
+    "SPK",
+    "TEL"
+   ],
+   "analiseEm": "2026-10-22",
+   "anexos": [
+    {
+     "legenda": "",
+     "titulo": "1PAVa",
+     "url": "https://storage.googleapis.com/bimweb-v2-files/bimweb/projectId_10348/issues_files/65aed2ec-39b2-4220-86de-f7739fd13a47.png"
+    },
+    {
+     "legenda": "",
+     "titulo": "1PAVb",
+     "url": "https://storage.googleapis.com/bimweb-v2-files/bimweb/projectId_10348/issues_files/252b8dae-7861-4582-9d90-0fb775e15375.png"
+    },
+    {
+     "legenda": "",
+     "titulo": "SS1a",
+     "url": "https://storage.googleapis.com/bimweb-v2-files/bimweb/projectId_10348/issues_files/65a6f8fe-ec4b-4a90-9874-a04730697a81.png"
+    },
+    {
+     "legenda": "",
+     "titulo": "SS1b",
+     "url": "https://storage.googleapis.com/bimweb-v2-files/bimweb/projectId_10348/issues_files/20d83d58-0773-4a28-9d5b-dd8d8f26a138.png"
+    },
+    {
+     "legenda": "",
+     "titulo": "3PAVa",
+     "url": "https://storage.googleapis.com/bimweb-v2-files/bimweb/projectId_10348/issues_files/a729211e-adc0-4118-92ba-a7ac5cb4bfb6.png"
+    },
+    {
+     "legenda": "",
+     "titulo": "3PAVb",
+     "url": "https://storage.googleapis.com/bimweb-v2-files/bimweb/projectId_10348/issues_files/509c8a6e-3604-4efc-b3f5-3dc099f63ff4.png"
+    },
+    {
+     "legenda": "",
+     "titulo": "ALV",
+     "url": "https://storage.googleapis.com/bimweb-v2-files/bimweb/projectId_10348/issues_files/3553e137-b3e1-4016-b206-00868b424efb.png"
+    }
+   ],
+   "categoria": "Sugestão de mudança ou otimização",
+   "comentarios": [],
+   "complexidade": "media",
+   "complexidadeMotivo": "Depende da avaliação da Arquitetura sobre a suficiência das áreas técnicas; possível reflexo nas instalações das demais disciplinas, que acompanham.",
+   "complexidadeOrigem": "análise",
+   "construflowId": 1830385,
+   "criadoPor": [],
+   "dataCriacao": "2026-10-21",
+   "direcionadas": [
+    "ARQ"
+   ],
+   "disciplinas": [
+    {
+     "c": "ARQ",
+     "concluidoEm": null,
+     "prazo": null,
+     "status": "todo"
+    },
+    {
+     "c": "CLI",
+     "concluidoEm": null,
+     "prazo": null,
+     "status": "follow"
+    },
+    {
+     "c": "ELT",
+     "concluidoEm": null,
+     "prazo": null,
+     "status": "follow"
+    },
+    {
+     "c": "EST",
+     "concluidoEm": null,
+     "prazo": null,
+     "status": "follow"
+    },
+    {
+     "c": "HID",
+     "concluidoEm": null,
+     "prazo": null,
+     "status": "follow"
+    },
+    {
+     "c": "MAG",
+     "concluidoEm": null,
+     "prazo": null,
+     "status": "follow"
+    },
+    {
+     "c": "PCI",
+     "concluidoEm": null,
+     "prazo": null,
+     "status": "follow"
+    },
+    {
+     "c": "EXT",
+     "concluidoEm": null,
+     "prazo": null,
+     "status": "follow"
+    },
+    {
+     "c": "INT",
+     "concluidoEm": null,
+     "prazo": null,
+     "status": "follow"
+    },
+    {
+     "c": "SPDA",
+     "concluidoEm": null,
+     "prazo": null,
+     "status": "follow"
+    },
+    {
+     "c": "SPK",
+     "concluidoEm": null,
+     "prazo": null,
+     "status": "follow"
+    },
+    {
+     "c": "TEL",
+     "concluidoEm": null,
+     "prazo": null,
+     "status": "follow"
+    }
+   ],
+   "etapaAlertas": [],
+   "etapaConferencia": null,
+   "etapaOrigem": null,
+   "etapaResolucao": null,
+   "fonte": "Construflow",
+   "numero": 3616,
+   "observacao": "Sugestão registrada em 21/10: se as áreas técnicas já previstas atenderem às demandas, avaliar usar como hobby boxes os espaços de difícil acesso indicados nos anexos (1º pavimento, subsolo 1 e 3º pavimento), mantendo-os como área técnica só se necessário, e retirar a alvenaria entre as vagas próximas ao depósito de lixo temporário. Aguarda avaliação da Arquitetura; as demais disciplinas acompanham.",
+   "prazo": null,
+   "prazoConstruflow": null,
+   "prazoMeta": "2026-11-13",
+   "prazoMetaEm": "2026-10-22",
+   "prazoMetaOrigem": "automático",
+   "prioridade": "Média",
+   "proximas": [
+    "ARQ"
+   ],
+   "realizadas": [],
+   "respondidas": {},
+   "sincronizadoEm": "2026-10-22T10:00:34.000Z",
+   "status": "aberto",
+   "titulo": "ÁREA TÉCNICA E HOBBY BOX",
+   "ultimoComentario": "2026-10-21"
+  },
   "3638": {
    "acoes": [
     {
@@ -8245,22 +8419,25 @@
    "fim": "2026-11-30",
    "geradoEm": "2026-10-19"
   },
-  "sincronizadoEm": "2026-10-21T18:42:02.965Z",
-  "ultimaSync": "2026-10-21T18:42:02.965Z",
+  "sincronizadoEm": "2026-10-22T10:00:41.000Z",
+  "ultimaSync": "2026-10-22T10:00:41.000Z",
   "ultimaSyncResumo": {
-   "alterados": 78,
-   "analisados": 0,
+   "alterados": 0,
+   "analisados": 1,
    "analisePendente": 0,
    "comentarios": 0,
-   "novos": 0,
-   "origem": "manual_app",
+   "novos": 1,
+   "origem": "agendada",
+   "prazosMeta": [
+    "#3616 13/11 (media)"
+   ],
    "resumoSemanal": true,
    "reunioes": [],
    "statusAtualizados": 0,
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-10-21T18:42:41+00:00",
+ "geradoEm": "2026-10-22T10:28:15+00:00",
  "resumos": {
   "2026-10-05": {
    "disciplinas": {
@@ -8301,10 +8478,10 @@
     "CLI": "#5870 incorporar a definição de ponto elétrico somente na evaporadora",
     "COORD": "#1775 validar a resposta da MAG\n#3230 validar a resposta da MAG\n#5870 validar a resposta da MAG",
     "ELT": "#4308 incorporar: embutido em PVC nas áreas comuns e halls; aparente em aço nas garagens e alimentadores acima de Ø32 mm",
-    "HID": "#2140 aguardar a validação da Arquitetura; HID apenas acompanha e adota a numeração definida (Magno validou em 07/10)\n#2508 HID está em Validar; falta a coordenação validar e encerrar (esgoto CASAN viabilizado em 30/09)\n#3230 PCI prever medidores de água e gás pré-equipados para telemetria",
+    "HID": "#2140 aguardar a validação da Arquitetura; HID apenas acompanha e adota a numeração definida (Magno validou em 07/10)\n#2508 HID está em Validar; falta a coordenação validar e encerrar (esgoto CASAN viabilizado em 30/09)\n#3230 prever medidores de água e gás pré-equipados para telemetria",
     "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#2062 incorporar as posições das ventilações permanentes\n#2323 sem comentários na Construflow até 06/10/2026; aguardar a primeira resposta das disciplinas pendentes\n#3264 conferir o enchimento previsto pela arquitetura\n#3426 sem comentários na Construflow até 06/10/2026; aguardar a primeira resposta das disciplinas pendentes\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 sem comentários na Construflow até 06/10/2026; aguardar a primeira resposta das disciplinas pendentes\n#4923 conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33"
    },
-   "geradoEm": "2026-10-21T18:42:02.670Z",
+   "geradoEm": "2026-10-22T10:00:34.000Z",
    "geral": "Vencem 14 apontamentos na semana (todos com prazo meta em 23/10), nenhum atrasado. Os que envolvem mais disciplinas são o #1775 (gás: PCI, ARQ e COORD), o #2140 (numeração: ARQ e HID), o #3230 (telemetria: COORD e HID) e vários apontamentos que envolvem PCI e ARQ (#2062, #2323, #3264, #3426, #4050, #4252, #4532, #4923). As respostas se concentram em PCI (9 apontamentos) e ARQ (10 apontamentos); COORD tem 3 validações, HID 3, e ELT e CLI têm 1 cada.",
    "semana": "2026-10-19"
   }
