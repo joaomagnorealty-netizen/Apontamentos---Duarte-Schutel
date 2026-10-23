@@ -8419,25 +8419,23 @@
    "fim": "2026-11-30",
    "geradoEm": "2026-10-19"
   },
-  "sincronizadoEm": "2026-10-22T10:00:41.000Z",
-  "ultimaSync": "2026-10-22T10:00:41.000Z",
+  "sincronizadoEm": "2026-10-23T09:58:59.000Z",
+  "ultimaSync": "2026-10-23T09:58:59.000Z",
   "ultimaSyncResumo": {
    "alterados": 0,
-   "analisados": 1,
+   "analisados": 0,
    "analisePendente": 0,
    "comentarios": 0,
-   "novos": 1,
+   "novos": 0,
    "origem": "agendada",
-   "prazosMeta": [
-    "#3616 13/11 (media)"
-   ],
+   "prazosMeta": [],
    "resumoSemanal": true,
    "reunioes": [],
    "statusAtualizados": 0,
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-10-22T10:28:15+00:00",
+ "geradoEm": "2026-10-23T10:28:23+00:00",
  "resumos": {
   "2026-10-05": {
    "disciplinas": {
@@ -8481,7 +8479,7 @@
     "HID": "#2140 aguardar a validação da Arquitetura; HID apenas acompanha e adota a numeração definida (Magno validou em 07/10)\n#2508 HID está em Validar; falta a coordenação validar e encerrar (esgoto CASAN viabilizado em 30/09)\n#3230 prever medidores de água e gás pré-equipados para telemetria",
     "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#2062 incorporar as posições das ventilações permanentes\n#2323 sem comentários na Construflow até 06/10/2026; aguardar a primeira resposta das disciplinas pendentes\n#3264 conferir o enchimento previsto pela arquitetura\n#3426 sem comentários na Construflow até 06/10/2026; aguardar a primeira resposta das disciplinas pendentes\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 sem comentários na Construflow até 06/10/2026; aguardar a primeira resposta das disciplinas pendentes\n#4923 conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33"
    },
-   "geradoEm": "2026-10-22T10:00:34.000Z",
+   "geradoEm": "2026-10-23T09:58:54.000Z",
    "geral": "Vencem 14 apontamentos na semana (todos com prazo meta em 23/10), nenhum atrasado. Os que envolvem mais disciplinas são o #1775 (gás: PCI, ARQ e COORD), o #2140 (numeração: ARQ e HID), o #3230 (telemetria: COORD e HID) e vários apontamentos que envolvem PCI e ARQ (#2062, #2323, #3264, #3426, #4050, #4252, #4532, #4923). As respostas se concentram em PCI (9 apontamentos) e ARQ (10 apontamentos); COORD tem 3 validações, HID 3, e ELT e CLI têm 1 cada.",
    "semana": "2026-10-19"
   }
