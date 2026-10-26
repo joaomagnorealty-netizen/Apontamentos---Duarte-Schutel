@@ -8419,8 +8419,8 @@
    "fim": "2026-11-30",
    "geradoEm": "2026-10-19"
   },
-  "sincronizadoEm": "2026-10-23T09:58:59.000Z",
-  "ultimaSync": "2026-10-23T09:58:59.000Z",
+  "sincronizadoEm": "2026-10-26T09:59:43.000Z",
+  "ultimaSync": "2026-10-26T09:59:43.000Z",
   "ultimaSyncResumo": {
    "alterados": 0,
    "analisados": 0,
@@ -8435,7 +8435,7 @@
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-10-23T10:28:23+00:00",
+ "geradoEm": "2026-10-26T10:28:32+00:00",
  "resumos": {
   "2026-10-05": {
    "disciplinas": {
@@ -8482,6 +8482,25 @@
    "geradoEm": "2026-10-23T09:58:54.000Z",
    "geral": "Vencem 14 apontamentos na semana (todos com prazo meta em 23/10), nenhum atrasado. Os que envolvem mais disciplinas são o #1775 (gás: PCI, ARQ e COORD), o #2140 (numeração: ARQ e HID), o #3230 (telemetria: COORD e HID) e vários apontamentos que envolvem PCI e ARQ (#2062, #2323, #3264, #3426, #4050, #4252, #4532, #4923). As respostas se concentram em PCI (9 apontamentos) e ARQ (10 apontamentos); COORD tem 3 validações, HID 3, e ELT e CLI têm 1 cada.",
    "semana": "2026-10-19"
+  },
+  "2026-10-26": {
+   "disciplinas": {
+    "ARQ": "#1775 validar a quantidade de pontos de gás nas áreas comuns, considerando os estudos do 4º pavimento e da cobertura\n#2062 prever as VPs nas esquadrias das áreas de serviço e, no final 07, aberturas na alvenaria junto à área técnica\n#2140 validar a nomenclatura de apartamentos indicada na Figura 01 (a MAG já validou em 07/10)\n#2323 prever bate-rodas de concreto nas vagas indicadas, se necessário (Figuras 02 e 03)\n#3264 prever enchimento de cerca de 8 cm nas paredes da escada com instalações (Figuras 01 e 02)\n#3426 atender aos itens das escadas apontados e manter a conferência em todas as etapas (Figuras 01 a 03)\n#4050 validar a posição sugerida para a central de alarme (Figuras 01 e 02), depois validar com Interiores\n#4252 especificar o corrimão conforme a definição da Construtora\n#4532 prever os guarda-corpos conforme indicado no apontamento (Figuras 01 a 07)\n#4923 prever barreira física no entorno da piscina descoberta da cobertura (Figuras 01 e 02)\n#1436 avaliar a viabilidade do recuo para o caminhão de coleta\n#2612 locar a área técnica de insuflamento abaixo do térreo, próxima à escada, com tomada de ar no térreo\n#3470 aumentar os shafts conforme indicado, depois da escolha da MAG\n#4549 validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI das áreas comuns (Figuras 01 a 07)\n#5862 acompanhar as definições da MAG sobre os chuveiros automáticos\n#7614 manter a conferência da largura de circulação e corredores em todas as etapas do projeto\n#7671 considerar a passagem da tubulação de gás da rede secundária pelo vão da porta, definida pela MAG em 22/09 (Figura 01)\n#8478 avaliar os shafts propostos e retornar no apontamento\n#8547 incorporar as sugestões de renovação de ar conforme a opção escolhida pela MAG\n#9292 considerar a compartimentação horizontal junto com o reposicionamento das áreas técnicas\n#9636 escolher, com a MAG, a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada",
+    "CLI": "#5870 incorporar a definição de ponto elétrico somente na evaporadora\n#8547 aguardar a MAG validar as sugestões de renovação de ar mecânica",
+    "COORD": "#1775 validar a resposta da MAG\n#3230 validar a resposta da MAG\n#5870 validar a resposta da MAG\n#3470 validar a resposta da MAG (a escolha da solução de ventilação secundária ainda não foi feita)\n#7671 validar a resposta da MAG",
+    "ELT": "#4308 incorporar: embutido em PVC nas áreas comuns e halls; aparente em aço nas garagens e alimentadores acima de Ø32 mm\n#4549 aguardar a MAG e a ARQ validarem as posições sugeridas para os quadros de distribuição elétrica e VDI das áreas comuns",
+    "EST": "#7215 confirmar o atendimento ao TRRF indicado\n#8200 aguardar a sondagem e a validação da MAG sobre a necessidade de laje de subpressão",
+    "HID": "#2140 aguardar a validação da Arquitetura; HID apenas acompanha e adota a numeração definida (Magno validou em 07/10)\n#2508 HID está em Validar sem resposta registrada nos comentários; confirmar a viabilidade da rede de esgoto CASAN (30/09) para a coordenação encerrar\n#3230 prever medidores de água e gás pré-equipados para telemetria\n#1436 sem comentários na Construflow; aguardar a primeira resposta das disciplinas pendentes\n#3470 responder qual o modelo de caixa sifonada especial e como funcionaria\n#8200 aguardar a sondagem e a validação da MAG sobre a necessidade de laje de subpressão\n#8478 aguardar a ARQ avaliar os shafts propostos na circulação dos pavimentos\n#9636 prever recirculação interna nos aptos de 3 e 4 quartos",
+    "INT": "#6034 se contratado, emitir as plantas de pontos antes do início do pré-executivo",
+    "MAG": "#2612 acompanhar a locação da área técnica de insuflamento abaixo do térreo, validada pela CLI em 01/10\n#4549 validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI das áreas comuns (Figuras 01 a 07)\n#5862 indicar se os sprinklers serão adotados para o SAVE ou para aumentar o caminhamento nos subsolos -03 e -02, e informar preferência de tipo de bomba\n#6034 confirmar a contratação dos projetos de interiores e luminotécnico ou disponibilizar imagens comerciais\n#8200 realizar a sondagem e validar a necessidade de laje de subpressão até o início da revisão do AP\n#8478 aguardar a ARQ avaliar os shafts propostos na circulação dos pavimentos\n#8547 validar as sugestões para o sistema de renovação de ar em todos os locais indicados\n#9636 escolher, com a ARQ, a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada",
+    "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#2062 incorporar as posições das ventilações permanentes\n#2323 sem comentários na Construflow; aguardar a primeira resposta das disciplinas pendentes\n#3264 conferir o enchimento previsto pela arquitetura\n#3426 sem comentários na Construflow; aguardar a primeira resposta das disciplinas pendentes\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 sem comentários na Construflow; aguardar a primeira resposta das disciplinas pendentes\n#4923 conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33\n#5862 aguardar a MAG definir o uso dos chuveiros automáticos (SAVE ou caminhamento nos subsolos) e o tipo de bomba\n#5996 incorporar os materiais de gás e SHP validados pela MAG e ajustar o caminhamento da rede primária após a definição da nova localização da ERPM\n#7215 aguardar a EST confirmar o atendimento ao TRRF indicado\n#7614 conferir a largura de circulação e corredores mantida pela ARQ em todas as etapas\n#7671 incorporar no projeto o caminhamento da rede secundária pelo vão da porta (Figura 01)\n#9292 acompanhar a compartimentação horizontal a ser considerada pela ARQ",
+    "PEP": "#2612 considerar o duto de pressurização terminando no barrilete (Figura 05)",
+    "SPK": "#5862 aguardar a MAG indicar se os sprinklers serão adotados para o SAVE ou para aumentar o caminhamento nos subsolos -03 e -02",
+    "TEL": "#4549 aguardar a MAG e a ARQ validarem as posições sugeridas para os quadros de distribuição elétrica e VDI das áreas comuns"
+   },
+   "geradoEm": "2026-10-26T09:59:38.000Z",
+   "geral": "Vencem 15 apontamentos nesta semana (prazo meta 30/10) e 14 estão atrasados (prazo meta 23/10, sem respostas novas na Construflow desde 16/10). Os que envolvem mais disciplinas são o #5862 (chuveiros automáticos: ARQ, PCI, SPK e MAG), o #4549 (quadros das áreas comuns: ELT, ARQ, TEL e MAG), o #3470 (ventilação secundária: HID, ARQ e COORD) e o #9636 (aquecimento: HID, ARQ e MAG). As respostas se concentram na ARQ (21 apontamentos) e no PCI (15); HID tem 8, MAG 8, COORD 5 validações, CLI, ELT e EST têm 2 cada, e TEL, INT, PEP e SPK têm 1 cada. Os #7618 e #8386 ficam fora por aguardarem o AP.",
+   "semana": "2026-10-26"
   }
  },
  "reunioes": {
