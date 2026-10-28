@@ -270,6 +270,34 @@ h3 .n{font-weight:500;color:var(--ink-3);font-size:14px}
 
 .empty{padding:22px 16px;color:var(--ink-2);background:var(--sheet);border:1px dashed var(--rule)}
 
+/* Plano semanal */
+.pl-nav{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0 12px}
+.pl-f{display:flex;gap:6px;align-items:center;margin-left:auto;font-size:13px;color:var(--ink-2)}
+.pl-f select{width:auto}
+.pl-card{background:var(--sheet);border:1.5px solid var(--ink);padding:12px 14px}
+.pl-h{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:16px}
+.pl-h:focus{outline:2px solid var(--focus);outline-offset:2px}
+.pl-st.at{color:var(--brand)}.pl-st.fu{color:var(--ink-2)}.pl-st.co{color:var(--ok)}
+.pl-foco{margin:8px 0 0;color:var(--ink);max-width:80ch}
+.pl-al{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:6px}
+.pl-al li{display:flex;gap:8px;padding:8px 12px;border-left:4px solid currentColor}
+.pl-al li span:last-child{color:var(--ink)}
+.pl-al .crit{color:var(--crit);background:var(--crit-bg)}
+.pl-al .warn{color:var(--warn);background:var(--warn-bg)}
+.pl-l{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.pl-l li{padding:8px 4px;border-bottom:1px solid var(--rule);background:var(--sheet)}
+.pl-l li.mk{background:var(--brand-bg)}
+.pl-mk{color:var(--brand-ink)}
+.pl-r{color:var(--ink-2);font-weight:550}
+.pl-sem{list-style:none;margin:0;padding:0}
+.pl-sem li{padding:8px 0;border-bottom:1px solid var(--rule)}
+.pl-sem .count{margin:0}
+.pl-go{background:none;border:0;padding:4px 0;font:inherit;font-weight:600;color:var(--brand);cursor:pointer;text-decoration:underline;min-height:36px}
+.pl-mkl{font-size:13px;color:var(--brand-ink)}
+.pl-ant{margin-top:18px}.pl-ant summary{cursor:pointer;font-weight:600;padding:6px 0}
+.pl-orig{margin-top:18px}
+@media (max-width:560px){.pl-f{margin-left:0;width:100%}.pl-nav .btn{min-height:36px}}
+
 /* Panel */
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--ink);background:var(--sheet);margin-top:14px}
 .kpis>div{padding:12px 14px;border-left:1px solid var(--rule)}
@@ -510,6 +538,7 @@ table.apt .dias{min-width:0}
     <button role="tab" data-v="painel" aria-selected="false"><span class="tl">Painel geral</span><span class="ts">Painel</span></button>
     <button role="tab" data-v="lista" aria-selected="false"><span class="tl">Todos os apontamentos</span><span class="ts">Lista</span></button>
     <button role="tab" data-v="reuniao" aria-selected="false"><span class="tl">Reuniões</span><span class="ts">Reuniões</span></button>
+    <button role="tab" data-v="plano" aria-selected="false"><span class="tl">Plano semanal</span><span class="ts">Plano</span></button>
     <button role="tab" data-v="emails" aria-selected="false" id="tabEmails" hidden><span class="tl">E-mails da semana</span><span class="ts">E-mails</span></button>
   </nav></div>
 
@@ -557,7 +586,7 @@ var S = {
   aps: [], cfg: null, loaded: false, dbOk: null,
   view: null, myDiscs: [], lastVisit: null, isAdmin: false, uid: null,
   f: {disc:"", faixa:"", prio:"", status:"aberto", q:"", sort:"dias", group:false, prazo:""},
-  interno: {}, resumos: {}, reunioes: {}, openId: null, db: null, user: null, editing: false, creating: false
+  interno: {}, resumos: {}, reunioes: {}, plano: {}, planoSem: null, planoResp: "", openId: null, db: null, user: null, editing: false, creating: false
 };
 
 /* ---------- helpers ---------- */
@@ -925,12 +954,95 @@ function render(){
   if(S.view==="painel") main.innerHTML=S.isAdmin?viewPainel():viewPainelForn();
   else if(S.view==="lista") main.innerHTML=viewLista();
   else if(S.view==="reuniao") main.innerHTML=viewReuniao();
+  else if(S.view==="plano") main.innerHTML=viewPlano();
   else if(S.view==="emails") main.innerHTML=viewEmails();
   else main.innerHTML=viewMinhaSemana();
   if(S.preview){main.insertAdjacentHTML("afterbegin",'<div class="pvbar"><span>Pré-visualização: você está vendo o app como um fornecedor da disciplina <strong>'+esc(S.preview)+'</strong>. Nada aqui altera os dados.</span><button class="btn ghost sm" type="button" id="pvSair">Voltar ao perfil da construtora</button></div>');document.getElementById("pvSair").addEventListener("click",sairPreview);}
   bindView();
   bindEmails();
+  bindPlano();
   tabsSombra();
+}
+
+/* ---------- plano semanal (derivado do cronograma; só leitura) ---------- */
+var RE_PDISC={HID:/hidross/i,PCI:/\bPCI\b/,ELT:/el[eé]tric|telecom|spda/i,CLI:/climatiza/i,FUR:/fura[cç]/i};
+RE_PDISC.SPK=RE_PDISC.PCI;RE_PDISC.TEL=RE_PDISC.ELT;RE_PDISC.SPDA=RE_PDISC.ELT;RE_PDISC.PEP=RE_PDISC.CLI;RE_PDISC.EXT=RE_PDISC.CLI;
+var RESP_DISC={ARQ:"METHAFORA",EST:"ASPEN",MAG:"MAGNO REALTY",COORD:"PREMIÈRE",HID:"PREMIÈRE",PCI:"PREMIÈRE",SPK:"PREMIÈRE",ELT:"PREMIÈRE",TEL:"PREMIÈRE",SPDA:"PREMIÈRE",CLI:"PREMIÈRE",PEP:"PREMIÈRE",EXT:"PREMIÈRE",FUR:"PREMIÈRE"};
+var PL_RESPS=["TODOS","METHAFORA","ASPEN","PREMIÈRE","MAGNO REALTY","FUNDAÇÃO"];
+function plItem(s){var m=/^(★ )?#(\d+) (.*) \(([^()]+)\)$/.exec(String(s||""));return m?{marco:!!m[1],id:+m[2],nome:m[3],resp:m[4]}:{marco:false,id:0,nome:String(s||""),resp:""};}
+function plVe(it){
+  if(S.isAdmin)return !S.planoResp||it.resp===S.planoResp;
+  if(it.resp==="TODOS")return true;
+  return S.myDiscs.some(function(c){
+    if(RESP_DISC[c]!==it.resp)return false;
+    if(it.resp!=="PREMIÈRE"||c==="COORD")return true;
+    var gen=!Object.keys(RE_PDISC).some(function(k){return RE_PDISC[k].test(it.nome);});
+    return gen||RE_PDISC[c].test(it.nome);
+  });
+}
+function plIds(){var ids=Object.keys(S.plano||{}).sort();return ids;}
+function plStatus(p){var h=hojeIso(),dom=parseD(p.fim);dom.setDate(dom.getDate()+2);return p.inicio>h?"futura":(isoD(dom)<h?"concluída":"atual");}
+function plAtual(){var ids=plIds(),h=hojeIso(),r=ids[0]||null;ids.forEach(function(i){if(S.plano[i].inicio<=h)r=i;});return r;}
+function plSel(){var ids=plIds();if(!S.planoSem||ids.indexOf(S.planoSem)<0)S.planoSem=plAtual();return S.planoSem;}
+function plFiltra(p){
+  var f=function(l){return (l||[]).map(plItem).filter(plVe);};
+  var r={inicios:f(p.inicios),terminos:f(p.terminos),andamento:f(p.andamento)},ter={};
+  r.terminos.forEach(function(it){ter[it.id]=it;});
+  r.inicios=r.inicios.filter(function(it){if(ter[it.id]){ter[it.id].ambos=true;return false;}return true;});
+  var et=plEtapas();
+  r.alertas=(p.alertas||[]).filter(function(a){
+    if(S.isAdmin&&!S.planoResp)return true;
+    if(!S.isAdmin&&/^Sem avanço/.test(a))return false;
+    return (String(a).match(/#(\d+)/g)||[]).some(function(x){var it=et[x.slice(1)];return it&&plVe(it);});
+  });
+  return r;
+}
+function plEtapas(){var m={};plIds().forEach(function(i){var p=S.plano[i];[].concat(p.inicios||[],p.terminos||[],p.andamento||[]).forEach(function(s){var it=plItem(s);if(it.id)m[it.id]=it;});});return m;}
+function plLista(t,l){
+  if(!l.length)return '';
+  return '<h3>'+t+' <span class="n">'+l.length+'</span></h3><ul class="pl-l">'+l.map(function(it){
+    return '<li'+(it.marco?' class="mk"':'')+'>'+(it.marco?'<span class="tag pl-mk">★ Marco</span> ':'')+'<strong>#'+it.id+'</strong> '+esc(it.nome)+' <span class="tag pl-r">'+esc(it.resp)+'</span>'+(it.ambos?' <span class="count">· começa e termina nesta semana</span>':'')+'</li>';}).join("")+'</ul>';
+}
+function plLinha(i){
+  var p=S.plano[i],r=plFiltra(p),q=[];
+  if(r.terminos.length)q.push(r.terminos.length+" termina"+(r.terminos.length>1?"m":""));
+  if(r.inicios.length)q.push(r.inicios.length+" inicia"+(r.inicios.length>1?"m":""));
+  if(r.andamento.length)q.push(r.andamento.length+" em andamento");
+  var mk=r.terminos.filter(function(it){return it.marco;}).map(function(it){return "★ #"+it.id+" "+it.nome;});
+  return '<li><button type="button" class="pl-go" data-pl="'+esc(i)+'">'+esc(p.semana)+'</button> <span class="count">'+esc(q.join(" · ")||"sem etapas")+(r.alertas.length?' · ⚠ '+r.alertas.length+' alerta'+(r.alertas.length>1?'s':''):'')+'</span>'+(mk.length?'<div class="pl-mkl">'+esc(mk.join(" · "))+'</div>':'')+'</li>';
+}
+function viewPlano(){
+  var ids=plIds();
+  var h='<section class="view pl"><h2>Plano semanal</h2><p class="lede">O que o cronograma de projetos prevê para cada semana. Só consulta: nada aqui altera a Construflow.</p>';
+  if(!ids.length)return h+'<div class="empty">O plano semanal ainda não foi gerado. Ele é criado a partir do cronograma na pasta do projeto.</div></section>';
+  var sel=plSel(),k=ids.indexOf(sel),p=S.plano[sel],st=plStatus(p),r=plFiltra(p),atual=plAtual();
+  var semEtapas=!S.isAdmin&&!S.myDiscs.some(function(c){return RESP_DISC[c];});
+  h+='<div class="pl-nav"><button type="button" class="btn ghost sm" id="plPrev" aria-label="Semana anterior"'+(k<=0?' disabled':'')+'>‹ Anterior</button>'+
+    '<button type="button" class="btn ghost sm" id="plHoje"'+(sel===atual?' disabled':'')+'>Esta semana</button>'+
+    '<button type="button" class="btn ghost sm" id="plNext" aria-label="Próxima semana"'+(k>=ids.length-1?' disabled':'')+'>Próxima ›</button>'+
+    (S.isAdmin?'<label class="pl-f">Responsável <select id="plResp"><option value="">Todos</option>'+PL_RESPS.map(function(x){return '<option'+(x===S.planoResp?' selected':'')+'>'+esc(x)+'</option>';}).join("")+'</select></label>':'')+'</div>';
+  if(semEtapas)h+='<div class="notice">'+(S.myDiscs.length?'Sua disciplina não tem etapas próprias no cronograma. Aparecem só as etapas de todos os projetistas.':'Escolha suas disciplinas no topo para ver as etapas da sua empresa. Por enquanto aparecem só as etapas de todos os projetistas.')+'</div>';
+  h+='<div class="pl-card"><div class="pl-h" aria-live="polite"><strong>'+esc(p.semana)+'</strong> <span class="tag pl-st '+(st==="atual"?"at":st==="futura"?"fu":"co")+'">'+(st==="atual"?"Semana atual":st==="futura"?"Futura":"Concluída")+'</span></div>'+
+    (S.isAdmin&&!S.planoResp&&p.foco?'<p class="pl-foco">'+esc(p.foco)+'</p>':'')+'</div>';
+  if(r.alertas.length)h+='<ul class="pl-al">'+r.alertas.map(function(a){var crit=/^(Sem avanço|Atrasada)/.test(a);return '<li class="'+(crit?'crit':'warn')+'"><span aria-hidden="true">⚠</span> <span>'+esc(a)+'</span></li>';}).join("")+'</ul>';
+  var corpo=plLista("Terminam",r.terminos)+plLista("Iniciam",r.inicios)+plLista("Em andamento",r.andamento);
+  h+=corpo||'<div class="empty">'+(S.planoResp?'Nenhuma etapa de '+esc(S.planoResp)+' nesta semana. <button type="button" class="btn ghost sm" id="plLimpa">Limpar filtro</button>':(S.isAdmin?'Sem atividades previstas no cronograma.':'Sem etapas suas nesta semana.'))+'</div>';
+  var prox=ids.slice(k+1,k+5),ant=ids.slice(0,k).reverse();
+  if(prox.length)h+='<h3>Próximas semanas</h3><ul class="pl-sem">'+prox.map(plLinha).join("")+'</ul>';
+  if(ant.length)h+='<details class="pl-ant"><summary>Semanas anteriores ('+ant.length+')</summary><ul class="pl-sem">'+ant.map(plLinha).join("")+'</ul></details>';
+  h+='<p class="count pl-orig">Fonte: '+esc(p.origem||"cronograma")+' · gerado em '+fmtD(p.atualizadoEm)+' · '+ids.length+' semanas ('+fmtD(S.plano[ids[0]].inicio)+' a '+fmtD(S.plano[ids[ids.length-1]].fim)+')</p>';
+  return h+'</section>';
+}
+function bindPlano(){
+  if(S.view!=="plano")return;
+  var ids=plIds(),ir=function(i){if(!i)return;S.planoSem=i;render();var t=main.querySelector(".pl-h");if(t){t.setAttribute("tabindex","-1");t.focus({preventScroll:false});}};
+  var b=function(id,fn){var e=document.getElementById(id);if(e)e.addEventListener("click",fn);};
+  b("plPrev",function(){ir(ids[ids.indexOf(plSel())-1]);});
+  b("plNext",function(){ir(ids[ids.indexOf(plSel())+1]);});
+  b("plHoje",function(){ir(plAtual());});
+  b("plLimpa",function(){S.planoResp="";render();});
+  var rs=document.getElementById("plResp");if(rs)rs.addEventListener("change",function(){S.planoResp=rs.value;render();});
+  [].forEach.call(main.querySelectorAll(".pl-go"),function(x){x.addEventListener("click",function(){ir(x.getAttribute("data-pl"));});});
 }
 function tabsSombra(){var w=document.getElementById("tabsw"),n=document.getElementById("tabsNav");if(!w||!n)return;w.classList.toggle("more",n.scrollLeft+n.clientWidth<n.scrollWidth-4);}
 (function(){var n=document.getElementById("tabsNav");if(n)n.addEventListener("scroll",tabsSombra,{passive:true});
@@ -2203,6 +2315,7 @@ function boot(){
     S.db=db;S.dbOk=true;
     db.doc("empreendimentos/"+EMP).onSnapshot(function(s){S.cfg=s.exists?s.data():null;if(S.cfg&&S.cfg.disciplinas&&S.cfg.disciplinas.length){setDisc(S.cfg.disciplinas);}if(S.loaded)agendarRender();else renderHeader();},function(){});
     db.collection("empreendimentos/"+EMP+"/reunioes").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.reunioes=m;if(S.loaded)agendarRender();},function(){});
+    db.collection("empreendimentos/"+EMP+"/plano_semanal").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.plano=m;if(S.loaded&&S.view==="plano")agendarRender();},function(){});
     db.collection("empreendimentos/"+EMP+"/resumos").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.resumos=m;if(S.loaded)agendarRender();},function(){});
     db.collection("empreendimentos/"+EMP+"/apontamentos").onSnapshot(function(snap){
       S.aps=snap.docs.map(function(d){return d.data();}).filter(Boolean);
