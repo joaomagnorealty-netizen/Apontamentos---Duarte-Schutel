@@ -8332,6 +8332,43 @@
   "baseAtualizadaEm": "2026-10-06",
   "construflowProjeto": 10348,
   "construflowUrl": "https://app.construflow.com.br/workspace/project/10348/issues",
+  "cronograma": {
+   "atualizadoEm": "2026-10-28",
+   "fases": [
+    {
+     "c": "EP",
+     "fim": "2026-11-27",
+     "inicio": "2026-09-03",
+     "obs": "Fase 01 - Kickoff/Estudos preliminares; fechamento #13"
+    },
+    {
+     "c": "PL",
+     "fim": "2028-05-11",
+     "inicio": "2026-11-30",
+     "obs": "Projetos legais (trilha paralela)",
+     "paralela": true
+    },
+    {
+     "c": "AP",
+     "fim": "2027-07-19",
+     "inicio": "2027-01-05",
+     "obs": "Fase 02 - Anteprojeto; fechamento #40"
+    },
+    {
+     "c": "PE",
+     "fim": "2028-01-10",
+     "inicio": "2027-07-20",
+     "obs": "Fase 03 - Pré-executivo (PP no cronograma); fechamento #65"
+    },
+    {
+     "c": "EX",
+     "fim": "2028-05-11",
+     "inicio": "2028-01-11",
+     "obs": "Fase 04 - Executivo (PE no cronograma)"
+    }
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf"
+  },
   "disciplinas": [
    {
     "c": "ARQ",
@@ -8435,7 +8472,1616 @@
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-10-28T20:02:07+00:00",
+ "geradoEm": "2026-10-28T20:11:25+00:00",
+ "plano_semanal": {
+  "2026-S35": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-08-28",
+   "foco": "Foram concluídas a abertura e o término da #18 PL - Viabilidade técnica de Elétrica (MAGNO REALTY), ambos na própria semana.",
+   "inicio": "2026-08-24",
+   "inicios": [
+    "#18 PL - Viabilidade técnica de Elétrica (MAGNO REALTY)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 35 – 24/08 a 28/08/2026",
+   "status": "concluída",
+   "terminos": [
+    "#18 PL - Viabilidade técnica de Elétrica (MAGNO REALTY)"
+   ]
+  },
+  "2026-S36": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-09-04",
+   "foco": "Foi concluída a #4 Liberação base arquitetura (METHAFORA), iniciada e finalizada na semana.",
+   "inicio": "2026-08-31",
+   "inicios": [
+    "#4 Liberação base arquitetura (METHAFORA)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 36 – 31/08 a 04/09/2026",
+   "status": "concluída",
+   "terminos": [
+    "#4 Liberação base arquitetura (METHAFORA)"
+   ]
+  },
+  "2026-S37": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-09-11",
+   "foco": "Foram iniciados pela PREMIÈRE os estudos preliminares #5 Hidrossanitário, #6 PCI, #7 Elétrico/Telecom + Consulta Viabilidade e #8 Climatização. Nenhum deles terminou na semana.",
+   "inicio": "2026-09-07",
+   "inicios": [
+    "#5 EP - Estudo Preliminar Hidrossanitário (PREMIÈRE)",
+    "#6 EP - Estudo Preliminar PCI (PREMIÈRE)",
+    "#7 EP - Estudo Preliminar Elétrico/Telecom + Consulta Viabilidade (PREMIÈRE)",
+    "#8 EP - Estudo Preliminar Climatização (PREMIÈRE)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 37 – 07/09 a 11/09/2026",
+   "status": "concluída",
+   "terminos": []
+  },
+  "2026-S38": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-09-18",
+   "foco": "Foram concluídos pela PREMIÈRE os estudos preliminares #5, #6, #7 e #8 (Hidrossanitário, PCI, Elétrico/Telecom e Climatização). Foi iniciada a #9 Reuniões de Apresentação Eps Projetistas (TODOS).",
+   "inicio": "2026-09-14",
+   "inicios": [
+    "#9 Reuniões de Apresentação Eps Projetistas (TODOS)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 38 – 14/09 a 18/09/2026",
+   "status": "concluída",
+   "terminos": [
+    "#5 EP - Estudo Preliminar Hidrossanitário (PREMIÈRE)",
+    "#6 EP - Estudo Preliminar PCI (PREMIÈRE)",
+    "#7 EP - Estudo Preliminar Elétrico/Telecom + Consulta Viabilidade (PREMIÈRE)",
+    "#8 EP - Estudo Preliminar Climatização (PREMIÈRE)"
+   ]
+  },
+  "2026-S39": {
+   "alertas": [],
+   "andamento": [
+    "#9 Reuniões de Apresentação Eps Projetistas (TODOS)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-09-25",
+   "foco": "Foi realizada e concluída a #3 Reunião Kickoff (TODOS). A #9 Reuniões de Apresentação Eps Projetistas (TODOS) seguiu em andamento.",
+   "inicio": "2026-09-21",
+   "inicios": [
+    "#3 Reunião Kickoff (TODOS)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 39 – 21/09 a 25/09/2026",
+   "status": "concluída",
+   "terminos": [
+    "#3 Reunião Kickoff (TODOS)"
+   ]
+  },
+  "2026-S40": {
+   "alertas": [],
+   "andamento": [
+    "#9 Reuniões de Apresentação Eps Projetistas (TODOS)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-10-02",
+   "foco": "Seguiram em andamento as reuniões da #9 Reuniões de Apresentação Eps Projetistas (TODOS), sem inícios nem términos na semana.",
+   "inicio": "2026-09-28",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 40 – 28/09 a 02/10/2026",
+   "status": "concluída",
+   "terminos": []
+  },
+  "2026-S41": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-10-09",
+   "foco": "Foi concluída a #9 Reuniões de Apresentação Eps Projetistas (TODOS). A METHAFORA iniciou a #10 EP - Ajustes da arquitetura conforme Eps.",
+   "inicio": "2026-10-05",
+   "inicios": [
+    "#10 EP - Ajustes da arquitetura conforme Eps (METHAFORA)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 41 – 05/10 a 09/10/2026",
+   "status": "concluída",
+   "terminos": [
+    "#9 Reuniões de Apresentação Eps Projetistas (TODOS)"
+   ]
+  },
+  "2026-S42": {
+   "alertas": [],
+   "andamento": [
+    "#10 EP - Ajustes da arquitetura conforme Eps (METHAFORA)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-10-16",
+   "foco": "A METHAFORA seguiu com a #10 EP - Ajustes da arquitetura conforme Eps, em andamento, sem inícios nem términos na semana.",
+   "inicio": "2026-10-12",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 42 – 12/10 a 16/10/2026",
+   "status": "concluída",
+   "terminos": []
+  },
+  "2026-S43": {
+   "alertas": [],
+   "andamento": [
+    "#10 EP - Ajustes da arquitetura conforme Eps (METHAFORA)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-10-23",
+   "foco": "A METHAFORA seguiu com a #10 EP - Ajustes da arquitetura conforme Eps, em andamento, sem inícios nem términos na semana.",
+   "inicio": "2026-10-19",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 43 – 19/10 a 23/10/2026",
+   "status": "concluída",
+   "terminos": []
+  },
+  "2026-S44": {
+   "alertas": [
+    "Sem avanço registrado: #10 EP - Ajustes da arquitetura conforme Eps (METHAFORA) — 0% com 72% do prazo decorrido (término 05/11/2026)"
+   ],
+   "andamento": [
+    "#10 EP - Ajustes da arquitetura conforme Eps (METHAFORA)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-10-30",
+   "foco": "A METHAFORA precisa avançar na #10 EP - Ajustes da arquitetura conforme Eps, que tem término em 05/11/2026. Alerta: sem avanço registrado, 0% com 72% do prazo decorrido. Não há inícios nem términos previstos na semana.",
+   "inicio": "2026-10-26",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 44 – 26/10 a 30/10/2026",
+   "status": "atual",
+   "terminos": []
+  },
+  "2026-S45": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-11-06",
+   "foco": "A METHAFORA conclui a #10 EP - Ajustes da arquitetura conforme Eps. Iniciam a #11 EP - Relatório Estrutura (ASPEN) e a #12 EP - Revisão Estudos (PREMIÈRE).",
+   "inicio": "2026-11-02",
+   "inicios": [
+    "#11 EP - Relatório Estrutura (ASPEN)",
+    "#12 EP - Revisão Estudos (PREMIÈRE)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 45 – 02/11 a 06/11/2026",
+   "status": "futura",
+   "terminos": [
+    "#10 EP - Ajustes da arquitetura conforme Eps (METHAFORA)"
+   ]
+  },
+  "2026-S46": {
+   "alertas": [],
+   "andamento": [
+    "#11 EP - Relatório Estrutura (ASPEN)",
+    "#12 EP - Revisão Estudos (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-11-13",
+   "foco": "A ASPEN avança na #11 EP - Relatório Estrutura e a PREMIÈRE na #12 EP - Revisão Estudos, ambas em andamento. Não há inícios nem términos na semana.",
+   "inicio": "2026-11-09",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 46 – 09/11 a 13/11/2026",
+   "status": "futura",
+   "terminos": []
+  },
+  "2026-S47": {
+   "alertas": [
+    "Entrega da semana seguinte depende desta: ★ #13 Validação final e fechamento de etapa (MAGNO REALTY) (término 27/11/2026) ← #11, #12"
+   ],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-11-20",
+   "foco": "A ASPEN conclui a #11 EP - Relatório Estrutura e a PREMIÈRE conclui a #12 EP - Revisão Estudos. Alerta: o ★ #13 Validação final e fechamento de etapa (MAGNO REALTY, término 27/11/2026) depende de #11 e #12.",
+   "inicio": "2026-11-16",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 47 – 16/11 a 20/11/2026",
+   "status": "futura",
+   "terminos": [
+    "#11 EP - Relatório Estrutura (ASPEN)",
+    "#12 EP - Revisão Estudos (PREMIÈRE)"
+   ]
+  },
+  "2026-S48": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-11-27",
+   "foco": "A MAGNO REALTY realiza e conclui o ★ #13 Validação final e fechamento de etapa, marco de fechamento do EP, iniciado e finalizado na semana.",
+   "inicio": "2026-11-23",
+   "inicios": [
+    "★ #13 Validação final e fechamento de etapa (MAGNO REALTY)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 48 – 23/11 a 27/11/2026",
+   "status": "futura",
+   "terminos": [
+    "★ #13 Validação final e fechamento de etapa (MAGNO REALTY)"
+   ]
+  },
+  "2026-S49": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-12-04",
+   "foco": "A METHAFORA inicia a #15 PL - Arquitetura, primeira atividade da fase de projetos legais. Não há términos previstos na semana.",
+   "inicio": "2026-11-30",
+   "inicios": [
+    "#15 PL - Arquitetura (METHAFORA)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 49 – 30/11 a 04/12/2026",
+   "status": "futura",
+   "terminos": []
+  },
+  "2026-S50": {
+   "alertas": [],
+   "andamento": [
+    "#15 PL - Arquitetura (METHAFORA)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-12-11",
+   "foco": "A METHAFORA segue com a #15 PL - Arquitetura em andamento, sem inícios nem términos na semana.",
+   "inicio": "2026-12-07",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 50 – 07/12 a 11/12/2026",
+   "status": "futura",
+   "terminos": []
+  },
+  "2026-S51": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-12-18",
+   "foco": "A METHAFORA conclui a #15 PL - Arquitetura, único término da semana.",
+   "inicio": "2026-12-14",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 51 – 14/12 a 18/12/2026",
+   "status": "futura",
+   "terminos": [
+    "#15 PL - Arquitetura (METHAFORA)"
+   ]
+  },
+  "2026-S52": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2026-12-25",
+   "foco": "Sem atividades previstas no cronograma.",
+   "inicio": "2026-12-21",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 52 – 21/12 a 25/12/2026",
+   "status": "futura",
+   "terminos": []
+  },
+  "2026-S53": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-01-01",
+   "foco": "Sem atividades previstas no cronograma.",
+   "inicio": "2026-12-28",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 53 – 28/12 a 01/01/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S01": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-01-08",
+   "foco": "A ASPEN inicia a #22 Pré-formas estrutural. Não há términos previstos na semana.",
+   "inicio": "2027-01-04",
+   "inicios": [
+    "#22 Pré-formas estrutural (ASPEN)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 01 – 04/01 a 08/01/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S02": {
+   "alertas": [],
+   "andamento": [
+    "#22 Pré-formas estrutural (ASPEN)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-01-15",
+   "foco": "A ASPEN segue com a #22 Pré-formas estrutural em andamento, sem inícios nem términos na semana.",
+   "inicio": "2027-01-11",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 02 – 11/01 a 15/01/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S03": {
+   "alertas": [],
+   "andamento": [
+    "#22 Pré-formas estrutural (ASPEN)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-01-22",
+   "foco": "A ASPEN segue com a #22 Pré-formas estrutural em andamento, sem inícios nem términos na semana.",
+   "inicio": "2027-01-18",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 03 – 18/01 a 22/01/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S04": {
+   "alertas": [],
+   "andamento": [
+    "#22 Pré-formas estrutural (ASPEN)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-01-29",
+   "foco": "A ASPEN segue com a #22 Pré-formas estrutural em andamento, sem inícios nem términos na semana.",
+   "inicio": "2027-01-25",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 04 – 25/01 a 29/01/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S05": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-02-05",
+   "foco": "A ASPEN conclui a #22 Pré-formas estrutural. A METHAFORA inicia a #23 Validação e ajustes da arquitetura com estrutura.",
+   "inicio": "2027-02-01",
+   "inicios": [
+    "#23 Validação e ajustes da arquitetura com estrutura (METHAFORA)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 05 – 01/02 a 05/02/2027",
+   "status": "futura",
+   "terminos": [
+    "#22 Pré-formas estrutural (ASPEN)"
+   ]
+  },
+  "2027-S06": {
+   "alertas": [],
+   "andamento": [
+    "#23 Validação e ajustes da arquitetura com estrutura (METHAFORA)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-02-12",
+   "foco": "A METHAFORA segue com a #23 Validação e ajustes da arquitetura com estrutura em andamento, sem inícios nem términos na semana.",
+   "inicio": "2027-02-08",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 06 – 08/02 a 12/02/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S07": {
+   "alertas": [
+    "Entrega da semana seguinte depende desta: #24 Validação pré lançamentos (MAGNO REALTY) (término 24/02/2027) ← #23"
+   ],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-02-19",
+   "foco": "A METHAFORA conclui a #23 Validação e ajustes da arquitetura com estrutura. A MAGNO REALTY inicia a #24 Validação pré lançamentos. Alerta: a #24 (término 24/02/2027) depende da #23.",
+   "inicio": "2027-02-15",
+   "inicios": [
+    "#24 Validação pré lançamentos (MAGNO REALTY)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 07 – 15/02 a 19/02/2027",
+   "status": "futura",
+   "terminos": [
+    "#23 Validação e ajustes da arquitetura com estrutura (METHAFORA)"
+   ]
+  },
+  "2027-S08": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-02-26",
+   "foco": "A MAGNO REALTY conclui a #24 Validação pré lançamentos. A PREMIÈRE inicia a modelagem da fase AP: #25 Hidrossanitário, #26 PCI, #27 Elétrica e telecom e #28 Climatização.",
+   "inicio": "2027-02-22",
+   "inicios": [
+    "#25 AP - Modelagem - Hidrossanitário (PREMIÈRE)",
+    "#26 AP - Modelagem - PCI (PREMIÈRE)",
+    "#27 AP - Modelagem - Elétrica e telecom (PREMIÈRE)",
+    "#28 AP - Modelagem - Climatização (PREMIÈRE)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 08 – 22/02 a 26/02/2027",
+   "status": "futura",
+   "terminos": [
+    "#24 Validação pré lançamentos (MAGNO REALTY)"
+   ]
+  },
+  "2027-S09": {
+   "alertas": [],
+   "andamento": [
+    "#25 AP - Modelagem - Hidrossanitário (PREMIÈRE)",
+    "#26 AP - Modelagem - PCI (PREMIÈRE)",
+    "#27 AP - Modelagem - Elétrica e telecom (PREMIÈRE)",
+    "#28 AP - Modelagem - Climatização (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-03-05",
+   "foco": "A PREMIÈRE segue com a modelagem AP em andamento: #25 Hidrossanitário, #26 PCI, #27 Elétrica e telecom e #28 Climatização. Não há inícios nem términos na semana.",
+   "inicio": "2027-03-01",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 09 – 01/03 a 05/03/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S10": {
+   "alertas": [],
+   "andamento": [
+    "#25 AP - Modelagem - Hidrossanitário (PREMIÈRE)",
+    "#26 AP - Modelagem - PCI (PREMIÈRE)",
+    "#27 AP - Modelagem - Elétrica e telecom (PREMIÈRE)",
+    "#28 AP - Modelagem - Climatização (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-03-12",
+   "foco": "A PREMIÈRE segue com a modelagem AP em andamento: #25 Hidrossanitário, #26 PCI, #27 Elétrica e telecom e #28 Climatização. Não há inícios nem términos na semana.",
+   "inicio": "2027-03-08",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 10 – 08/03 a 12/03/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S11": {
+   "alertas": [],
+   "andamento": [
+    "#25 AP - Modelagem - Hidrossanitário (PREMIÈRE)",
+    "#26 AP - Modelagem - PCI (PREMIÈRE)",
+    "#27 AP - Modelagem - Elétrica e telecom (PREMIÈRE)",
+    "#28 AP - Modelagem - Climatização (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-03-19",
+   "foco": "A PREMIÈRE segue com a modelagem AP em andamento: #25 Hidrossanitário, #26 PCI, #27 Elétrica e telecom e #28 Climatização. Não há inícios nem términos na semana.",
+   "inicio": "2027-03-15",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 11 – 15/03 a 19/03/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S12": {
+   "alertas": [],
+   "andamento": [
+    "#25 AP - Modelagem - Hidrossanitário (PREMIÈRE)",
+    "#26 AP - Modelagem - PCI (PREMIÈRE)",
+    "#27 AP - Modelagem - Elétrica e telecom (PREMIÈRE)",
+    "#28 AP - Modelagem - Climatização (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-03-26",
+   "foco": "Semana de modelagem AP em andamento pela PREMIÈRE: Hidrossanitário (#25), PCI (#26), Elétrica e telecom (#27) e Climatização (#28). Nenhuma etapa inicia ou termina; manter o ritmo das quatro modelagens.",
+   "inicio": "2027-03-22",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 12 – 22/03 a 26/03/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S13": {
+   "alertas": [],
+   "andamento": [
+    "#25 AP - Modelagem - Hidrossanitário (PREMIÈRE)",
+    "#26 AP - Modelagem - PCI (PREMIÈRE)",
+    "#27 AP - Modelagem - Elétrica e telecom (PREMIÈRE)",
+    "#28 AP - Modelagem - Climatização (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-04-02",
+   "foco": "PREMIÈRE segue com as modelagens AP de Hidrossanitário (#25), PCI (#26), Elétrica e telecom (#27) e Climatização (#28). Nenhum início ou término na semana; preparar a conclusão na semana seguinte.",
+   "inicio": "2027-03-29",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 13 – 29/03 a 02/04/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S14": {
+   "alertas": [
+    "Entrega da semana seguinte depende desta: #29 Reunião Compatibilização AP-01 (TODOS) (término 16/04/2027) ← #25, #26, #27, #28"
+   ],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-04-09",
+   "foco": "PREMIÈRE conclui as modelagens AP: Hidrossanitário (#25), PCI (#26), Elétrica e telecom (#27) e Climatização (#28). Atenção: a Reunião de Compatibilização AP-01 (#29, TODOS) da semana seguinte depende dessas quatro entregas.",
+   "inicio": "2027-04-05",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 14 – 05/04 a 09/04/2027",
+   "status": "futura",
+   "terminos": [
+    "#25 AP - Modelagem - Hidrossanitário (PREMIÈRE)",
+    "#26 AP - Modelagem - PCI (PREMIÈRE)",
+    "#27 AP - Modelagem - Elétrica e telecom (PREMIÈRE)",
+    "#28 AP - Modelagem - Climatização (PREMIÈRE)"
+   ]
+  },
+  "2027-S15": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-04-16",
+   "foco": "Realizar a Reunião de Compatibilização AP-01 (#29, TODOS), que inicia e termina na semana. A PREMIÈRE inicia o Hidrossanitário Legal (#16) e o PCI Legal (#17) da fase PL.",
+   "inicio": "2027-04-12",
+   "inicios": [
+    "#16 PL - Hidrossanitário Legal (PREMIÈRE)",
+    "#17 PL - PCI Legal (PREMIÈRE)",
+    "#29 Reunião Compatibilização AP-01 (TODOS)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 15 – 12/04 a 16/04/2027",
+   "status": "futura",
+   "terminos": [
+    "#29 Reunião Compatibilização AP-01 (TODOS)"
+   ]
+  },
+  "2027-S16": {
+   "alertas": [],
+   "andamento": [
+    "#16 PL - Hidrossanitário Legal (PREMIÈRE)",
+    "#17 PL - PCI Legal (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-04-23",
+   "foco": "MAGNO REALTY inicia as Validações construflow (#30) e a METHAFORA inicia os Ajustes de arquitetura (#31). A PREMIÈRE segue com Hidrossanitário Legal (#16) e PCI Legal (#17).",
+   "inicio": "2027-04-19",
+   "inicios": [
+    "#30 Validações construflow (MAGNO REALTY)",
+    "#31 Ajustes arquitetura (METHAFORA)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 16 – 19/04 a 23/04/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S17": {
+   "alertas": [],
+   "andamento": [
+    "#16 PL - Hidrossanitário Legal (PREMIÈRE)",
+    "#17 PL - PCI Legal (PREMIÈRE)",
+    "#30 Validações construflow (MAGNO REALTY)",
+    "#31 Ajustes arquitetura (METHAFORA)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-04-30",
+   "foco": "Semana de andamento: MAGNO REALTY nas Validações construflow (#30), METHAFORA nos Ajustes de arquitetura (#31) e PREMIÈRE no Hidrossanitário Legal (#16) e PCI Legal (#17). Sem inícios ou términos.",
+   "inicio": "2027-04-26",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 17 – 26/04 a 30/04/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S18": {
+   "alertas": [],
+   "andamento": [
+    "#16 PL - Hidrossanitário Legal (PREMIÈRE)",
+    "#17 PL - PCI Legal (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-05-07",
+   "foco": "Terminam as Validações construflow (#30, MAGNO REALTY) e os Ajustes de arquitetura (#31, METHAFORA). ASPEN inicia os Ajustes de estrutura (#32) e a FUNDAÇÃO inicia o Lançamento inicial de fundações (#33). PREMIÈRE segue com #16 e #17.",
+   "inicio": "2027-05-03",
+   "inicios": [
+    "#32 Ajustes estrutura (ASPEN)",
+    "#33 Lançamento inicial fundações (FUNDAÇÃO)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 18 – 03/05 a 07/05/2027",
+   "status": "futura",
+   "terminos": [
+    "#30 Validações construflow (MAGNO REALTY)",
+    "#31 Ajustes arquitetura (METHAFORA)"
+   ]
+  },
+  "2027-S19": {
+   "alertas": [
+    "Entrega da semana seguinte depende desta: #33 Lançamento inicial fundações (FUNDAÇÃO) (término 17/05/2027) ← #32"
+   ],
+   "andamento": [
+    "#16 PL - Hidrossanitário Legal (PREMIÈRE)",
+    "#17 PL - PCI Legal (PREMIÈRE)",
+    "#32 Ajustes estrutura (ASPEN)",
+    "#33 Lançamento inicial fundações (FUNDAÇÃO)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-05-14",
+   "foco": "ASPEN avança nos Ajustes de estrutura (#32) e a FUNDAÇÃO no Lançamento inicial de fundações (#33). Atenção: o #33 termina na semana seguinte e depende do #32. PREMIÈRE segue com Hidrossanitário Legal (#16) e PCI Legal (#17).",
+   "inicio": "2027-05-10",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 19 – 10/05 a 14/05/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S20": {
+   "alertas": [],
+   "andamento": [
+    "#16 PL - Hidrossanitário Legal (PREMIÈRE)",
+    "#17 PL - PCI Legal (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-05-21",
+   "foco": "Terminam os Ajustes de estrutura (#32, ASPEN) e o Lançamento inicial de fundações (#33, FUNDAÇÃO). PREMIÈRE continua com Hidrossanitário Legal (#16) e PCI Legal (#17), que fecham na semana seguinte.",
+   "inicio": "2027-05-17",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 20 – 17/05 a 21/05/2027",
+   "status": "futura",
+   "terminos": [
+    "#32 Ajustes estrutura (ASPEN)",
+    "#33 Lançamento inicial fundações (FUNDAÇÃO)"
+   ]
+  },
+  "2027-S21": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-05-28",
+   "foco": "PREMIÈRE conclui o Hidrossanitário Legal (#16) e o PCI Legal (#17) e inicia os Ajustes de Engenharias da fase AP (#34).",
+   "inicio": "2027-05-24",
+   "inicios": [
+    "#34 AP - Ajustes Engenharias (PREMIÈRE)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 21 – 24/05 a 28/05/2027",
+   "status": "futura",
+   "terminos": [
+    "#16 PL - Hidrossanitário Legal (PREMIÈRE)",
+    "#17 PL - PCI Legal (PREMIÈRE)"
+   ]
+  },
+  "2027-S22": {
+   "alertas": [],
+   "andamento": [
+    "#34 AP - Ajustes Engenharias (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-06-04",
+   "foco": "Marco: inicia a Previsão de lançamento do empreendimento (★ #20, MAGNO REALTY). A PREMIÈRE segue com os Ajustes de Engenharias AP (#34).",
+   "inicio": "2027-05-31",
+   "inicios": [
+    "★ #20 Previsão de lançamento empreendimento (MAGNO REALTY)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 22 – 31/05 a 04/06/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S23": {
+   "alertas": [],
+   "andamento": [
+    "★ #20 Previsão de lançamento empreendimento (MAGNO REALTY)",
+    "#34 AP - Ajustes Engenharias (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-06-11",
+   "foco": "Marco ★ #20 (Previsão de lançamento, MAGNO REALTY) segue em andamento. PREMIÈRE continua os Ajustes de Engenharias AP (#34).",
+   "inicio": "2027-06-07",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 23 – 07/06 a 11/06/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S24": {
+   "alertas": [],
+   "andamento": [
+    "★ #20 Previsão de lançamento empreendimento (MAGNO REALTY)",
+    "#34 AP - Ajustes Engenharias (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-06-18",
+   "foco": "Marco ★ #20 (Previsão de lançamento, MAGNO REALTY) segue em andamento. PREMIÈRE continua os Ajustes de Engenharias AP (#34), sem término nesta semana.",
+   "inicio": "2027-06-14",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 24 – 14/06 a 18/06/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S25": {
+   "alertas": [
+    "Entrega da semana seguinte depende desta: #36 Validação de ajustes + construflow (MAGNO REALTY) (término 28/06/2027) ← #34"
+   ],
+   "andamento": [
+    "★ #20 Previsão de lançamento empreendimento (MAGNO REALTY)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-06-25",
+   "foco": "PREMIÈRE conclui os Ajustes de Engenharias AP (#34) e inicia as Furações AP (#35). MAGNO REALTY inicia a Validação de ajustes + construflow (#36), que termina na semana seguinte e depende do #34. Marco ★ #20 segue em andamento.",
+   "inicio": "2027-06-21",
+   "inicios": [
+    "#35 AP - Furações (PREMIÈRE)",
+    "#36 Validação de ajustes + construflow (MAGNO REALTY)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 25 – 21/06 a 25/06/2027",
+   "status": "futura",
+   "terminos": [
+    "#34 AP - Ajustes Engenharias (PREMIÈRE)"
+   ]
+  },
+  "2027-S26": {
+   "alertas": [],
+   "andamento": [
+    "#35 AP - Furações (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-07-02",
+   "foco": "Término do marco ★ #20 (Previsão de lançamento, MAGNO REALTY) e da Validação de ajustes + construflow (#36). Iniciam Ajustes de arquitetura (#37, METHAFORA), Ajustes de estrutura + validação de furações (#38, ASPEN) e Ajustes 2 de Engenharias, se necessário (#39, PREMIÈRE). PREMIÈRE segue com as Furações AP (#35).",
+   "inicio": "2027-06-28",
+   "inicios": [
+    "#37 Ajustes arquitetura (METHAFORA)",
+    "#38 Ajustes estrutura + validação furações (ASPEN)",
+    "#39 AP - Ajustes 2 Engenharias (se necessário) (PREMIÈRE)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 26 – 28/06 a 02/07/2027",
+   "status": "futura",
+   "terminos": [
+    "★ #20 Previsão de lançamento empreendimento (MAGNO REALTY)",
+    "#36 Validação de ajustes + construflow (MAGNO REALTY)"
+   ]
+  },
+  "2027-S27": {
+   "alertas": [
+    "Entrega da semana seguinte depende desta: #38 Ajustes estrutura + validação furações (ASPEN) (término 12/07/2027) ← #35"
+   ],
+   "andamento": [
+    "#37 Ajustes arquitetura (METHAFORA)",
+    "#38 Ajustes estrutura + validação furações (ASPEN)",
+    "#39 AP - Ajustes 2 Engenharias (se necessário) (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-07-09",
+   "foco": "PREMIÈRE conclui as Furações AP (#35); atenção: o #38 da semana seguinte depende dessa entrega. Seguem em andamento METHAFORA (#37), ASPEN (#38) e PREMIÈRE (#39, se necessário).",
+   "inicio": "2027-07-05",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 27 – 05/07 a 09/07/2027",
+   "status": "futura",
+   "terminos": [
+    "#35 AP - Furações (PREMIÈRE)"
+   ]
+  },
+  "2027-S28": {
+   "alertas": [
+    "Entrega da semana seguinte depende desta: ★ #40 Validação final e fechamento de etapa (MAGNO REALTY) (término 19/07/2027) ← #37, #38, #39"
+   ],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-07-16",
+   "foco": "Terminam os Ajustes de arquitetura (#37, METHAFORA), os Ajustes de estrutura + validação de furações (#38, ASPEN) e os Ajustes 2 de Engenharias (#39, PREMIÈRE). MAGNO REALTY inicia o marco ★ #40 (Validação final e fechamento de etapa), que depende de #37, #38 e #39.",
+   "inicio": "2027-07-12",
+   "inicios": [
+    "★ #40 Validação final e fechamento de etapa (MAGNO REALTY)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 28 – 12/07 a 16/07/2027",
+   "status": "futura",
+   "terminos": [
+    "#37 Ajustes arquitetura (METHAFORA)",
+    "#38 Ajustes estrutura + validação furações (ASPEN)",
+    "#39 AP - Ajustes 2 Engenharias (se necessário) (PREMIÈRE)"
+   ]
+  },
+  "2027-S29": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-07-23",
+   "foco": "Marco: MAGNO REALTY conclui a Validação final e fechamento de etapa (★ #40). A PREMIÈRE inicia as modelagens PP do Embasamento: Modelagem - Embasamento (#42), Hidrossanitário (#43), PCI (#44), Elétrica e telecom (#45) e Climatização (#46).",
+   "inicio": "2027-07-19",
+   "inicios": [
+    "#42 PP - Modelagem - Embasamento (PREMIÈRE)",
+    "#43 PP - Modelagem - Hidrossanitário (Embasamento) (PREMIÈRE)",
+    "#44 PP - Modelagem - PCI (Embasamento) (PREMIÈRE)",
+    "#45 PP - Modelagem - Elétrica e telecom (Embasamento) (PREMIÈRE)",
+    "#46 PP - Modelagem - Climatização (Embasamento) (PREMIÈRE)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 29 – 19/07 a 23/07/2027",
+   "status": "futura",
+   "terminos": [
+    "★ #40 Validação final e fechamento de etapa (MAGNO REALTY)"
+   ]
+  },
+  "2027-S30": {
+   "alertas": [],
+   "andamento": [
+    "#42 PP - Modelagem - Embasamento (PREMIÈRE)",
+    "#43 PP - Modelagem - Hidrossanitário (Embasamento) (PREMIÈRE)",
+    "#44 PP - Modelagem - PCI (Embasamento) (PREMIÈRE)",
+    "#45 PP - Modelagem - Elétrica e telecom (Embasamento) (PREMIÈRE)",
+    "#46 PP - Modelagem - Climatização (Embasamento) (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-07-30",
+   "foco": "PREMIÈRE segue com as modelagens PP do Embasamento: #42, Hidrossanitário (#43), PCI (#44), Elétrica e telecom (#45) e Climatização (#46). Sem inícios ou términos.",
+   "inicio": "2027-07-26",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 30 – 26/07 a 30/07/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S31": {
+   "alertas": [],
+   "andamento": [
+    "#42 PP - Modelagem - Embasamento (PREMIÈRE)",
+    "#43 PP - Modelagem - Hidrossanitário (Embasamento) (PREMIÈRE)",
+    "#44 PP - Modelagem - PCI (Embasamento) (PREMIÈRE)",
+    "#45 PP - Modelagem - Elétrica e telecom (Embasamento) (PREMIÈRE)",
+    "#46 PP - Modelagem - Climatização (Embasamento) (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-08-06",
+   "foco": "PREMIÈRE continua as modelagens PP do Embasamento (#42 a #46): Embasamento, Hidrossanitário, PCI, Elétrica e telecom e Climatização. Sem inícios ou términos.",
+   "inicio": "2027-08-02",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 31 – 02/08 a 06/08/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S32": {
+   "alertas": [],
+   "andamento": [
+    "#42 PP - Modelagem - Embasamento (PREMIÈRE)",
+    "#43 PP - Modelagem - Hidrossanitário (Embasamento) (PREMIÈRE)",
+    "#44 PP - Modelagem - PCI (Embasamento) (PREMIÈRE)",
+    "#45 PP - Modelagem - Elétrica e telecom (Embasamento) (PREMIÈRE)",
+    "#46 PP - Modelagem - Climatização (Embasamento) (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-08-13",
+   "foco": "PREMIÈRE mantém as modelagens PP do Embasamento (#42 a #46) em andamento, com conclusão prevista para a semana seguinte.",
+   "inicio": "2027-08-09",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 32 – 09/08 a 13/08/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S33": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-08-20",
+   "foco": "PREMIÈRE conclui as modelagens PP do Embasamento (#42 a #46) e inicia as modelagens PP da Torre: #47, Hidrossanitário (#48), PCI (#49), Elétrica e telecom (#50) e Climatização (#51).",
+   "inicio": "2027-08-16",
+   "inicios": [
+    "#47 PP - Modelagem - Torre (PREMIÈRE)",
+    "#48 PP - Modelagem - Hidrossanitário (Torre) (PREMIÈRE)",
+    "#49 PP - Modelagem - PCI (Torre) (PREMIÈRE)",
+    "#50 PP - Modelagem - Elétrica e telecom (Torre) (PREMIÈRE)",
+    "#51 PP - Modelagem - Climatização (Torre) (PREMIÈRE)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 33 – 16/08 a 20/08/2027",
+   "status": "futura",
+   "terminos": [
+    "#42 PP - Modelagem - Embasamento (PREMIÈRE)",
+    "#43 PP - Modelagem - Hidrossanitário (Embasamento) (PREMIÈRE)",
+    "#44 PP - Modelagem - PCI (Embasamento) (PREMIÈRE)",
+    "#45 PP - Modelagem - Elétrica e telecom (Embasamento) (PREMIÈRE)",
+    "#46 PP - Modelagem - Climatização (Embasamento) (PREMIÈRE)"
+   ]
+  },
+  "2027-S34": {
+   "alertas": [],
+   "andamento": [
+    "#47 PP - Modelagem - Torre (PREMIÈRE)",
+    "#48 PP - Modelagem - Hidrossanitário (Torre) (PREMIÈRE)",
+    "#49 PP - Modelagem - PCI (Torre) (PREMIÈRE)",
+    "#50 PP - Modelagem - Elétrica e telecom (Torre) (PREMIÈRE)",
+    "#51 PP - Modelagem - Climatização (Torre) (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-08-27",
+   "foco": "PREMIÈRE segue com as modelagens PP da Torre: #47, Hidrossanitário (#48), PCI (#49), Elétrica e telecom (#50) e Climatização (#51). Sem inícios ou términos.",
+   "inicio": "2027-08-23",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 34 – 23/08 a 27/08/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S35": {
+   "alertas": [],
+   "andamento": [
+    "#47 PP - Modelagem - Torre (PREMIÈRE)",
+    "#48 PP - Modelagem - Hidrossanitário (Torre) (PREMIÈRE)",
+    "#49 PP - Modelagem - PCI (Torre) (PREMIÈRE)",
+    "#50 PP - Modelagem - Elétrica e telecom (Torre) (PREMIÈRE)",
+    "#51 PP - Modelagem - Climatização (Torre) (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-09-03",
+   "foco": "PREMIÈRE continua as modelagens PP da Torre (#47 a #51) em andamento. Sem inícios ou términos.",
+   "inicio": "2027-08-30",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 35 – 30/08 a 03/09/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S36": {
+   "alertas": [],
+   "andamento": [
+    "#47 PP - Modelagem - Torre (PREMIÈRE)",
+    "#48 PP - Modelagem - Hidrossanitário (Torre) (PREMIÈRE)",
+    "#49 PP - Modelagem - PCI (Torre) (PREMIÈRE)",
+    "#50 PP - Modelagem - Elétrica e telecom (Torre) (PREMIÈRE)",
+    "#51 PP - Modelagem - Climatização (Torre) (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-09-10",
+   "foco": "PREMIÈRE mantém as modelagens PP da Torre (#47 a #51) em andamento: Torre, Hidrossanitário, PCI, Elétrica e telecom e Climatização.",
+   "inicio": "2027-09-06",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 36 – 06/09 a 10/09/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S37": {
+   "alertas": [],
+   "andamento": [
+    "#47 PP - Modelagem - Torre (PREMIÈRE)",
+    "#48 PP - Modelagem - Hidrossanitário (Torre) (PREMIÈRE)",
+    "#49 PP - Modelagem - PCI (Torre) (PREMIÈRE)",
+    "#50 PP - Modelagem - Elétrica e telecom (Torre) (PREMIÈRE)",
+    "#51 PP - Modelagem - Climatização (Torre) (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-09-17",
+   "foco": "PREMIÈRE segue nas modelagens PP da Torre (#47 a #51), que terminam na semana seguinte; manter o ritmo para não atrasar a compatibilização.",
+   "inicio": "2027-09-13",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 37 – 13/09 a 17/09/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S38": {
+   "alertas": [
+    "Entrega da semana seguinte depende desta: #52 Reunião Compatibilização PP-01 (TODOS) (término 28/09/2027) ← #47"
+   ],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-09-24",
+   "foco": "PREMIÈRE conclui as modelagens PP da Torre (#47 a #51). Inicia a Reunião de Compatibilização PP-01 (#52, TODOS), que depende do #47.",
+   "inicio": "2027-09-20",
+   "inicios": [
+    "#52 Reunião Compatibilização PP-01 (TODOS)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 38 – 20/09 a 24/09/2027",
+   "status": "futura",
+   "terminos": [
+    "#47 PP - Modelagem - Torre (PREMIÈRE)",
+    "#48 PP - Modelagem - Hidrossanitário (Torre) (PREMIÈRE)",
+    "#49 PP - Modelagem - PCI (Torre) (PREMIÈRE)",
+    "#50 PP - Modelagem - Elétrica e telecom (Torre) (PREMIÈRE)",
+    "#51 PP - Modelagem - Climatização (Torre) (PREMIÈRE)"
+   ]
+  },
+  "2027-S39": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-10-01",
+   "foco": "Termina a Reunião de Compatibilização PP-01 (#52, TODOS). Iniciam as Validações construflow (#53, MAGNO REALTY), os Ajustes de arquitetura (#54, METHAFORA) e os Ajustes de estrutura (#55, ASPEN).",
+   "inicio": "2027-09-27",
+   "inicios": [
+    "#53 Validações construflow (MAGNO REALTY)",
+    "#54 Ajustes arquitetura (METHAFORA)",
+    "#55 Ajustes estrutura (ASPEN)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 39 – 27/09 a 01/10/2027",
+   "status": "futura",
+   "terminos": [
+    "#52 Reunião Compatibilização PP-01 (TODOS)"
+   ]
+  },
+  "2027-S40": {
+   "alertas": [],
+   "andamento": [
+    "#53 Validações construflow (MAGNO REALTY)",
+    "#54 Ajustes arquitetura (METHAFORA)",
+    "#55 Ajustes estrutura (ASPEN)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-10-08",
+   "foco": "Semana de andamento: MAGNO REALTY nas Validações construflow (#53), METHAFORA nos Ajustes de arquitetura (#54) e ASPEN nos Ajustes de estrutura (#55). Sem inícios ou términos.",
+   "inicio": "2027-10-04",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 40 – 04/10 a 08/10/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S41": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-10-15",
+   "foco": "Terminam as Validações construflow (#53, MAGNO REALTY), os Ajustes de arquitetura (#54, METHAFORA) e os Ajustes de estrutura (#55, ASPEN). PREMIÈRE inicia os Ajustes de Engenharias PP do Embasamento (#57).",
+   "inicio": "2027-10-11",
+   "inicios": [
+    "#57 PP - Ajustes Engenharias - Embasamento (PREMIÈRE)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 41 – 11/10 a 15/10/2027",
+   "status": "futura",
+   "terminos": [
+    "#53 Validações construflow (MAGNO REALTY)",
+    "#54 Ajustes arquitetura (METHAFORA)",
+    "#55 Ajustes estrutura (ASPEN)"
+   ]
+  },
+  "2027-S42": {
+   "alertas": [],
+   "andamento": [
+    "#57 PP - Ajustes Engenharias - Embasamento (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-10-22",
+   "foco": "PREMIÈRE segue em andamento no #57 PP - Ajustes Engenharias - Embasamento. Sem inícios nem términos previstos na semana.",
+   "inicio": "2027-10-18",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 42 – 18/10 a 22/10/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S43": {
+   "alertas": [],
+   "andamento": [
+    "#57 PP - Ajustes Engenharias - Embasamento (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-10-29",
+   "foco": "PREMIÈRE continua o #57 PP - Ajustes Engenharias - Embasamento, que deve ser concluído na semana seguinte. Sem novos inícios ou términos.",
+   "inicio": "2027-10-25",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 43 – 25/10 a 29/10/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S44": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-11-05",
+   "foco": "PREMIÈRE conclui o #57 PP - Ajustes Engenharias - Embasamento. Iniciam o #58 PP - Ajustes Engenharias - Torre e o #59 PP - Furações - Embasamento, ambos da PREMIÈRE.",
+   "inicio": "2027-11-01",
+   "inicios": [
+    "#58 PP - Ajustes Engenharias - Torre (PREMIÈRE)",
+    "#59 PP - Furações - Embasamento (PREMIÈRE)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 44 – 01/11 a 05/11/2027",
+   "status": "futura",
+   "terminos": [
+    "#57 PP - Ajustes Engenharias - Embasamento (PREMIÈRE)"
+   ]
+  },
+  "2027-S45": {
+   "alertas": [],
+   "andamento": [
+    "#58 PP - Ajustes Engenharias - Torre (PREMIÈRE)",
+    "#59 PP - Furações - Embasamento (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-11-12",
+   "foco": "PREMIÈRE avança em paralelo no #58 PP - Ajustes Engenharias - Torre e no #59 PP - Furações - Embasamento. Sem inícios ou términos na semana.",
+   "inicio": "2027-11-08",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 45 – 08/11 a 12/11/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S46": {
+   "alertas": [],
+   "andamento": [
+    "#58 PP - Ajustes Engenharias - Torre (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-11-19",
+   "foco": "PREMIÈRE conclui o #59 PP - Furações - Embasamento. O #58 PP - Ajustes Engenharias - Torre segue em andamento.",
+   "inicio": "2027-11-15",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 46 – 15/11 a 19/11/2027",
+   "status": "futura",
+   "terminos": [
+    "#59 PP - Furações - Embasamento (PREMIÈRE)"
+   ]
+  },
+  "2027-S47": {
+   "alertas": [
+    "Entrega da semana seguinte depende desta: #61 Validação de ajustes + construflow (TODOS) (término 03/12/2027) ← #58"
+   ],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-11-26",
+   "foco": "PREMIÈRE conclui o #58 PP - Ajustes Engenharias - Torre. Atenção: o #61 Validação de ajustes + construflow (TODOS), com término em 03/12/2027, depende do #58.",
+   "inicio": "2027-11-22",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 47 – 22/11 a 26/11/2027",
+   "status": "futura",
+   "terminos": [
+    "#58 PP - Ajustes Engenharias - Torre (PREMIÈRE)"
+   ]
+  },
+  "2027-S48": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-12-03",
+   "foco": "Iniciam o #60 PP - Furações - Torre (PREMIÈRE) e o #61 Validação de ajustes + construflow (TODOS). O #61 inicia e termina na semana, fechando a validação dos ajustes.",
+   "inicio": "2027-11-29",
+   "inicios": [
+    "#60 PP - Furações - Torre (PREMIÈRE)",
+    "#61 Validação de ajustes + construflow (TODOS)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 48 – 29/11 a 03/12/2027",
+   "status": "futura",
+   "terminos": [
+    "#61 Validação de ajustes + construflow (TODOS)"
+   ]
+  },
+  "2027-S49": {
+   "alertas": [
+    "Entrega da semana seguinte depende desta: #64 Ajustes estrutura + validação furações (ASPEN) (término 17/12/2027) ← #60"
+   ],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-12-10",
+   "foco": "PREMIÈRE conclui o #60 PP - Furações - Torre. Iniciam o #62 Validações construflow (MAGNO REALTY), o #63 Ajustes arquitetura (METHAFORA) e o #64 Ajustes estrutura + validação furações (ASPEN). Atenção: o #64 depende do #60 e termina em 17/12/2027.",
+   "inicio": "2027-12-06",
+   "inicios": [
+    "#62 Validações construflow (MAGNO REALTY)",
+    "#63 Ajustes arquitetura (METHAFORA)",
+    "#64 Ajustes estrutura + validação furações (ASPEN)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 49 – 06/12 a 10/12/2027",
+   "status": "futura",
+   "terminos": [
+    "#60 PP - Furações - Torre (PREMIÈRE)"
+   ]
+  },
+  "2027-S50": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-12-17",
+   "foco": "Terminam o #62 Validações construflow (MAGNO REALTY), o #63 Ajustes arquitetura (METHAFORA) e o #64 Ajustes estrutura + validação furações (ASPEN). Fecha-se o ciclo de ajustes e validações do PP.",
+   "inicio": "2027-12-13",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 50 – 13/12 a 17/12/2027",
+   "status": "futura",
+   "terminos": [
+    "#62 Validações construflow (MAGNO REALTY)",
+    "#63 Ajustes arquitetura (METHAFORA)",
+    "#64 Ajustes estrutura + validação furações (ASPEN)"
+   ]
+  },
+  "2027-S51": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-12-24",
+   "foco": "Sem atividades previstas no cronograma.",
+   "inicio": "2027-12-20",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 51 – 20/12 a 24/12/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2027-S52": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2027-12-31",
+   "foco": "Sem atividades previstas no cronograma.",
+   "inicio": "2027-12-27",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 52 – 27/12 a 31/12/2027",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S01": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-01-07",
+   "foco": "MAGNO REALTY inicia o marco ★ #65 Validação final e fechamento de etapa. Sem outras atividades na semana.",
+   "inicio": "2028-01-03",
+   "inicios": [
+    "★ #65 Validação final e fechamento de etapa (MAGNO REALTY)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 01 – 03/01 a 07/01/2028",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S02": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-01-14",
+   "foco": "MAGNO REALTY conclui o marco ★ #65 Validação final e fechamento de etapa. Iniciam as documentações executivas: #67 Arquitetura (METHAFORA), #68 Detalhamento Estrutural (ASPEN) e, pela PREMIÈRE, #69 Hidrossanitário, #70 PCI, #71 Climatização, #72 Elétrico/Telecom/SPDA e #73 Furações.",
+   "inicio": "2028-01-10",
+   "inicios": [
+    "#67 Documentação executiva Arquitetura (METHAFORA)",
+    "#68 Detalhamento Estrutural (ASPEN)",
+    "#69 PE1 - Documentação Hidrossanitário + Memorial (PREMIÈRE)",
+    "#70 PE1 - Documentação PCI + Memorial (PREMIÈRE)",
+    "#71 PE1 - Documentação Climatização + Memorial (PREMIÈRE)",
+    "#72 PE1 - Documentação Elétrico/Telecom/SPDA + Memoriais (PREMIÈRE)",
+    "#73 PE - Documentação Furações (PREMIÈRE)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 02 – 10/01 a 14/01/2028",
+   "status": "futura",
+   "terminos": [
+    "★ #65 Validação final e fechamento de etapa (MAGNO REALTY)"
+   ]
+  },
+  "2028-S03": {
+   "alertas": [],
+   "andamento": [
+    "#67 Documentação executiva Arquitetura (METHAFORA)",
+    "#68 Detalhamento Estrutural (ASPEN)",
+    "#69 PE1 - Documentação Hidrossanitário + Memorial (PREMIÈRE)",
+    "#70 PE1 - Documentação PCI + Memorial (PREMIÈRE)",
+    "#71 PE1 - Documentação Climatização + Memorial (PREMIÈRE)",
+    "#72 PE1 - Documentação Elétrico/Telecom/SPDA + Memoriais (PREMIÈRE)",
+    "#73 PE - Documentação Furações (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-01-21",
+   "foco": "Semana de desenvolvimento: METHAFORA no #67, ASPEN no #68 e PREMIÈRE nos #69, #70, #71, #72 e #73. Sem inícios ou términos.",
+   "inicio": "2028-01-17",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 03 – 17/01 a 21/01/2028",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S04": {
+   "alertas": [],
+   "andamento": [
+    "#67 Documentação executiva Arquitetura (METHAFORA)",
+    "#68 Detalhamento Estrutural (ASPEN)",
+    "#69 PE1 - Documentação Hidrossanitário + Memorial (PREMIÈRE)",
+    "#70 PE1 - Documentação PCI + Memorial (PREMIÈRE)",
+    "#71 PE1 - Documentação Climatização + Memorial (PREMIÈRE)",
+    "#72 PE1 - Documentação Elétrico/Telecom/SPDA + Memoriais (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-01-28",
+   "foco": "PREMIÈRE conclui o #73 PE - Documentação Furações. Seguem em andamento o #67 (METHAFORA), o #68 (ASPEN) e os #69, #70, #71 e #72 (PREMIÈRE).",
+   "inicio": "2028-01-24",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 04 – 24/01 a 28/01/2028",
+   "status": "futura",
+   "terminos": [
+    "#73 PE - Documentação Furações (PREMIÈRE)"
+   ]
+  },
+  "2028-S05": {
+   "alertas": [],
+   "andamento": [
+    "#67 Documentação executiva Arquitetura (METHAFORA)",
+    "#68 Detalhamento Estrutural (ASPEN)",
+    "#69 PE1 - Documentação Hidrossanitário + Memorial (PREMIÈRE)",
+    "#70 PE1 - Documentação PCI + Memorial (PREMIÈRE)",
+    "#71 PE1 - Documentação Climatização + Memorial (PREMIÈRE)",
+    "#72 PE1 - Documentação Elétrico/Telecom/SPDA + Memoriais (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-02-04",
+   "foco": "Seguem em andamento o #67 Documentação executiva Arquitetura (METHAFORA), o #68 Detalhamento Estrutural (ASPEN) e os PE1 da PREMIÈRE (#69, #70, #71, #72). Sem inícios ou términos.",
+   "inicio": "2028-01-31",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 05 – 31/01 a 04/02/2028",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S06": {
+   "alertas": [],
+   "andamento": [
+    "#67 Documentação executiva Arquitetura (METHAFORA)",
+    "#68 Detalhamento Estrutural (ASPEN)",
+    "#69 PE1 - Documentação Hidrossanitário + Memorial (PREMIÈRE)",
+    "#70 PE1 - Documentação PCI + Memorial (PREMIÈRE)",
+    "#71 PE1 - Documentação Climatização + Memorial (PREMIÈRE)",
+    "#72 PE1 - Documentação Elétrico/Telecom/SPDA + Memoriais (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-02-11",
+   "foco": "Seguem em andamento o #67 (METHAFORA), o #68 (ASPEN) e os PE1 da PREMIÈRE (#69 Hidrossanitário, #70 PCI, #71 Climatização, #72 Elétrico/Telecom/SPDA). Os PE1 terminam na semana seguinte.",
+   "inicio": "2028-02-07",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 06 – 07/02 a 11/02/2028",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S07": {
+   "alertas": [],
+   "andamento": [
+    "#67 Documentação executiva Arquitetura (METHAFORA)",
+    "#68 Detalhamento Estrutural (ASPEN)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-02-18",
+   "foco": "PREMIÈRE conclui os PE1 #69 Hidrossanitário, #70 PCI, #71 Climatização e #72 Elétrico/Telecom/SPDA. Iniciam o #19 PL - Elétrica Legal (PREMIÈRE) e o #74 Validação Construtora (MAGNO REALTY). METHAFORA (#67) e ASPEN (#68) seguem em andamento.",
+   "inicio": "2028-02-14",
+   "inicios": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)",
+    "#74 Validação Construtora (MAGNO REALTY)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 07 – 14/02 a 18/02/2028",
+   "status": "futura",
+   "terminos": [
+    "#69 PE1 - Documentação Hidrossanitário + Memorial (PREMIÈRE)",
+    "#70 PE1 - Documentação PCI + Memorial (PREMIÈRE)",
+    "#71 PE1 - Documentação Climatização + Memorial (PREMIÈRE)",
+    "#72 PE1 - Documentação Elétrico/Telecom/SPDA + Memoriais (PREMIÈRE)"
+   ]
+  },
+  "2028-S08": {
+   "alertas": [],
+   "andamento": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)",
+    "#67 Documentação executiva Arquitetura (METHAFORA)",
+    "#68 Detalhamento Estrutural (ASPEN)",
+    "#74 Validação Construtora (MAGNO REALTY)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-02-25",
+   "foco": "Seguem em andamento o #19 PL - Elétrica Legal (PREMIÈRE), o #67 (METHAFORA), o #68 (ASPEN) e o #74 Validação Construtora (MAGNO REALTY). Sem inícios ou términos na semana.",
+   "inicio": "2028-02-21",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 08 – 21/02 a 25/02/2028",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S09": {
+   "alertas": [],
+   "andamento": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)",
+    "#67 Documentação executiva Arquitetura (METHAFORA)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-03-03",
+   "foco": "ASPEN conclui o #68 Detalhamento Estrutural e MAGNO REALTY conclui o #74 Validação Construtora. Inicia o #75 PE2 - Revisão final e quantitativos (PREMIÈRE). Seguem o #19 (PREMIÈRE) e o #67 (METHAFORA).",
+   "inicio": "2028-02-28",
+   "inicios": [
+    "#75 PE2 - Revisão final e quantitativos (PREMIÈRE)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 09 – 28/02 a 03/03/2028",
+   "status": "futura",
+   "terminos": [
+    "#68 Detalhamento Estrutural (ASPEN)",
+    "#74 Validação Construtora (MAGNO REALTY)"
+   ]
+  },
+  "2028-S10": {
+   "alertas": [],
+   "andamento": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)",
+    "#75 PE2 - Revisão final e quantitativos (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-03-10",
+   "foco": "METHAFORA conclui o #67 Documentação executiva Arquitetura. PREMIÈRE segue no #19 PL - Elétrica Legal e no #75 PE2 - Revisão final e quantitativos.",
+   "inicio": "2028-03-06",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 10 – 06/03 a 10/03/2028",
+   "status": "futura",
+   "terminos": [
+    "#67 Documentação executiva Arquitetura (METHAFORA)"
+   ]
+  },
+  "2028-S11": {
+   "alertas": [],
+   "andamento": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)",
+    "#75 PE2 - Revisão final e quantitativos (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-03-17",
+   "foco": "PREMIÈRE avança no #19 PL - Elétrica Legal e no #75 PE2 - Revisão final e quantitativos. Sem inícios ou términos.",
+   "inicio": "2028-03-13",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 11 – 13/03 a 17/03/2028",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S12": {
+   "alertas": [],
+   "andamento": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)",
+    "#75 PE2 - Revisão final e quantitativos (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-03-24",
+   "foco": "PREMIÈRE avança no #19 PL - Elétrica Legal e no #75 PE2 - Revisão final e quantitativos. Sem inícios ou términos.",
+   "inicio": "2028-03-20",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 12 – 20/03 a 24/03/2028",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S13": {
+   "alertas": [],
+   "andamento": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)",
+    "#75 PE2 - Revisão final e quantitativos (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-03-31",
+   "foco": "PREMIÈRE avança no #19 PL - Elétrica Legal e no #75 PE2 - Revisão final e quantitativos. Sem inícios ou términos.",
+   "inicio": "2028-03-27",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 13 – 27/03 a 31/03/2028",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S14": {
+   "alertas": [],
+   "andamento": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)",
+    "#75 PE2 - Revisão final e quantitativos (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-04-07",
+   "foco": "PREMIÈRE avança no #19 PL - Elétrica Legal e no #75 PE2 - Revisão final e quantitativos. Sem inícios ou términos.",
+   "inicio": "2028-04-03",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 14 – 03/04 a 07/04/2028",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S15": {
+   "alertas": [],
+   "andamento": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)",
+    "#75 PE2 - Revisão final e quantitativos (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-04-14",
+   "foco": "PREMIÈRE avança no #19 PL - Elétrica Legal e no #75 PE2 - Revisão final e quantitativos. Sem inícios ou términos.",
+   "inicio": "2028-04-10",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 15 – 10/04 a 14/04/2028",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S16": {
+   "alertas": [],
+   "andamento": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)",
+    "#75 PE2 - Revisão final e quantitativos (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-04-21",
+   "foco": "PREMIÈRE avança no #19 PL - Elétrica Legal e no #75 PE2 - Revisão final e quantitativos, que termina na semana seguinte.",
+   "inicio": "2028-04-17",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 16 – 17/04 a 21/04/2028",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S17": {
+   "alertas": [],
+   "andamento": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-04-28",
+   "foco": "PREMIÈRE conclui o #75 PE2 - Revisão final e quantitativos e inicia o #76 PE - Furações Revisão. O #19 PL - Elétrica Legal segue em andamento.",
+   "inicio": "2028-04-24",
+   "inicios": [
+    "#76 PE - Furações Revisão (PREMIÈRE)"
+   ],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 17 – 24/04 a 28/04/2028",
+   "status": "futura",
+   "terminos": [
+    "#75 PE2 - Revisão final e quantitativos (PREMIÈRE)"
+   ]
+  },
+  "2028-S18": {
+   "alertas": [],
+   "andamento": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)",
+    "#76 PE - Furações Revisão (PREMIÈRE)"
+   ],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-05-05",
+   "foco": "PREMIÈRE avança no #19 PL - Elétrica Legal e no #76 PE - Furações Revisão. Ambos terminam na semana seguinte.",
+   "inicio": "2028-05-01",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 18 – 01/05 a 05/05/2028",
+   "status": "futura",
+   "terminos": []
+  },
+  "2028-S19": {
+   "alertas": [],
+   "andamento": [],
+   "atualizadoEm": "2026-10-28",
+   "fim": "2028-05-12",
+   "foco": "PREMIÈRE conclui o #19 PL - Elétrica Legal e o #76 PE - Furações Revisão. Sem outras atividades na semana.",
+   "inicio": "2028-05-08",
+   "inicios": [],
+   "origem": "DUAR - Cronograma - R00.pdf",
+   "semana": "Semana 19 – 08/05 a 12/05/2028",
+   "status": "futura",
+   "terminos": [
+    "#19 PL - Elétrica Legal (PREMIÈRE)",
+    "#76 PE - Furações Revisão (PREMIÈRE)"
+   ]
+  }
+ },
  "resumos": {
   "2026-10-05": {
    "disciplinas": {

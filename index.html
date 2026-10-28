@@ -648,7 +648,7 @@ function semanaBox(){
   h+=rs&&rs.geral?'<p class="geral">'+esc(rs.geral)+'</p>':'<p class="count">O resumo desta semana é gerado na próxima sincronização.</p>';
   h+='<div class="scroll"><table class="mx" style="min-width:680px"><thead><tr><th>Disciplina</th><th>Pendentes no início</th><th>Novos</th><th>Resolvidos</th><th>Meta</th><th style="text-align:left">Progresso</th><th>Pendentes agora</th><th>'+(plano()?'Situação no plano':'Previsão para zerar')+'</th></tr></thead><tbody>'+
     rows.map(function(r){return '<tr data-disc="'+esc(r.c)+'" tabindex="0"><td>'+chip(r.c)+'</td><td>'+r.ini+'</td><td class="'+(r.novos?'':'z')+'">'+(r.novos||'–')+'</td><td><strong>'+r.res+'</strong></td><td>'+(r.meta||'–')+'</td><td>'+(r.meta?mbar(r.res,r.meta):'')+'</td><td>'+r.pend+'</td><td>'+esc(r.prev)+'</td></tr>';}).join("")+
-    '</tbody></table></div><p class="count" style="margin-top:6px">Resolvido = disciplina que passou para Validar ou Concluído no Construflow nesta semana. Apontamentos aguardando etapa ficam fora. '+(plano()?'Meta = apontamentos com prazo do plano até o fim desta semana (incluindo os atrasados), para zerar até o início do '+esc(plano().fase)+' em '+fmtD(plano().fim)+'. Prazos maiores para os de maior complexidade.':'Meta = '+(((S.cfg&&S.cfg.metas)||{}).pct||25)+'% dos pendentes no início da semana, salvo meta definida para a disciplina.')+'</p>';
+    '</tbody></table></div><p class="count" style="margin-top:6px">Resolvido = disciplina que passou para Validar ou Concluído no Construflow nesta semana. Apontamentos aguardando etapa ficam fora. '+(plano()?'Meta = apontamentos com prazo do plano até o fim desta semana (incluindo os atrasados), para zerar até o '+esc(planoRot(plano()))+' em '+fmtD(plano().fim)+'. Prazos maiores para os de maior complexidade.':'Meta = '+(((S.cfg&&S.cfg.metas)||{}).pct||25)+'% dos pendentes no início da semana, salvo meta definida para a disciplina.')+'</p>';
   if(rs&&rs.disciplinas){var ks=Object.keys(rs.disciplinas).filter(function(k){return rs.disciplinas[k];});
     if(ks.length)h+='<details open><summary>Ações da semana por disciplina</summary><div class="dtx">'+ks.map(function(k){return '<div>'+chip(k)+'</div><div>'+esc(rs.disciplinas[k])+'</div>';}).join("")+'</div></details>';}
   if(ids.filter(function(i){return i!==w.id;}).length)h+='<details><summary>Semanas anteriores</summary>'+ids.filter(function(i){return i!==w.id;}).map(function(i){var r=S.resumos[i];return '<p class="count" style="margin:8px 0 2px"><strong>Semana de '+fmtD(i)+'</strong></p><p class="geral">'+esc(r.geral||"")+'</p>';}).join("")+'</details>';
@@ -707,8 +707,9 @@ function renderFase(){
   el.appendChild(document.createTextNode("Etapa atual: "));
   var b=document.createElement("b");b.textContent=(FN[fa.c]||fa.c)+" ("+fa.c+")";el.appendChild(b);
   if(fa.inicio)el.appendChild(document.createTextNode(" desde "+fmtD(fa.inicio)));
-  var pl=plano(),proj=fasesProj(),i=proj.indexOf(fa.c),nx=pl&&pl.fase?pl.fase:null;
-  if(nx&&proj.indexOf(nx)>i){var s=document.createElement("span");s.className="nx";s.textContent="Próxima: "+(FN[nx]||nx)+" ("+nx+") em "+fmtD(pl.fim);el.appendChild(s);}
+  var cf=cronoFase(fa.c),h=hojeIso(),nx=crono().filter(function(x){return x.c!==fa.c&&!faseIniciada(x.c)&&x.inicio>h;})[0];
+  if(cf&&cf.fim||nx){var s=document.createElement("span");s.className="nx";
+    s.textContent=[cf&&cf.fim?"Fecha em "+fmtD(cf.fim):"",nx?"Próxima: "+(FN[nx.c]||nx.c)+" ("+nx.c+") em "+fmtD(nx.inicio):""].filter(Boolean).join(" · ")+" (cronograma)";el.appendChild(s);}
   el.hidden=false;
 }
 function renderHeader(){
@@ -1056,12 +1057,17 @@ function etapaBox(){
   var prox=proj.filter(function(c){return !faseIniciada(c);});
   var h='<div class="notice"><strong>Etapa atual: '+(fa?esc(fa.c)+' · '+esc(FN[fa.c]||fa.c)+'</strong>, desde '+fmtD(fa.inicio):'não definida</strong>')+
     (ini.length>1?'<p class="count" style="margin:4px 0 0">Etapas iniciadas: '+ini.map(function(x){return esc(x.c)+' em '+fmtD(x.inicio);}).join(', ')+'</p>':'');
-  if(S.isAdmin&&prox.length) h+='<div class="row-btns" style="margin-top:8px"><label class="cl" style="display:flex;gap:6px;align-items:center;margin:0">Iniciar etapa <select id="nxFase">'+prox.map(function(c){return '<option value="'+esc(c)+'">'+esc(c)+' · '+esc(FN[c]||c)+'</option>';}).join('')+'</select></label><label class="cl" style="display:flex;gap:6px;align-items:center;margin:0">em '+dataInput('id="nxData"',hojeIso())+'</label><button class="btn ghost" type="button" id="nxBtn">Registrar início</button><span class="msg" id="nxMsg"></span></div>';
+  if(S.isAdmin&&prox.length) h+='<div class="row-btns" style="margin-top:8px"><label class="cl" style="display:flex;gap:6px;align-items:center;margin:0">Iniciar etapa <select id="nxFase">'+prox.map(function(c){var cf=cronoFase(c);return '<option value="'+esc(c)+'" data-ini="'+esc(cf?cf.inicio:"")+'">'+esc(c)+' · '+esc(FN[c]||c)+(cf?' (cronograma: '+fmtD(cf.inicio)+')':'')+'</option>';}).join('')+'</select></label><label class="cl" style="display:flex;gap:6px;align-items:center;margin:0">em '+dataInput('id="nxData"',(cronoFase(prox[0])||{}).inicio||hojeIso())+'</label><button class="btn ghost" type="button" id="nxBtn">Registrar início</button><span class="msg" id="nxMsg"></span></div>';
   var pl=plano();
-  h+='<p class="count" style="margin:8px 0 0">'+(pl?'Plano de resolução: zerar as pendências até o início do <strong>'+esc(pl.fase)+'</strong>, previsto para <strong>'+fmtD(pl.fim)+'</strong>. Gerado em '+fmtD(pl.geradoEm)+'.':'Sem plano de resolução definido; a meta semanal usa o percentual padrão.')+'</p>';
+  h+='<p class="count" style="margin:8px 0 0">'+(pl?'Plano de resolução: zerar as pendências até o <strong>'+esc(planoRot(pl))+'</strong>, previsto para <strong>'+fmtD(pl.fim)+'</strong>. Gerado em '+fmtD(pl.geradoEm)+'.':'Sem plano de resolução definido; a meta semanal usa o percentual padrão.')+'</p>';
   if(S.isAdmin){
     h+='<p class="count" style="margin:8px 0 0">A sincronização com o Construflow é feita automaticamente pela tarefa agendada nos dias úteis a partir das 6h57, com nova tentativa a cada hora se o Construflow não responder. O botão Sincronizar atualiza o app na hora, a partir desta página, e em seguida pede a atualização do site. Abrir o app não sincroniza.</p>';
-    h+='<div class="row-btns" style="margin-top:8px"><label class="cl" style="display:flex;gap:6px;align-items:center;margin:0">Zerar até o início do <select id="plFase">'+proj.filter(function(c){return !faseIniciada(c);}).map(function(c){return '<option value="'+esc(c)+'"'+((pl?pl.fase:"AP")===c?' selected':'')+'>'+esc(c)+'</option>';}).join('')+'</select></label><label class="cl" style="display:flex;gap:6px;align-items:center;margin:0">previsto para '+dataInput('id="plData"',pl?pl.fim:"")+'</label><button class="btn ghost" type="button" id="plBtn">'+(pl?'Refazer plano':'Gerar plano')+'</button><span class="msg" id="plMsg"></span></div>';
+    var alvos=[],cfa=fa?cronoFase(fa.c):null;
+    if(fa&&cfa&&cfa.fim)alvos.push({v:"fim:"+fa.c,t:"fechamento do "+fa.c,d:cfa.fim});
+    proj.filter(function(c){return !faseIniciada(c);}).forEach(function(c){var cf=cronoFase(c);alvos.push({v:c,t:"início do "+c,d:cf?cf.inicio:""});});
+    var a0=alvos[0]||{},selA=a0.v||(pl&&pl.fase),dA=a0.d||(pl?pl.fim:"");
+    if(crono().length)h+='<p class="count" style="margin:8px 0 0">Cronograma ('+esc(S.cfg.cronograma.origem||"")+'): '+crono().map(function(x){return esc(x.c)+' '+fmtD(x.inicio)+(x.fim?' a '+fmtD(x.fim):'')+(x.paralela?' (paralela)':'');}).join(' · ')+'</p>';
+    h+='<div class="row-btns" style="margin-top:8px"><label class="cl" style="display:flex;gap:6px;align-items:center;margin:0">Zerar até o <select id="plFase">'+alvos.map(function(x){return '<option value="'+esc(x.v)+'" data-d="'+esc(x.d)+'"'+(x.v===selA?' selected':'')+'>'+esc(x.t)+(x.d?' (cronograma: '+fmtD(x.d)+')':'')+'</option>';}).join('')+'</select></label><label class="cl" style="display:flex;gap:6px;align-items:center;margin:0">previsto para '+dataInput('id="plData"',dA)+'</label><button class="btn ghost" type="button" id="plBtn">'+(pl?'Refazer plano':'Gerar plano')+'</button><span class="msg" id="plMsg"></span></div>';
   }
   return h+'</div>';
 }
@@ -1212,15 +1218,17 @@ function bindView(){
     var mm=document.getElementById("mMsg");mm.textContent="Salvando…";ms.disabled=true;
     S.db.doc("empreendimentos/"+EMP).update({metas:{pct:pct,porDisciplina:pd}}).then(function(){}).catch(function(){ms.disabled=false;mm.className="msg err";mm.textContent="Não foi possível salvar agora.";});
   });
+  [["plFase","plData","d"],["nxFase","nxData","ini"]].forEach(function(p){var s=document.getElementById(p[0]),d=document.getElementById(p[1]);
+    if(s&&d)s.addEventListener("change",function(){var v=s.options[s.selectedIndex].getAttribute("data-"+p[2]);if(v)d.value=fmtD(v);});});
   var pb=document.getElementById("plBtn");
   if(pb)pb.addEventListener("click",async function(){
-    var fase=document.getElementById("plFase").value, fim=isoDe(document.getElementById("plData").value), m=document.getElementById("plMsg");
+    var alvo=document.getElementById("plFase").value, fimDe=alvo.indexOf("fim:")===0, fase=fimDe?alvo.slice(4):alvo, fim=isoDe(document.getElementById("plData").value), m=document.getElementById("plMsg");
     if(!fase||!fim){m.className="msg err";m.textContent="Informe a etapa e a data prevista (dd/mm/aaaa).";return;}
     if(parseD(fim)<=today()){m.className="msg err";m.textContent="A data precisa ser futura.";return;}
     pb.disabled=true;m.className="msg";m.textContent="Gerando plano…";
     try{var plan=gerarPlano(fase,fim),ks=Object.keys(plan),col=S.db.collection("empreendimentos/"+EMP+"/apontamentos");
       for(var i=0;i<ks.length;i++){await col.doc(String(ks[i])).update({prazoMeta:plan[ks[i]]});}
-      await S.db.doc("empreendimentos/"+EMP).update({plano:{fase:fase,fim:fim,geradoEm:isoD(today())}});
+      await S.db.doc("empreendimentos/"+EMP).update({plano:fimDe?{fase:fase,fim:fim,marco:"fim",rotulo:"fechamento do "+fase,geradoEm:isoD(today())}:{fase:fase,fim:fim,geradoEm:isoD(today())}});
       m.textContent="";}catch(e){pb.disabled=false;m.className="msg err";m.textContent="Não foi possível gerar o plano agora.";}
   });
   var as=document.getElementById("autoSt");if(as)as.addEventListener("change",function(){S.db.doc("empreendimentos/"+EMP).update({autoStatus:as.checked}).catch(function(){});});
@@ -1453,7 +1461,7 @@ function burnSVG(D){
     if(pts)area+='<polygon class="gap" points="'+pts.map(function(p){return p[0].toFixed(1)+","+p[1].toFixed(1);}).join(" ")+'"/>';
   }
   s+=area;
-  if(pl)s+='<line x1="'+X(n-1)+'" x2="'+X(n-1)+'" y1="'+T+'" y2="'+(H-B)+'" class="ap"/><text x="'+(X(n-1)-2)+'" y="14" class="apl">início do '+esc(pl.fase)+'</text>';
+  if(pl)s+='<line x1="'+X(n-1)+'" x2="'+X(n-1)+'" y1="'+T+'" y2="'+(H-B)+'" class="ap"/><text x="'+(X(n-1)-2)+'" y="14" class="apl">'+esc(planoRot(pl))+'</text>';
   if(plan.length)s+='<path d="'+path(plan)+'" class="pl"/>';
   if(ci>=0)s+='<line x1="'+X(ci)+'" x2="'+X(ci)+'" y1="'+(T-8)+'" y2="'+(H-B)+'" class="hoje"/>';
   if(real.length){
@@ -1559,6 +1567,9 @@ function viewReuniao(){
 /* ---------- plano por complexidade ---------- */
 var CX={baixa:"Baixa",media:"Média",alta:"Alta"};
 function plano(){return (S.cfg&&S.cfg.plano&&S.cfg.plano.fim)?S.cfg.plano:null;}
+function planoRot(pl){return pl.rotulo||("início do "+pl.fase);}
+function crono(){return (S.cfg&&S.cfg.cronograma&&S.cfg.cronograma.fases)||[];}
+function cronoFase(c){var l=crono();for(var i=0;i<l.length;i++)if(l[i].c===c)return l[i];return null;}
 function sexta(d){var x=new Date(d);x.setDate(x.getDate()+4);return x;}
 function gerarPlano(fase,fimIso){
   var fim=parseD(fimIso), w0=new Date(semanaAt().ini), weeks=[];if((today().getDay()+6)%7>=5)w0.setDate(w0.getDate()+7);
@@ -2176,11 +2187,11 @@ function proxSemanasHtml(arr,hl,pl){
   arr.forEach(function(a){var p=prazoItem(a),d=p?parseD(p):null;if(!d){sem.push(a);return;}
     var ini=new Date(d);ini.setDate(d.getDate()-((d.getDay()+6)%7));var k=isoD(ini);if(!g[k]){g[k]={ini:ini,itens:[]};ks.push(k);}g[k].itens.push(a);});
   ks.sort();
-  var h='<p class="count">Os prazos estão distribuídos semana a semana'+(pl?' até '+fmtD(pl.fim)+', início do '+esc(pl.fase):'')+'. Terminou as demandas desta semana? Você pode se adiantar e responder já os apontamentos das próximas semanas.</p>';
+  var h='<p class="count">Os prazos estão distribuídos semana a semana'+(pl?' até '+fmtD(pl.fim)+', '+esc(planoRot(pl)):'')+'. Terminou as demandas desta semana? Você pode se adiantar e responder já os apontamentos das próximas semanas.</p>';
   ks.forEach(function(k){var x=g[k],fim=new Date(x.ini);fim.setDate(x.ini.getDate()+6);
     var n=Math.round((x.ini-w.ini)/6048e5),rel=n<=1?"Semana que vem":"Daqui a "+n+" semanas";
     var ult=pl&&pl.fim>=k&&pl.fim<=isoD(fim);
-    h+='<h4 class="semh"><span>'+rel+'</span> '+fmtD(k).slice(0,5)+' a '+fmtD(isoD(sexta(x.ini))).slice(0,5)+' <span class="n">'+x.itens.length+(x.itens.length===1?' apontamento':' apontamentos')+(ult?' · última semana antes do '+esc(pl.fase):'')+'</span></h4>'+listHtml(x.itens,hl,"");});
+    h+='<h4 class="semh"><span>'+rel+'</span> '+fmtD(k).slice(0,5)+' a '+fmtD(isoD(sexta(x.ini))).slice(0,5)+' <span class="n">'+x.itens.length+(x.itens.length===1?' apontamento':' apontamentos')+(ult?' · última semana antes do '+esc(planoRot(pl)):'')+'</span></h4>'+listHtml(x.itens,hl,"");});
   if(sem.length)h+='<h4 class="semh"><span>Sem prazo definido</span> <span class="n">'+sem.length+'</span></h4>'+listHtml(sem,hl,"");
   return h;
 }
@@ -2198,7 +2209,7 @@ function viewMinhaSemana(){
   if(!lsGet("ap-onb-"+EMP))h+='<div class="onb"><ol><li><span>1</span>Veja o que vence esta semana</li><li><span>2</span>Clique em Responder no Construflow</li><li><span>3</span>Depois de responder, marque o status lá</li></ol><button type="button" class="btn ghost" id="onbOk">Entendi</button></div>';
   h+='<h1 class="headline">'+headlineSem(r.atras.length,N,sex)+'</h1>';
   if(N){var cxs=[];["baixa","media","alta"].forEach(function(k){if(cx[k])cxs.push(cx[k]+" de "+({baixa:"baixa",media:"média",alta:"alta"})[k]+" complexidade");});
-    h+='<p class="lede">'+(cxs.length===1&&cx.baixa===N?'Todos são de baixa complexidade: validações e definições que destravam o projeto.':esc(cxs.join(", "))+'.')+(pl?' Meta final: zerar as pendências até '+fmtD(pl.fim)+', início do '+esc(pl.fase)+'.':'')+'</p>';}
+    h+='<p class="lede">'+(cxs.length===1&&cx.baixa===N?'Todos são de baixa complexidade: validações e definições que destravam o projeto.':esc(cxs.join(", "))+'.')+(pl?' Meta final: zerar as pendências até '+fmtD(pl.fim)+', '+esc(planoRot(pl))+'.':'')+'</p>';}
   var rsem=respondidosSemana(D);
   h+='<div class="cards c5">'+card("atras","Atrasados",r.atras.length,"crit")+card("semana","Vencem esta semana",N,"warn")+card("resp","Respondidos",rsem.length,"ok")+card("prox","Próximas semanas",r.prox.length,"")+card("espera","Ficam para outra etapa",r.espera.length,"mute")+'</div>';
   if(tot.meta)h+='<div class="metaline"><span>Você entregou <strong>'+tot.res+' de '+tot.meta+'</strong> nesta semana</span>'+mbar(tot.res,tot.meta)+'</div>';
@@ -2239,7 +2250,7 @@ function viewPainelForn(){
     return {c:c,atras:r.atras.length,semana:r.semana.length,prox:r.prox.length,espera:r.espera.length,resp:r.resp.length,pend:r.atras.length+r.semana.length+r.prox.length,res:st.res,meta:st.meta};});
   var pend=u.atras.length+u.semana.length+u.prox.length;
   var h='<section class="view"><h2>Painel '+(D.length>1?'das minhas disciplinas':'da minha disciplina')+'</h2>'+
-    '<p class="lede">'+(fa?'Etapa atual: '+esc(fa.c)+' · '+esc(FN[fa.c]||fa.c)+'. ':'')+(pl?'Meta: zerar as pendências até '+fmtD(pl.fim)+', início do '+esc(pl.fase)+'.':'')+'</p>';
+    '<p class="lede">'+(fa?'Etapa atual: '+esc(fa.c)+' · '+esc(FN[fa.c]||fa.c)+'. ':'')+(pl?'Meta: zerar as pendências até '+fmtD(pl.fim)+', '+esc(planoRot(pl))+'.':'')+'</p>';
   h+='<div class="kpis"><div><b>'+pend+'</b><span>Para responder</span></div><div><b style="color:var(--crit)">'+u.atras.length+'</b><span>Atrasados</span></div><div><b style="color:var(--warn)">'+u.semana.length+'</b><span>Vencem esta semana</span></div><div><b>'+tot.res+(tot.meta?' / '+tot.meta:'')+'</b><span>Entregues nesta semana</span></div></div>';
   h+='<h3>Por disciplina</h3><div class="dcards">'+rows.map(function(r){return '<div class="dcard" style="cursor:default"><div class="h">'+chip(r.c,true)+'<span class="nm">'+esc(DMAP[r.c]?DMAP[r.c].n:r.c)+'</span></div><div class="nums"><span><b>'+r.pend+'</b>para responder</span><span class="'+(r.atras?'hot':'')+'"><b>'+r.atras+'</b>'+(r.atras===1?'atrasado':'atrasados')+'</span><span><b>'+r.semana+'</b>vencem esta semana</span></div>'+(r.meta?'<div style="font-size:13px;color:var(--ink-2)">Entregues na semana: '+r.res+' de '+r.meta+'</div>'+mbar(r.res,r.meta):'')+'</div>';}).join("")+'</div><div class="scroll dtable"><table class="mx" style="min-width:640px"><thead><tr><th>Disciplina</th><th>Para responder</th><th>Atrasados</th><th>Vencem esta semana</th><th>Próximas semanas</th><th>Já respondidos</th><th>Outra etapa</th><th style="text-align:left">Entregues na semana</th></tr></thead><tbody>'+
     rows.map(function(r){return '<tr style="cursor:default"><td>'+chip(r.c)+' <span style="color:var(--ink-2);font-size:13px">'+esc(DMAP[r.c]?DMAP[r.c].n:r.c)+'</span></td><td><strong>'+r.pend+'</strong></td><td class="'+(r.atras?'hot':'z')+'">'+(r.atras||'–')+'</td><td>'+(r.semana||'–')+'</td><td>'+(r.prox||'–')+'</td><td class="'+(r.resp?'':'z')+'">'+(r.resp||'–')+'</td><td class="'+(r.espera?'':'z')+'">'+(r.espera||'–')+'</td><td style="text-align:left">'+(r.meta?'<div style="display:flex;gap:8px;align-items:center"><span style="white-space:nowrap">'+r.res+' de '+r.meta+'</span>'+mbar(r.res,r.meta)+'</div>':'–')+'</td></tr>';}).join("")+
