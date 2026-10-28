@@ -8419,8 +8419,8 @@
    "fim": "2026-11-30",
    "geradoEm": "2026-10-19"
   },
-  "sincronizadoEm": "2026-10-27T09:59:20.000Z",
-  "ultimaSync": "2026-10-27T09:59:20.000Z",
+  "sincronizadoEm": "2026-10-28T09:58:51.000Z",
+  "ultimaSync": "2026-10-28T09:58:51.000Z",
   "ultimaSyncResumo": {
    "alterados": 0,
    "analisados": 0,
@@ -8435,7 +8435,7 @@
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-10-27T10:28:05+00:00",
+ "geradoEm": "2026-10-28T10:28:16+00:00",
  "resumos": {
   "2026-10-05": {
    "disciplinas": {
@@ -8498,7 +8498,7 @@
     "SPK": "#5862 aguardar a MAG indicar se os sprinklers serão adotados para o SAVE ou para aumentar o caminhamento nos subsolos -03 e -02",
     "TEL": "#4549 aguardar a MAG e a ARQ validarem as posições sugeridas para os quadros de distribuição elétrica e VDI das áreas comuns"
    },
-   "geradoEm": "2026-10-27T09:59:20.000Z",
+   "geradoEm": "2026-10-28T09:58:51.000Z",
    "geral": "Vencem 15 apontamentos nesta semana (prazo meta 30/10) e 14 estão atrasados (prazo meta 23/10, sem respostas novas na Construflow desde 16/10). Os que envolvem mais disciplinas são o #5862 (chuveiros automáticos: ARQ, PCI, SPK e MAG), o #4549 (quadros das áreas comuns: ELT, ARQ, TEL e MAG), o #3470 (ventilação secundária: HID, ARQ e COORD) e o #9636 (aquecimento: HID, ARQ e MAG). As respostas se concentram na ARQ (21 apontamentos) e no PCI (15); HID tem 8, MAG 8, COORD 5 validações, CLI, ELT e EST têm 2 cada, e TEL, INT, PEP e SPK têm 1 cada. Os #7618 e #8386 ficam fora por aguardarem o AP.",
    "semana": "2026-10-26"
   }
