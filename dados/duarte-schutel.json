@@ -8456,8 +8456,8 @@
    "fim": "2026-11-30",
    "geradoEm": "2026-10-19"
   },
-  "sincronizadoEm": "2026-10-29T10:00:32.000Z",
-  "ultimaSync": "2026-10-29T10:00:32.000Z",
+  "sincronizadoEm": "2026-10-30T09:59:16.000Z",
+  "ultimaSync": "2026-10-30T09:59:16.000Z",
   "ultimaSyncResumo": {
    "alterados": 0,
    "analisados": 0,
@@ -8472,7 +8472,7 @@
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-10-29T10:28:20+00:00",
+ "geradoEm": "2026-10-30T10:28:48+00:00",
  "plano_semanal": {
   "2026-S35": {
    "alertas": [],
