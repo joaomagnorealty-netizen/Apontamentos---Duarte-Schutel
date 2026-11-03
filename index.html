@@ -589,7 +589,7 @@ var S = {
   aps: [], cfg: null, loaded: false, dbOk: null,
   view: null, myDiscs: [], lastVisit: null, isAdmin: false, uid: null,
   f: {disc:"", faixa:"", prio:"", status:"aberto", q:"", sort:"dias", group:false, prazo:""},
-  interno: {}, resumos: {}, reunioes: {}, plano: {}, planoSem: null, planoResp: "", openId: null, db: null, user: null, editing: false, creating: false
+  interno: {}, revs: {}, resumos: {}, reunioes: {}, plano: {}, planoSem: null, planoResp: "", openId: null, db: null, user: null, editing: false, creating: false
 };
 
 /* ---------- helpers ---------- */
@@ -612,13 +612,17 @@ function idxFase(c){return fasesProj().indexOf(c);}
 function faseIniciada(c){if(inicioFase(c))return true;var fa=faseAtual();return !!fa&&idxFase(c)>=0&&idxFase(c)<=idxFase(fa.c);}
 var PENDST={todo:1,awaiting:1,aware:1,doing:1,review:1};
 function semPendencia(a){if((a.disciplinas||[]).length)return !a.disciplinas.some(function(d){return PENDST[d.status];});return !(a.proximas||[]).some(function(c){return c!=="COORD";});}
-/* "Fica para próxima revisão": adiamento exclusivo do app (campos revisao + revisaoHist no doc).
-   Não é resolução nem conferência: o apontamento segue pendente. O estado é calculado pela data em toda
-   leitura (camada 1): ate > hoje (Brasília) = em espera; ate <= hoje = volta sozinho, sem depender de rotina. */
+/* "Fica para próxima revisão": adiamento exclusivo do app, gravado SÓ no banco do app (coleção
+   empreendimentos/<slug>/revisoes/<nº>, gravável por Editores e fornecedores Contribuidores); nunca toca a Construflow.
+   Campos legados revisao/revisaoHist no doc do apontamento continuam lidos. Não é resolução nem conferência.
+   Estado calculado pela data em toda leitura (camada 1): ate > hoje (Brasília) = em espera; ate <= hoje = volta sozinho. */
 var DIAS_SELO_RETORNO=7;
-function revAte(a){return a&&a.revisao&&a.revisao.ate?String(a.revisao.ate).slice(0,10):null;}
+function revDoc(a){return a?S.revs[String(a.numero)]||null:null;}
+function revObj(a){var d=revDoc(a);return d&&d.revisao!==undefined?d.revisao:(a&&a.revisao)||null;}
+function revHist(a){var d=revDoc(a);return ((a&&a.revisaoHist)||[]).concat((d&&d.revisaoHist)||[]);}
+function revAte(a){var r=revObj(a);return r&&r.ate?String(r.ate).slice(0,10):null;}
 function emRevisao(a){var d=revAte(a);return isOpen(a)&&!!d&&d>hojeIso();}
-function retornouRevisao(a){var d=revAte(a);if(!isOpen(a)||!d||d>hojeIso()||a.revisao.canceladoEm)return false;return Math.round((today()-parseD(d))/86400000)<=DIAS_SELO_RETORNO;}
+function retornouRevisao(a){var d=revAte(a);if(!isOpen(a)||!d||d>hojeIso()||revObj(a).canceladoEm)return false;return Math.round((today()-parseD(d))/86400000)<=DIAS_SELO_RETORNO;}
 function espera(a){
   if(!isOpen(a)||emRevisao(a))return null;
   if(a.etapaResolucao&&!faseIniciada(a.etapaResolucao))return {t:"res",c:a.etapaResolucao,lb:"Resolver no "+a.etapaResolucao};
@@ -1341,7 +1345,7 @@ function renderDrawer(){
     var Dm=minhasDiscs(), minhasPend=Dm.filter(function(c){return proxEf(a).indexOf(c)>=0;}), acm=acoesPara(a,minhasPend.length?minhasPend:Dm), pi=prazoInfo(a);
     var faca;
     if(!isOpen(a))faca='<section class="faca"><h4>Apontamento '+esc((STL[a.status]||'').toLowerCase())+'</h4><p style="margin:0">Não há mais nada a fazer neste apontamento.</p></section>';
-    else if(emRevisao(a))faca='<section class="faca"><h4>Fica para a próxima revisão</h4><p style="margin:0;font-size:15px">Este apontamento continua pendente, mas não precisa ser resolvido nesta rodada. Ele volta para as demandas em '+fmtD(revAte(a))+'.'+(a.revisao.motivo?' Motivo: '+esc(a.revisao.motivo):'')+'</p></section>';
+    else if(emRevisao(a))faca='<section class="faca"><h4>Fica para a próxima revisão</h4><p style="margin:0;font-size:15px">Este apontamento continua pendente, mas não precisa ser resolvido nesta rodada. Ele volta para as demandas em '+fmtD(revAte(a))+'.'+(revObj(a).motivo?' Motivo: '+esc(revObj(a).motivo):'')+'</p></section>';
     else if(Dm.length&&!minhasPend.length&&!S.isAdmin)faca='<section class="faca"><h4>Sua disciplina não precisa responder agora</h4><p style="margin:0;font-size:15px">'+(respLista(a).some(function(c){return Dm.indexOf(c)>=0;})?'Você já respondeu; falta marcar o status no Construflow.':'Acompanhe o andamento pelos comentários.')+'</p>'+(cfUrl?'<a class="btn cr" href="'+esc(cfUrl)+'" target="_blank" rel="noopener">Abrir no Construflow</a>':'')+'</section>';
     else faca='<section class="faca"><h4>O que você precisa fazer</h4>'+(acm.length?'<ul>'+acm.map(function(x){return '<li>'+esc(acaoTexto(x.texto))+'</li>';}).join("")+'</ul>':(a.observacao?'<ul><li>'+esc(a.observacao)+'</li></ul>':''))+
       '<span class="pz '+pi.cls+'">'+(pi.dia==="Sem prazo"?'Sem prazo definido':'Prazo: '+esc(pi.dia)+(pi.rel?' · '+esc(pi.rel):''))+'</span>'+(cfUrl?'<a class="btn cr" href="'+esc(cfUrl)+'" target="_blank" rel="noopener">Responder no Construflow</a>':'')+'<label class="mk"><input type="checkbox" id="drMk"'+(mkData(a)?' checked':'')+'> Respondido'+(mkData(a)?' <span>(marcado em '+fmtD(mkData(a)).slice(0,5)+')</span>':'')+'</label></section>';
@@ -1382,17 +1386,21 @@ function revHistTxt(x){
   if(x.acao==="adiou")t+=' '+fmtD(x.ate);
   else if(x.acao==="alterou")t+=' de '+fmtD(x.de)+' para '+fmtD(x.ate);
   else if(x.acao==="retornou")t+=' (data programada '+fmtD(x.ate)+')';
-  return t+(x.motivo?' — '+x.motivo:'');
+  return t+(x.motivo?' — '+x.motivo:'')+(x.por?' ('+x.por+')':'');
 }
+/* Quem pode adiar: Editor em qualquer apontamento; fornecedor nos apontamentos das disciplinas dele. Site público: ninguém. */
+function ehSite(){try{return /github\.io$/i.test(location.hostname);}catch(e){return false;}}
+function podeRevisar(a){if(!isOpen(a)||!S.db||ehSite())return false;if(S.isAdmin)return true;var D=minhasDiscs();return D.some(function(c){return involves(a,c);});}
+function revPor(){return S.realAdmin&&!S.preview?"Editor":"Fornecedor"+(minhasDiscs().length?" "+minhasDiscs().join("/"):"");}
 function revisaoBox(a){
-  var hs=(a.revisaoHist||[]).slice().reverse();
+  var hs=revHist(a).slice().reverse();
   var hh=hs.length?'<details class="blk det"><summary>Histórico de adiamentos <span class="n">'+hs.length+'</span></summary><ul class="rvh">'+hs.map(function(x){return '<li>'+esc(revHistTxt(x))+'</li>';}).join("")+'</ul></details>':'';
-  if(!S.isAdmin||!isOpen(a))return hh?'<div class="box rvbox">'+hh+'</div>':'';
+  if(!podeRevisar(a))return hh?'<div class="box rvbox">'+hh+'</div>':'';
   var on=emRevisao(a), dflt=on?revAte(a):"";
   return '<div class="box rvbox"><h4>Fica para próxima revisão</h4>'+
     '<p class="count" style="margin:0 0 6px">'+(on?'Em espera até <strong>'+fmtD(revAte(a))+'</strong>. Fora das demandas, dos indicadores, da pauta e dos e-mails até essa data; volta sozinho.':'Adia este apontamento para uma próxima rodada de revisão. Ele continua pendente (não é resolução nem conferência), sai das demandas ativas e volta sozinho na data de retorno.')+'</p>'+
     '<div class="row-btns"><label class="cl">Data de retorno (obrigatória)'+dataInput('id="rvAte" aria-required="true"',dflt)+'</label>'+
-    '<label class="cl">Motivo (opcional; visível para fornecedores)<input type="text" id="rvMot" maxlength="200" value="'+esc(on&&a.revisao.motivo||"")+'"></label></div>'+
+    '<label class="cl">Motivo (opcional; visível para todos)<input type="text" id="rvMot" maxlength="200" value="'+esc(on&&revObj(a).motivo||"")+'"></label></div>'+
     '<div class="row-btns">'+(on?'<button class="btn ghost" type="button" data-rv="alterou">Alterar data</button><button class="btn ghost" type="button" data-rv="cancelou">Cancelar adiamento</button>':'<button class="btn ghost" type="button" data-rv="adiou">Fica para próxima revisão</button>')+
     '<span class="msg" id="rvMsg" role="status"></span></div>'+hh+'</div>';
 }
@@ -1406,31 +1414,32 @@ function salvarRevisao(a,acao){
     if(ate<=hoje)return erro("A data de retorno precisa ser futura.");
   }
   if(!S.db)return erro("Sem conexão com o banco nesta visualização.");
-  var ref=S.db.collection("empreendimentos/"+EMP+"/apontamentos").doc(String(a.numero));
+  // Grava só no banco do app (coleção revisoes). Nenhuma chamada à Construflow.
+  var ref=S.db.collection("empreendimentos/"+EMP+"/revisoes").doc(String(a.numero)), por=revPor();
   [].forEach.call(document.querySelectorAll("[data-rv]"),function(b){b.disabled=true;});
   msg.className="msg";msg.textContent="Salvando…";
   // Relê o doc logo antes de gravar para montar o histórico sobre a versão mais recente.
   ref.get().then(function(sn){
-    var cur=(sn&&sn.exists?sn.data():a)||a, rv=cur.revisao||null, hist=(cur.revisaoHist||[]).slice(), agora=new Date().toISOString();
+    var cur=sn&&sn.exists?sn.data():{revisao:a.revisao||null,revisaoHist:[]}, rv=cur.revisao||null, hist=(cur.revisaoHist||[]).slice(), agora=new Date().toISOString();
     var ativoRv=!!rv&&String(rv.ate).slice(0,10)>hoje, data;
     if(acao==="adiou"){
       if(ativoRv)throw {msg:"Este apontamento já está em espera. Atualize a ficha."};
-      data={revisao:{ate:ate,desde:hoje,motivo:mot,em:agora}};hist.push({acao:"adiou",em:agora,ate:ate,motivo:mot});
+      data={revisao:{ate:ate,desde:hoje,motivo:mot,em:agora,por:por}};hist.push({acao:"adiou",em:agora,ate:ate,motivo:mot,por:por});
     }else if(acao==="alterou"){
       if(!ativoRv)throw {msg:"Este apontamento não está mais em espera. Atualize a ficha."};
       var de=String(rv.ate).slice(0,10);
       if(de===ate&&(rv.motivo||"")===mot)throw {msg:"Nada mudou: escolha outra data ou outro motivo."};
-      data={revisao:Object.assign({},rv,{ate:ate,motivo:mot,em:agora})};
-      hist.push({acao:"alterou",em:agora,de:de,ate:ate,motivo:mot});
+      data={revisao:Object.assign({},rv,{ate:ate,motivo:mot,em:agora,por:por})};
+      hist.push({acao:"alterou",em:agora,de:de,ate:ate,motivo:mot,por:por});
     }else{
       if(!ativoRv)throw {msg:"Este apontamento não está mais em espera."};
-      data={revisao:Object.assign({},rv,{ate:hoje,canceladoEm:agora})};hist.push({acao:"cancelou",em:agora,ate:String(rv.ate).slice(0,10)});
+      data={revisao:Object.assign({},rv,{ate:hoje,canceladoEm:agora,por:por})};hist.push({acao:"cancelou",em:agora,ate:String(rv.ate).slice(0,10),por:por});
     }
-    data.revisaoHist=hist;
-    return ref.update(data);
+    data.numero=a.numero;data.revisaoHist=hist;data.atualizadoEm=agora;
+    return ref.set(data);
   }).then(function(){renderDrawer();}).catch(function(e){
     [].forEach.call(document.querySelectorAll("[data-rv]"),function(b){b.disabled=false;});
-    erro(e&&e.msg?e.msg:(e&&(e.code==="invalid_argument"||e.code==="not_granted"))?"Seu acesso permite apenas visualizar.":"Não foi possível salvar agora. Tente de novo em alguns segundos.");
+    erro(e&&e.msg?e.msg:(e&&(e.code==="invalid_argument"||e.code==="not_granted"||e.code==="permission_denied"))?"Seu acesso permite apenas visualizar. Para adiar, peça à Magno acesso de Contribuidor no app.":"Não foi possível salvar agora. Tente de novo em alguns segundos.");
   });
 }
 
@@ -2412,6 +2421,7 @@ function boot(){
     db.doc("empreendimentos/"+EMP).onSnapshot(function(s){S.cfg=s.exists?s.data():null;if(S.cfg&&S.cfg.disciplinas&&S.cfg.disciplinas.length){setDisc(S.cfg.disciplinas);}if(S.loaded)agendarRender();else renderHeader();},function(){});
     db.collection("empreendimentos/"+EMP+"/reunioes").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.reunioes=m;if(S.loaded)agendarRender();},function(){});
     db.collection("empreendimentos/"+EMP+"/plano_semanal").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.plano=m;if(S.loaded&&S.view==="plano")agendarRender();},function(){});
+    db.collection("empreendimentos/"+EMP+"/revisoes").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.revs=m;if(S.loaded)agendarRender(true);},function(){});
     db.collection("empreendimentos/"+EMP+"/resumos").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.resumos=m;if(S.loaded)agendarRender();},function(){});
     db.collection("empreendimentos/"+EMP+"/apontamentos").onSnapshot(function(snap){
       S.aps=snap.docs.map(function(d){return d.data();}).filter(Boolean);
