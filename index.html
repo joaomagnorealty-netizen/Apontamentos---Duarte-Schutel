@@ -179,7 +179,10 @@ details.blk>summary .n{font-weight:500;color:var(--ink-3);font-size:14px}
 .ct:hover{text-decoration:underline}
 .ct:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 .ca{font-size:14px;color:var(--ink-3);line-height:1.45}
-.ca .okt{color:var(--ok);font-weight:600} .ca .nvt{color:var(--focus);font-weight:600}
+.ca .okt{color:var(--ok);font-weight:600} .ca .nvt{color:var(--focus);font-weight:600} .rvt{color:var(--focus);font-weight:600}
+.rvbox .rvh{margin:6px 0 0;padding-left:18px;font-size:13px;color:var(--ink-2)}
+.rvbox label.cl{display:flex;flex-direction:column;gap:2px;font-size:13px;flex:1 1 180px}
+.rvbox label.cl input{width:100%}
 .ca .dias{font-size:12px;padding:1px 6px;min-width:0}
 .dot{flex:none;display:inline-block;width:10px;height:10px;border-radius:5px;background:var(--focus);margin-right:8px;vertical-align:1px}
 .btn.cr{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;background:var(--ink);color:var(--paper);text-decoration:none;font-size:14.5px;white-space:nowrap;border-color:var(--ink)}
@@ -609,8 +612,15 @@ function idxFase(c){return fasesProj().indexOf(c);}
 function faseIniciada(c){if(inicioFase(c))return true;var fa=faseAtual();return !!fa&&idxFase(c)>=0&&idxFase(c)<=idxFase(fa.c);}
 var PENDST={todo:1,awaiting:1,aware:1,doing:1,review:1};
 function semPendencia(a){if((a.disciplinas||[]).length)return !a.disciplinas.some(function(d){return PENDST[d.status];});return !(a.proximas||[]).some(function(c){return c!=="COORD";});}
+/* "Fica para próxima revisão": adiamento exclusivo do app (campos revisao + revisaoHist no doc).
+   Não é resolução nem conferência: o apontamento segue pendente. O estado é calculado pela data em toda
+   leitura (camada 1): ate > hoje (Brasília) = em espera; ate <= hoje = volta sozinho, sem depender de rotina. */
+var DIAS_SELO_RETORNO=7;
+function revAte(a){return a&&a.revisao&&a.revisao.ate?String(a.revisao.ate).slice(0,10):null;}
+function emRevisao(a){var d=revAte(a);return isOpen(a)&&!!d&&d>hojeIso();}
+function retornouRevisao(a){var d=revAte(a);if(!isOpen(a)||!d||d>hojeIso()||a.revisao.canceladoEm)return false;return Math.round((today()-parseD(d))/86400000)<=DIAS_SELO_RETORNO;}
 function espera(a){
-  if(!isOpen(a))return null;
+  if(!isOpen(a)||emRevisao(a))return null;
   if(a.etapaResolucao&&!faseIniciada(a.etapaResolucao))return {t:"res",c:a.etapaResolucao,lb:"Resolver no "+a.etapaResolucao};
   if(a.etapaConferencia&&!faseIniciada(a.etapaConferencia)&&semPendencia(a))return {t:"conf",c:a.etapaConferencia,lb:"Conferir no "+a.etapaConferencia};
   return null;
@@ -659,8 +669,9 @@ function semanaBox(){
   return h+'</div>';
 }
 function ordEsp(x,y){return idxFase(espera(x).c)-idxFase(espera(y).c)||x.numero-y.numero;}
-function ativo(a){return isOpen(a)&&!aguardando(a);}
-function dias(a){var d=parseD(a.ultimoComentario);[a.etapaResolucao,a.etapaConferencia].forEach(function(c){var ini=c?parseD(inicioFase(c)):null;if(ini&&ini<=today()&&(!d||ini>d))d=ini;});if(!d)return 0;return Math.max(0,Math.round((today()-d)/86400000));}
+function ativo(a){return isOpen(a)&&!aguardando(a)&&!emRevisao(a);}
+function ordRev(x,y){return String(revAte(x)).localeCompare(String(revAte(y)))||x.numero-y.numero;}
+function dias(a){var d=parseD(a.ultimoComentario);[a.etapaResolucao,a.etapaConferencia].forEach(function(c){var ini=c?parseD(inicioFase(c)):null;if(ini&&ini<=today()&&(!d||ini>d))d=ini;});var rv=parseD(revAte(a));if(rv&&rv<=today()&&(!d||rv>d))d=rv;if(!d)return 0;return Math.max(0,Math.round((today()-d)/86400000));}
 function faixa(n){return n<=10?"normal":(n<=30?"atencao":"critico");}
 function prazoEf(a){return a.prazo||a.prazoConstruflow||null;}
 function prazoVencido(a){var d=parseD(prazoEf(a));return !!d && d<today();}
@@ -718,10 +729,10 @@ function renderHeader(){
   var bi=document.getElementById("baseInfo");
   if(!S.loaded){bi.textContent = S.dbOk===false ? "Indisponível nesta visualização" : "Carregando…";}
   else{
-    var n=S.aps.filter(ativo).length, ag=S.aps.filter(aguardando).length, fa=faseAtual();
+    var n=S.aps.filter(ativo).length, ag=S.aps.filter(aguardando).length, rvn=S.aps.filter(emRevisao).length, fa=faseAtual();
     if(!S.isAdmin&&S.cfg&&S.cfg.sincronizadoEm){var b0=brt(S.cfg.sincronizadoEm);bi.textContent="Atualizado "+(b0&&b0.dia===hojeIso()?"hoje":"em "+fmtD(S.cfg.sincronizadoEm))+" às "+fmtH(S.cfg.sincronizadoEm);var lb0=document.getElementById("baseLbl");if(lb0)lb0.textContent="Atualização";}
     else{var lb1=document.getElementById("baseLbl");if(lb1)lb1.textContent="Base de apontamentos";
-    bi.textContent = n+" ativos"+(ag?", "+ag+" aguardando etapa":"")+(S.cfg&&S.cfg.sincronizadoEm?", sincronizado com o Construflow em "+fmtD(S.cfg.sincronizadoEm):(S.cfg&&S.cfg.baseAtualizadaEm?", atualizada em "+fmtD(S.cfg.baseAtualizadaEm):""));}
+    bi.textContent = n+" ativos"+(ag?", "+ag+" aguardando etapa":"")+(rvn?", "+rvn+" em espera para próxima revisão":"")+(S.cfg&&S.cfg.sincronizadoEm?", sincronizado com o Construflow em "+fmtD(S.cfg.sincronizadoEm):(S.cfg&&S.cfg.baseAtualizadaEm?", atualizada em "+fmtD(S.cfg.baseAtualizadaEm):""));}
   }
   dselBuild();
   var sr=document.getElementById("syncRow");
@@ -917,6 +928,10 @@ tabs.forEach(function(b){b.addEventListener("click",function(){go(b.getAttribute
 var RD={t:null,dr:false};
 function agendarRender(comDrawer){if(comDrawer)RD.dr=true;if(RD.t)return;RD.t=setTimeout(function(){var d=RD.dr;RD.t=null;RD.dr=false;
   render();if(d&&dr.innerHTML&&!S.editing&&!S.creating)renderDrawer();},40);}
+/* Virada do dia (Brasília) com a página aberta: recalcula as telas, para os apontamentos em espera voltarem na data. Só lê. */
+var DIA_RENDER=hojeIso();
+function checaVirada(){var h=hojeIso();if(h!==DIA_RENDER){DIA_RENDER=h;if(S.loaded)agendarRender(true);}}
+setInterval(checaVirada,60000);document.addEventListener("visibilitychange",function(){if(!document.hidden)checaVirada();});
 function go(v){S.view=v;render();window.scrollTo(0,0);}
 
 /* ---------- discipline choice ---------- */
@@ -1073,8 +1088,8 @@ function etapaBox(){
 }
 function viewPainel(){
   var open=S.aps.filter(ativo);
-  var esp=S.aps.filter(aguardando);
-  if(!open.length&&!esp.length) return '<section class="view"><h2>Painel geral</h2><div class="empty">Nenhum apontamento ativo. Os apontamentos aparecem aqui assim que a base for sincronizada com o Construflow.</div></section>';
+  var esp=S.aps.filter(aguardando), rvs=S.aps.filter(emRevisao).sort(ordRev);
+  if(!open.length&&!esp.length&&!rvs.length) return '<section class="view"><h2>Painel geral</h2><div class="empty">Nenhum apontamento ativo. Os apontamentos aparecem aqui assim que a base for sincronizada com o Construflow.</div></section>';
   var alta=open.filter(function(a){return a.prioridade==="Alta";}).length;
   var crit=open.filter(function(a){return dias(a)>30;}).length;
   var media=open.length?open.reduce(function(s,a){return s+dias(a);},0)/open.length:0;
@@ -1115,7 +1130,8 @@ function viewPainel(){
     '<div class="dcards">'+cardsD+'</div>'+
     '<div class="legend"><span><i style="background:var(--ok)"></i>Até 10 dias: acompanhamento normal</span><span><i style="background:var(--warn)"></i>11 a 30 dias: cobrar retorno</span><span><i style="background:var(--crit)"></i>Mais de 30 dias: crítico</span></div>'+
     '<h3>Há mais tempo sem movimentação</h3>'+listHtml(top,null,"")+
-    '<h3>Aguardando etapa (resolução ou conferência) <span class="n">'+esp.length+'</span></h3>'+(esp.length?'<p class="count">Por etapa: '+fasesProj().map(function(c){var r=esp.filter(function(a){var e=espera(a);return e.c===c&&e.t==="res";}).length,k=esp.filter(function(a){var e=espera(a);return e.c===c&&e.t==="conf";}).length;return (r||k)?esc(c)+': '+[r?r+' a resolver':'',k?k+' a conferir':''].filter(Boolean).join(' e '):'';}).filter(Boolean).join('; ')+'</p>'+listHtml(esp.slice().sort(ordEsp),null,""):'<div class="empty">Nenhum apontamento marcado para uma etapa futura.'+(S.isAdmin?' Para marcar, abra o apontamento e use "Editar prazo e observações".':'')+'</div>')+'</section>';
+    '<h3>Aguardando etapa (resolução ou conferência) <span class="n">'+esp.length+'</span></h3>'+(esp.length?'<p class="count">Por etapa: '+fasesProj().map(function(c){var r=esp.filter(function(a){var e=espera(a);return e.c===c&&e.t==="res";}).length,k=esp.filter(function(a){var e=espera(a);return e.c===c&&e.t==="conf";}).length;return (r||k)?esc(c)+': '+[r?r+' a resolver':'',k?k+' a conferir':''].filter(Boolean).join(' e '):'';}).filter(Boolean).join('; ')+'</p>'+listHtml(esp.slice().sort(ordEsp),null,""):'<div class="empty">Nenhum apontamento marcado para uma etapa futura.'+(S.isAdmin?' Para marcar, abra o apontamento e use "Editar prazo e observações".':'')+'</div>')+
+    '<h3 id="b-rev-painel">Em espera para próxima revisão <span class="n">'+rvs.length+'</span></h3>'+(rvs.length?'<p class="count">Continuam pendentes, mas não entram nas demandas nem nos indicadores até a data de retorno, quando voltam sozinhos.</p>'+listHtml(rvs,null,""):'<div class="empty">Nenhum apontamento em espera.'+(S.isAdmin?' Para adiar, abra o apontamento e use "Fica para próxima revisão".':'')+'</div>')+'</section>';
   return h;
 }
 
@@ -1124,6 +1140,7 @@ function filtered(){
   return S.aps.filter(function(a){
     if(f.status==="aberto"&&!ativo(a))return false;
     if(f.status==="aguardando"&&!aguardando(a))return false;
+    if(f.status==="revisao"&&!emRevisao(a))return false;
     if(f.status==="resolvido"&&a.status!=="resolvido")return false;
     if(f.status==="reprovado"&&a.status!=="reprovado")return false;
     if(f.disc&&proxEf(a).indexOf(f.disc)<0&&!(f.discAll&&involves(a,f.disc)))return false;
@@ -1148,9 +1165,10 @@ function apTable(arr,hl,emptyMsg){
   if(!arr.length)return emptyMsg?'<div class="empty">'+esc(emptyMsg)+'</div>':'';
   return '<table class="apt"><thead><tr><th>Nº</th><th>Título</th><th>Pendentes</th><th>Prazo</th><th class="r">'+(S.isAdmin?'Sem movimentação':'Situação')+'</th></tr></thead><tbody>'+arr.map(function(a){
     var p=prazoItem(a),pi=prazoInfo(a),ew=espera(a),n=dias(a),pend=proxEf(a);
-    var pz=ew?'<span class="sub">'+esc(ew.lb)+'</span>':(p?'<span class="pz '+(pi.cls==="neu"?'':pi.cls)+'">'+fmtD(p).slice(0,5)+'</span><span class="sub">'+esc(pi.rel)+'</span>':'<span class="sub">Sem prazo</span>');
-    var dd=!isOpen(a)?'<span class="sub">'+esc(STL[a.status]||a.status)+'</span>':(ew?'<span class="sub">aguardando etapa</span>':(S.isAdmin?'<span class="dias f-'+faixa(n)+'" title="'+esc(FAIXA[faixa(n)])+'">'+n+' d</span>':'<span class="sub">ativo</span>'));
-    return '<tr data-id="'+esc(a.numero)+'" tabindex="0"><td class="n">#'+esc(a.numero)+'</td><td class="t">'+esc(tituloFmt(a.titulo))+(a.prioridade==="Alta"&&isOpen(a)?' <span class="pri" title="Prioridade alta">▲ Alta</span>':'')+'</td><td class="c">'+(pend.length?chips(pend):'<span class="sub">ninguém pendente</span>')+'</td><td class="d">'+pz+'</td><td class="r">'+dd+'</td></tr>';
+    var rv=emRevisao(a);
+    var pz=rv?'<span class="sub">Volta em '+fmtD(revAte(a))+'</span>':ew?'<span class="sub">'+esc(ew.lb)+'</span>':(p?'<span class="pz '+(pi.cls==="neu"?'':pi.cls)+'">'+fmtD(p).slice(0,5)+'</span><span class="sub">'+esc(pi.rel)+'</span>':'<span class="sub">Sem prazo</span>');
+    var dd=!isOpen(a)?'<span class="sub">'+esc(STL[a.status]||a.status)+'</span>':(rv?'<span class="sub">em espera</span>':ew?'<span class="sub">aguardando etapa</span>':(S.isAdmin?'<span class="dias f-'+faixa(n)+'" title="'+esc(FAIXA[faixa(n)])+'">'+n+' d</span>':'<span class="sub">ativo</span>'));
+    return '<tr data-id="'+esc(a.numero)+'" tabindex="0"><td class="n">#'+esc(a.numero)+'</td><td class="t">'+esc(tituloFmt(a.titulo))+(a.prioridade==="Alta"&&isOpen(a)?' <span class="pri" title="Prioridade alta">▲ Alta</span>':'')+(retornouRevisao(a)?' <b class="rvt">retornou da espera</b>':'')+'</td><td class="c">'+(pend.length?chips(pend):'<span class="sub">ninguém pendente</span>')+'</td><td class="d">'+pz+'</td><td class="r">'+dd+'</td></tr>';
   }).join("")+'</tbody></table>';
 }
 function viewLista(){
@@ -1163,7 +1181,7 @@ function viewLista(){
     (S.isAdmin?sel("ff","Inatividade",[["","Todas"],["critico",FAIXA.critico],["atencao",FAIXA.atencao],["normal",FAIXA.normal],["quase","Viram críticos em 7 dias"]],f.faixa):"")+
     sel("fz","Prazo",[["","Todos"],["atrasado","Atrasados"]],f.prazo||"")+
     sel("fp","Prioridade",[["","Todas"],["Alta","Alta"],["Média","Média"],["Baixa","Baixa"]],f.prio)+
-    sel("fs","Situação",[["aberto","Ativos"],["aguardando","Aguardando etapa"],["resolvido","Resolvidos"],["reprovado","Reprovados"],["todos","Todos"]],f.status)+
+    sel("fs","Situação",[["aberto","Ativos"],["aguardando","Aguardando etapa"],["revisao","Em espera para próxima revisão"],["resolvido","Resolvidos"],["reprovado","Reprovados"],["todos","Todos"]],f.status)+
     sel("fo","Ordenar por",(S.isAdmin?[["dias","Dias sem movimentação"]]:[]).concat([["prazo","Prazo"],["numero","Número"],["criacao","Data de criação"]]),sortEf())+
     '<label class="chk"><input type="checkbox" id="fg"'+(f.group?' checked':'')+'> Separar por disciplina</label>'+
     (f.disc?'<label class="chk"><input type="checkbox" id="fa"'+(f.discAll?' checked':'')+'> Incluir onde só acompanha</label>':'')+
@@ -1288,7 +1306,8 @@ function renderDrawer(){
     var cfUrl=a.construflowId&&S.cfg&&S.cfg.construflowUrl?S.cfg.construflowUrl+"/"+a.construflowId:null;
     var info='<dl class="f">'+
       ((a.etapaResolucao||a.etapaConferencia)?'<dt>Etapas</dt><dd>'+(a.etapaResolucao?'<span class="tag">Resolver no '+esc(a.etapaResolucao)+'</span> ':'')+(a.etapaConferencia?'<span class="tag">Conferir no '+esc(a.etapaConferencia)+'</span>':'')+'</dd>':'')+
-      (espera(a)?'<dt>Situação</dt><dd><span style="color:var(--ink-3);font-size:13px">'+(espera(a).t==="res"?'Aguardando o início do '+esc(espera(a).c)+' para ser resolvido':'Resolvido; aguardando o '+esc(espera(a).c)+' para conferência')+'. Não conta como sem movimentação.</span></dd>':
+      (emRevisao(a)?'<dt>Situação</dt><dd><span class="tag">Em espera até '+fmtD(revAte(a))+'</span> <span style="color:var(--ink-3);font-size:13px">Fica para a próxima revisão; continua pendente e volta sozinho para as demandas nessa data.</span></dd>':
+      espera(a)?'<dt>Situação</dt><dd><span style="color:var(--ink-3);font-size:13px">'+(espera(a).t==="res"?'Aguardando o início do '+esc(espera(a).c)+' para ser resolvido':'Resolvido; aguardando o '+esc(espera(a).c)+' para conferência')+'. Não conta como sem movimentação.</span></dd>':
       (!S.isAdmin?'<dt>Prazo</dt><dd>'+(prazoItem(a)?'<span class="tag prazo'+(parseD(prazoItem(a))<today()?' vencido':'')+'">'+fmtD(prazoItem(a))+'</span>':'<span style="color:var(--ink-3)">Sem prazo definido</span>')+'</dd>':'<dt>Sem movimentação</dt><dd><span class="dias f-'+f+'">'+n+' d</span> <span style="color:var(--ink-3);font-size:13px">'+FAIXA[f]+', movimentação mais recente em '+fmtD(a.ultimoComentario)+(a.etapaResolucao&&inicioFase(a.etapaResolucao)?'; '+esc(a.etapaResolucao)+' iniciado em '+fmtD(inicioFase(a.etapaResolucao)):'')+'</span></dd>'))+
       '<dt>Quem precisa responder</dt><dd>'+(chips(proxEf(a))||'—')+'</dd>'+
       ((a.statusAuto||[]).length?'<dt>Status atualizado</dt><dd>'+a.statusAuto.map(function(x){return esc(x.c)+' passou para Validar em '+fmtD(x.em)+' pelo app'+(x.resposta?' (resposta de '+fmtD(x.resposta)+')':'');}).join("; ")+'</dd>':'')+
@@ -1322,6 +1341,7 @@ function renderDrawer(){
     var Dm=minhasDiscs(), minhasPend=Dm.filter(function(c){return proxEf(a).indexOf(c)>=0;}), acm=acoesPara(a,minhasPend.length?minhasPend:Dm), pi=prazoInfo(a);
     var faca;
     if(!isOpen(a))faca='<section class="faca"><h4>Apontamento '+esc((STL[a.status]||'').toLowerCase())+'</h4><p style="margin:0">Não há mais nada a fazer neste apontamento.</p></section>';
+    else if(emRevisao(a))faca='<section class="faca"><h4>Fica para a próxima revisão</h4><p style="margin:0;font-size:15px">Este apontamento continua pendente, mas não precisa ser resolvido nesta rodada. Ele volta para as demandas em '+fmtD(revAte(a))+'.'+(a.revisao.motivo?' Motivo: '+esc(a.revisao.motivo):'')+'</p></section>';
     else if(Dm.length&&!minhasPend.length&&!S.isAdmin)faca='<section class="faca"><h4>Sua disciplina não precisa responder agora</h4><p style="margin:0;font-size:15px">'+(respLista(a).some(function(c){return Dm.indexOf(c)>=0;})?'Você já respondeu; falta marcar o status no Construflow.':'Acompanhe o andamento pelos comentários.')+'</p>'+(cfUrl?'<a class="btn cr" href="'+esc(cfUrl)+'" target="_blank" rel="noopener">Abrir no Construflow</a>':'')+'</section>';
     else faca='<section class="faca"><h4>O que você precisa fazer</h4>'+(acm.length?'<ul>'+acm.map(function(x){return '<li>'+esc(acaoTexto(x.texto))+'</li>';}).join("")+'</ul>':(a.observacao?'<ul><li>'+esc(a.observacao)+'</li></ul>':''))+
       '<span class="pz '+pi.cls+'">'+(pi.dia==="Sem prazo"?'Sem prazo definido':'Prazo: '+esc(pi.dia)+(pi.rel?' · '+esc(pi.rel):''))+'</span>'+(cfUrl?'<a class="btn cr" href="'+esc(cfUrl)+'" target="_blank" rel="noopener">Responder no Construflow</a>':'')+'<label class="mk"><input type="checkbox" id="drMk"'+(mkData(a)?' checked':'')+'> Respondido'+(mkData(a)?' <span>(marcado em '+fmtD(mkData(a)).slice(0,5)+')</span>':'')+'</label></section>';
@@ -1339,7 +1359,7 @@ function renderDrawer(){
     var anx='<details class="blk det"><summary>Anexos <span class="n">'+ax.length+'</span></summary>'+(ax.length?'<ul class="anx">'+ax.map(function(x){return '<li><a href="'+esc(x.url)+'" target="_blank" rel="noopener"><b>'+esc(x.titulo)+'</b>'+(x.legenda?'<span>'+esc(x.legenda)+'</span>':'')+'<i>Abrir figura</i></a></li>';}).join("")+'</ul><p class="count">As figuras abrem em uma nova aba. São as imagens do próprio apontamento; as dos comentários ficam no Construflow.</p>':'<p class="count">Este apontamento não tem figuras anexadas.</p>')+'</details>';
     var det='<details class="blk det"><summary>Detalhes do apontamento</summary>'+info+ac+dt+'</details>';
     var tools2=S.isAdmin?'<div class="box row-btns"><button class="btn ghost" type="button" id="editBtn">Editar prazo e observações</button><span class="msg">'+(a.atualizadoEm?'Editado no app em '+fmtD(a.atualizadoEm):(a.sincronizadoEm?'Sincronizado em '+fmtD(a.sincronizadoEm):''))+'</span></div>':'';
-    body=S.editing?editForm(a):(faca+situ+feito+quem+hist+hint+anx+det+tools2);
+    body=S.editing?editForm(a):(faca+situ+feito+quem+hist+hint+anx+det+revisaoBox(a)+tools2);
   }
   dr.innerHTML='<div class="scrim" id="scrim"></div><aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="drTitle"><header>'+head+'<button class="x" id="xBtn" aria-label="Fechar">×</button></header><div class="body">'+body+'</div></aside>';
   document.getElementById("scrim").addEventListener("click",closeDrawer);
@@ -1347,11 +1367,71 @@ function renderDrawer(){
   document.getElementById("xBtn").focus();
   var dm=document.getElementById("drMk");if(dm)dm.addEventListener("change",function(){mkToggle(a.numero,dm.checked);});
   var eb=document.getElementById("editBtn");if(eb)eb.addEventListener("click",function(){S.editing=true;renderDrawer();});
+  [].forEach.call(dr.querySelectorAll("[data-rv]"),function(b){b.addEventListener("click",function(){salvarRevisao(a,b.getAttribute("data-rv"));});});
   var form=document.getElementById("edForm");
   if(form){
     document.getElementById("cancelEd").addEventListener("click",function(){if(S.creating)closeDrawer();else{S.editing=false;renderDrawer();}});
     form.addEventListener("submit",function(e){e.preventDefault();saveForm(form,a);});
   }
+}
+
+/* ---------- Fica para próxima revisão (ficha) ---------- */
+var RV_ACAO={adiou:"Adiado até",alterou:"Data de retorno alterada",cancelou:"Adiamento cancelado; voltou para as demandas",retornou:"Retornou para as demandas"};
+function revHistTxt(x){
+  var t=fmtD(x.em)+' · '+(RV_ACAO[x.acao]||x.acao);
+  if(x.acao==="adiou")t+=' '+fmtD(x.ate);
+  else if(x.acao==="alterou")t+=' de '+fmtD(x.de)+' para '+fmtD(x.ate);
+  else if(x.acao==="retornou")t+=' (data programada '+fmtD(x.ate)+')';
+  return t+(x.motivo?' — '+x.motivo:'');
+}
+function revisaoBox(a){
+  var hs=(a.revisaoHist||[]).slice().reverse();
+  var hh=hs.length?'<details class="blk det"><summary>Histórico de adiamentos <span class="n">'+hs.length+'</span></summary><ul class="rvh">'+hs.map(function(x){return '<li>'+esc(revHistTxt(x))+'</li>';}).join("")+'</ul></details>':'';
+  if(!S.isAdmin||!isOpen(a))return hh?'<div class="box rvbox">'+hh+'</div>':'';
+  var on=emRevisao(a), dflt=on?revAte(a):"";
+  return '<div class="box rvbox"><h4>Fica para próxima revisão</h4>'+
+    '<p class="count" style="margin:0 0 6px">'+(on?'Em espera até <strong>'+fmtD(revAte(a))+'</strong>. Fora das demandas, dos indicadores, da pauta e dos e-mails até essa data; volta sozinho.':'Adia este apontamento para uma próxima rodada de revisão. Ele continua pendente (não é resolução nem conferência), sai das demandas ativas e volta sozinho na data de retorno.')+'</p>'+
+    '<div class="row-btns"><label class="cl">Data de retorno (obrigatória)'+dataInput('id="rvAte" aria-required="true"',dflt)+'</label>'+
+    '<label class="cl">Motivo (opcional; visível para fornecedores)<input type="text" id="rvMot" maxlength="200" value="'+esc(on&&a.revisao.motivo||"")+'"></label></div>'+
+    '<div class="row-btns">'+(on?'<button class="btn ghost" type="button" data-rv="alterou">Alterar data</button><button class="btn ghost" type="button" data-rv="cancelou">Cancelar adiamento</button>':'<button class="btn ghost" type="button" data-rv="adiou">Fica para próxima revisão</button>')+
+    '<span class="msg" id="rvMsg" role="status"></span></div>'+hh+'</div>';
+}
+function salvarRevisao(a,acao){
+  var msg=document.getElementById("rvMsg");
+  function erro(t){msg.className="msg err";msg.textContent=t;}
+  var hoje=hojeIso(), ate=null, mot=String((document.getElementById("rvMot")||{}).value||"").trim().slice(0,200);
+  if(acao!=="cancelou"){
+    ate=isoDe((document.getElementById("rvAte")||{}).value);
+    if(!ate)return erro("Informe a data de retorno no formato dd/mm/aaaa.");
+    if(ate<=hoje)return erro("A data de retorno precisa ser futura.");
+  }
+  if(!S.db)return erro("Sem conexão com o banco nesta visualização.");
+  var ref=S.db.collection("empreendimentos/"+EMP+"/apontamentos").doc(String(a.numero));
+  [].forEach.call(document.querySelectorAll("[data-rv]"),function(b){b.disabled=true;});
+  msg.className="msg";msg.textContent="Salvando…";
+  // Relê o doc logo antes de gravar para montar o histórico sobre a versão mais recente.
+  ref.get().then(function(sn){
+    var cur=(sn&&sn.exists?sn.data():a)||a, rv=cur.revisao||null, hist=(cur.revisaoHist||[]).slice(), agora=new Date().toISOString();
+    var ativoRv=!!rv&&String(rv.ate).slice(0,10)>hoje, data;
+    if(acao==="adiou"){
+      if(ativoRv)throw {msg:"Este apontamento já está em espera. Atualize a ficha."};
+      data={revisao:{ate:ate,desde:hoje,motivo:mot,em:agora}};hist.push({acao:"adiou",em:agora,ate:ate,motivo:mot});
+    }else if(acao==="alterou"){
+      if(!ativoRv)throw {msg:"Este apontamento não está mais em espera. Atualize a ficha."};
+      var de=String(rv.ate).slice(0,10);
+      if(de===ate&&(rv.motivo||"")===mot)throw {msg:"Nada mudou: escolha outra data ou outro motivo."};
+      data={revisao:Object.assign({},rv,{ate:ate,motivo:mot,em:agora})};
+      hist.push({acao:"alterou",em:agora,de:de,ate:ate,motivo:mot});
+    }else{
+      if(!ativoRv)throw {msg:"Este apontamento não está mais em espera."};
+      data={revisao:Object.assign({},rv,{ate:hoje,canceladoEm:agora})};hist.push({acao:"cancelou",em:agora,ate:String(rv.ate).slice(0,10)});
+    }
+    data.revisaoHist=hist;
+    return ref.update(data);
+  }).then(function(){renderDrawer();}).catch(function(e){
+    [].forEach.call(document.querySelectorAll("[data-rv]"),function(b){b.disabled=false;});
+    erro(e&&e.msg?e.msg:(e&&(e.code==="invalid_argument"||e.code==="not_granted"))?"Seu acesso permite apenas visualizar.":"Não foi possível salvar agora. Tente de novo em alguns segundos.");
+  });
 }
 
 function saveForm(form,a){
@@ -1375,7 +1455,8 @@ function saveForm(form,a){
 
 
 /* ---------- minha semana, novidades, evolução e reunião ---------- */
-function prazoItem(a){return a.prazoMeta||prazoEf(a)||null;}
+/* Depois de uma espera, a cobrança recomeça na data de retorno: prazo anterior a ela não conta como atraso. */
+function prazoItem(a){var p=a.prazoMeta||prazoEf(a)||null,rv=revAte(a);if(rv&&isOpen(a)&&(!p||p<rv))p=rv;return p;}
 function lvDia(){return S.lastVisit?(brt(S.lastVisit)||{}).dia:null;}
 function ehNovo(a){var l=lvDia();return !!l&&String(a.dataCriacao||"")>l;}
 function comentNovos(a){var l=lvDia();if(!l)return 0;return (a.comentarios||[]).filter(function(c){return String(c.d||"")>l;}).length;}
@@ -1388,9 +1469,10 @@ function selecaoSemana(c){
 }
 function byPrazo(x,y){return String(prazoItem(x)||"9999").localeCompare(String(prazoItem(y)||"9999"))||x.numero-y.numero;}
 function classificar(D){
-  var w=semanaAt(),iniS=isoD(w.ini),fimS=isoD(w.fim),r={atras:[],semana:[],prox:[],espera:[],resp:[]},pl=plano(),sel={};
+  var w=semanaAt(),iniS=isoD(w.ini),fimS=isoD(w.fim),r={atras:[],semana:[],prox:[],espera:[],resp:[],rev:[]},pl=plano(),sel={};
   if(!pl)D.forEach(function(c){if(c!=="COORD")selecaoSemana(c).forEach(function(a){sel[a.numero]=1;});});
   S.aps.forEach(function(a){
+    if(emRevisao(a)){if(D.some(function(c){return involves(a,c);}))r.rev.push(a);return;}
     if(aguardando(a)){if(D.some(function(c){return involves(a,c);}))r.espera.push(a);return;}
     if(ativo(a)&&D.some(function(c){return resp(a,c);})&&!D.some(function(c){return proxEf(a).indexOf(c)>=0;})){r.resp.push(a);return;}
     if(!ativo(a)||!D.some(function(c){return proxEf(a).indexOf(c)>=0;}))return;
@@ -1400,7 +1482,7 @@ function classificar(D){
     else if(!pl&&sel[a.numero])r.semana.push(a);
     else r.prox.push(a);
   });
-  r.atras.sort(byPrazo);r.semana.sort(byPrazo);r.prox.sort(byPrazo);r.espera.sort(ordEsp);
+  r.atras.sort(byPrazo);r.semana.sort(byPrazo);r.prox.sort(byPrazo);r.espera.sort(ordEsp);r.rev.sort(ordRev);
   for(var k in sel)S.metaSel[k]=1;
   return r;
 }
@@ -2136,6 +2218,7 @@ function tituloFmt(t){
 }
 var DSEM=["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
 function prazoInfo(a){
+  if(emRevisao(a))return {cls:"neu",lab:"Em espera",dia:"Volta "+fmtD(revAte(a)).slice(0,5),rel:"próxima revisão"};
   var ew=espera(a);
   if(ew)return {cls:"neu",dia:ew.t==="res"?"Fica para o "+ew.c:"Conferir no "+ew.c,rel:FN[ew.c]||""};
   var p=prazoItem(a);
@@ -2165,11 +2248,12 @@ function apRow(a,hl){
   (D.length?D:proxEf(a)).forEach(function(c){if(semRespPublica(a,c))extras.push('<b style="color:var(--warn)">'+esc(c)+' está em Validar, mas a resposta ainda não está pública</b>');});
   var rl=isOpen(a)?respLista(a):[];
   rl.forEach(function(c){extras.push('<b class="okt">'+(D.indexOf(c)>=0?"você já respondeu, falta marcar no Construflow":esc(c)+" já respondeu")+'</b>');});
+  if(retornouRevisao(a))extras.push('<b class="rvt">retornou da espera em '+fmtD(revAte(a)).slice(0,5)+'</b>');
   if(isOpen(a)&&ehNovo(a))extras.push('<b class="nvt">novo</b>');else if(isOpen(a)&&comentNovos(a))extras.push('<b class="nvt">comentário novo</b>');
   if(!isOpen(a)&&!S.respInfo)extras.push(esc(STL[a.status]||a.status));
   if(D.length&&S.respInfo)infoRespondido(a,D).forEach(function(t){extras.push('<b class="okt">'+esc(t)+'</b>');});
   else if(mkData(a))extras.push('<b class="okt">marcado como respondido em '+fmtD(mkData(a)).slice(0,5)+'</b>');
-  if(S.isAdmin&&isOpen(a)&&!espera(a)){var n=dias(a);if(mostraDias(n))extras.push('<span class="dias f-'+faixa(n)+'">'+n+' d sem movimentação</span>');}
+  if(S.isAdmin&&isOpen(a)&&!espera(a)&&!emRevisao(a)){var n=dias(a);if(mostraDias(n))extras.push('<span class="dias f-'+faixa(n)+'">'+n+' d sem movimentação</span>');}
   if(a.prioridade==="Alta"&&isOpen(a))extras.unshift('<span class="pri">▲ Alta</span>');
   if(S.isAdmin&&S.interno[String(a.numero)])extras.push('<b style="color:var(--warn)">interno</b>');
   var url=cfLink(a);
@@ -2225,6 +2309,7 @@ function viewMinhaSemana(){
   var abrirProx=DET_ABERTO["b-prox"]!==undefined?DET_ABERTO["b-prox"]:emDia;
   h+='<details class="blk" id="b-prox"'+(abrirProx?' open':'')+'><summary>Próximas semanas <span class="n">'+r.prox.length+(prox1?' · o próximo vence em '+fmtD(prazoItem(prox1)).slice(0,5):'')+'</span></summary>'+proxSemanasHtml(r.prox,D,pl)+'</details>';
   h+='<details class="blk" id="b-espera"'+(DET_ABERTO["b-espera"]?' open':'')+'><summary>Ficam para outra etapa <span class="n">'+(r.espera.length||'nenhum no momento')+'</span></summary>'+listHtml(r.espera,D,"Nenhum apontamento ficou para outra etapa.")+'</details>';
+  h+='<details class="blk" id="b-rev"'+(DET_ABERTO["b-rev"]?' open':'')+'><summary>Em espera para próxima revisão <span class="n">'+(r.rev.length||'nenhum no momento')+'</span></summary><p class="count">Apontamentos que continuam pendentes, mas a coordenação deixou para a próxima rodada de revisão. Eles voltam sozinhos para as suas demandas na data indicada.</p>'+listHtml(r.rev,D,"Nenhum apontamento em espera.")+'</details>';
   var rs=resumoSem(w.id);
   if(rs&&rs.disciplinas){var tx=D.filter(function(c){return rs.disciplinas[c];});if(tx.length)h+='<h3>Resumo das ações da semana</h3><div class="dtx2">'+tx.map(function(c){return '<p>'+chip(c)+' '+esc(rs.disciplinas[c])+'</p>';}).join("")+'</div>';}
   if(S.isAdmin){var bs=burnSVG(D.filter(function(c){return c!=="COORD";}));if(bs)h+='<h3>Evolução das pendências</h3>'+bs;
