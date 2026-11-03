@@ -8456,8 +8456,8 @@
    "fim": "2026-11-30",
    "geradoEm": "2026-10-19"
   },
-  "sincronizadoEm": "2026-11-02T09:59:31.000Z",
-  "ultimaSync": "2026-11-02T09:59:31.000Z",
+  "sincronizadoEm": "2026-11-03T09:58:39.000Z",
+  "ultimaSync": "2026-11-03T09:58:39.000Z",
   "ultimaSyncResumo": {
    "alterados": 0,
    "analisados": 0,
@@ -8472,7 +8472,7 @@
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-11-02T10:28:02+00:00",
+ "geradoEm": "2026-11-03T10:28:15+00:00",
  "plano_semanal": {
   "2026-S35": {
    "alertas": [],
@@ -10164,7 +10164,7 @@
     "SPK": "#5862 responder; sem comentários na Construflow, aguardando a primeira resposta",
     "TEL": "#4549 responder; sem comentários na Construflow, aguardando a primeira resposta\n#7738 aguardar MAG e ARQ validarem as posições sugeridas para os quadros elétricos e VDI nas unidades privativas (Figuras 01 a 06)"
    },
-   "geradoEm": "2026-11-02T09:59:26.000Z",
+   "geradoEm": "2026-11-03T09:58:39.000Z",
    "geral": "Na semana de 02/11 a 06/11 há 42 apontamentos com prazo meta até sexta: 13 vencem em 06/11 e 29 já estão atrasados (prazos meta de 23/10 e 30/10), sem nenhum comentário novo na Construflow desde 16/10. Os que envolvem mais disciplinas são o #7458 (renovação de ar nas garagens: PCI, EST, ARQ e MAG), o #9098 (reservatório superior: HID, ARQ, EST e MAG), o #4549 e o #7738 (quadros elétricos e VDI: ELT, TEL, ARQ e MAG), o #6715 (infra das lojas: HID, ARQ, INT e MAG) e o #5862 (chuveiros automáticos: ARQ, PCI, SPK e MAG). A ARQ concentra a maior parte das respostas (31 apontamentos, 21 atrasados), seguida da PCI (20, 15 atrasados), da MAG (16, 8 atrasados) e da HID (12, 8 atrasados); a coordenação tem 7 validações de respostas da MAG.",
    "semana": "2026-11-02"
   }
