@@ -3372,14 +3372,22 @@
    "acoes": [
     {
      "disciplinas": [
-      "MAG",
       "ARQ"
      ],
-     "texto": "MAG / ARQ validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI das áreas comuns (Figuras 01 a 07)"
+     "texto": "ARQ consolidar a definição final das áreas comuns"
+    },
+    {
+     "disciplinas": [
+      "ELT",
+      "TEL"
+     ],
+     "texto": "ELT / TEL refazer o lançamento dos quadros de elétrica e VDI após a consolidação das áreas comuns e reemitir o apontamento"
     }
    ],
-   "acompanhar": [],
-   "analiseEm": "2026-10-07",
+   "acompanhar": [
+    "MAG"
+   ],
+   "analiseEm": "2026-11-03",
    "anexos": [
     {
      "legenda": "Posição para QDC (ELT) e VDI (TEL) para Kids e Sports",
@@ -3423,7 +3431,17 @@
     }
    ],
    "categoria": "Definição",
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "João Victor da Silva",
+     "d": "2026-11-03",
+     "ds": [
+      "MAG"
+     ],
+     "id": 3038244,
+     "t": "@Thalles D`Luca | ELT, TEL e SPDA\n\nAguardar a definição final das áreas comuns pela ARQ para realizar um novo lançamento dos quadros de elétrica e telecomunicações (VDI).\n\nAção: Revisar e emitir novamente os apontamentos após a consolidação das áreas comuns."
+    }
+   ],
    "complexidade": "media",
    "complexidadeMotivo": "",
    "complexidadeOrigem": "análise",
@@ -3433,8 +3451,7 @@
    "direcionadas": [
     "ELT",
     "ARQ",
-    "TEL",
-    "MAG"
+    "TEL"
    ],
    "disciplinas": [
     {
@@ -3459,7 +3476,7 @@
      "c": "MAG",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
@@ -3468,7 +3485,7 @@
    "etapaResolucao": null,
    "fonte": "Construflow",
    "numero": 4549,
-   "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
+   "observacao": "Em 03/11 a MAG informou que a posição dos quadros de elétrica (QDC) e VDI das áreas comuns depende da definição final das áreas comuns pela ARQ, e passou a acompanhar. Depois que a ARQ consolidar as áreas comuns, ELT e TEL devem refazer o lançamento dos quadros e reemitir o apontamento.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-30",
@@ -3476,15 +3493,16 @@
    "proximas": [
     "ELT",
     "ARQ",
-    "TEL",
-    "MAG"
+    "TEL"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "03/11 MAG orientou aguardar a definição final das áreas comuns pela ARQ antes de um novo lançamento dos quadros de elétrica e VDI"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-29T09:59:39.000Z",
+   "sincronizadoEm": "2026-11-03T20:16:46.000Z",
    "status": "aberto",
    "titulo": "DEFINIÇÃO DA POSIÇÃO DOS QUADROS DE DISTRIBUIÇÃO ELÉTRICA E VDI DAS ÁREAS COMUNS",
-   "ultimoComentario": "2026-09-14"
+   "ultimoComentario": "2026-11-03"
   },
   "4562": {
    "acoes": [
@@ -6584,7 +6602,8 @@
    "acompanhar": [
     "ELT",
     "PCI",
-    "TEL"
+    "TEL",
+    "MAG"
    ],
    "analiseEm": "2026-10-09",
    "anexos": [
@@ -6652,8 +6671,7 @@
    "dataCriacao": "2026-09-16",
    "direcionadas": [
     "HID",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "disciplinas": [
     {
@@ -6690,7 +6708,7 @@
      "c": "MAG",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
@@ -6706,12 +6724,11 @@
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ARQ",
-    "MAG"
+    "ARQ"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-10-29T09:59:39.000Z",
+   "sincronizadoEm": "2026-11-03T20:16:46.000Z",
    "status": "aberto",
    "titulo": "SHAFTS NA CIRCULAÇÃO DOS PAVIMENTOS",
    "ultimoComentario": "2026-10-01"
@@ -8456,15 +8473,15 @@
    "fim": "2026-11-30",
    "geradoEm": "2026-10-19"
   },
-  "sincronizadoEm": "2026-11-03T09:58:39.000Z",
-  "ultimaSync": "2026-11-03T09:58:39.000Z",
+  "sincronizadoEm": "2026-11-03T20:17:10.000Z",
+  "ultimaSync": "2026-11-03T20:17:10.000Z",
   "ultimaSyncResumo": {
-   "alterados": 0,
-   "analisados": 0,
+   "alterados": 2,
+   "analisados": 1,
    "analisePendente": 0,
-   "comentarios": 0,
+   "comentarios": 1,
    "novos": 0,
-   "origem": "agendada",
+   "origem": "manual",
    "prazosMeta": [],
    "resumoSemanal": true,
    "reunioes": [],
@@ -8472,7 +8489,7 @@
    "statusFalhas": []
   }
  },
- "geradoEm": "2026-11-03T10:28:15+00:00",
+ "geradoEm": "2026-11-03T20:26:54+00:00",
  "plano_semanal": {
   "2026-S35": {
    "alertas": [],
@@ -10150,22 +10167,22 @@
   },
   "2026-11-02": {
    "disciplinas": {
-    "ARQ": "#1436 avaliar a viabilidade do recuo para o caminhão de coleta\n#1775 validar a quantidade de pontos de gás nas áreas comuns, considerando os estudos do 4º pavimento e da cobertura\n#2062 prever as VPs nas esquadrias das áreas de serviço e, no final 07, aberturas na alvenaria junto à área técnica\n#2140 validar a nomenclatura de apartamentos da Figura 01 (MAG já validou em 07/10)\n#2323 prever bate-rodas de concreto nas vagas indicadas, se necessário (Figuras 02 e 03)\n#2612 locar a área técnica de insuflamento abaixo do térreo, próxima à escada, com tomada de ar no térreo\n#3264 prever enchimento de cerca de 8 cm nas paredes da escada com instalações (Figuras 01 e 02)\n#3426 atender aos itens das escadas apontados e manter a conferência em todas as etapas (Figuras 01 a 03)\n#3470 aumentar os shafts conforme indicado, depois da escolha da MAG\n#4050 validar a posição sugerida para a central de alarme (Figuras 01 e 02), depois validar com Interiores\n#4252 especificar o corrimão conforme a definição da Construtora\n#4532 prever os guarda-corpos conforme indicado no apontamento (Figuras 01 a 07)\n#4549 validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI das áreas comuns (Figuras 01 a 07)\n#4923 prever barreira física no entorno da piscina descoberta da cobertura (Figuras 01 e 02)\n#5862 acompanhar as definições da MAG\n#7614 manter a conferência da largura de circulação e corredores em todas as etapas do projeto\n#7671 aguardar a PCI incorporar o caminhamento pelo vão da porta e a coordenação validar a resposta da MAG\n#8478 avaliar os shafts propostos e retornar no apontamento\n#8547 incorporar as sugestões conforme a opção escolhida pela MAG\n#9292 considerar a compartimentação horizontal junto com o reposicionamento das áreas técnicas\n#9636 aguardar a MAG escolher a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada\n#1491 acompanhar a viabilidade de GN; o dimensionamento da central de GLP depende desse retorno (ver #7356)\n#2697 ajustar a porta de acesso à escada nos subsolos -03 e -02 ou indicar a previsão de sprinklers para aumentar o caminhamento máximo\n#4562 definir com a MAG se o mezanino terá acesso ao público e prever os ajustes na escada (Figura 01)\n#5335 validar e prever os shafts sanitários sugeridos (Figuras 01 a 07)\n#6715 aguardar a MAG confirmar a definição de uso da loja e a possibilidade de subdivisão (ver #1274)\n#7458 avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos\n#7738 validar com a MAG as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)\n#8197 verificar e ajustar a escada do barrilete em projeto\n#8625 validar a localização das condensadoras ao lado do acesso de veículos do SS1\n#9098 manter os acessos superiores do reservatório; aguardar a definição do volume de SPK junto do reservatório superior (ver #2005)",
+    "ARQ": "#1436 avaliar a viabilidade do recuo para o caminhão de coleta\n#1775 validar a quantidade de pontos de gás nas áreas comuns, considerando os estudos do 4º pavimento e da cobertura\n#2062 prever as VPs nas esquadrias das áreas de serviço e, no final 07, aberturas na alvenaria junto à área técnica\n#2140 validar a nomenclatura de apartamentos da Figura 01 (MAG já validou em 07/10)\n#2323 prever bate-rodas de concreto nas vagas indicadas, se necessário (Figuras 02 e 03)\n#2612 locar a área técnica de insuflamento abaixo do térreo, próxima à escada, com tomada de ar no térreo\n#3264 prever enchimento de cerca de 8 cm nas paredes da escada com instalações (Figuras 01 e 02)\n#3426 atender aos itens das escadas apontados e manter a conferência em todas as etapas (Figuras 01 a 03)\n#3470 aumentar os shafts conforme indicado, depois da escolha da MAG\n#4050 validar a posição sugerida para a central de alarme (Figuras 01 e 02), depois validar com Interiores\n#4252 especificar o corrimão conforme a definição da Construtora\n#4532 prever os guarda-corpos conforme indicado no apontamento (Figuras 01 a 07)\n#4549 consolidar a definição final das áreas comuns (ELT e TEL refazem depois o lançamento dos quadros)\n#4923 prever barreira física no entorno da piscina descoberta da cobertura (Figuras 01 e 02)\n#5862 acompanhar as definições da MAG\n#7614 manter a conferência da largura de circulação e corredores em todas as etapas do projeto\n#7671 aguardar a PCI incorporar o caminhamento pelo vão da porta e a coordenação validar a resposta da MAG\n#8478 avaliar os shafts propostos e retornar no apontamento\n#8547 incorporar as sugestões conforme a opção escolhida pela MAG\n#9292 considerar a compartimentação horizontal junto com o reposicionamento das áreas técnicas\n#9636 aguardar a MAG escolher a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada\n#1491 acompanhar a viabilidade de GN; o dimensionamento da central de GLP depende desse retorno (ver #7356)\n#2697 ajustar a porta de acesso à escada nos subsolos -03 e -02 ou indicar a previsão de sprinklers para aumentar o caminhamento máximo\n#4562 definir com a MAG se o mezanino terá acesso ao público e prever os ajustes na escada (Figura 01)\n#5335 validar e prever os shafts sanitários sugeridos (Figuras 01 a 07)\n#6715 aguardar a MAG confirmar a definição de uso da loja e a possibilidade de subdivisão (ver #1274)\n#7458 avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos\n#7738 validar com a MAG as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)\n#8197 verificar e ajustar a escada do barrilete em projeto\n#8625 validar a localização das condensadoras ao lado do acesso de veículos do SS1\n#9098 manter os acessos superiores do reservatório; aguardar a definição do volume de SPK junto do reservatório superior (ver #2005)",
     "CLI": "#5870 incorporar a definição de ponto elétrico somente na evaporadora\n#8547 aguardar a MAG validar as sugestões de renovação de ar mecânica para a ARQ incorporar a opção escolhida\n#8625 avaliar a viabilidade técnica da proposta",
     "COORD": "#1775 validar a resposta da MAG\n#3230 validar a resposta da MAG\n#3470 validar a resposta da MAG\n#5870 validar a resposta da MAG\n#7671 validar a resposta da MAG\n#1491 validar a resposta da MAG\n#9477 validar a resposta da MAG",
-    "ELT": "#4308 incorporar: embutido em PVC nas áreas comuns e halls; aparente em aço nas garagens e alimentadores acima de Ø32 mm\n#4549 responder; sem comentários na Construflow, aguardando a primeira resposta\n#7738 aguardar MAG e ARQ validarem as posições sugeridas para os quadros elétricos e VDI nas unidades privativas (Figuras 01 a 06)",
+    "ELT": "#4308 incorporar: embutido em PVC nas áreas comuns e halls; aparente em aço nas garagens e alimentadores acima de Ø32 mm\n#4549 aguardar a ARQ consolidar as áreas comuns e refazer o lançamento dos quadros de elétrica e VDI, reemitindo o apontamento\n#7738 aguardar MAG e ARQ validarem as posições sugeridas para os quadros elétricos e VDI nas unidades privativas (Figuras 01 a 06)",
     "EST": "#7215 confirmar o atendimento ao TRRF indicado\n#8200 realizar a sondagem (pendente por negociação de permuta e demolições) e validar a laje de subpressão até o início da revisão do AP\n#7458 avaliar o impacto da extração de fumaça nas garagens (ver #3694)\n#9098 validar o acréscimo do volume de SPK no reservatório superior (ver #2005)",
     "HID": "#1436 responder sobre o depósito de lixo; ainda sem comentários na Construflow\n#2140 aguardar a ARQ validar a nomenclatura dos apartamentos (MAG já validou em 07/10) e adotar a numeração definida\n#2508 validar e encerrar com a coordenação; documentação da rede de esgoto da CASAN viabilizada em 30/09\n#3230 prever com a PCI medidores de água e gás pré-equipados para telemetria\n#3470 responder qual o modelo de caixa sifonada especial e como funcionaria\n#8200 acompanhar a sondagem e a validação da laje de subpressão, necessária até o início da revisão do AP\n#8478 aguardar o retorno da ARQ sobre os shafts propostos na circulação dos pavimentos\n#9636 prever recirculação interna nos aptos de 3 e 4 quartos\n#5335 responder; sem comentários na Construflow, aguardando a primeira resposta\n#6715 aguardar a MAG confirmar a definição de uso da loja e a possibilidade de subdivisão (ver #1274)\n#8613 aguardar a definição das áreas comuns do 4º pavimento, tratada junto com o aquecimento das áreas privativas (#9636)\n#9098 aguardar a definição do volume de SPK junto do reservatório superior (ver #2005)",
     "INT": "#6034 se contratado, emitir as plantas de pontos antes do início do pré-executivo\n#6715 aguardar a MAG confirmar a definição de uso da loja e a possibilidade de subdivisão (ver #1274)",
-    "MAG": "#2612 registrar a validação da CLI de 01/10: área técnica de insuflamento abaixo do térreo, perto da escada, com tomada de ar no térreo, e duto terminando no barrilete\n#4549 validar com a ARQ as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI das áreas comuns (Figuras 01 a 07)\n#5862 indicar se os sprinklers serão adotados para o SAVE ou para aumentar o caminhamento nos subsolos -03 e -02, e informar preferência de tipo de bomba\n#6034 confirmar a contratação dos projetos de interiores e luminotécnico ou disponibilizar imagens comerciais\n#8200 realizar a sondagem e validar a necessidade de laje de subpressão até o início da revisão do AP\n#8478 aguardar a avaliação da ARQ sobre os shafts propostos na circulação dos pavimentos\n#8547 validar as sugestões para o sistema de renovação de ar em todos os locais indicados\n#9636 escolher com a ARQ a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada\n#2697 indicar com a ARQ o ajuste da porta da escada nos subsolos -03 e -02 ou a previsão de sprinklers\n#4562 definir se o mezanino terá acesso ao público\n#6298 confirmar se haverá contratação do projeto de desempenho\n#6715 (Renato) confirmar com o Luiz a definição de uso e se a loja poderá ser subdividida\n#7458 acompanhar a extração de fumaça nas garagens decorrente do SAVE em todos os pavimentos (ver #1875 e #3694)\n#7738 validar com a ARQ as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)\n#8613 definir as áreas comuns do 4º pavimento junto com o sistema de aquecimento das áreas privativas (#9636)\n#9098 definir se o volume de SPK ficará junto do reservatório superior (ver #2005)",
+    "MAG": "#2612 registrar a validação da CLI de 01/10: área técnica de insuflamento abaixo do térreo, perto da escada, com tomada de ar no térreo, e duto terminando no barrilete\n#5862 indicar se os sprinklers serão adotados para o SAVE ou para aumentar o caminhamento nos subsolos -03 e -02, e informar preferência de tipo de bomba\n#6034 confirmar a contratação dos projetos de interiores e luminotécnico ou disponibilizar imagens comerciais\n#8200 realizar a sondagem e validar a necessidade de laje de subpressão até o início da revisão do AP\n#8547 validar as sugestões para o sistema de renovação de ar em todos os locais indicados\n#9636 escolher com a ARQ a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada\n#2697 indicar com a ARQ o ajuste da porta da escada nos subsolos -03 e -02 ou a previsão de sprinklers\n#4562 definir se o mezanino terá acesso ao público\n#6298 confirmar se haverá contratação do projeto de desempenho\n#6715 (Renato) confirmar com o Luiz a definição de uso e se a loja poderá ser subdividida\n#7458 acompanhar a extração de fumaça nas garagens decorrente do SAVE em todos os pavimentos (ver #1875 e #3694)\n#7738 validar com a ARQ as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)\n#8613 definir as áreas comuns do 4º pavimento junto com o sistema de aquecimento das áreas privativas (#9636)\n#9098 definir se o volume de SPK ficará junto do reservatório superior (ver #2005)",
     "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#2062 incorporar as posições das ventilações permanentes\n#2323 responder; sem comentários na Construflow, aguardando a primeira resposta\n#3264 conferir o enchimento previsto pela arquitetura\n#3426 responder; sem comentários na Construflow, aguardando a primeira resposta\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 responder; sem comentários na Construflow, aguardando a primeira resposta\n#4923 conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33\n#5862 responder; sem comentários na Construflow, aguardando a primeira resposta\n#5996 incorporar os materiais de gás e SHP validados pela MAG e ajustar a rede primária após a nova localização da ERPM\n#7215 aguardar a EST confirmar o atendimento ao TRRF indicado\n#7614 acompanhar a conferência contínua da ARQ sobre largura de circulação e corredores\n#7671 incorporar no projeto o caminhamento da rede secundária pelo vão da porta (Figura 01)\n#9292 acompanhar a ARQ na compartimentação horizontal junto com o reposicionamento das áreas técnicas\n#1491 ajustar a solução de gás conforme a decisão por GN\n#2697 responder; sem comentários na Construflow, aguardando a primeira resposta\n#4562 responder; sem comentários na Construflow, aguardando a primeira resposta\n#7458 prever o sistema de extração de fumaça nas garagens (ver #3694)\n#8197 aguardar a ARQ verificar e ajustar a escada do barrilete em projeto",
     "PEP": "#2612 considerar o duto de pressurização terminando no barrilete (Figura 05)",
     "SPDA": "#9477 incorporar a captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação",
     "SPK": "#5862 responder; sem comentários na Construflow, aguardando a primeira resposta",
-    "TEL": "#4549 responder; sem comentários na Construflow, aguardando a primeira resposta\n#7738 aguardar MAG e ARQ validarem as posições sugeridas para os quadros elétricos e VDI nas unidades privativas (Figuras 01 a 06)"
+    "TEL": "#4549 aguardar a ARQ consolidar as áreas comuns e refazer o lançamento dos quadros de elétrica e VDI, reemitindo o apontamento\n#7738 aguardar MAG e ARQ validarem as posições sugeridas para os quadros elétricos e VDI nas unidades privativas (Figuras 01 a 06)"
    },
-   "geradoEm": "2026-11-03T09:58:39.000Z",
-   "geral": "Na semana de 02/11 a 06/11 há 42 apontamentos com prazo meta até sexta: 13 vencem em 06/11 e 29 já estão atrasados (prazos meta de 23/10 e 30/10), sem nenhum comentário novo na Construflow desde 16/10. Os que envolvem mais disciplinas são o #7458 (renovação de ar nas garagens: PCI, EST, ARQ e MAG), o #9098 (reservatório superior: HID, ARQ, EST e MAG), o #4549 e o #7738 (quadros elétricos e VDI: ELT, TEL, ARQ e MAG), o #6715 (infra das lojas: HID, ARQ, INT e MAG) e o #5862 (chuveiros automáticos: ARQ, PCI, SPK e MAG). A ARQ concentra a maior parte das respostas (31 apontamentos, 21 atrasados), seguida da PCI (20, 15 atrasados), da MAG (16, 8 atrasados) e da HID (12, 8 atrasados); a coordenação tem 7 validações de respostas da MAG.",
+   "geradoEm": "2026-11-03T20:16:46.000Z",
+   "geral": "Na semana de 02/11 a 06/11 há 42 apontamentos com prazo meta até sexta: 13 vencem em 06/11 e 29 já estão atrasados (prazos meta de 23/10 e 30/10). Em 03/11 a MAG respondeu no #4549 (os quadros de ELT e VDI das áreas comuns aguardam a definição final das áreas comuns pela ARQ) e passou a acompanhar o #4549 e o #8478. Os que envolvem mais disciplinas são o #7458 (renovação de ar nas garagens: PCI, EST, ARQ e MAG), o #9098 (reservatório superior: HID, ARQ, EST e MAG), o #7738 (quadros elétricos e VDI das unidades: ELT, TEL, ARQ e MAG), o #6715 (infra das lojas: HID, ARQ, INT e MAG) e o #5862 (chuveiros automáticos: ARQ, PCI, SPK e MAG). A ARQ concentra a maior parte das respostas (31 apontamentos, 21 atrasados), seguida da PCI (20, 15 atrasados), da MAG (14, 6 atrasados) e da HID (12, 8 atrasados); a coordenação tem 7 validações de respostas da MAG.",
    "semana": "2026-11-02"
   }
  },
