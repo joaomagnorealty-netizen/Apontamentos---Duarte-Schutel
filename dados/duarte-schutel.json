@@ -25,6 +25,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -33,14 +34,16 @@
       "MAG"
      ],
      "id": 2937927,
-     "t": "Não vamos manter a escada pressurizada nos Subsolos"
+     "t": "Não vamos manter a escada pressurizada nos Subsolos",
+     "v": []
     },
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940389,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@Gustavo Neves | PCI  explicou que, no caso da previsão de paradas do elevador de emergência em todos os pavimentos, caso a antecâmara do elevador também tenha acesso da escada do subsolo também para esse espaço do elevador, as duas escadas precisariam ser pressurizadas, por conta da conexão do poço de elevador com a escada da torre.\nAlinhado entre Magno e Methafora a retirada do elevador de emergência dos pavimentos subsolo."
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@Gustavo Neves | PCI  explicou que, no caso da previsão de paradas do elevador de emergência em todos os pavimentos, caso a antecâmara do elevador também tenha acesso da escada do subsolo também para esse espaço do elevador, as duas escadas precisariam ser pressurizadas, por conta da conexão do poço de elevador com a escada da torre.\nAlinhado entre Magno e Methafora a retirada do elevador de emergência dos pavimentos subsolo.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -78,6 +81,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 1049,
    "observacao": "Definido que a escada dos subsolos não será pressurizada; para isso, Magno e Methafora alinharam em 01/10 retirar o elevador de emergência dos subsolos.",
@@ -95,7 +99,7 @@
     "01/10 Alinhada a retirada do elevador de emergência dos subsolos"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "ESCADA PROTEGIDA SEM VENTILAÇÃO COM P90 – SUBSOLO",
    "ultimoComentario": "2026-10-01"
@@ -121,6 +125,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeMotivo": "",
@@ -156,6 +161,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 1269,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -169,7 +175,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "DRENAGEM DE CONTENÇÕES E TERRENO",
    "ultimoComentario": "2026-09-16"
@@ -224,13 +230,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953599,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@Alex  Vieira repassou que a loja será operada pela Magno, então deverá ser prevista infra para exaustão de loja de alimentação, permitindo instalação posterior de restaurante, caso necessário.\nA sugestão é que o duto de exaustão faça o menor número de curvas possíveis, por conta da perda de carga.\n@André da Rosa Selhorst levantou a preocupação com o retorno do cheiro. Pediu um estudo mais detalhado para locação em áreas com menor impacto nesse sentido. Alex complementou com o transtorno do barulho do equipamento também. Nesse caso, o ideal seria que os equipamentos de exaustão ficassem na cobertura.\nTamanho das infraestruturas e posicionamento dos equipamentos será reestudada pela Première na etapa de AJEP."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@Alex  Vieira repassou que a loja será operada pela Magno, então deverá ser prevista infra para exaustão de loja de alimentação, permitindo instalação posterior de restaurante, caso necessário.\nA sugestão é que o duto de exaustão faça o menor número de curvas possíveis, por conta da perda de carga.\n@André da Rosa Selhorst levantou a preocupação com o retorno do cheiro. Pediu um estudo mais detalhado para locação em áreas com menor impacto nesse sentido. Alex complementou com o transtorno do barulho do equipamento também. Nesse caso, o ideal seria que os equipamentos de exaustão ficassem na cobertura.\nTamanho das infraestruturas e posicionamento dos equipamentos será reestudada pela Première na etapa de AJEP.",
+     "v": []
     }
    ],
    "complexidade": "alta",
@@ -268,6 +276,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 1274,
    "observacao": "A loja será operada pela Magno e precisa de infraestrutura para exaustão de alimentação. Há preocupação com cheiro e ruído; o ideal é equipamento na cobertura, e a Première reestuda na AJEP.",
@@ -284,7 +293,7 @@
     "06/10 Magno definiu que vai operar a loja, com infra para alimentação"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "LOJAS DE ALIMENTAÇÃO - CONSIDERAÇÕES",
    "ultimoComentario": "2026-10-06"
@@ -330,6 +339,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeMotivo": "",
@@ -365,6 +375,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 1436,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -378,7 +389,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "DEPÓSITO DE LIXO",
    "ultimoComentario": "2026-09-15"
@@ -433,6 +444,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -441,7 +453,8 @@
       "MAG"
      ],
      "id": 2906276,
-     "t": "Seguiremos com a viabilidade de GN"
+     "t": "Seguiremos com a viabilidade de GN",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -479,6 +492,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 1491,
    "observacao": "A Magno decidiu em 22/09 seguir com a viabilidade de gás natural (GN). O dimensionamento da central de GLP depende do retorno dessa viabilidade (ver #7356).",
@@ -495,7 +509,7 @@
     "22/09 MAG decidiu seguir com a viabilidade de GN"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -526,13 +540,15 @@
    "analiseEm": "2026-10-07",
    "anexos": [],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953545,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@Alex  Vieira e @André da Rosa Selhorst irão verificar e retornar no apontamento."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@Alex  Vieira e @André da Rosa Selhorst irão verificar e retornar no apontamento.",
+     "v": []
     },
     {
      "a": "João Victor da Silva",
@@ -541,7 +557,8 @@
       "MAG"
      ],
      "id": 2957526,
-     "t": "Prever ponto de gás para a sala comercial, tendo em vista que poderá ser utilizado para ponto de alimentação média.\n\nSolicitamos que sejam feitos os cálculos de demanda considerando os aquecedores de passagem dos apartamentos.\n\nReferente as áreas comuns, estas podem sofrer alterações posteriormente com o estudo da nova área comum no 4° andar e modificação da área comum na cobertura. A princípio, podemos manter como foi proposto."
+     "t": "Prever ponto de gás para a sala comercial, tendo em vista que poderá ser utilizado para ponto de alimentação média.\n\nSolicitamos que sejam feitos os cálculos de demanda considerando os aquecedores de passagem dos apartamentos.\n\nReferente as áreas comuns, estas podem sofrer alterações posteriormente com o estudo da nova área comum no 4° andar e modificação da área comum na cobertura. A princípio, podemos manter como foi proposto.",
+     "v": []
     }
    ],
    "complexidade": "baixa",
@@ -579,6 +596,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 1775,
    "observacao": "Em 07/10 a Magno respondeu: prever ponto de gás na sala comercial, calcular a demanda com aquecedores de passagem nos apartamentos e manter por ora a proposta das áreas comuns, que pode mudar com os estudos do 4º pavimento e da cobertura. Falta a Arquitetura se manifestar e o PCI incorporar.",
@@ -595,7 +613,7 @@
     "07/10 MAG definiu ponto de gás na sala comercial, demanda com aquecedores de passagem e manutenção da proposta das áreas comuns"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -648,6 +666,9 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [
+    "EP"
+   ],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -656,14 +677,16 @@
       "MAG"
      ],
      "id": 2934614,
-     "t": "Conseguimos alterar o acesso para a escada de acordo com a imagem nos pavimentos Subsolo 3, Subsolo 2 e no Subsolo 1."
+     "t": "Conseguimos alterar o acesso para a escada de acordo com a imagem nos pavimentos Subsolo 3, Subsolo 2 e no Subsolo 1.",
+     "v": []
     },
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940331,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nMagno quer infra em TODAS as vagas, indiferente se será vaga simples ou dupla.\nArquitetura irá avaliar a possibilidade de compartimentar as vagas próximas da circulação vertical com a previsão de divisórias em alvenaria, criando corredores de acesso."
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nMagno quer infra em TODAS as vagas, indiferente se será vaga simples ou dupla.\nArquitetura irá avaliar a possibilidade de compartimentar as vagas próximas da circulação vertical com a previsão de divisórias em alvenaria, criando corredores de acesso.",
+     "v": []
     }
    ],
    "complexidade": "alta",
@@ -722,6 +745,9 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [
+    121089
+   ],
    "fonte": "Construflow",
    "numero": 1875,
    "observacao": "A Construtora ajustou o acesso à escada nos subsolos 1 a 3. Em 01/10 a Magno pediu infraestrutura de recarga em todas as vagas, e a Arquitetura vai avaliar compartimentar as vagas junto à circulação vertical com divisórias de alvenaria.",
@@ -742,7 +768,7 @@
     "01/10 Magno definiu infraestrutura de recarga em todas as vagas (simples e duplas)"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "NOVA NORMA CBMSC IN23 - SISTEMAS PARA ALIMENTAÇÃO DE VEÍCULOS ELÉTRICOS (SAVE)",
    "ultimoComentario": "2026-10-01"
@@ -783,6 +809,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -791,7 +818,8 @@
       "MAG"
      ],
      "id": 2940273,
-     "t": "1 - Furos redondos para tubulação circular única. Furos retangulares apenas quando realmente necessário (múltiplas tubulações)\n2 - Projeto deverá vir cotado, porém antes disso o estrutural precisará validar se são viáveis as posições dos furos.\n3- Entregar modelo 3D para compatibilização + prancha 2D executiva cotada para obra."
+     "t": "1 - Furos redondos para tubulação circular única. Furos retangulares apenas quando realmente necessário (múltiplas tubulações)\n2 - Projeto deverá vir cotado, porém antes disso o estrutural precisará validar se são viáveis as posições dos furos.\n3- Entregar modelo 3D para compatibilização + prancha 2D executiva cotada para obra.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -859,6 +887,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 1888,
    "observacao": "A Construtora definiu em 01/10 as premissas de furação: furos redondos (retangulares só para múltiplas tubulações), validação estrutural antes do projeto cotado e entrega de modelo 3D + prancha 2D.",
@@ -875,7 +904,7 @@
     "01/10 MAG definiu as premissas de furação"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -938,6 +967,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -946,14 +976,18 @@
       "MAG"
      ],
      "id": 2933512,
-     "t": "Conseguimos utilizar a piscina como RTI do SPK?"
+     "t": "Conseguimos utilizar a piscina como RTI do SPK?",
+     "v": []
     },
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940358,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nConfirmado pelo @Gustavo Neves | PCI que é possível utilizar o volume da piscina como RTI de SPK, mas nesse caso o volume da piscina precisa ser maior que o necessário para o reservatório (67m³). No entanto, pela água da piscina não ser de utilização específica para a RTI, é necessário prever algumas adaptações no sistema de sprinkler para viabilizar esse uso (como previsão de sifão - FIGURA 01) - não sendo possível utilizar filtro nesse caso, pois se o filtro entupir o sistema pode ser comprometido no caso de um sinistro.\n@André da Rosa Selhorst repassou que o volume da piscina maior, prevista na cobertura, atenderia com folga a esse volume.\nRepassado também que os bicos de sprinklers são necessários apenas nas garagens e nos locais onde as bombas estiverem instaladas.\nSobre a possibilidade de prever o volume de SPK no reservatório superior, para evitar um sistema adicional de pressurização, deverá ser validada com a Estrutura @Aspen  Engenharia - ver também apontamento #9098"
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nConfirmado pelo @Gustavo Neves | PCI que é possível utilizar o volume da piscina como RTI de SPK, mas nesse caso o volume da piscina precisa ser maior que o necessário para o reservatório (67m³). No entanto, pela água da piscina não ser de utilização específica para a RTI, é necessário prever algumas adaptações no sistema de sprinkler para viabilizar esse uso (como previsão de sifão - FIGURA 01) - não sendo possível utilizar filtro nesse caso, pois se o filtro entupir o sistema pode ser comprometido no caso de um sinistro.\n@André da Rosa Selhorst repassou que o volume da piscina maior, prevista na cobertura, atenderia com folga a esse volume.\nRepassado também que os bicos de sprinklers são necessários apenas nas garagens e nos locais onde as bombas estiverem instaladas.\nSobre a possibilidade de prever o volume de SPK no reservatório superior, para evitar um sistema adicional de pressurização, deverá ser validada com a Estrutura @Aspen  Engenharia - ver também apontamento #9098",
+     "v": [
+      9098
+     ]
     }
    ],
    "complexidade": "alta",
@@ -1010,6 +1044,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 2005,
    "observacao": "Confirmado em 01/10 que a piscina pode servir como RTI do SPK, desde que o volume supere 67 m³ e com adaptações no sistema (sifão, sem filtro); a piscina da cobertura atende. Segue em aberto a alternativa de colocar o volume de SPK no reservatório superior, que depende da Estrutura (ver #9098).",
@@ -1028,7 +1063,7 @@
     "01/10 Definido que sprinklers são necessários só nas garagens e nos locais das bombas"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "RESERVATÓRIO INFERIOR - CHUVEIROS AUTOMÁTICOS",
    "ultimoComentario": "2026-10-01"
@@ -1075,13 +1110,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953510,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nNas áreas comuns, validado entre a Methafora e Magno de prever as VPs na alvenaria.\nNas unidades privativas, onde for possível, foi indicado de prever as VPs na esquadria da área de serviço, evitando locar na alvenaria da sala. Na unidade final 07, André sugeriu também prever VP na área de serviço, com as aberturas previstas na alvenaria que divide com a área técnica das condensadoras."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nNas áreas comuns, validado entre a Methafora e Magno de prever as VPs na alvenaria.\nNas unidades privativas, onde for possível, foi indicado de prever as VPs na esquadria da área de serviço, evitando locar na alvenaria da sala. Na unidade final 07, André sugeriu também prever VP na área de serviço, com as aberturas previstas na alvenaria que divide com a área técnica das condensadoras.",
+     "v": []
     }
    ],
    "complexidade": "baixa",
@@ -1118,6 +1155,9 @@
    "etapaConferencia": "AP",
    "etapaOrigem": "etiqueta",
    "etapaResolucao": null,
+   "etiquetas": [
+    117652
+   ],
    "fonte": "Construflow",
    "numero": 2062,
    "observacao": "Validado em 06/10: VPs na alvenaria nas áreas comuns; nas unidades, na esquadria da área de serviço, e no final 07 com aberturas na alvenaria junto à área técnica das condensadoras.",
@@ -1133,7 +1173,7 @@
     "06/10 Definidas as posições das ventilações permanentes"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "VENTILAÇÃO PERMANENTE",
    "ultimoComentario": "2026-10-06"
@@ -1165,6 +1205,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "João Victor da Silva",
@@ -1173,7 +1214,8 @@
       "MAG"
      ],
      "id": 2957540,
-     "t": "Podemos manter a nomenclatura de acordo com o proposto pela ARQ."
+     "t": "Podemos manter a nomenclatura de acordo com o proposto pela ARQ.",
+     "v": []
     }
    ],
    "complexidade": "baixa",
@@ -1253,6 +1295,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 2140,
    "observacao": "Em 07/10 a Magno validou a nomenclatura dos apartamentos proposta pela Arquitetura. Falta a Arquitetura validar; as demais disciplinas só acompanham e adotam a numeração definida.",
@@ -1268,7 +1311,7 @@
     "07/10 MAG validou a nomenclatura proposta pela ARQ"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -1311,6 +1354,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "baixa",
    "complexidadeMotivo": "",
@@ -1346,6 +1390,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 2323,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -1359,7 +1404,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "PROTEÇÃO CONTRA QUEDAS DE VEÍCULOS",
    "ultimoComentario": "2026-09-14"
@@ -1401,13 +1446,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953486,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst indicou que, entre os pavimentos, serão previstas abas na fachada. No entanto, essa aba atualmente configura como fachada ventilada.\n@Gustavo Neves | PCI repassou que, nesse caso, a fachada ventilada não conta no cálculo do afastamento das aberturas e a medida de 1,20m deve ser considerada na fachada interior. Além disso, o material dessa fachada também deve atender às premissas necessárias para evitar propagação do fogo. Para que a aba configure um elemento válido para esse distanciamento, seria necessário prever em concreto.\nArquitetura irá avaliar qual possibilidade terá o menor impacto: ajuste de distanciamento das esquadrias ou previsão de abas de concreto.\nPremière irá aprofundar o estudo sobre as premissas de fachadas ventiladas para atender à compartimentação vertical."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst indicou que, entre os pavimentos, serão previstas abas na fachada. No entanto, essa aba atualmente configura como fachada ventilada.\n@Gustavo Neves | PCI repassou que, nesse caso, a fachada ventilada não conta no cálculo do afastamento das aberturas e a medida de 1,20m deve ser considerada na fachada interior. Além disso, o material dessa fachada também deve atender às premissas necessárias para evitar propagação do fogo. Para que a aba configure um elemento válido para esse distanciamento, seria necessário prever em concreto.\nArquitetura irá avaliar qual possibilidade terá o menor impacto: ajuste de distanciamento das esquadrias ou previsão de abas de concreto.\nPremière irá aprofundar o estudo sobre as premissas de fachadas ventiladas para atender à compartimentação vertical.",
+     "v": []
     }
    ],
    "complexidade": "alta",
@@ -1451,6 +1498,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 2479,
    "observacao": "As abas de fachada hoje configuram fachada ventilada e não contam para o afastamento de 1,20 m. A Arquitetura vai escolher entre ajustar as esquadrias ou fazer abas em concreto; a Première aprofunda as premissas de fachada ventilada.",
@@ -1465,7 +1513,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "COMPARTIMENTAÇÃO VERTICAL",
    "ultimoComentario": "2026-10-06"
@@ -1489,6 +1537,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "João Victor da Silva",
@@ -1497,7 +1546,8 @@
       "MAG"
      ],
      "id": 2935317,
-     "t": "Viabilizado a documentação da rede de esgoto disponibilizada pela CASAN."
+     "t": "Viabilizado a documentação da rede de esgoto disponibilizada pela CASAN.",
+     "v": []
     }
    ],
    "complexidade": "baixa",
@@ -1535,6 +1585,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 2508,
    "observacao": "A documentação da rede de esgoto da CASAN foi viabilizada em 30/09. HID está em Validar; falta a coordenação validar e encerrar.",
@@ -1549,7 +1600,7 @@
     "30/09 MAG viabilizou a documentação da rede de esgoto junto à CASAN"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "[HID] VIABILIDADES E APROVAÇÃO DE PROJETO",
    "ultimoComentario": "2026-09-30"
@@ -1606,13 +1657,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940392,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nValidado pela @Vanessa Lenhart | CLI que a área técnica de insuflamento não precisa necessariamente estar prevista na fachada, mas a tomada de ar sempre precisa ser prevista no térreo.\nNesse caso, a área técnica pode ser locada em qualquer pavimento abaixo do térreo, de preferência o mais próximo possível do corpo da escada, para evitar perda de área por conta do duto de pressurização.\nO duto de pressurização não precisa subir até a cobertura, como acontece em escadas enclausuradas ventiladas. O sistema termina na área técnica do barrilete, conforme FIGURA 05 do pavimento."
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nValidado pela @Vanessa Lenhart | CLI que a área técnica de insuflamento não precisa necessariamente estar prevista na fachada, mas a tomada de ar sempre precisa ser prevista no térreo.\nNesse caso, a área técnica pode ser locada em qualquer pavimento abaixo do térreo, de preferência o mais próximo possível do corpo da escada, para evitar perda de área por conta do duto de pressurização.\nO duto de pressurização não precisa subir até a cobertura, como acontece em escadas enclausuradas ventiladas. O sistema termina na área técnica do barrilete, conforme FIGURA 05 do pavimento.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -1656,6 +1709,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 2612,
    "observacao": "A CLI validou em 01/10 que a área técnica de insuflamento pode ficar abaixo do térreo, perto da escada, com tomada de ar no térreo, e o duto termina no barrilete.",
@@ -1672,7 +1726,7 @@
     "01/10 CLI validou a área técnica de insuflamento abaixo do térreo"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "ESCADA PRESSURIZADA",
    "ultimoComentario": "2026-10-01"
@@ -1702,6 +1756,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeMotivo": "",
@@ -1738,6 +1793,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 2697,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -1752,7 +1808,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "DISTÂNCIAS MÁXIMAS",
    "ultimoComentario": "2026-09-14"
@@ -1801,13 +1857,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953634,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nConsiderando o possível conflito da área do gerador com a estrutura, @André da Rosa Selhorst ficou de estudar um novo local para o gerador.\nPremière também irá avaliar novas possibilidades no 2º ou 3º Pavimento.\nMagno irá validar nos comentários as cargas consideradas no gerador e indicadas no apontamento - @Alex  Vieira psc"
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nConsiderando o possível conflito da área do gerador com a estrutura, @André da Rosa Selhorst ficou de estudar um novo local para o gerador.\nPremière também irá avaliar novas possibilidades no 2º ou 3º Pavimento.\nMagno irá validar nos comentários as cargas consideradas no gerador e indicadas no apontamento - @Alex  Vieira psc",
+     "v": []
     }
    ],
    "complexidade": "alta",
@@ -1857,6 +1915,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 2891,
    "observacao": "Possível conflito do gerador com a estrutura. A Arquitetura vai estudar novo local e a Première avaliar o 2º ou 3º pavimento; a Magno precisa validar as cargas.",
@@ -1871,7 +1930,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.154Z",
    "status": "aberto",
    "titulo": "GERADOR - DEFINIÇÃO CARGAS E ESPAÇO",
    "ultimoComentario": "2026-10-06"
@@ -1922,6 +1981,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -1930,7 +1990,8 @@
       "MAG"
      ],
      "id": 2940195,
-     "t": "MEDIDOR DE ÁGUA\nPré equipado - permite condomínio instalar telemetria no futuro;\n\n  MEDIDOR DE GÁS\nPré equipado - permite condomínio instalar telemetria no futuro;"
+     "t": "MEDIDOR DE ÁGUA\nPré equipado - permite condomínio instalar telemetria no futuro;\n\n  MEDIDOR DE GÁS\nPré equipado - permite condomínio instalar telemetria no futuro;",
+     "v": []
     }
    ],
    "complexidade": "baixa",
@@ -1979,6 +2040,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 3230,
    "observacao": "A Construtora definiu em 01/10 medidores de água e gás pré-equipados para telemetria futura pelo condomínio.",
@@ -1994,7 +2056,7 @@
     "01/10 MAG definiu medidores de água e gás pré-equipados para telemetria"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -2036,6 +2098,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "baixa",
    "complexidadeMotivo": "",
@@ -2065,6 +2128,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 3264,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -2078,7 +2142,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "INSTALAÇÕES NAS PAREDES DA ESCADA",
    "ultimoComentario": "2026-09-14"
@@ -2112,6 +2176,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "baixa",
    "complexidadeMotivo": "",
@@ -2141,6 +2206,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 3426,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -2154,7 +2220,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "CARACTERÍSTICAS DAS ESCADAS",
    "ultimoComentario": "2026-09-14"
@@ -2200,6 +2266,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "João Victor da Silva",
@@ -2208,7 +2275,8 @@
       "MAG"
      ],
      "id": 2957599,
-     "t": "Qual seria o modelo utilizado como caixa sifonada especial? Como ela funcionaria neste caso?"
+     "t": "Qual seria o modelo utilizado como caixa sifonada especial? Como ela funcionaria neste caso?",
+     "v": []
     }
    ],
    "complexidade": "baixa",
@@ -2246,6 +2314,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 3470,
    "observacao": "Em 07/10 a Magno perguntou qual seria o modelo de caixa sifonada especial e como ela funcionaria; a escolha da solução ainda não foi feita, embora a MAG esteja em Validar na Construflow.",
@@ -2262,7 +2331,7 @@
     "07/10 MAG pediu detalhes da caixa sifonada especial"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -2341,6 +2410,7 @@
     }
    ],
    "categoria": "Sugestão de mudança ou otimização",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeMotivo": "Depende da avaliação da Arquitetura sobre a suficiência das áreas técnicas; possível reflexo nas instalações das demais disciplinas, que acompanham.",
@@ -2429,6 +2499,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 3616,
    "observacao": "Sugestão registrada em 21/10: se as áreas técnicas já previstas atenderem às demandas, avaliar usar como hobby boxes os espaços de difícil acesso indicados nos anexos (1º pavimento, subsolo 1 e 3º pavimento), mantendo-os como área técnica só se necessário, e retirar a alvenaria entre as vagas próximas ao depósito de lixo temporário. Aguarda avaliação da Arquitetura; as demais disciplinas acompanham.",
@@ -2443,7 +2514,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "ÁREA TÉCNICA E HOBBY BOX",
    "ultimoComentario": "2026-10-21"
@@ -2466,13 +2537,15 @@
    "analiseEm": "2026-10-06",
    "anexos": [],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940337,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@Renato Lopez repassou que já foi realizado o levantamento topográfico inicial, mas este não contempla as cotas de fundo e topo e posicionamento das caixas e demais infraestruturas. Magno irá solicitar um novo levantamento para a equipe responsável, contendo todas as informações necessárias indicadas em reunião e no apontamento."
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@Renato Lopez repassou que já foi realizado o levantamento topográfico inicial, mas este não contempla as cotas de fundo e topo e posicionamento das caixas e demais infraestruturas. Magno irá solicitar um novo levantamento para a equipe responsável, contendo todas as informações necessárias indicadas em reunião e no apontamento.",
+     "v": []
     }
    ],
    "complexidade": "alta",
@@ -2527,6 +2600,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 3638,
    "observacao": "O topográfico inicial não traz cotas de fundo e topo nem as caixas e infraestruturas. A Magno vai solicitar novo levantamento.",
@@ -2540,7 +2614,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "LEVANTAMENTO PLANIALTIMÉTRICO / TOPOGRAFIA",
    "ultimoComentario": "2026-10-01"
@@ -2582,13 +2656,17 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953568,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nValidado pela Magno que haverá SAVE em todos os pavimentos de garagem, devendo ser previsto infraestrutura para todas as vagas (individuais e duplas) - ver #1875\nNesse caso, pela normativa dos bombeiros ser mais restritiva em relação à ambientes com carregamento veicular, será necessário prever o sistema de extração de fumaça nos pavimentos.\n@Vanessa Lenhart | CLI explicou que o sistema de exaustão dos subsolos foi previsto inicialmente para atender à qualidade do ar nos pavimentos de garagem. Para adaptação para o sistema do SAVE, será necessário prever ventiladores mais potentes.\nEm relação à FIGURA 03 do apontamento, a subida da descarga no mezanino não precisa ser necessariamente metálica, pode ser previsto um prisma em alvenaria também.\nNa utilização do sistema para o SAVE, Vanessa ainda explicou que há dois estágios:\n1-renovação de ar, para utilização do dia a dia;\n2-extração de ar, quando há sinistro e a necessidade de retirada de fumaça e calor no pavimento."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nValidado pela Magno que haverá SAVE em todos os pavimentos de garagem, devendo ser previsto infraestrutura para todas as vagas (individuais e duplas) - ver #1875\nNesse caso, pela normativa dos bombeiros ser mais restritiva em relação à ambientes com carregamento veicular, será necessário prever o sistema de extração de fumaça nos pavimentos.\n@Vanessa Lenhart | CLI explicou que o sistema de exaustão dos subsolos foi previsto inicialmente para atender à qualidade do ar nos pavimentos de garagem. Para adaptação para o sistema do SAVE, será necessário prever ventiladores mais potentes.\nEm relação à FIGURA 03 do apontamento, a subida da descarga no mezanino não precisa ser necessariamente metálica, pode ser previsto um prisma em alvenaria também.\nNa utilização do sistema para o SAVE, Vanessa ainda explicou que há dois estágios:\n1-renovação de ar, para utilização do dia a dia;\n2-extração de ar, quando há sinistro e a necessidade de retirada de fumaça e calor no pavimento.",
+     "v": [
+      1875
+     ]
     }
    ],
    "complexidade": "alta",
@@ -2632,6 +2710,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 3694,
    "observacao": "Com SAVE em todas as garagens, a exaustão dos subsolos precisa virar extração de fumaça, com ventiladores mais potentes e dois estágios (renovação e extração).",
@@ -2648,7 +2727,7 @@
     "06/10 Magno confirmou SAVE em todos os pavimentos de garagem"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "EXAUSTÃO E VENTILAÇÃO MECÂNICA - SUBSOLOS",
    "ultimoComentario": "2026-10-06"
@@ -2683,6 +2762,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeMotivo": "",
@@ -2735,6 +2815,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 3873,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -2747,7 +2828,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "IRRIGAÇÃO E PAISAGISMO",
    "ultimoComentario": "2026-09-16"
@@ -2794,6 +2875,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "João Victor da Silva",
@@ -2802,7 +2884,8 @@
       "MAG"
      ],
      "id": 2942470,
-     "t": "Em relação ao SDAI da loja, podemos seguir com a opção 02.\nEm relação a fiação de alarme de incêndio: eletroduto flexível onde embutido; rígido onde aparente.\nPosicionamento da central de alarme pode ser verificado com a arquitetura e posteriormente validado com interiores."
+     "t": "Em relação ao SDAI da loja, podemos seguir com a opção 02.\nEm relação a fiação de alarme de incêndio: eletroduto flexível onde embutido; rígido onde aparente.\nPosicionamento da central de alarme pode ser verificado com a arquitetura e posteriormente validado com interiores.",
+     "v": []
     }
    ],
    "complexidade": "baixa",
@@ -2839,6 +2922,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4050,
    "observacao": "MAG respondeu em 02/10: SDAI da loja pela opção 02, eletroduto flexível onde embutido e rígido onde aparente, e posição da central de alarme a verificar com a ARQ e validar depois com Interiores. Falta a ARQ validar a posição da central e o PCI incorporar as definições.",
@@ -2854,7 +2938,7 @@
     "02/10 MAG definiu SDAI da loja pela opção 02 e eletroduto flexível embutido / rígido aparente"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "ALARME E DETECÇÃO DE INCÊNDIO",
    "ultimoComentario": "2026-10-02"
@@ -2889,6 +2973,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -2897,7 +2982,8 @@
       "MAG"
      ],
      "id": 2937857,
-     "t": "Considerar corrimão de madeira em verniz e com suporte em alumínio na cor preto."
+     "t": "Considerar corrimão de madeira em verniz e com suporte em alumínio na cor preto.",
+     "v": []
     }
    ],
    "complexidade": "baixa",
@@ -2928,6 +3014,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4252,
    "observacao": "A Construtora definiu em 01/10 corrimão de madeira em verniz com suporte em alumínio preto.",
@@ -2943,7 +3030,7 @@
     "01/10 MAG definiu corrimão de madeira em verniz com suporte em alumínio preto"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "CORRIMÃO",
    "ultimoComentario": "2026-10-01"
@@ -2967,13 +3054,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953639,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nValidado com a Magno de seguir com as infras embutidas na estrutura nas áreas comuns e halls de pavimento (PVC). Garagens manterá aparente, e alimentadores acima de Ø32mm também (AÇO)."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nValidado com a Magno de seguir com as infras embutidas na estrutura nas áreas comuns e halls de pavimento (PVC). Garagens manterá aparente, e alimentadores acima de Ø32mm também (AÇO).",
+     "v": []
     }
    ],
    "complexidade": "baixa",
@@ -2997,6 +3086,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4308,
    "observacao": "Validado em 06/10: infraestrutura embutida em PVC nas áreas comuns e halls; aparente em aço nas garagens e nos alimentadores acima de Ø32 mm.",
@@ -3011,7 +3101,7 @@
     "06/10 Definidos os materiais e caminhamentos dos eletrodutos"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "CLASSIFICAÇÃO DOS ELETRODUTOS QUANTO À ROTA DE FUGA",
    "ultimoComentario": "2026-10-06"
@@ -3079,6 +3169,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "João Victor da Silva",
@@ -3087,14 +3178,16 @@
       "MAG"
      ],
      "id": 2934336,
-     "t": "Por parte da construtora, sugerimos que este reservatório seja realizado nos pavimentos 1°PAVIMENTO e 1°PAVIMENTO-MEZANINO a fim de evitar utilização de bombas para o uso de águas pluviais."
+     "t": "Por parte da construtora, sugerimos que este reservatório seja realizado nos pavimentos 1°PAVIMENTO e 1°PAVIMENTO-MEZANINO a fim de evitar utilização de bombas para o uso de águas pluviais.",
+     "v": []
     },
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940362,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nArquitetura repassou que irá estudar a possibilidade de ocupação do vazio do mezanino, conforme sugestão do João no comentário acima.\nA princípio, para HID, essa solução não possui implicações técnicas. Première irá estudar melhor os traçados para validação da saída da drenagem do empreendimento por gravidade para a rede (considerando a inclinação do terreno)."
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nArquitetura repassou que irá estudar a possibilidade de ocupação do vazio do mezanino, conforme sugestão do João no comentário acima.\nA princípio, para HID, essa solução não possui implicações técnicas. Première irá estudar melhor os traçados para validação da saída da drenagem do empreendimento por gravidade para a rede (considerando a inclinação do terreno).",
+     "v": []
     }
    ],
    "complexidade": "alta",
@@ -3144,6 +3237,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4315,
    "observacao": "A Construtora sugeriu em 30/09 fazer o reservatório pluvial no 1º pavimento e no mezanino para evitar bombas. Em 01/10 a Arquitetura ficou de estudar a ocupação do vazio do mezanino e a Première de validar a drenagem por gravidade.",
@@ -3161,7 +3255,7 @@
     "01/10 HID informou que a solução não tem implicação técnica a princípio"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "APROVEITAMENTO PLUVIAL E TANQUE DE DETENÇÃO PLUVIAL",
    "ultimoComentario": "2026-10-01"
@@ -3203,13 +3297,17 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953606,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nValidado pela Magno que deverá ser previsto infraestrutura para todas as vagas (individuais e duplas) - ver #1875\nNesse caso, validado que será possível atender a todas as vagas considerando a recarga mínima, por meio do gerenciador de demanda."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nValidado pela Magno que deverá ser previsto infraestrutura para todas as vagas (individuais e duplas) - ver #1875\nNesse caso, validado que será possível atender a todas as vagas considerando a recarga mínima, por meio do gerenciador de demanda.",
+     "v": [
+      1875
+     ]
     }
    ],
    "complexidade": "media",
@@ -3252,6 +3350,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4398,
    "observacao": "A Magno definiu infraestrutura em todas as vagas, atendidas com recarga mínima por gerenciador de demanda.",
@@ -3267,7 +3366,7 @@
     "06/10 Validado atendimento de todas as vagas com gerenciador de demanda"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.153Z",
    "status": "aberto",
    "titulo": "TOMADAS DE VEÍCULOS ELÉTRICOS",
    "ultimoComentario": "2026-10-06"
@@ -3321,6 +3420,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "baixa",
    "complexidadeMotivo": "",
@@ -3350,6 +3450,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4532,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -3363,7 +3464,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "GUARDA-CORPOS E GUARDA-CORPOS DE VIDRO",
    "ultimoComentario": "2026-09-14"
@@ -3431,6 +3532,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "João Victor da Silva",
@@ -3439,7 +3541,8 @@
       "MAG"
      ],
      "id": 3038244,
-     "t": "@Thalles D`Luca | ELT, TEL e SPDA\n\nAguardar a definição final das áreas comuns pela ARQ para realizar um novo lançamento dos quadros de elétrica e telecomunicações (VDI).\n\nAção: Revisar e emitir novamente os apontamentos após a consolidação das áreas comuns."
+     "t": "@Thalles D`Luca | ELT, TEL e SPDA\n\nAguardar a definição final das áreas comuns pela ARQ para realizar um novo lançamento dos quadros de elétrica e telecomunicações (VDI).\n\nAção: Revisar e emitir novamente os apontamentos após a consolidação das áreas comuns.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -3483,6 +3586,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4549,
    "observacao": "Em 03/11 a MAG informou que a posição dos quadros de elétrica (QDC) e VDI das áreas comuns depende da definição final das áreas comuns pela ARQ, e passou a acompanhar. Depois que a ARQ consolidar as áreas comuns, ELT e TEL devem refazer o lançamento dos quadros e reemitir o apontamento.",
@@ -3499,7 +3603,7 @@
     "03/11 MAG orientou aguardar a definição final das áreas comuns pela ARQ antes de um novo lançamento dos quadros de elétrica e VDI"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "DEFINIÇÃO DA POSIÇÃO DOS QUADROS DE DISTRIBUIÇÃO ELÉTRICA E VDI DAS ÁREAS COMUNS",
    "ultimoComentario": "2026-11-03"
@@ -3524,6 +3628,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeMotivo": "",
@@ -3560,6 +3665,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4562,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -3574,7 +3680,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "ESCADA MEZANINO",
    "ultimoComentario": "2026-09-14"
@@ -3660,13 +3766,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953580,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@Renato Lopez repassou que foi contratado uma equipe de consultoria de climatização para as unidades habitacionais, para estressar todas as possibilidades de utilização da área técnica atual para locação das condensadoras.\nApós a entrega inicial dessa consultoria, Renato irá passar o estudo no CFD - Simulação térmica para validação do funcionamento do sistema.\nPremière havia realizado uma validação do raio de atendimento da área técnica prevista pela Arquitetura em relação à distância máxima das frigorígenas, mas reforçou sobre a problemática do calor acumulado nessa região (FIGURA 01 do comentário e ANEXO A do apontamento).\nMagno irá repassar para a Première o prazo para recebimento do estudo, para análise dos impactos no estudo inicial realizado pela equipe interna de climatização."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@Renato Lopez repassou que foi contratado uma equipe de consultoria de climatização para as unidades habitacionais, para estressar todas as possibilidades de utilização da área técnica atual para locação das condensadoras.\nApós a entrega inicial dessa consultoria, Renato irá passar o estudo no CFD - Simulação térmica para validação do funcionamento do sistema.\nPremière havia realizado uma validação do raio de atendimento da área técnica prevista pela Arquitetura em relação à distância máxima das frigorígenas, mas reforçou sobre a problemática do calor acumulado nessa região (FIGURA 01 do comentário e ANEXO A do apontamento).\nMagno irá repassar para a Première o prazo para recebimento do estudo, para análise dos impactos no estudo inicial realizado pela equipe interna de climatização.",
+     "v": []
     }
    ],
    "complexidade": "alta",
@@ -3704,6 +3812,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4707,
    "observacao": "A Magno contratou consultoria de climatização para as unidades e vai rodar simulação CFD após a entrega inicial. A Première reforçou o risco de calor acumulado na área técnica e aguarda o prazo do estudo.",
@@ -3720,7 +3829,7 @@
     "06/10 MAG informou a contratação de consultoria de climatização para as unidades"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "ÁREA TÉCNICA CONDENSADORAS - UNIDADES HABITACIONAIS",
    "ultimoComentario": "2026-10-06"
@@ -3805,13 +3914,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940322,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst trouxe que subestação não funciona na praça, por conta da área de fruição.\nSugeriu prever ERPM, hidrômetro e HR na região de entrada de veículos do subsolo, na parede oposta à parede do canteiro da árvore.\nPremière irá avaliar novos posicionamentos na próxima etapa, de revisão do EP."
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst trouxe que subestação não funciona na praça, por conta da área de fruição.\nSugeriu prever ERPM, hidrômetro e HR na região de entrada de veículos do subsolo, na parede oposta à parede do canteiro da árvore.\nPremière irá avaliar novos posicionamentos na próxima etapa, de revisão do EP.",
+     "v": []
     }
    ],
    "complexidade": "alta",
@@ -3867,6 +3978,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4727,
    "observacao": "Na reunião de 01/10 a subestação na praça foi descartada (área de fruição) e a Arquitetura sugeriu ERPM, hidrômetro e HR na entrada de veículos do subsolo. A Première vai reavaliar na revisão do EP.",
@@ -3883,7 +3995,7 @@
     "01/10 Descartada a subestação na praça"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "LOCAÇÃO MEDIDORES, CONTENTORES, CENTRAL DE GÁS, HIDRÔMETRO",
    "ultimoComentario": "2026-10-01"
@@ -3902,6 +4014,7 @@
    "analiseEm": "2026-10-07",
    "anexos": [],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -3910,14 +4023,16 @@
       "MAG"
      ],
      "id": 2937693,
-     "t": "Opção B"
+     "t": "Opção B",
+     "v": []
     },
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953612,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nValidado pelo @Alex  Vieira via comentário sobre a utilização da Opção B - Travessia subterrânea;\nPara validação do projeto de travessia subterrânea, será necessário o topográfico atualizado com o posicionamento dos postes, do mesmo lado do empreendimento e do outro lado da rua, com as cotas de amarração - @Renato Lopez psc"
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nValidado pelo @Alex  Vieira via comentário sobre a utilização da Opção B - Travessia subterrânea;\nPara validação do projeto de travessia subterrânea, será necessário o topográfico atualizado com o posicionamento dos postes, do mesmo lado do empreendimento e do outro lado da rua, com as cotas de amarração - @Renato Lopez psc",
+     "v": []
     },
     {
      "a": "Alex Vieira",
@@ -3926,7 +4041,8 @@
       "MAG"
      ],
      "id": 2956394,
-     "t": "Temos no projeto topográfico a localização do poste."
+     "t": "Temos no projeto topográfico a localização do poste.",
+     "v": []
     }
    ],
    "complexidade": "alta",
@@ -3957,6 +4073,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4756,
    "observacao": "A Magno escolheu a Opção B (travessia subterrânea). Em 07/10 o Alex informou que o projeto topográfico já tem a localização do poste; falta ELT e TEL confirmarem se isso atende ao pedido de postes dos dois lados da rua com cotas de amarração.",
@@ -3973,7 +4090,7 @@
     "07/10 MAG informou que o projeto topográfico já tem a localização do poste"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.154Z",
    "status": "aberto",
    "titulo": "PONTO DE CONEXÃO COM A REDE DA CONCESSIONÁRIA",
    "ultimoComentario": "2026-10-07"
@@ -4005,6 +4122,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "alta",
    "complexidadeMotivo": "Entrepiso e entreforros; 9 disciplinas",
@@ -4077,6 +4195,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4808,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -4091,7 +4210,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "ENTREPISO E ENTREFORROS",
    "ultimoComentario": "2026-09-16"
@@ -4135,6 +4254,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "alta",
    "complexidadeMotivo": "Construção de shafts; 7 disciplinas",
@@ -4189,6 +4309,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4839,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -4203,7 +4324,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "CONSTRUÇÃO SHAFTS",
    "ultimoComentario": "2026-09-16"
@@ -4238,6 +4359,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "baixa",
    "complexidadeMotivo": "",
@@ -4267,6 +4389,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4923,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -4280,7 +4403,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "PISCINAS E ÁREA DE BANHO",
    "ultimoComentario": "2026-09-14"
@@ -4337,6 +4460,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeMotivo": "",
@@ -4378,6 +4502,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 5335,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -4391,7 +4516,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "SHAFTS SANITÁRIOS",
    "ultimoComentario": "2026-09-15"
@@ -4439,6 +4564,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -4447,14 +4573,16 @@
       "MAG"
      ],
      "id": 2934348,
-     "t": "Conseguimos colocar a subestação no local do Gerador, pois no local indicado para subestação temos área de fruição."
+     "t": "Conseguimos colocar a subestação no local do Gerador, pois no local indicado para subestação temos área de fruição.",
+     "v": []
     },
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953629,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst levantou a possibilidade de alterar o layout da subestação, prevendo talvez em 2 pavimentos com pé direito duplo. @Thalles D`Luca | ELT, TEL e SPDA  repassou que não é indicado pela CELESC, sendo o ideal prever os trafos no mesmo nível.\nAinda, Thalles explicou que a subestação precisaria estar a 3m de distância do depósito de lixo, por conta do risco de incêndio. No entanto, a Première irá validar com a concessionária a possibilidade de passar com o distanciamento vertical de 2,70m, considerando que essa distância está sendo contada a partir da verga da porta de acesso ao depósito (FIGURA 01).\nSobre a ventilação da subestação, @Alex  Vieira questionou se é possível prever uma dessas aberturas para a região da garagem. Première irá validar com a concessionária também.\nEm relação a largura de circulação de dentro da subestação, indicado na FIGURA 01, validado pela Première que pode-se diminuir para 1,30m, visto que os equipamentos serão retirados pelas esquadrias da fachada."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst levantou a possibilidade de alterar o layout da subestação, prevendo talvez em 2 pavimentos com pé direito duplo. @Thalles D`Luca | ELT, TEL e SPDA  repassou que não é indicado pela CELESC, sendo o ideal prever os trafos no mesmo nível.\nAinda, Thalles explicou que a subestação precisaria estar a 3m de distância do depósito de lixo, por conta do risco de incêndio. No entanto, a Première irá validar com a concessionária a possibilidade de passar com o distanciamento vertical de 2,70m, considerando que essa distância está sendo contada a partir da verga da porta de acesso ao depósito (FIGURA 01).\nSobre a ventilação da subestação, @Alex  Vieira questionou se é possível prever uma dessas aberturas para a região da garagem. Première irá validar com a concessionária também.\nEm relação a largura de circulação de dentro da subestação, indicado na FIGURA 01, validado pela Première que pode-se diminuir para 1,30m, visto que os equipamentos serão retirados pelas esquadrias da fachada.",
+     "v": []
     }
    ],
    "complexidade": "alta",
@@ -4505,6 +4633,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 5403,
    "observacao": "A subestação foi deslocada para o local do gerador por causa da área de fruição. Em 06/10 ficou descartada a opção em 2 níveis (CELESC) e a Première vai validar com a concessionária o distanciamento vertical de 2,70 m do depósito de lixo e a ventilação para a garagem.",
@@ -4524,7 +4653,7 @@
     "06/10 Validada circulação interna de 1,30 m"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.154Z",
    "status": "aberto",
    "titulo": "SUBESTAÇÃO (SE)",
    "ultimoComentario": "2026-10-06"
@@ -4554,6 +4683,9 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [
+    "EP"
+   ],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeMotivo": "",
@@ -4597,6 +4729,9 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [
+    121089
+   ],
    "fonte": "Construflow",
    "numero": 5862,
    "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
@@ -4612,7 +4747,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "DEFINIÇÕES CHUVEIROS AUTOMÁTICOS",
    "ultimoComentario": "2026-09-14"
@@ -4633,6 +4768,7 @@
    "analiseEm": "2026-10-06",
    "anexos": [],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -4641,7 +4777,8 @@
       "MAG"
      ],
      "id": 2934870,
-     "t": "De acordo com as áreas indicadas, deixar o ponto de elétrica somente na evaporadora."
+     "t": "De acordo com as áreas indicadas, deixar o ponto de elétrica somente na evaporadora.",
+     "v": []
     }
    ],
    "complexidade": "baixa",
@@ -4684,6 +4821,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 5870,
    "observacao": "A Construtora definiu em 30/09 que, nas áreas indicadas, o ponto elétrico fica somente na evaporadora.",
@@ -4699,7 +4837,7 @@
     "30/09 MAG definiu ponto elétrico somente na evaporadora"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -4763,6 +4901,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "João Victor da Silva",
@@ -4771,7 +4910,8 @@
       "MAG"
      ],
      "id": 2969930,
-     "t": "De acordo com a utilização dos materiais para tubulação.\nEm relação ao caminhamento da tubulação, aguardar definição da nova localização da ERPM para definição deste."
+     "t": "De acordo com a utilização dos materiais para tubulação.\nEm relação ao caminhamento da tubulação, aguardar definição da nova localização da ERPM para definição deste.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -4800,6 +4940,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 5996,
    "observacao": "MAG concordou em 09/10 com os materiais propostos para as tubulações de gás e SHP. O caminhamento da rede primária de gás aguarda a definição da nova localização da ERPM (ver #4727); depois disso o PCI ajusta o projeto.",
@@ -4814,7 +4955,7 @@
     "09/10 MAG aprovou os materiais das tubulações de gás e SHP; caminhamento aguarda nova localização da ERPM"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "ESPECIFICAÇÃO DA TUBULAÇÃO DE GÁS E SHP",
    "ultimoComentario": "2026-10-09"
@@ -4843,6 +4984,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
@@ -4871,6 +5013,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 6003,
    "observacao": "Sem comentários na Construflow. Aguardando a ARQ prever paredes com TRRF de 2 h e portas corta-fogo nos locais indicados (Figuras 01 e 02).",
@@ -4884,7 +5027,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "COMPARTIMENTAÇÃO ENTRE OCUPAÇÕES",
    "ultimoComentario": "2026-09-14"
@@ -4922,6 +5065,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
@@ -4992,6 +5136,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 6034,
    "observacao": "Sem comentários na Construflow. Aguardando a MAG confirmar a contratação dos projetos de interiores e luminotécnico ou disponibilizar imagens comerciais.",
@@ -5005,7 +5150,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "PROJETO DE INTERIORES E LUMINOTÉCNICO",
    "ultimoComentario": "2026-09-16"
@@ -5037,6 +5182,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
@@ -5100,6 +5246,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 6298,
    "observacao": "Sem comentários na Construflow. Aguardando a MAG confirmar se haverá contratação do projeto de desempenho.",
@@ -5112,7 +5259,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "PROJETO DE DESEMPENHO",
    "ultimoComentario": "2026-09-16"
@@ -5146,13 +5293,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940325,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nAinda não foi definido o uso da loja comercial, nem se será mantido apenas 1 loja ou se poderá ser subdividida depois. Caso seja dividida, @André da Rosa Selhorst repassou que possivelmente deverá ser previsto no pós Habite-se.\n@Renato Lopez irá validar com o Luiz a definição de uso. André complementou que, para o produto de arquitetura, seria interessante prever um café."
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nAinda não foi definido o uso da loja comercial, nem se será mantido apenas 1 loja ou se poderá ser subdividida depois. Caso seja dividida, @André da Rosa Selhorst repassou que possivelmente deverá ser previsto no pós Habite-se.\n@Renato Lopez irá validar com o Luiz a definição de uso. André complementou que, para o produto de arquitetura, seria interessante prever um café.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -5221,6 +5370,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 6715,
    "observacao": "Na reunião de 01/10 ficou pendente a definição de uso da loja e se ela poderá ser subdividida depois. Em 06/10 a Magno informou que vai operar a loja (ver #1274); falta a MAG confirmar com o Luiz a definição de uso e a possibilidade de subdivisão.",
@@ -5238,7 +5388,7 @@
     "06/10 Magno informou que vai operar a loja (ver #1274)"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "INFRAS DAS LOJAS/SALAS COMERCIAIS",
    "ultimoComentario": "2026-10-01"
@@ -5264,13 +5414,17 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953498,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nValidado com o Alex que, caso a ERMU seja locada na entrada do subsolo 01, conforme conversado na reunião de 01/10 e indicado no apontamento #4727  será necessário prever o registro de corte de gás próximo da entrada."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nValidado com o Alex que, caso a ERMU seja locada na entrada do subsolo 01, conforme conversado na reunião de 01/10 e indicado no apontamento #4727  será necessário prever o registro de corte de gás próximo da entrada.",
+     "v": [
+      4727
+     ]
     }
    ],
    "complexidade": "media",
@@ -5306,6 +5460,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 6984,
    "observacao": "Validado com a Magno na reunião de 06/10 que, se a ERPM ficar na entrada do subsolo 01 (ver #4727), o registro de corte geral de gás será previsto próximo dessa entrada. Falta o PCI incorporar em projeto.",
@@ -5321,7 +5476,7 @@
     "06/10 Validado com a Magno o registro de corte próximo à entrada, se a ERPM ficar no SS1"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "REGISTRO DE CORTE GERAL DE GÁS",
    "ultimoComentario": "2026-10-06"
@@ -5341,6 +5496,7 @@
    "analiseEm": "2026-10-09",
    "anexos": [],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
@@ -5375,6 +5531,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 7215,
    "observacao": "Sem comentários na Construflow. Aguardando a EST confirmar o atendimento ao TRRF indicado.",
@@ -5388,7 +5545,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "TEMPO DE RESISTÊNCIA AO FOGO",
    "ultimoComentario": "2026-09-14"
@@ -5433,13 +5590,17 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2936706,
-     "t": "Conforme mencionado pelo Alex no apontamento #1491 a Magno decidiu seguir com a solicitação de viabilidade de GN para o empreendimento."
+     "t": "Conforme mencionado pelo Alex no apontamento #1491 a Magno decidiu seguir com a solicitação de viabilidade de GN para o empreendimento.",
+     "v": [
+      1491
+     ]
     }
    ],
    "complexidade": "media",
@@ -5477,6 +5638,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 7356,
    "observacao": "A Magno decidiu solicitar a viabilidade de GN à concessionária (registrado em 01/10, ver #1491). Aguardando o retorno da concessionária e a definição da posição da ERPM (ver #4727).",
@@ -5493,7 +5655,7 @@
     "22/09 Magno decidiu solicitar viabilidade de GN"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "VIABILIDADE DE GÁS NATURAL (GN) E ERPM",
    "ultimoComentario": "2026-10-01"
@@ -5515,6 +5677,7 @@
    "analiseEm": "2026-10-09",
    "anexos": [],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -5523,7 +5686,8 @@
       "MAG"
      ],
      "id": 2937941,
-     "t": "vamos seguir com bloco autônomo"
+     "t": "vamos seguir com bloco autônomo",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -5565,6 +5729,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 7400,
    "observacao": "MAG definiu em 01/10 a iluminação de emergência por blocos autônomos. Falta PCI e ELT incorporarem a definição e a coordenação validar a resposta da MAG.",
@@ -5580,7 +5745,7 @@
     "01/10 MAG definiu blocos autônomos"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -5667,13 +5832,20 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [
+    "EP"
+   ],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953557,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nValidado pela Magno que haverá SAVE em todos os pavimentos de garagem, devendo ser previsto infraestrutura para todas as vagas (individuais e duplas) - ver #1875\nNesse caso, pela normativa dos bombeiros ser mais restritiva em relação à ambientes com carregamento veicular, será necessário prever o sistema de extração de fumaça nos pavimentos (ver #3694 ).\n@André da Rosa Selhorst repassou que as garagens do 2º e 3º pavimentos são mais favoráveis para previsão de aberturas de ventilação natural, demais pavimentos existem limitações por conta de outros ambientes na fachada."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nValidado pela Magno que haverá SAVE em todos os pavimentos de garagem, devendo ser previsto infraestrutura para todas as vagas (individuais e duplas) - ver #1875\nNesse caso, pela normativa dos bombeiros ser mais restritiva em relação à ambientes com carregamento veicular, será necessário prever o sistema de extração de fumaça nos pavimentos (ver #3694 ).\n@André da Rosa Selhorst repassou que as garagens do 2º e 3º pavimentos são mais favoráveis para previsão de aberturas de ventilação natural, demais pavimentos existem limitações por conta de outros ambientes na fachada.",
+     "v": [
+      1875,
+      3694
+     ]
     }
    ],
    "complexidade": "media",
@@ -5718,6 +5890,9 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [
+    121089
+   ],
    "fonte": "Construflow",
    "numero": 7458,
    "observacao": "Na reunião de 06/10 a Magno confirmou SAVE em todos os pavimentos de garagem (ver #1875), o que exige sistema de extração de fumaça nas garagens (ver #3694). ARQ deve avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos.",
@@ -5735,7 +5910,7 @@
     "06/10 Magno confirmou SAVE em todos os pavimentos de garagem"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "RENOVAÇÃO DE AR NAS GARAGENS",
    "ultimoComentario": "2026-10-06"
@@ -5780,6 +5955,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "João Victor da Silva",
@@ -5788,7 +5964,8 @@
       "MAG"
      ],
      "id": 2933742,
-     "t": "Segue a proposta para as esperas das antenas, a área indicada esta voltada para a face norte e dentro do cone de proteção do SPDA.\n\n@André da Rosa Selhorst Validar posição da antena."
+     "t": "Segue a proposta para as esperas das antenas, a área indicada esta voltada para a face norte e dentro do cone de proteção do SPDA.\n\n@André da Rosa Selhorst Validar posição da antena.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -5831,6 +6008,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 7521,
    "observacao": "A MAG enviou em 30/09 a proposta de localização das esperas das antenas, voltada para a face norte e dentro do cone de proteção do SPDA. Falta validar a posição indicada para definir a infraestrutura de TEL e a integração com o SPDA.",
@@ -5846,7 +6024,7 @@
     "30/09 MAG apresentou a proposta de localização das esperas das antenas, na face norte e dentro do cone de proteção do SPDA"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.154Z",
    "status": "aberto",
    "titulo": "ANTENAS VIA SATÉLITE NA COBERTURA",
    "ultimoComentario": "2026-09-30"
@@ -5864,6 +6042,7 @@
    "analiseEm": "2026-10-09",
    "anexos": [],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
@@ -5892,6 +6071,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 7614,
    "observacao": "Sem comentários na Construflow. Item de conferência contínua: a ARQ deve manter a largura de circulação e corredores em todas as etapas do projeto.",
@@ -5905,7 +6085,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "LARGURA CIRCULAÇÃO E CORREDORES",
    "ultimoComentario": "2026-09-14"
@@ -5929,13 +6109,17 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940404,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EPs:\nAlinhado em reunião entre a Magno e Methafora que o elevador de emergência será retirado dos pavimentos de subsolo, por conta da pressurização necessária na escada do subsolo em caso de acesso compartilhado co a antecâmara do elevador.\nVer mais sobre a discussão no apontamento #1049"
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EPs:\nAlinhado em reunião entre a Magno e Methafora que o elevador de emergência será retirado dos pavimentos de subsolo, por conta da pressurização necessária na escada do subsolo em caso de acesso compartilhado co a antecâmara do elevador.\nVer mais sobre a discussão no apontamento #1049",
+     "v": [
+      1049
+     ]
     }
    ],
    "complexidade": "media",
@@ -5972,6 +6156,9 @@
    "etapaConferencia": null,
    "etapaOrigem": "etiqueta",
    "etapaResolucao": "AP",
+   "etiquetas": [
+    117648
+   ],
    "fonte": "Construflow",
    "numero": 7618,
    "observacao": "Alinhado na reunião de 01/10 entre Magno e Methafora retirar o elevador de emergência dos subsolos, por causa da pressurização da escada (ver #1049). Falta a ARQ ajustar o projeto; etiqueta indica resolução no AP.",
@@ -5988,7 +6175,7 @@
     "01/10 Alinhada a retirada do elevador de emergência dos subsolos"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "ELEVADOR DE EMERGÊNCIA",
    "ultimoComentario": "2026-10-01"
@@ -6017,6 +6204,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -6025,7 +6213,8 @@
       "MAG"
      ],
      "id": 2906112,
-     "t": "A tubulação de gás deverá passar pelo vão da porta. (Figura 01)"
+     "t": "A tubulação de gás deverá passar pelo vão da porta. (Figura 01)",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -6062,6 +6251,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 7671,
    "observacao": "MAG definiu em 22/09 que a tubulação de gás da rede secundária passará pelo vão da porta (Figura 01). Falta o PCI incorporar em projeto e a coordenação validar a resposta da MAG.",
@@ -6078,7 +6268,7 @@
     "22/09 MAG definiu a passagem da tubulação de gás pelo vão da porta (Figura 01)"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "CAMINHAMENTO DE GÁS - REDE SECUNDÁRIA",
    "ultimoComentario": "2026-10-07"
@@ -6128,6 +6318,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
@@ -6170,6 +6361,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 7738,
    "observacao": "Sem comentários na Construflow. Aguardando MAG e ARQ validarem as posições sugeridas para os quadros de distribuição elétrica e VDI nas unidades privativas (Figuras 01 a 06).",
@@ -6185,7 +6377,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.153Z",
    "status": "aberto",
    "titulo": "DEFINIÇÃO DA POSIÇÃO DOS QUADROS DE DISTRIBUIÇÃO ELÉTRICA E VDI NAS UNIDADES PRIVATIVAS",
    "ultimoComentario": "2026-09-14"
@@ -6211,13 +6403,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940383,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nArquitetura irá verificar a ajustar em projeto.\n@André da Rosa Selhorst psc"
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nArquitetura irá verificar a ajustar em projeto.\n@André da Rosa Selhorst psc",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -6253,6 +6447,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8197,
    "observacao": "Na reunião de 01/10 a arquitetura ficou de verificar e ajustar a escada do barrilete em projeto. Aguardando o retorno da ARQ.",
@@ -6266,7 +6461,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "ESCADA BARRILETE",
    "ultimoComentario": "2026-10-01"
@@ -6301,13 +6496,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940341,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nAinda não foi realizado a sondagem para validação da necessidade de laje de subpressão.\n@Renato Lopez explicou que o terreno está sendo negociado por permuta e possui edificações existentes, que precisariam ser demolidas para viabilizar a sondagem completa do terreno.\nAlinhado que a Première necessita da validação da laje de subpressão até, no máximo, o início da revisão do AP."
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nAinda não foi realizado a sondagem para validação da necessidade de laje de subpressão.\n@Renato Lopez explicou que o terreno está sendo negociado por permuta e possui edificações existentes, que precisariam ser demolidas para viabilizar a sondagem completa do terreno.\nAlinhado que a Première necessita da validação da laje de subpressão até, no máximo, o início da revisão do AP.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -6375,6 +6572,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8200,
    "observacao": "A sondagem ainda não foi feita porque o terreno está em negociação por permuta e tem edificações a demolir. Na reunião de 01/10 ficou alinhado que a Première precisa da validação da laje de subpressão até, no máximo, o início da revisão do AP.",
@@ -6389,7 +6587,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "LAJE DE SUBPRESSÃO E DRENAGEM DE SUBSOLOS",
    "ultimoComentario": "2026-10-01"
@@ -6426,6 +6624,7 @@
    ],
    "atualizadoEm": "2026-10-09T18:16:55.130Z",
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeOrigem": "manual",
@@ -6461,6 +6660,7 @@
    "etapaConferencia": null,
    "etapaOrigem": "manual",
    "etapaResolucao": "AP",
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8386,
    "observacao": "Sem comentários na Construflow. Aguardando ARQ e MAG indicarem os locais de portas com fechadura eletrônica ou portas automáticas, para o PCI prever as botoeiras de emergência.",
@@ -6475,7 +6675,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "PORTAS",
    "ultimoComentario": "2026-09-14"
@@ -6521,6 +6721,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "João Victor da Silva",
@@ -6529,14 +6730,16 @@
       "MAG"
      ],
      "id": 2935683,
-     "t": "@Leilini Rossette l HID Solicitamos um estudo com relação a quantidade de válvulas de ação direta x pilotada a fim de comparar custo.\n\nCaso não seja viável as válvulas de ação direta, pedimos novo estudo de quantidade de válvulas utilizando tubulações resistentes a pressão + válvula pilotada (FIGURA 01)"
+     "t": "@Leilini Rossette l HID Solicitamos um estudo com relação a quantidade de válvulas de ação direta x pilotada a fim de comparar custo.\n\nCaso não seja viável as válvulas de ação direta, pedimos novo estudo de quantidade de válvulas utilizando tubulações resistentes a pressão + válvula pilotada (FIGURA 01)",
+     "v": []
     },
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940380,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nAssunto será aprofundado em outra reunião."
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nAssunto será aprofundado em outra reunião.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -6572,6 +6775,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8430,
    "observacao": "MAG pediu em 30/09 um estudo comparativo de custo entre VRPs de ação direta e pilotadas (ou tubulação resistente à pressão com válvula pilotada). Na reunião de 01/10 o assunto ficou para ser aprofundado em outra reunião; aguardando o estudo da HID.",
@@ -6585,7 +6789,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "REDUTORAS DE PRESSÃO",
    "ultimoComentario": "2026-10-01"
@@ -6654,13 +6858,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940328,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst irá avaliar os shafts propostos e retornar no apontamento."
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst irá avaliar os shafts propostos e retornar no apontamento.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -6715,6 +6921,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8478,
    "observacao": "Na reunião de 01/10 a ARQ ficou de avaliar os shafts propostos na circulação dos pavimentos e retornar no apontamento.",
@@ -6728,7 +6935,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "SHAFTS NA CIRCULAÇÃO DOS PAVIMENTOS",
    "ultimoComentario": "2026-10-01"
@@ -6758,6 +6965,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
@@ -6793,6 +7001,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8547,
    "observacao": "Sem comentários na Construflow. Aguardando a MAG validar as sugestões de renovação de ar mecânica, para a ARQ incorporar a opção escolhida.",
@@ -6807,7 +7016,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "RENOVAÇÃO DE AR MECÂNICA",
    "ultimoComentario": "2026-09-15"
@@ -6858,6 +7067,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "João Victor da Silva",
@@ -6866,7 +7076,8 @@
       "MAG"
      ],
      "id": 2933405,
-     "t": "Podemos seguir pela Opção 01 - Divisão mais detalhada (Padrão recomendado)"
+     "t": "Podemos seguir pela Opção 01 - Divisão mais detalhada (Padrão recomendado)",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -6902,6 +7113,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8592,
    "observacao": "A MAG definiu em 30/09 seguir pela Opção 01 (divisão mais detalhada: uma prancha por apartamento e, nas áreas comuns, por pavimento); o comentário foi tornado público e a MAG concluída em 16/10. Falta a HID adotar esse padrão nas pranchas.",
@@ -6916,7 +7128,7 @@
     "30/09 MAG escolheu a Opção 01 (divisão mais detalhada) para as pranchas de hidrossanitário"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "[HID] PADRÃO DE DOCUMENTAÇÃO DE HIDRÁULICA E SANITÁRIO",
    "ultimoComentario": "2026-10-16"
@@ -6948,13 +7160,17 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940379,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst confirmou que serão previstas áreas comuns no 4º pavimento também, só não foram definidas ainda.\nEssa definição será aprofundada junto da discussão do sistema de aquecimento de água das áreas privativas - #9636"
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst confirmou que serão previstas áreas comuns no 4º pavimento também, só não foram definidas ainda.\nEssa definição será aprofundada junto da discussão do sistema de aquecimento de água das áreas privativas - #9636",
+     "v": [
+      9636
+     ]
     }
    ],
    "complexidade": "media",
@@ -6996,6 +7212,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8613,
    "observacao": "Na reunião de 01/10 a ARQ confirmou que haverá áreas comuns também no 4º pavimento, ainda não definidas. A definição será tratada junto com o sistema de aquecimento das áreas privativas (#9636).",
@@ -7009,7 +7226,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "AQUECIMENTO DE ÁGUA ÁREAS COMUNS",
    "ultimoComentario": "2026-10-01"
@@ -7056,6 +7273,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "João Victor da Silva",
@@ -7064,14 +7282,16 @@
       "MAG"
      ],
      "id": 2943651,
-     "t": "@Vanessa Lenhart | CLI Sugerimos o estudo da área ao lado do acesso de veículos do subsolo 01 com fechamento em brise para locação das máquinas de ar condicionado. (FIGURA 01).\n\n@André da Rosa Selhorst Validar localização e solução de posicionamento das máquinas."
+     "t": "@Vanessa Lenhart | CLI Sugerimos o estudo da área ao lado do acesso de veículos do subsolo 01 com fechamento em brise para locação das máquinas de ar condicionado. (FIGURA 01).\n\n@André da Rosa Selhorst Validar localização e solução de posicionamento das máquinas.",
+     "v": []
     },
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953570,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst irá verificar as opções indicadas no apontamento para validação."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst irá verificar as opções indicadas no apontamento para validação.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -7107,6 +7327,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8625,
    "observacao": "MAG sugeriu em 02/10 a área técnica das condensadoras ao lado do acesso de veículos do SS1, com fechamento em brise. Na reunião de 06/10 a ARQ ficou de verificar as opções para validação; a CLI ainda precisa avaliar a viabilidade técnica.",
@@ -7122,7 +7343,7 @@
     "02/10 MAG sugeriu área técnica ao lado do acesso de veículos do SS1 com brise"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "ÁREA TÉCNICA CONDENSADORAS - ÁREAS COMUNS E COMERCIAL",
    "ultimoComentario": "2026-10-06"
@@ -7143,13 +7364,15 @@
    "analiseEm": "2026-10-09",
    "anexos": [],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953601,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nSem dúvidas durante a reunião."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nSem dúvidas durante a reunião.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -7184,6 +7407,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8672,
    "observacao": "Apresentado na reunião de 06/10, sem dúvidas. Aguardando a MAG validar a demanda de energia elétrica.",
@@ -7196,7 +7420,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.153Z",
    "status": "aberto",
    "titulo": "DEMANDA DE ENERGIA ELÉTRICA",
    "ultimoComentario": "2026-10-06"
@@ -7246,6 +7470,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -7254,14 +7479,16 @@
       "MAG"
      ],
      "id": 2933508,
-     "t": "Conseguimos utilizar o pé direito duplo para o reservatório, utilizando o reservatório de água potável junto com o reservatório de SPK."
+     "t": "Conseguimos utilizar o pé direito duplo para o reservatório, utilizando o reservatório de água potável junto com o reservatório de SPK.",
+     "v": []
     },
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940365,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst sugeriu prever um reservatório inferior em 2 níveis, considerando o volume conjunto de água potável e de SPK (caso esse se mantenha no subsolo). A ideia é evitar a perda de vagas de garagem.\nPremière irá estudar essa possibilidade na próxima etapa (AJEP)."
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst sugeriu prever um reservatório inferior em 2 níveis, considerando o volume conjunto de água potável e de SPK (caso esse se mantenha no subsolo). A ideia é evitar a perda de vagas de garagem.\nPremière irá estudar essa possibilidade na próxima etapa (AJEP).",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -7306,6 +7533,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8710,
    "observacao": "MAG indicou em 30/09 usar o pé-direito duplo com reservatório conjunto de água potável e SPK. Na reunião de 01/10 a ARQ sugeriu reservatório inferior em 2 níveis para evitar perda de vagas, e a Première vai estudar essa opção na próxima etapa (AJEP).",
@@ -7324,7 +7552,7 @@
     "01/10 ARQ sugeriu reservatório inferior em 2 níveis"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "RESERVATÓRIO INFERIOR DE ÁGUA POTÁVEL",
    "ultimoComentario": "2026-10-01"
@@ -7352,13 +7580,17 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940396,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EPs:\nApontamento repassado em reunião em conjunto com o #2612"
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EPs:\nApontamento repassado em reunião em conjunto com o #2612",
+     "v": [
+      2612
+     ]
     }
    ],
    "complexidade": "media",
@@ -7413,6 +7645,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8908,
    "observacao": "Tratado na reunião de 01/10 junto com o #2612. A ARQ deve seguir as definições da escada pressurizada daquele apontamento.",
@@ -7427,7 +7660,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "ESCADA À PROVA DE FUMAÇA (EPF) - PRESSURIZADA",
    "ultimoComentario": "2026-10-01"
@@ -7459,6 +7692,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "João Victor da Silva",
@@ -7467,7 +7701,8 @@
       "MAG"
      ],
      "id": 2989273,
-     "t": "Cientes em relação a limitação de população para as áreas comuns do empreendimento. Está sendo discutida uma possível criação de área comum no 4° pavimento.\n\nEm relação ao layout da academia, este pode ser proposto pela arquitetura e posteriormente validado com interiores."
+     "t": "Cientes em relação a limitação de população para as áreas comuns do empreendimento. Está sendo discutida uma possível criação de área comum no 4° pavimento.\n\nEm relação ao layout da academia, este pode ser proposto pela arquitetura e posteriormente validado com interiores.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -7503,6 +7738,9 @@
    "etapaConferencia": "AP",
    "etapaOrigem": "etiqueta",
    "etapaResolucao": null,
+   "etiquetas": [
+    117652
+   ],
    "fonte": "Construflow",
    "numero": 8958,
    "observacao": "A MAG deu ciência em 16/10 da limitação de população nas áreas comuns e informou que se discute criar área comum no 4º pavimento; o layout da academia pode ser proposto pela ARQ e validado depois com Interiores. Falta a ARQ apresentar o layout e o PCI redistribuir a população.",
@@ -7518,7 +7756,7 @@
     "16/10 MAG deu ciência da limitação de população e indicou que a ARQ proponha o layout da academia"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "LIMITAÇÃO PÚBLICO LAZER",
    "ultimoComentario": "2026-10-16"
@@ -7569,13 +7807,17 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940345,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nValidado com a Magno de manter os acessos superiores, conforme sugerido no apontamento.\nEstá sendo avaliado se a RTI de SPK vai ser prevista junto desse volume também, ver apontamento #2005"
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nValidado com a Magno de manter os acessos superiores, conforme sugerido no apontamento.\nEstá sendo avaliado se a RTI de SPK vai ser prevista junto desse volume também, ver apontamento #2005",
+     "v": [
+      2005
+     ]
     }
    ],
    "complexidade": "media",
@@ -7625,6 +7867,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 9098,
    "observacao": "Validado com a Magno na reunião de 01/10 manter os acessos superiores do reservatório. Está em avaliação se o volume de SPK ficará junto do reservatório superior (ver #2005).",
@@ -7642,7 +7885,7 @@
     "01/10 Validado manter os acessos superiores"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "RESERVATÓRIO SUPERIOR",
    "ultimoComentario": "2026-10-01"
@@ -7682,6 +7925,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
@@ -7741,6 +7985,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 9151,
    "observacao": "Sem comentários na Construflow. Aguardando a ARQ locar a casa de bombas da piscina e a MAG validar as informações e obter do fornecedor a infraestrutura e a potência dos equipamentos.",
@@ -7755,7 +8000,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "PISCINAS E SAUNA",
    "ultimoComentario": "2026-09-16"
@@ -7791,13 +8036,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953489,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nArquitetura irá considerar em projeto - @André da Rosa Selhorst psc.\nNecessário avaliar esse ponto junto com as discussões de reposicionamento das áreas técnicas (sala de insuflamento, gerador, etc)."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nArquitetura irá considerar em projeto - @André da Rosa Selhorst psc.\nNecessário avaliar esse ponto junto com as discussões de reposicionamento das áreas técnicas (sala de insuflamento, gerador, etc).",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -7833,6 +8080,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 9292,
    "observacao": "Na reunião de 06/10 a arquitetura ficou de considerar a compartimentação horizontal em projeto, junto com o reposicionamento das áreas técnicas (sala de insuflamento, gerador etc.).",
@@ -7846,7 +8094,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "COMPARTIMENTAÇÃO HORIZONTAL OU DE ÁREAS",
    "ultimoComentario": "2026-10-06"
@@ -7883,6 +8131,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
@@ -7917,6 +8166,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 9300,
    "observacao": "Sem comentários na Construflow. Aguardando a ARQ definir a tipologia das paredes da escada (TRRF de 2 h nos subsolos e 3 h nos demais pavimentos) e o PCI conferir as espessuras.",
@@ -7930,7 +8180,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "VEDAÇÃO DA ESCADA",
    "ultimoComentario": "2026-09-14"
@@ -7954,6 +8204,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Alex Vieira",
@@ -7962,7 +8213,8 @@
       "MAG"
      ],
      "id": 2937551,
-     "t": "Subsistema de captação: Utilizar barra chata de alumínio.\nSubsistema de descidas: Descida embutida na estrutura com barra de aço galvanizado a fogo adicional (rebar).\nSubsistema de aterramento: Descida até a fundação com o rebar fazendo o papel de eletrodo de aterramento."
+     "t": "Subsistema de captação: Utilizar barra chata de alumínio.\nSubsistema de descidas: Descida embutida na estrutura com barra de aço galvanizado a fogo adicional (rebar).\nSubsistema de aterramento: Descida até a fundação com o rebar fazendo o papel de eletrodo de aterramento.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -7992,6 +8244,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 9477,
    "observacao": "MAG definiu em 01/10 o SPDA: captação em barra chata de alumínio, descidas embutidas na estrutura com rebar e aterramento pela fundação. Falta o SPDA incorporar e a coordenação validar a resposta da MAG.",
@@ -8007,7 +8260,7 @@
     "01/10 MAG definiu captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.153Z",
    "status": "aberto",
    "statusAuto": [
     {
@@ -8073,13 +8326,15 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953585,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nSugestões foram validadas a princípio pela Arquitetura.\nMagno irá verificar o apontamento e validar pelos comentários. @Alex  Vieira psc"
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\nSugestões foram validadas a princípio pela Arquitetura.\nMagno irá verificar o apontamento e validar pelos comentários. @Alex  Vieira psc",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -8116,6 +8371,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 9627,
    "observacao": "Na reunião de 06/10 as sugestões foram validadas a princípio pela arquitetura. Aguardando a MAG validar nos comentários as sugestões de exaustão de banheiros e coifas.",
@@ -8130,7 +8386,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "EXAUSTÃO E VENTILAÇÃO MECÂNICA - BANHEIROS E COIFAS",
    "ultimoComentario": "2026-10-06"
@@ -8180,20 +8436,23 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-01",
      "ds": [],
      "id": 2940378,
-     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@Leilini Rossette l HID enfatizou problemáticas do sistema de aquecimento central em prédios muito altos:\n1. Sistema de recirculação mais complexo, para manter a temperatura necessária com caminhamentos bem longos;\n2. Necessidade de mais VRPs, tanto para água fria quanto para água quente.\nUma alternativa seria o sistema indireto de aquecimento.\n@André da Rosa Selhorst levantou a possibilidade de distribuição dos boilers em zonas da edificação, para diminuir os caminhamentos. Nesse caso, complementou que seria possível prever um pavimento técnico após o 12º pavimento para essa locação.\nPatrícia sugeriu uma reunião com a Tobio para apresentação de soluções que se adaptam melhor ao empreendimento."
+     "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@Leilini Rossette l HID enfatizou problemáticas do sistema de aquecimento central em prédios muito altos:\n1. Sistema de recirculação mais complexo, para manter a temperatura necessária com caminhamentos bem longos;\n2. Necessidade de mais VRPs, tanto para água fria quanto para água quente.\nUma alternativa seria o sistema indireto de aquecimento.\n@André da Rosa Selhorst levantou a possibilidade de distribuição dos boilers em zonas da edificação, para diminuir os caminhamentos. Nesse caso, complementou que seria possível prever um pavimento técnico após o 12º pavimento para essa locação.\nPatrícia sugeriu uma reunião com a Tobio para apresentação de soluções que se adaptam melhor ao empreendimento.",
+     "v": []
     },
     {
      "a": "Giulia Destefani I Coord. Première",
      "d": "2026-10-06",
      "ds": [],
      "id": 2953539,
-     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@Alex  Vieira repassou que foi validado com o Luiz de utilizar aquecedores de passagem nas unidades ao invés de aquecimento central. Ainda, nas unidades com aptos de 3 e 4 quartos deverá ser previsto um sistema de recirculação interna nos apartamentos.\n@Gustavo Neves | PCI repassou que haverá mudança nos shafts de gás, por conta dos medidores que serão maiores do que os previstos atualmente. Nesse caso, será necessário prever shafts espaçados no pavimento tipo para otimizar o sistema utilizando PEX.\nAlex questionou se os dutos do aquecedor poder ser destinados a outro ponto para não saírem nas fachadas. Gustavo retornou que é possível, mas é uma solução mais complexa.\nExistem diversos pontos dificultadores para considerar uma solução diferente da comum com dutos individuais saindo na fachada em cada pavimento. As propostas discutidas foram:\n1. Exaustão coletiva;\n2. Exaustão individual com o aquecedor na sacada sem terminal na fachada;\n3. Exaustão individual em átrio;\n4. Exaustão individual na fachada (padrão e recomendação).\nOs pontos de atenção de cada sugestão foram apresentados em reunião e a arquitetura e construtora ficaram de estudar as possibilidades e indicar qual das soluções gostariam que considerássemos em projeto e, após definição, a Première realizará uma análise detalhada dos ajustes necessários e propostas de solução para viabilizar tal solução.\nCaso seja considerada a saída dos dutos na fachada mesmo, existem duas possibilidades:\n- Terminal previsto abaixo da marquise, mas com 40 a 50cm de afastamento da aba;\n- Terminal previsto em recorte na aba."
+     "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@Alex  Vieira repassou que foi validado com o Luiz de utilizar aquecedores de passagem nas unidades ao invés de aquecimento central. Ainda, nas unidades com aptos de 3 e 4 quartos deverá ser previsto um sistema de recirculação interna nos apartamentos.\n@Gustavo Neves | PCI repassou que haverá mudança nos shafts de gás, por conta dos medidores que serão maiores do que os previstos atualmente. Nesse caso, será necessário prever shafts espaçados no pavimento tipo para otimizar o sistema utilizando PEX.\nAlex questionou se os dutos do aquecedor poder ser destinados a outro ponto para não saírem nas fachadas. Gustavo retornou que é possível, mas é uma solução mais complexa.\nExistem diversos pontos dificultadores para considerar uma solução diferente da comum com dutos individuais saindo na fachada em cada pavimento. As propostas discutidas foram:\n1. Exaustão coletiva;\n2. Exaustão individual com o aquecedor na sacada sem terminal na fachada;\n3. Exaustão individual em átrio;\n4. Exaustão individual na fachada (padrão e recomendação).\nOs pontos de atenção de cada sugestão foram apresentados em reunião e a arquitetura e construtora ficaram de estudar as possibilidades e indicar qual das soluções gostariam que considerássemos em projeto e, após definição, a Première realizará uma análise detalhada dos ajustes necessários e propostas de solução para viabilizar tal solução.\nCaso seja considerada a saída dos dutos na fachada mesmo, existem duas possibilidades:\n- Terminal previsto abaixo da marquise, mas com 40 a 50cm de afastamento da aba;\n- Terminal previsto em recorte na aba.",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -8243,6 +8502,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 9636,
    "observacao": "Na reunião de 01/10 a HID apontou as limitações do aquecimento central em prédio alto e a ARQ sugeriu boilers por zonas com pavimento técnico. Em 06/10 a Magno definiu aquecedores de passagem individuais, com recirculação interna nos aptos de 3 e 4 quartos; falta ARQ/MAG escolherem a solução de exaustão dos aquecedores.",
@@ -8261,7 +8521,7 @@
     "06/10 Definida recirculação interna nos aptos de 3 e 4 quartos"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "SISTEMA DE AQUECIMENTO CENTRAL",
    "ultimoComentario": "2026-10-06"
@@ -8292,6 +8552,7 @@
     }
    ],
    "categoria": "Definição",
+   "chave": [],
    "comentarios": [],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
@@ -8326,6 +8587,7 @@
    "etapaConferencia": null,
    "etapaOrigem": null,
    "etapaResolucao": null,
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 9899,
    "observacao": "Sem comentários na Construflow. Aguardando a ARQ confirmar, com Interiores, que os materiais de acabamento e revestimento atendem ao CMAR (Classe II-A, Dm ≤ 100 em poços e shafts).",
@@ -8339,7 +8601,7 @@
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-04T09:59:01.000Z",
+   "sincronizadoEm": "2026-11-09T14:54:11.155Z",
    "status": "aberto",
    "titulo": "CONTROLE MATERIAIS DE ACABAMENTO E REVESTIMENTO",
    "ultimoComentario": "2026-09-14"
@@ -8347,6 +8609,17 @@
  },
  "empreendimento": {
   "baseAtualizadaEm": "2026-10-06",
+  "chaveLabels": {
+   "filhas": {
+    "121089": "EP",
+    "121090": "PL",
+    "121091": "AP",
+    "121092": "PE",
+    "121093": "EX"
+   },
+   "lidoEm": "2026-11-09T14:55:03.279Z",
+   "raiz": 121088
+  },
   "construflowProjeto": 10348,
   "construflowUrl": "https://app.construflow.com.br/workspace/project/10348/issues",
   "cronograma": {
@@ -8473,23 +8746,25 @@
    "fim": "2026-11-30",
    "geradoEm": "2026-10-19"
   },
-  "sincronizadoEm": "2026-11-09T09:59:59.000Z",
-  "ultimaSync": "2026-11-09T09:59:59.000Z",
+  "sincronizadoEm": "2026-11-09T14:55:03.279Z",
+  "ultimaSync": "2026-11-09T14:55:03.279Z",
   "ultimaSyncResumo": {
-   "alterados": 0,
+   "alterados": 79,
    "analisados": 0,
    "analisePendente": 0,
    "comentarios": 0,
    "novos": 0,
-   "origem": "agendada",
+   "origem": "manual_app",
    "prazosMeta": [],
    "resumoSemanal": true,
    "reunioes": [],
    "statusAtualizados": 0,
    "statusFalhas": []
-  }
+  },
+  "vinculosReleituraEm": "2026-11-09T14:55:03.279Z",
+  "vinculosVerificadosEm": "2026-11-09T14:55:03.279Z"
  },
- "geradoEm": "2026-11-09T10:28:08+00:00",
+ "geradoEm": "2026-11-09T14:55:50+00:00",
  "plano_semanal": {
   "2026-S35": {
    "alertas": [],
@@ -10187,22 +10462,22 @@
   },
   "2026-11-09": {
    "disciplinas": {
-    "ARQ": "#1775 validar a quantidade de pontos de gás nas áreas comuns, considerando os estudos do 4º pavimento e da cobertura\n#2062 prever as VPs nas esquadrias das áreas de serviço e, no final 07, aberturas na alvenaria junto à área técnica\n#2140 validar a nomenclatura de apartamentos indicada na Figura 01 (a MAG já validou em 07/10)\n#2323 prever bate-rodas de concreto nas vagas indicadas, se necessário (Figuras 02 e 03)\n#3264 prever enchimento de cerca de 8 cm nas paredes da escada com instalações (Figuras 01 e 02)\n#3426 atender aos itens das escadas apontados e manter a conferência em todas as etapas (Figuras 01 a 03)\n#4050 validar a posição sugerida para a central de alarme (Figuras 01 e 02), depois validar com Interiores\n#4252 especificar o corrimão conforme a definição da Construtora\n#4532 prever os guarda-corpos conforme indicado no apontamento (Figuras 01 a 07)\n#4923 prever barreira física no entorno da piscina descoberta da cobertura (Figuras 01 e 02)\n#1436 avaliar a viabilidade do recuo para o caminhão de coleta\n#2612 locar a área técnica de insuflamento abaixo do térreo, próxima à escada, com tomada de ar no térreo\n#3470 aumentar os shafts conforme indicado, depois da escolha da MAG\n#4549 consolidar a definição final das áreas comuns\n#5862 acompanhar as definições da MAG\n#7614 manter a conferência da largura de circulação e corredores em todas as etapas do projeto\n#7671 MAG definiu em 22/09 que a tubulação de gás da rede secundária passará pelo vão da porta (Figura 01). Falta o PCI incorporar em projeto e a coordenação validar a resposta da MAG.\n#8478 avaliar os shafts propostos e retornar no apontamento\n#8547 incorporar as sugestões conforme a opção escolhida pela MAG\n#9292 considerar a compartimentação horizontal junto com o reposicionamento das áreas técnicas\n#9636 (com MAG) escolher a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada\n#1491 A Magno decidiu em 22/09 seguir com a viabilidade de gás natural (GN). O dimensionamento da central de GLP depende do retorno dessa viabilidade (ver #7356).\n#2697 (com MAG) ajustar a porta de acesso à escada nos subsolos -03 e -02 ou indicar a previsão de sprinklers para aumentar o caminhamento máximo\n#4562 (com MAG) definir se o mezanino terá acesso ao público e prever os ajustes na escada (Figura 01)\n#5335 validar e prever os shafts sanitários sugeridos (Figuras 01 a 07)\n#6715 Na reunião de 01/10 ficou pendente a definição de uso da loja e se ela poderá ser subdividida depois. Em 06/10 a Magno informou que vai operar a loja (ver #1274); falta a MAG confirmar com o Luiz a definição de uso e a possibilidade de subdivisão.\n#7458 avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos\n#7738 (com MAG) validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)\n#8197 verificar e ajustar a escada do barrilete em projeto\n#8625 validar a localização das condensadoras ao lado do acesso de veículos do SS1\n#9098 Validado com a Magno na reunião de 01/10 manter os acessos superiores do reservatório. Está em avaliação se o volume de SPK ficará junto do reservatório superior (ver #2005).\n#1875 avaliar a compartimentação das vagas junto à circulação vertical com divisórias em alvenaria\n#2891 estudar novo local para o gerador\n#3616 avaliar o uso dos espaços indicados nos anexos (1PAV, SS1 e 3PAV) como hobby boxes, mantendo-os como área técnica só se necessário; retirar a alvenaria que separa as vagas próximas ao depósito de lixo temporário (anexo ALV)\n#6003 prever paredes com TRRF de 2 h e portas corta-fogo nos locais indicados (Figuras 01 e 02)\n#6984 Validado com a Magno na reunião de 06/10 que, se a ERPM ficar na entrada do subsolo 01 (ver #4727), o registro de corte geral de gás será previsto próximo dessa entrada. Falta o PCI incorporar em projeto.\n#7356 A Magno decidiu solicitar a viabilidade de GN à concessionária (registrado em 01/10, ver #1491). Aguardando o retorno da concessionária e a definição da posição da ERPM (ver #4727).\n#8710 MAG indicou em 30/09 usar o pé-direito duplo com reservatório conjunto de água potável e SPK. Na reunião de 01/10 a ARQ sugeriu reservatório inferior em 2 níveis para evitar perda de vagas, e a Première vai estudar essa opção na próxima etapa (AJEP).\n#9151 locar a casa de bombas da piscina em projeto\n#9300 definir a tipologia das paredes da escada: TRRF de 2 h nos subsolos -03 a -01 e 3 h nos demais pavimentos",
-    "CLI": "#5870 incorporar a definição de ponto elétrico somente na evaporadora\n#8547 Sem comentários na Construflow. Aguardando a MAG validar as sugestões de renovação de ar mecânica, para a ARQ incorporar a opção escolhida.\n#8625 avaliar a viabilidade técnica da proposta",
-    "COORD": "#1775 validar a resposta da MAG\n#3230 validar a resposta da MAG\n#5870 validar a resposta da MAG\n#3470 validar a resposta da MAG\n#7671 validar a resposta da MAG\n#1491 validar a resposta da MAG\n#9477 validar a resposta da MAG\n#7400 validar a resposta da MAG",
-    "ELT": "#4308 incorporar: embutido em PVC nas áreas comuns e halls; aparente em aço nas garagens e alimentadores acima de Ø32 mm\n#4549 (com TEL) refazer o lançamento dos quadros de elétrica e VDI após a consolidação das áreas comuns e reemitir o apontamento\n#7738 Sem comentários na Construflow. Aguardando MAG e ARQ validarem as posições sugeridas para os quadros de distribuição elétrica e VDI nas unidades privativas (Figuras 01 a 06).\n#1875 prever infraestrutura de recarga em todas as vagas (ver #4398)\n#2891 avaliar alternativas no 2º ou 3º pavimento\n#4398 prever infraestrutura de recarga em todas as vagas com gerenciador de demanda",
+    "ARQ": "#1775 validar a quantidade de pontos de gás nas áreas comuns, considerando os estudos do 4º pavimento e da cobertura\n#2062 prever as VPs nas esquadrias das áreas de serviço e, no final 07, aberturas na alvenaria junto à área técnica\n#2140 validar a nomenclatura de apartamentos indicada na Figura 01 (a MAG já validou em 07/10)\n#2323 prever bate-rodas de concreto nas vagas indicadas, se necessário (Figuras 02 e 03)\n#3264 prever enchimento de cerca de 8 cm nas paredes da escada com instalações (Figuras 01 e 02)\n#3426 atender aos itens das escadas apontados e manter a conferência em todas as etapas (Figuras 01 a 03)\n#4050 validar a posição sugerida para a central de alarme (Figuras 01 e 02), depois validar com Interiores\n#4252 especificar o corrimão conforme a definição da Construtora\n#4532 prever os guarda-corpos conforme indicado no apontamento (Figuras 01 a 07)\n#4923 prever barreira física no entorno da piscina descoberta da cobertura (Figuras 01 e 02)\n#1436 avaliar a viabilidade do recuo para o caminhão de coleta\n#2612 locar a área técnica de insuflamento abaixo do térreo, próxima à escada, com tomada de ar no térreo\n#3470 aumentar os shafts conforme indicado, depois da escolha da MAG\n#4549 consolidar a definição final das áreas comuns\n#5862 acompanhar as definições da MAG\n#7614 manter a conferência da largura de circulação e corredores em todas as etapas do projeto\n#7671 MAG definiu em 22/09 que a tubulação de gás da rede secundária passará pelo vão da porta (Figura 01). Falta o PCI incorporar em projeto e a coordenação validar a resposta da MAG.\n#8478 avaliar os shafts propostos e retornar no apontamento\n#8547 incorporar as sugestões conforme a opção escolhida pela MAG\n#9292 considerar a compartimentação horizontal junto com o reposicionamento das áreas técnicas\n#9636 / MAG escolher a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada\n#1491 A Magno decidiu em 22/09 seguir com a viabilidade de gás natural (GN). O dimensionamento da central de GLP depende do retorno dessa viabilidade (ver #7356).\n#2697 / MAG ajustar a porta de acesso à escada nos subsolos -03 e -02 ou indicar a previsão de sprinklers para aumentar o caminhamento máximo\n#4562 / MAG definir se o mezanino terá acesso ao público e prever os ajustes na escada (Figura 01)\n#5335 validar e prever os shafts sanitários sugeridos (Figuras 01 a 07)\n#6715 Na reunião de 01/10 ficou pendente a definição de uso da loja e se ela poderá ser subdividida depois. Em 06/10 a Magno informou que vai operar a loja (ver #1274); falta a MAG confirmar com o Luiz a definição de uso e a possibilidade de subdivisão.\n#7458 avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos\n#7738 MAG / ARQ validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)\n#8197 verificar e ajustar a escada do barrilete em projeto\n#8625 validar a localização das condensadoras ao lado do acesso de veículos do SS1\n#9098 Validado com a Magno na reunião de 01/10 manter os acessos superiores do reservatório. Está em avaliação se o volume de SPK ficará junto do reservatório superior (ver #2005).\n#1875 avaliar a compartimentação das vagas junto à circulação vertical com divisórias em alvenaria\n#2891 estudar novo local para o gerador\n#3616 avaliar o uso dos espaços indicados nos anexos (1PAV, SS1 e 3PAV) como hobby boxes, mantendo-os como área técnica só se necessário; retirar a alvenaria que separa as vagas próximas ao depósito de lixo temporário (anexo ALV)\n#6003 prever paredes com TRRF de 2 h e portas corta-fogo nos locais indicados (Figuras 01 e 02)\n#6984 Validado com a Magno na reunião de 06/10 que, se a ERPM ficar na entrada do subsolo 01 (ver #4727), o registro de corte geral de gás será previsto próximo dessa entrada. Falta o PCI incorporar em projeto.\n#7356 A Magno decidiu solicitar a viabilidade de GN à concessionária (registrado em 01/10, ver #1491). Aguardando o retorno da concessionária e a definição da posição da ERPM (ver #4727).\n#8710 MAG indicou em 30/09 usar o pé-direito duplo com reservatório conjunto de água potável e SPK. Na reunião de 01/10 a ARQ sugeriu reservatório inferior em 2 níveis para evitar perda de vagas, e a Première vai estudar essa opção na próxima etapa (AJEP).\n#9151 locar a casa de bombas da piscina em projeto\n#9300 definir a tipologia das paredes da escada: TRRF de 2 h nos subsolos -03 a -01 e 3 h nos demais pavimentos",
+    "CLI": "#5870 Incorporar a definição de ponto elétrico somente na evaporadora\n#8547 Aguardar a MAG validar as sugestões de renovação de ar mecânica para a ARQ incorporar a opção escolhida\n#8625 Avaliar a viabilidade técnica da proposta",
+    "COORD": "#1775 Validar a resposta da MAG\n#3230 Validar a resposta da MAG\n#5870 Validar a resposta da MAG\n#3470 Validar a resposta da MAG\n#7671 Validar a resposta da MAG\n#1491 Validar a resposta da MAG\n#9477 Validar a resposta da MAG\n#7400 Validar a resposta da MAG",
+    "ELT": "#4308 Incorporar: embutido em PVC nas áreas comuns e halls; aparente em aço nas garagens e alimentadores acima de Ø32 mm\n#4549 Com a TEL, refazer o lançamento dos quadros de elétrica e VDI após a consolidação das áreas comuns e reemitir o apontamento\n#7738 Aguardar MAG e ARQ validarem as posições dos quadros de elétrica e VDI nas unidades privativas\n#1875 Prever infraestrutura de recarga em todas as vagas (#4398)\n#2891 Avaliar alternativas para o gerador no 2º ou 3º pavimento\n#4398 Prever infraestrutura de recarga em todas as vagas com gerenciador de demanda",
     "EST": "#7215 confirmar o atendimento ao TRRF indicado\n#8200 A sondagem ainda não foi feita porque o terreno está em negociação por permuta e tem edificações a demolir. Na reunião de 01/10 ficou alinhado que a Première precisa da validação da laje de subpressão até, no máximo, o início da revisão do AP.\n#7458 Na reunião de 06/10 a Magno confirmou SAVE em todos os pavimentos de garagem (ver #1875), o que exige sistema de extração de fumaça nas garagens (ver #3694). ARQ deve avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos.\n#9098 validar o acréscimo do volume de SPK no reservatório superior (ver #2005)\n#1875 A Construtora ajustou o acesso à escada nos subsolos 1 a 3. Em 01/10 a Magno pediu infraestrutura de recarga em todas as vagas, e a Arquitetura vai avaliar compartimentar as vagas junto à circulação vertical com divisórias de alvenaria.\n#8710 avaliar o reservatório em pé-direito duplo",
-    "HID": "#2140 Em 07/10 a Magno validou a nomenclatura dos apartamentos proposta pela Arquitetura. Falta a Arquitetura validar; as demais disciplinas só acompanham e adotam a numeração definida.\n#2508 A documentação da rede de esgoto da CASAN foi viabilizada em 30/09. HID está em Validar; falta a coordenação validar e encerrar.\n#3230 (com PCI) prever medidores de água e gás pré-equipados para telemetria\n#1436 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#3470 responder qual o modelo de caixa sifonada especial e como funcionaria\n#8200 A sondagem ainda não foi feita porque o terreno está em negociação por permuta e tem edificações a demolir. Na reunião de 01/10 ficou alinhado que a Première precisa da validação da laje de subpressão até, no máximo, o início da revisão do AP.\n#8478 Na reunião de 01/10 a ARQ ficou de avaliar os shafts propostos na circulação dos pavimentos e retornar no apontamento.\n#9636 prever recirculação interna nos aptos de 3 e 4 quartos\n#5335 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#6715 Na reunião de 01/10 ficou pendente a definição de uso da loja e se ela poderá ser subdividida depois. Em 06/10 a Magno informou que vai operar a loja (ver #1274); falta a MAG confirmar com o Luiz a definição de uso e a possibilidade de subdivisão.\n#8613 Na reunião de 01/10 a ARQ confirmou que haverá áreas comuns também no 4º pavimento, ainda não definidas. A definição será tratada junto com o sistema de aquecimento das áreas privativas (#9636).\n#9098 Validado com a Magno na reunião de 01/10 manter os acessos superiores do reservatório. Está em avaliação se o volume de SPK ficará junto do reservatório superior (ver #2005).\n#1269 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#3638 O topográfico inicial não traz cotas de fundo e topo nem as caixas e infraestruturas. A Magno vai solicitar novo levantamento.\n#8592 adotar a Opção 01 (divisão mais detalhada, por apartamento e por pavimento nas áreas comuns) na apresentação das pranchas de hidrossanitário\n#8710 estudar o reservatório inferior em 2 níveis com volume conjunto de água potável e SPK na etapa AJEP\n#9151 Sem comentários na Construflow. Aguardando a ARQ locar a casa de bombas da piscina e a MAG validar as informações e obter do fornecedor a infraestrutura e a potência dos equipamentos.",
-    "INT": "#6034 se contratado, emitir as plantas de pontos antes do início do pré-executivo\n#6715 Na reunião de 01/10 ficou pendente a definição de uso da loja e se ela poderá ser subdividida depois. Em 06/10 a Magno informou que vai operar a loja (ver #1274); falta a MAG confirmar com o Luiz a definição de uso e a possibilidade de subdivisão.",
-    "MAG": "#2612 A CLI validou em 01/10 que a área técnica de insuflamento pode ficar abaixo do térreo, perto da escada, com tomada de ar no térreo, e o duto termina no barrilete.\n#5862 indicar se os sprinklers serão adotados para o SAVE ou para aumentar o caminhamento nos subsolos -03 e -02, e informar preferência de tipo de bomba\n#6034 confirmar a contratação dos projetos de interiores e luminotécnico ou disponibilizar imagens comerciais\n#8200 realizar a sondagem e validar a necessidade de laje de subpressão até o início da revisão do AP\n#8547 validar as sugestões para o sistema de renovação de ar em todos os locais indicados\n#9636 (com ARQ) escolher a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada\n#2697 (com ARQ) ajustar a porta de acesso à escada nos subsolos -03 e -02 ou indicar a previsão de sprinklers para aumentar o caminhamento máximo\n#4562 (com ARQ) definir se o mezanino terá acesso ao público e prever os ajustes na escada (Figura 01)\n#6298 confirmar se haverá contratação do projeto de desempenho\n#6715 (Renato) confirmar com o Luiz a definição de uso e se a loja poderá ser subdividida\n#7458 Na reunião de 06/10 a Magno confirmou SAVE em todos os pavimentos de garagem (ver #1875), o que exige sistema de extração de fumaça nas garagens (ver #3694). ARQ deve avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos.\n#7738 (com ARQ) validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)\n#8613 Na reunião de 01/10 a ARQ confirmou que haverá áreas comuns também no 4º pavimento, ainda não definidas. A definição será tratada junto com o sistema de aquecimento das áreas privativas (#9636).\n#9098 Validado com a Magno na reunião de 01/10 manter os acessos superiores do reservatório. Está em avaliação se o volume de SPK ficará junto do reservatório superior (ver #2005).\n#1269 confirmar se haverá projeto específico de drenagem ou se faz parte do escopo de contenções\n#1875 A Construtora ajustou o acesso à escada nos subsolos 1 a 3. Em 01/10 a Magno pediu infraestrutura de recarga em todas as vagas, e a Arquitetura vai avaliar compartimentar as vagas junto à circulação vertical com divisórias de alvenaria.\n#2891 validar nos comentários as cargas consideradas no gerador\n#3638 solicitar novo levantamento topográfico com cotas de fundo e topo, caixas e infraestruturas, incluindo os postes (ver #4756)\n#7356 solicitar a viabilidade de GN à concessionária e repassar o retorno\n#8710 MAG indicou em 30/09 usar o pé-direito duplo com reservatório conjunto de água potável e SPK. Na reunião de 01/10 a ARQ sugeriu reservatório inferior em 2 níveis para evitar perda de vagas, e a Première vai estudar essa opção na próxima etapa (AJEP).\n#9151 confirmar e validar as informações, e obter do fornecedor da piscina a infraestrutura e a potência dos equipamentos",
-    "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#2062 incorporar as posições das ventilações permanentes\n#2323 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#3264 conferir o enchimento previsto pela arquitetura\n#3426 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#4923 conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33\n#5862 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#5996 incorporar os materiais de gás e SHP validados pela MAG e ajustar o caminhamento da rede primária após a definição da nova localização da ERPM\n#7215 Sem comentários na Construflow. Aguardando a EST confirmar o atendimento ao TRRF indicado.\n#7614 Sem comentários na Construflow. Item de conferência contínua: a ARQ deve manter a largura de circulação e corredores em todas as etapas do projeto.\n#7671 incorporar no projeto o caminhamento da rede secundária pelo vão da porta (Figura 01)\n#9292 Na reunião de 06/10 a arquitetura ficou de considerar a compartimentação horizontal em projeto, junto com o reposicionamento das áreas técnicas (sala de insuflamento, gerador etc.).\n#1491 ajustar a solução de gás conforme a decisão por GN\n#2697 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#4562 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#7458 prever o sistema de extração de fumaça nas garagens (ver #3694)\n#8197 Na reunião de 01/10 a arquitetura ficou de verificar e ajustar a escada do barrilete em projeto. Aguardando o retorno da ARQ.\n#1875 considerar as exigências da IN23 com SAVE em todas as garagens (ver #7458 e #3694)\n#6003 Sem comentários na Construflow. Aguardando a ARQ prever paredes com TRRF de 2 h e portas corta-fogo nos locais indicados (Figuras 01 e 02).\n#6984 prever o registro de corte geral de gás próximo à entrada do subsolo 01 (ver #4727)\n#7356 prever a ERPM conforme o posicionamento em estudo (ver #4727)\n#7400 (com ELT) considerar iluminação de emergência por blocos autônomos\n#9300 conferir se a tipologia atende às espessuras indicadas",
-    "PEP": "#2612 considerar o duto de pressurização terminando no barrilete (Figura 05)",
-    "SPDA": "#9477 incorporar a captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação",
-    "SPK": "#5862 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#1875 A Construtora ajustou o acesso à escada nos subsolos 1 a 3. Em 01/10 a Magno pediu infraestrutura de recarga em todas as vagas, e a Arquitetura vai avaliar compartimentar as vagas junto à circulação vertical com divisórias de alvenaria.",
-    "TEL": "#4549 (com ELT) refazer o lançamento dos quadros de elétrica e VDI após a consolidação das áreas comuns e reemitir o apontamento\n#7738 Sem comentários na Construflow. Aguardando MAG e ARQ validarem as posições sugeridas para os quadros de distribuição elétrica e VDI nas unidades privativas (Figuras 01 a 06).\n#4398 A Magno definiu infraestrutura em todas as vagas, atendidas com recarga mínima por gerenciador de demanda."
+    "HID": "#2140 Em 07/10 a Magno validou a nomenclatura dos apartamentos proposta pela Arquitetura. Falta a Arquitetura validar; as demais disciplinas só acompanham e adotam a numeração definida.\n#2508 A documentação da rede de esgoto da CASAN foi viabilizada em 30/09. HID está em Validar; falta a coordenação validar e encerrar.\n#3230 / PCI prever medidores de água e gás pré-equipados para telemetria\n#1436 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#3470 responder qual o modelo de caixa sifonada especial e como funcionaria\n#8200 A sondagem ainda não foi feita porque o terreno está em negociação por permuta e tem edificações a demolir. Na reunião de 01/10 ficou alinhado que a Première precisa da validação da laje de subpressão até, no máximo, o início da revisão do AP.\n#8478 Na reunião de 01/10 a ARQ ficou de avaliar os shafts propostos na circulação dos pavimentos e retornar no apontamento.\n#9636 prever recirculação interna nos aptos de 3 e 4 quartos\n#5335 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#6715 Na reunião de 01/10 ficou pendente a definição de uso da loja e se ela poderá ser subdividida depois. Em 06/10 a Magno informou que vai operar a loja (ver #1274); falta a MAG confirmar com o Luiz a definição de uso e a possibilidade de subdivisão.\n#8613 Na reunião de 01/10 a ARQ confirmou que haverá áreas comuns também no 4º pavimento, ainda não definidas. A definição será tratada junto com o sistema de aquecimento das áreas privativas (#9636).\n#9098 Validado com a Magno na reunião de 01/10 manter os acessos superiores do reservatório. Está em avaliação se o volume de SPK ficará junto do reservatório superior (ver #2005).\n#1269 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#3638 O topográfico inicial não traz cotas de fundo e topo nem as caixas e infraestruturas. A Magno vai solicitar novo levantamento.\n#8592 adotar a Opção 01 (divisão mais detalhada, por apartamento e por pavimento nas áreas comuns) na apresentação das pranchas de hidrossanitário\n#8710 estudar o reservatório inferior em 2 níveis com volume conjunto de água potável e SPK na etapa AJEP\n#9151 Sem comentários na Construflow. Aguardando a ARQ locar a casa de bombas da piscina e a MAG validar as informações e obter do fornecedor a infraestrutura e a potência dos equipamentos.",
+    "INT": "#6034 Se contratado, emitir as plantas de pontos antes do início do pré-executivo\n#6715 Aguardar a MAG confirmar com o Luiz o uso da loja e a possibilidade de subdivisão",
+    "MAG": "#2612 A CLI validou em 01/10 que a área técnica de insuflamento pode ficar abaixo do térreo, perto da escada, com tomada de ar no térreo, e o duto termina no barrilete.\n#5862 indicar se os sprinklers serão adotados para o SAVE ou para aumentar o caminhamento nos subsolos -03 e -02, e informar preferência de tipo de bomba\n#6034 confirmar a contratação dos projetos de interiores e luminotécnico ou disponibilizar imagens comerciais\n#8200 realizar a sondagem e validar a necessidade de laje de subpressão até o início da revisão do AP\n#8547 validar as sugestões para o sistema de renovação de ar em todos os locais indicados\n#9636 ARQ / MAG escolher a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada\n#2697 ARQ / MAG ajustar a porta de acesso à escada nos subsolos -03 e -02 ou indicar a previsão de sprinklers para aumentar o caminhamento máximo\n#4562 ARQ / MAG definir se o mezanino terá acesso ao público e prever os ajustes na escada (Figura 01)\n#6298 confirmar se haverá contratação do projeto de desempenho\n#6715 (Renato) confirmar com o Luiz a definição de uso e se a loja poderá ser subdividida\n#7458 Na reunião de 06/10 a Magno confirmou SAVE em todos os pavimentos de garagem (ver #1875), o que exige sistema de extração de fumaça nas garagens (ver #3694). ARQ deve avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos.\n#7738 / ARQ validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)\n#8613 Na reunião de 01/10 a ARQ confirmou que haverá áreas comuns também no 4º pavimento, ainda não definidas. A definição será tratada junto com o sistema de aquecimento das áreas privativas (#9636).\n#9098 Validado com a Magno na reunião de 01/10 manter os acessos superiores do reservatório. Está em avaliação se o volume de SPK ficará junto do reservatório superior (ver #2005).\n#1269 confirmar se haverá projeto específico de drenagem ou se faz parte do escopo de contenções\n#1875 A Construtora ajustou o acesso à escada nos subsolos 1 a 3. Em 01/10 a Magno pediu infraestrutura de recarga em todas as vagas, e a Arquitetura vai avaliar compartimentar as vagas junto à circulação vertical com divisórias de alvenaria.\n#2891 validar nos comentários as cargas consideradas no gerador\n#3638 solicitar novo levantamento topográfico com cotas de fundo e topo, caixas e infraestruturas, incluindo os postes (ver #4756)\n#7356 solicitar a viabilidade de GN à concessionária e repassar o retorno\n#8710 MAG indicou em 30/09 usar o pé-direito duplo com reservatório conjunto de água potável e SPK. Na reunião de 01/10 a ARQ sugeriu reservatório inferior em 2 níveis para evitar perda de vagas, e a Première vai estudar essa opção na próxima etapa (AJEP).\n#9151 confirmar e validar as informações, e obter do fornecedor da piscina a infraestrutura e a potência dos equipamentos",
+    "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#2062 incorporar as posições das ventilações permanentes\n#2323 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#3264 conferir o enchimento previsto pela arquitetura\n#3426 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#4923 conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33\n#5862 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#5996 incorporar os materiais de gás e SHP validados pela MAG e ajustar o caminhamento da rede primária após a definição da nova localização da ERPM\n#7215 Sem comentários na Construflow. Aguardando a EST confirmar o atendimento ao TRRF indicado.\n#7614 Sem comentários na Construflow. Item de conferência contínua: a ARQ deve manter a largura de circulação e corredores em todas as etapas do projeto.\n#7671 incorporar no projeto o caminhamento da rede secundária pelo vão da porta (Figura 01)\n#9292 Na reunião de 06/10 a arquitetura ficou de considerar a compartimentação horizontal em projeto, junto com o reposicionamento das áreas técnicas (sala de insuflamento, gerador etc.).\n#1491 ajustar a solução de gás conforme a decisão por GN\n#2697 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#4562 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#7458 prever o sistema de extração de fumaça nas garagens (ver #3694)\n#8197 Na reunião de 01/10 a arquitetura ficou de verificar e ajustar a escada do barrilete em projeto. Aguardando o retorno da ARQ.\n#1875 considerar as exigências da IN23 com SAVE em todas as garagens (ver #7458 e #3694)\n#6003 Sem comentários na Construflow. Aguardando a ARQ prever paredes com TRRF de 2 h e portas corta-fogo nos locais indicados (Figuras 01 e 02).\n#6984 prever o registro de corte geral de gás próximo à entrada do subsolo 01 (ver #4727)\n#7356 prever a ERPM conforme o posicionamento em estudo (ver #4727)\n#7400 / ELT considerar iluminação de emergência por blocos autônomos\n#9300 conferir se a tipologia atende às espessuras indicadas",
+    "PEP": "#2612 Considerar o duto de pressurização terminando no barrilete (Figura 05)",
+    "SPDA": "#9477 Incorporar a captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação",
+    "SPK": "#5862 Aguardando a primeira resposta das disciplinas pendentes\n#1875 Acompanhar a avaliação da ARQ sobre compartimentar as vagas com divisórias de alvenaria (recarga em todas as vagas pedida pela Magno)",
+    "TEL": "#4549 Com a ELT, refazer o lançamento dos quadros de elétrica e VDI após a consolidação das áreas comuns e reemitir o apontamento\n#7738 Aguardar MAG e ARQ validarem as posições dos quadros de elétrica e VDI nas unidades privativas\n#4398 Considerar a infraestrutura em todas as vagas, com recarga mínima por gerenciador de demanda, conforme definição da Magno"
    },
-   "geradoEm": "2026-11-09T09:59:52.000Z",
-   "geral": "Na semana de 09/11 a 13/11 vencem 14 apontamentos e outros 42 já estão atrasados, somando 56 com prazo meta até sexta. Os que envolvem mais disciplinas são #1875 (SAVE: ARQ, ELT, EST, PCI, SPK e MAG), #7458 (renovação de ar nas garagens: ARQ, PCI, EST e MAG), #9098 (reservatório superior: HID, ARQ, EST e MAG), #8710 (reservatório inferior: HID, ARQ, EST e MAG), #5862 (chuveiros automáticos: ARQ, PCI, SPK e MAG), #6715 (infras das lojas: HID, ARQ, INT e MAG) e #7738 (quadros elétricos e VDI nas unidades: ELT, ARQ, TEL e MAG). As respostas se concentram na ARQ (40 apontamentos), seguida de PCI (26), MAG (21) e HID (17); a coordenação tem 8 validações de respostas da MAG a fazer. Não houve comentários novos na Construflow desde 03/11.",
+   "geradoEm": "2026-11-09T14:55:02.974Z",
+   "geral": "Na semana de 09/11 a 13/11 vencem 56 apontamentos, dos quais 42 estão atrasados. Os que envolvem mais disciplinas são o #1875 (SAVE/IN23: MAG, ARQ, PCI, ELT, EST e SPK), o #6715 (lojas/salas comerciais: HID, MAG, ARQ e INT), o #8200 (laje de subpressão: HID, MAG e EST), o #9636 (aquecimento central: HID, MAG e ARQ), o #7458 (renovação de ar nas garagens: MAG, ARQ, PCI e EST), o #9098 (reservatório superior: HID, MAG, ARQ e EST) e o #8710 (reservatório inferior: HID, MAG, ARQ e EST). As respostas se concentram na ARQ, com o maior número de apontamentos, seguida de MAG, HID e PCI. Muitos itens da PCI e da HID ainda aguardam a primeira resposta de outras disciplinas.",
    "semana": "2026-11-09"
   }
  },

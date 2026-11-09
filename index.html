@@ -519,6 +519,32 @@ table.apt .dias{min-width:0}
   .vmode{width:100%} .vmode button{flex:1}
   .kpis b{font-size:28px}
 }
+/* Apontamentos-chave e Vínculos */
+.tag.chave{color:var(--brand-ink);background:var(--brand-bg);border-color:transparent;white-space:nowrap}
+.ca .tag.chave{font-size:11.5px;padding:0 6px;vertical-align:1px}
+.dtags{margin-top:6px;display:flex;gap:6px;flex-wrap:wrap}
+.fkbar{margin:10px 0 4px}
+.fkbar .msg{align-self:center;font-size:13px}
+.chv-e{border:1px solid var(--rule);background:var(--sheet);padding:12px 14px;margin:8px 0;display:flex;flex-direction:column;gap:6px}
+.chv-h{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.chv-h strong{font-family:var(--title);font-size:17px}
+.chv-h span{color:var(--ink-3);font-size:13px}
+.chv-h b{margin-left:auto;font-size:14px}
+.chv-e .count{margin:0}
+.chv-d{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;font-size:13.5px;color:var(--ink-2)}
+.chv-dc{display:inline-flex;gap:6px;align-items:center;min-height:32px;padding:2px 10px 2px 4px;border:1px solid var(--rule);background:var(--sheet);cursor:pointer;border-radius:3px}
+.chv-dc:hover{border-color:var(--brand)}
+.chv-dc b{font-size:14px;color:var(--ink)}
+@media (max-width:640px){.chv-dc{min-height:40px}.chv-h b{margin-left:0;flex-basis:100%}}
+.vin-l{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.vin-b{display:flex;flex-direction:column;gap:3px;width:100%;max-width:100%;min-width:0;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere;text-align:left;padding:10px 12px;min-height:44px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink);cursor:pointer;border-radius:0}
+.vin-b:hover{border-color:var(--brand)}
+.vin-t{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:14px}
+.vin-t .st{font-size:12.5px;font-weight:600;padding:1px 7px;border-radius:3px;border:1px solid currentColor;color:var(--ink-2)}
+.vin-t .st.ok{color:var(--ok)} .vin-t .st.crit{color:var(--crit)}
+.vin-int{color:var(--warn);font-size:13px}
+.vin-w{font-size:12.5px;color:var(--ink-3)}
+.vin-q{font-size:13.5px;color:var(--ink-2);overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -588,7 +614,7 @@ var STL = {aberto:"Ativo",resolvido:"Resolvido",reprovado:"Reprovado"};
 var S = {
   aps: [], cfg: null, loaded: false, dbOk: null,
   view: null, myDiscs: [], lastVisit: null, isAdmin: false, uid: null,
-  f: {disc:"", faixa:"", prio:"", status:"aberto", q:"", sort:"dias", group:false, prazo:""},
+  f: {disc:"", faixa:"", prio:"", status:"aberto", q:"", sort:"dias", group:false, prazo:""}, fChave: "",
   interno: {}, revs: {}, resumos: {}, reunioes: {}, plano: {}, planoSem: null, planoResp: "", openId: null, db: null, user: null, editing: false, creating: false
 };
 
@@ -1093,7 +1119,9 @@ function etapaBox(){
 function viewPainel(){
   var open=S.aps.filter(ativo);
   var esp=S.aps.filter(aguardando), rvs=S.aps.filter(emRevisao).sort(ordRev);
-  if(!open.length&&!esp.length&&!rvs.length) return '<section class="view"><h2>Painel geral</h2><div class="empty">Nenhum apontamento ativo. Os apontamentos aparecem aqui assim que a base for sincronizada com o Construflow.</div></section>';
+  var vazioPainel=!open.length&&!esp.length&&!rvs.length;
+  open=chaveFiltra(open);esp=chaveFiltra(esp);rvs=chaveFiltra(rvs);
+  if(vazioPainel) return '<section class="view"><h2>Painel geral</h2><div class="empty">Nenhum apontamento ativo. Os apontamentos aparecem aqui assim que a base for sincronizada com o Construflow.</div></section>';
   var alta=open.filter(function(a){return a.prioridade==="Alta";}).length;
   var crit=open.filter(function(a){return dias(a)>30;}).length;
   var media=open.length?open.reduce(function(s,a){return s+dias(a);},0)/open.length:0;
@@ -1127,6 +1155,7 @@ function viewPainel(){
   h+='<details class="info"><summary>ⓘ Como os números são contados</summary>'+
     '<p>Contagem pelas disciplinas com status Pendente no Construflow em cada apontamento ativo. A linha da Coordenação Première reúne os apontamentos com alguma disciplina em Validar. Um apontamento pode contar para mais de uma disciplina, por isso os totais por linha não somam o total geral. Apontamentos aguardando etapa de resolução ficam fora dessas contagens.</p>'+
     '<p>Atrasados: apontamentos ativos cujo prazo do plano de resolução (ou, sem plano, o prazo de resposta) já passou. Prazo de resposta do Construflow vencido: '+(vencCf?vencCf+(vencCf===1?' apontamento':' apontamentos'):'nenhum apontamento')+'.</p></details>';
+  h+=chaveFiltroHtml()+chaveBlocoHtml(S.aps);
   if(S.isAdmin)h+='<details class="cfg blk" id="b-etapa"'+(DET_ABERTO["b-etapa"]?' open':'')+'><summary>Configurar etapa e plano</summary>'+etapaBox()+'</details>';
   h+='<h3>Evolução das pendências</h3>'+burnSVG(null)+
     '<h3>Por disciplina <span class="n">'+(ehMob()?'toque':'clique')+' em uma disciplina para ver os apontamentos</span></h3>'+
@@ -1151,6 +1180,7 @@ function filtered(){
     if(S.isAdmin){if(f.faixa==="quase"){if(!quaseCritico(a))return false;}else if(f.faixa&&faixa(dias(a))!==f.faixa)return false;}
     if(f.prazo==="atrasado"&&!atrasadoPlano(a))return false;
     if(f.prio&&a.prioridade!==f.prio)return false;
+    if(!chaveOk(a))return false;
     if(q){var hay=(a.numero+" "+a.titulo+" "+(a.observacao||"")+" "+(a.acoes||[]).map(function(x){return x.texto;}).join(" ")+" "+(a.comentarios||[]).map(function(x){return x.t;}).join(" ")).toLowerCase();if(hay.indexOf(q)<0)return false;}
     return true;
   }).sort(function(a,b){
@@ -1172,7 +1202,7 @@ function apTable(arr,hl,emptyMsg){
     var rv=emRevisao(a);
     var pz=rv?'<span class="sub">Volta em '+fmtD(revAte(a))+'</span>':ew?'<span class="sub">'+esc(ew.lb)+'</span>':(p?'<span class="pz '+(pi.cls==="neu"?'':pi.cls)+'">'+fmtD(p).slice(0,5)+'</span><span class="sub">'+esc(pi.rel)+'</span>':'<span class="sub">Sem prazo</span>');
     var dd=!isOpen(a)?'<span class="sub">'+esc(STL[a.status]||a.status)+'</span>':(rv?'<span class="sub">em espera</span>':ew?'<span class="sub">aguardando etapa</span>':(S.isAdmin?'<span class="dias f-'+faixa(n)+'" title="'+esc(FAIXA[faixa(n)])+'">'+n+' d</span>':'<span class="sub">ativo</span>'));
-    return '<tr data-id="'+esc(a.numero)+'" tabindex="0"><td class="n">#'+esc(a.numero)+'</td><td class="t">'+esc(tituloFmt(a.titulo))+(a.prioridade==="Alta"&&isOpen(a)?' <span class="pri" title="Prioridade alta">▲ Alta</span>':'')+(retornouRevisao(a)?' <b class="rvt">retornou da espera</b>':'')+'</td><td class="c">'+(pend.length?chips(pend):'<span class="sub">ninguém pendente</span>')+'</td><td class="d">'+pz+'</td><td class="r">'+dd+'</td></tr>';
+    return '<tr data-id="'+esc(a.numero)+'" tabindex="0"><td class="n">#'+esc(a.numero)+'</td><td class="t">'+esc(tituloFmt(a.titulo))+(a.prioridade==="Alta"&&isOpen(a)?' <span class="pri" title="Prioridade alta">▲ Alta</span>':'')+(chaveDe(a).length?' '+chaveTag(a):'')+(retornouRevisao(a)?' <b class="rvt">retornou da espera</b>':'')+'</td><td class="c">'+(pend.length?chips(pend):'<span class="sub">ninguém pendente</span>')+'</td><td class="d">'+pz+'</td><td class="r">'+dd+'</td></tr>';
   }).join("")+'</tbody></table>';
 }
 function viewLista(){
@@ -1184,6 +1214,7 @@ function viewLista(){
     sel("fd","Disciplina a agir",dOpts,f.disc)+
     (S.isAdmin?sel("ff","Inatividade",[["","Todas"],["critico",FAIXA.critico],["atencao",FAIXA.atencao],["normal",FAIXA.normal],["quase","Viram críticos em 7 dias"]],f.faixa):"")+
     sel("fz","Prazo",[["","Todos"],["atrasado","Atrasados"]],f.prazo||"")+
+    chaveFiltroHtml(true)+
     sel("fp","Prioridade",[["","Todas"],["Alta","Alta"],["Média","Média"],["Baixa","Baixa"]],f.prio)+
     sel("fs","Situação",[["aberto","Ativos"],["aguardando","Aguardando etapa"],["revisao","Em espera para próxima revisão"],["resolvido","Resolvidos"],["reprovado","Reprovados"],["todos","Todos"]],f.status)+
     sel("fo","Ordenar por",(S.isAdmin?[["dias","Dias sem movimentação"]]:[]).concat([["prazo","Prazo"],["numero","Número"],["criacao","Data de criação"]]),sortEf())+
@@ -1223,6 +1254,8 @@ function bindView(){
     tr.addEventListener("click",fn);tr.addEventListener("keydown",function(e){if(e.key==="Enter")fn();});
   });
   [].forEach.call(main.querySelectorAll("[data-jump]"),function(el){el.addEventListener("click",function(e){e.preventDefault();var t=document.getElementById(el.getAttribute("data-jump"));if(!t)return;if(t.tagName==="DETAILS")t.open=true;t.scrollIntoView({behavior:"smooth",block:"start"});});});
+  [].forEach.call(main.querySelectorAll("select[data-fk]"),function(el){el.addEventListener("change",function(){S.fChave=el.value;render();var n=document.getElementById("fk");if(n)n.focus();});});
+  [].forEach.call(main.querySelectorAll("[data-chv-d]"),function(b){b.addEventListener("click",function(){S.fChave=b.getAttribute("data-chv-e");S.f.disc=b.getAttribute("data-chv-d");S.f.discAll=false;S.f.faixa="";S.f.prazo="";S.f.prio="";S.f.q="";S.f.status="aberto";S.f.group=false;go("lista");});});
   var co=document.getElementById("chooseOk");if(co)co.addEventListener("click",function(){setMyDiscs([].map.call(main.querySelectorAll(".chk2 input:checked"),function(i){return i.value;}));});
   [].forEach.call(main.querySelectorAll(".lnk"),function(b){b.addEventListener("click",function(e){e.preventDefault();openAp(b.getAttribute("data-id"));});});
   [].forEach.call(main.querySelectorAll("details.blk[id]"),function(d){d.addEventListener("toggle",function(){DET_ABERTO[d.id]=d.open;});});
@@ -1281,6 +1314,62 @@ function closeDrawer(){S.openId=null;S.editing=false;S.creating=false;dr.innerHT
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&dr.innerHTML)closeDrawer();});
 function findAp(id){for(var i=0;i<S.aps.length;i++)if(String(S.aps[i].numero)===String(id))return S.aps[i];return null;}
 
+/* ---------- Vínculos entre apontamentos (derivados dos comentários; sem render) ----------
+   Fonte: c.v (números citados, gravado pela sincronização; [] = lido e sem menção; ausente = legado) ou,
+   no legado, regex #NNN no texto. Comentário interno só entra se S.isAdmin && S.interno (fornecedor/site nunca vê).
+   vinculosDe(n) -> [{de:n, para:outro, sentido:"cita"|"citado", noAp:nº do apontamento que contém o comentário,
+                      comentarioId, autor, data, trecho, interno}]
+   "cita": o comentário está em n e menciona "para". "citado": o comentário está em "para" e menciona n. */
+var VINC={aps:null,intr:null,adm:null,idx:null};
+function vincTrecho(t,n){
+  t=String(t||"");var m=new RegExp("#"+String(n).replace(/[^0-9A-Za-z_-]/g,"")+"(?![0-9])").exec(t),i=m?m.index:0,L=m?m[0].length:0,a=0,b=t.length,re=/[.!?](?=\s|$)|\n/g,x;
+  while((x=re.exec(t))){var e=x.index+x[0].length;if(e<=i)a=e;else if(x.index>=i+L){b=x[0]==="\n"?x.index:e;break;}}
+  var s=t.slice(a,b).trim();
+  if(s.length>200){var p=Math.max(0,i-a-80);s=(p?"…":"")+s.slice(p,p+200).trim()+"…";}
+  return s;
+}
+function vincConstroi(){
+  var adm=!!(S.isAdmin&&S.interno),ex={},por={};
+  S.aps.forEach(function(a){ex[String(a.numero)]=1;});
+  function add(de,para,sent,noAp,c,tr,intr){
+    var k=(c.id!=null?c.id:c.d+"|"+String(c.t).slice(0,60))+"|"+de+"|"+para+"|"+sent;
+    var l=por[de]=por[de]||{items:[],seen:{}};if(l.seen[k])return;l.seen[k]=1;
+    l.items.push({de:de,para:para,sentido:sent,noAp:noAp,comentarioId:c.id!=null?c.id:null,autor:c.a||"",data:c.d||"",trecho:tr,interno:intr});
+  }
+  function proc(origem,c,intr){
+    var alvos=[],visto={};
+    if(Array.isArray(c.v))c.v.forEach(function(n){n=String(n);if(!visto[n]){visto[n]=1;alvos.push(n);}});
+    else{var re=/#(\d{3,6})\b/g,m,t=String(c.t||"");while((m=re.exec(t))){if(!visto[m[1]]){visto[m[1]]=1;alvos.push(m[1]);}}}
+    alvos.forEach(function(n){if(n===origem||!ex[n])return;var tr=vincTrecho(c.t,n);
+      add(origem,n,"cita",origem,c,tr,intr);add(n,origem,"citado",origem,c,tr,intr);});
+  }
+  S.aps.forEach(function(a){var o=String(a.numero);(a.comentarios||[]).forEach(function(c){proc(o,c,false);});});
+  if(adm)Object.keys(S.interno).forEach(function(k){var d=S.interno[k],o=String((d&&d.numero!=null)?d.numero:k);
+    if(!d||!ex[o])return;(d.comentarios||[]).forEach(function(c){proc(o,c,true);});});
+  var idx={};Object.keys(por).forEach(function(n){idx[n]=por[n].items.sort(function(a,b){return String(a.data).localeCompare(String(b.data));});});
+  return idx;
+}
+function vinculosDe(numero){
+  var adm=!!(S.isAdmin&&S.interno);
+  if(!VINC.idx||VINC.aps!==S.aps||VINC.intr!==S.interno||VINC.adm!==adm){VINC.idx=vincConstroi();VINC.aps=S.aps;VINC.intr=S.interno;VINC.adm=adm;}
+  return (VINC.idx[String(numero)]||[]).slice();
+}
+function vinculosVerificadosEm(){return (S.cfg&&S.cfg.vinculosVerificadosEm)||null;}
+function vinculosReleituraEm(){return (S.cfg&&S.cfg.vinculosReleituraEm)||null;}
+
+/* Seção "Vínculos" da ficha: mesmo padrão de "Anexos" (details recolhível). Fornecedor/site: vinculosDe já devolve só os públicos. */
+function vinculosHtml(a){
+  var vs=vinculosDe(a.numero).filter(function(v){return findAp(v.para);});
+  var h='<details class="blk det vin"><summary>Vínculos <span class="n">'+vs.length+'</span></summary>';
+  if(!vs.length){var ve=vinculosVerificadosEm();return h+'<p class="count">Nenhum vínculo identificado '+(ve?'até a última verificação ('+fmtD(ve)+')':'(ainda não verificado)')+'.</p></details>';}
+  return h+'<ul class="vin-l">'+vs.map(function(v){
+    var o=findAp(v.para),tt='#'+v.para+' · '+tituloFmt(o.titulo);
+    var sc=o.status==="resolvido"?' ok':(o.status==="reprovado"?' crit':'');
+    var cit=v.sentido==="citado"?'citado em comentário do #'+esc(v.noAp):'cita o #'+esc(v.para)+' em comentário deste apontamento';
+    return '<li><button type="button" class="vin-b" data-vin="'+esc(v.para)+'" aria-label="Abrir o apontamento '+esc(tt)+'"><span class="vin-t"><b>'+esc(tt)+'</b><span class="st'+sc+'">'+esc(STL[o.status]||"Ativo")+'</span>'+(v.interno?'<b class="vin-int">interno</b>':'')+'</span>'+
+      '<span class="vin-w">'+cit+(v.data||v.autor?' · '+(v.data?fmtD(v.data):'')+(v.data&&v.autor?', ':'')+esc(v.autor):'')+'</span>'+(v.trecho?'<span class="vin-q">“'+esc(v.trecho)+'”</span>':'')+'</button></li>';
+  }).join("")+'</ul><p class="count">Apontamentos que citam este, ou que este cita, nos comentários do Construflow.</p></details>';
+}
 function editForm(a){
   return '<form class="ed" id="edForm"><p class="full msg" style="margin:0">Situação, prioridade e status das disciplinas vêm do Construflow e são atualizados a cada sincronização. Aqui você ajusta o que é controle interno.</p>'+
     '<label>Complexidade<select name="complexidade">'+["baixa","media","alta"].map(function(k){return '<option value="'+k+'"'+((a.complexidade||"media")===k?' selected':'')+'>'+CX[k]+'</option>';}).join('')+'</select></label>'+
@@ -1306,7 +1395,7 @@ function renderDrawer(){
   var head, body;
   {
     var n=dias(a),f=faixa(n);
-    head='<div class="t">'+(isOpen(a)?'':'<div class="num">'+esc(STL[a.status]||'')+'</div>')+'<h2 id="drTitle" class="dtit">#'+esc(a.numero)+' · '+esc(tituloFmt(a.titulo))+'</h2></div>';
+    head='<div class="t">'+(isOpen(a)?'':'<div class="num">'+esc(STL[a.status]||'')+'</div>')+'<h2 id="drTitle" class="dtit">#'+esc(a.numero)+' · '+esc(tituloFmt(a.titulo))+'</h2>'+(chaveDe(a).length?'<div class="dtags">'+chaveTag(a)+'</div>':'')+'</div>';
     var cfUrl=a.construflowId&&S.cfg&&S.cfg.construflowUrl?S.cfg.construflowUrl+"/"+a.construflowId:null;
     var info='<dl class="f">'+
       ((a.etapaResolucao||a.etapaConferencia)?'<dt>Etapas</dt><dd>'+(a.etapaResolucao?'<span class="tag">Resolver no '+esc(a.etapaResolucao)+'</span> ':'')+(a.etapaConferencia?'<span class="tag">Conferir no '+esc(a.etapaConferencia)+'</span>':'')+'</dd>':'')+
@@ -1361,9 +1450,10 @@ function renderDrawer(){
     var quem='<div class="box"><h4>Quem precisa responder</h4>'+(qn.length?'<ul class="qr">'+qn.join("")+'</ul>':'<p style="font-size:15px">Ninguém pendente no momento.</p>')+'</div>';
     var ax=(a.anexos||[]);
     var anx='<details class="blk det"><summary>Anexos <span class="n">'+ax.length+'</span></summary>'+(ax.length?'<ul class="anx">'+ax.map(function(x){return '<li><a href="'+esc(x.url)+'" target="_blank" rel="noopener"><b>'+esc(x.titulo)+'</b>'+(x.legenda?'<span>'+esc(x.legenda)+'</span>':'')+'<i>Abrir figura</i></a></li>';}).join("")+'</ul><p class="count">As figuras abrem em uma nova aba. São as imagens do próprio apontamento; as dos comentários ficam no Construflow.</p>':'<p class="count">Este apontamento não tem figuras anexadas.</p>')+'</details>';
+    var vin=vinculosHtml(a);
     var det='<details class="blk det"><summary>Detalhes do apontamento</summary>'+info+ac+dt+'</details>';
     var tools2=S.isAdmin?'<div class="box row-btns"><button class="btn ghost" type="button" id="editBtn">Editar prazo e observações</button><span class="msg">'+(a.atualizadoEm?'Editado no app em '+fmtD(a.atualizadoEm):(a.sincronizadoEm?'Sincronizado em '+fmtD(a.sincronizadoEm):''))+'</span></div>':'';
-    body=S.editing?editForm(a):(faca+situ+feito+quem+hist+hint+anx+det+revisaoBox(a)+tools2);
+    body=S.editing?editForm(a):(faca+situ+feito+quem+hist+hint+anx+vin+det+revisaoBox(a)+tools2);
   }
   dr.innerHTML='<div class="scrim" id="scrim"></div><aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="drTitle"><header>'+head+'<button class="x" id="xBtn" aria-label="Fechar">×</button></header><div class="body">'+body+'</div></aside>';
   document.getElementById("scrim").addEventListener("click",closeDrawer);
@@ -1371,6 +1461,7 @@ function renderDrawer(){
   document.getElementById("xBtn").focus();
   var dm=document.getElementById("drMk");if(dm)dm.addEventListener("change",function(){mkToggle(a.numero,dm.checked);});
   var eb=document.getElementById("editBtn");if(eb)eb.addEventListener("click",function(){S.editing=true;renderDrawer();});
+  [].forEach.call(dr.querySelectorAll("[data-vin]"),function(b){b.addEventListener("click",function(){S.openId=String(b.getAttribute("data-vin"));S.editing=false;S.creating=false;renderDrawer();});});
   [].forEach.call(dr.querySelectorAll("[data-rv]"),function(b){b.addEventListener("click",function(){salvarRevisao(a,b.getAttribute("data-rv"));});});
   var form=document.getElementById("edForm");
   if(form){
@@ -1688,9 +1779,90 @@ function gerarPlano(fase,fimIso){
    Parte A (status Validar no Construflow) e Parte B (B2 campos, B3 etapas, B4 análise,
    B5 statusAuto, B6 resumo semanal, B6b reuniões, B7 gravação, B8 fechamento). */
 var SRV="Construflow", SYNC={on:false,msg:""};
+/* Apontamento-chave: entregas (filhas da etiqueta CHAVE) de cada apontamento. Funções puras. */
+var ENTREGAS_CHAVE=["EP","PL","AP","PE","EX"];
+function chaveDe(ap){var c=(ap&&ap.chave)||[];return ENTREGAS_CHAVE.filter(function(e){return c.indexOf(e)>=0;});}
+/* flat = pr.labels.flatten; raiz por abreviação "CHAVE" (fallback nome "Apontamento-chave"); sem raiz → {raiz:null,filhas:{}} */
+function chaveMapa(flat){
+  flat=flat||[];var ab=function(l){return String(l.abbreviation||"").trim().toUpperCase();},tr=function(l){return String(l.abbreviationTree||"").trim().toUpperCase();};
+  var root=flat.filter(function(l){return ab(l)==="CHAVE"&&(!tr(l)||tr(l)==="CHAVE");})[0]||flat.filter(function(l){return String(l.name||"").trim().toLowerCase()==="apontamento-chave";})[0]||null;
+  var out={raiz:root?root.id:null,filhas:{}};if(!root)return out;
+  var rt=tr(root);
+  flat.forEach(function(l){if(l.id===root.id)return;
+    var pai=l.parentId!=null?l.parentId:(l.parentLabelId!=null?l.parentLabelId:l.parent_id);
+    var filha=(pai!=null&&pai===root.id)||(rt&&tr(l).indexOf(rt+"/")===0);
+    if(!filha)return;var a=tr(l).split("/").pop()||ab(l);
+    if(ENTREGAS_CHAVE.indexOf(a)>=0)out.filhas[l.id]=a;});
+  return out;}
+/* ids = etiquetas do apontamento; devolve abreviações na ordem EP, PL, AP, PE, EX */
+function chaveCalc(ids,mapa){var f=(mapa&&mapa.filhas)||{},has={};(ids||[]).forEach(function(i){if(f[i])has[f[i]]=1;});return ENTREGAS_CHAVE.filter(function(e){return has[e];});}
+/* ---- Apontamentos-chave na interface: selo, filtro compartilhado S.fChave ("" = não filtra; "*" = qualquer entrega; "EP"...) e bloco do painel ---- */
+function chaveTag(a){var c=chaveDe(a);if(!c.length)return "";return '<span class="tag chave" title="Apontamento-chave: '+esc(c.map(function(e){return FN[e]||e;}).join(", "))+'">Chave · '+esc(c.join(", "))+'</span>';}
+function chaveOk(a){var f=S.fChave;if(!f)return true;var c=chaveDe(a);return f==="*"?c.length>0:c.indexOf(f)>=0;}
+function chaveFiltra(arr){return S.fChave?arr.filter(chaveOk):arr;}
+function chaveFiltraR(r){if(S.fChave)Object.keys(r).forEach(function(k){if(Array.isArray(r[k]))r[k]=chaveFiltra(r[k]);});return r;}
+function chaveEntregas(){var h={};S.aps.forEach(function(a){chaveDe(a).forEach(function(e){h[e]=1;});});return ENTREGAS_CHAVE.filter(function(e){return h[e]||S.fChave===e;});}
+function chaveFiltroHtml(inline){
+  var op=[["","Não filtrar"],["*","Todas as entregas"]].concat(chaveEntregas().map(function(e){return [e,e+" · "+(FN[e]||e)];}));
+  var vazio=!S.aps.some(function(a){return chaveDe(a).length;});
+  var sl='<label>Apontamentos-chave<select id="fk" data-fk>'+op.map(function(o){return '<option value="'+esc(o[0])+'"'+(o[0]===S.fChave?' selected':'')+'>'+esc(o[1])+'</option>';}).join("")+'</select></label>';
+  if(inline)return sl;
+  return '<div class="filters fkbar">'+sl+(S.fChave?'<span class="msg" role="status">'+(vazio?'Nenhum apontamento-chave marcado na Construflow.':'Mostrando só apontamentos-chave'+(S.fChave==="*"?'.':' de '+esc(S.fChave)+'.'))+'</span>':'')+'</div>';
+}
+/* Base do bloco = apontamentos-chave da entrega EXCETO reprovados (Y). resolvido = status geral resolvido OU todas as disciplinas direcionadas em Concluído.
+   Os demais contam só sobre ativo(a) (mesma função do filtro status "aberto"), para o número do botão bater com a lista aberta pelo clique:
+   pendente = proxEf sem a coordenação; aguardando validação = ativo sem pendência com disciplina em Validar; sem disciplina pendente = ativo sem nenhuma das duas; espera = não ativo e não resolvido. Resolvidos + aguardando + com pendência + sem disciplina + espera = Y. */
+function chaveResolvido(a){if(a.status==="resolvido")return true;var dir=a.direcionadas||[];if(!dir.length)return false;return dir.every(function(c){return (a.disciplinas||[]).some(function(d){return d.c===c&&d.status==="done";});});}
+function chavePend(a){return (chaveResolvido(a)||!ativo(a))?[]:proxEf(a).filter(function(c){return c!=="COORD";});}
+function chaveAguarda(a){if(chaveResolvido(a)||!ativo(a)||chavePend(a).length)return false;return (a.disciplinas||[]).some(function(d){return d.status==="validate"||d.status==="validated";});}
+function chaveEspera(a){return !chaveResolvido(a)&&!ativo(a);}
+function chaveSemDisc(a){return !chaveResolvido(a)&&ativo(a)&&!chavePend(a).length&&!chaveAguarda(a);}
+/* l = apontamentos-chave de uma entrega, já sem reprovados; D = (opcional) limita as disciplinas dos botões (fornecedor) */
+function chaveContagem(l,D){
+  var r={y:l.length,res:0,ag:0,esp:0,sem:0,pendAps:0,pc:{}};
+  l.forEach(function(a){
+    if(chaveResolvido(a)){r.res++;return;}
+    if(!ativo(a)){r.esp++;return;}
+    var p=chavePend(a);
+    if(p.length){r.pendAps++;p.forEach(function(c){if(!D||D.indexOf(c)>=0)r.pc[c]=(r.pc[c]||0)+1;});}
+    else if(chaveAguarda(a))r.ag++;
+    else r.sem++;
+  });
+  return r;
+}
+/* base = apontamentos no escopo; D = (opcional) limita as disciplinas pendentes exibidas (fornecedor) */
+function chaveBlocoHtml(base,D){
+  var h='<h3>Apontamentos-chave por entrega</h3>';
+  if(!base.some(function(a){return chaveDe(a).length;}))return h+'<p class="count">Nenhum apontamento-chave marcado na Construflow</p>';
+  var bs=base.filter(function(a){return a.status!=="reprovado";});
+  var ents=ENTREGAS_CHAVE.filter(function(e){return (!S.fChave||S.fChave==="*"||S.fChave===e)&&bs.some(function(a){return chaveDe(a).indexOf(e)>=0;});});
+  if(!ents.length)return h+'<p class="count">Nenhum apontamento-chave nesta entrega.</p>';
+  return h+ents.map(function(e){
+    var l=bs.filter(function(a){return chaveDe(a).indexOf(e)>=0;}),k=chaveContagem(l,D),res=k.res,pc=k.pc,pct=Math.round(res/l.length*100);
+    var ks=Object.keys(pc).sort(function(x,y){return pc[y]-pc[x]||x.localeCompare(y);});
+    return '<div class="chv-e"><div class="chv-h"><strong>'+esc(e)+':</strong><span>'+esc(FN[e]||e)+'</span><b>'+res+' de '+l.length+(l.length===1?' resolvido':' resolvidos')+'</b></div>'+
+      '<div class="mbarw"><div class="mbar'+(pct<100?' low':'')+'" role="img" aria-label="'+res+' de '+l.length+' resolvidos ('+pct+'%)"><i style="width:'+pct+'%"></i></div><span class="pct">'+pct+'%</span></div>'+
+      (k.ag?'<p class="count">'+k.ag+' aguardando validação da coordenação</p>':'')+
+      (k.sem?'<p class="count">'+k.sem+' sem disciplina pendente</p>':'')+
+      (k.esp?'<p class="count">'+k.esp+' em espera/aguardando etapa</p>':'')+
+      (ks.length?'<div class="chv-d"><span>Pendentes por disciplina:</span>'+ks.map(function(c){return '<button type="button" class="chv-dc" data-chv-e="'+esc(e)+'" data-chv-d="'+esc(c)+'" aria-label="Ver '+pc[c]+(pc[c]===1?' apontamento-chave':' apontamentos-chave')+' '+esc(e)+' pendentes de '+esc(DMAP[c]?DMAP[c].n:c)+'">'+chip(c)+'<b>'+pc[c]+'</b></button>';}).join("")+'</div>':'<p class="count">Nenhuma disciplina pendente.</p>')+'</div>';
+  }).join("");
+}
 var CFST={active:"aberto",resolved:"resolvido",reproved:"reprovado"}, CFPR={high:"Alta",medium:"Média",low:"Baixa"};
 var PHASE_RE=[["PL",/projeto legal|\bPL\b/i],["AP",/anteprojeto|\bAP\b/i],["PE",/pr[ée][- ]?executivo|\bPE\b/i],["EX",/\bexecutivo\b|\bEX\b/i]];
 function txtHtml(h){try{var d=new DOMParser().parseFromString(String(h||"").replace(/<\/p>\s*<p>/g,"</p>\n<p>").replace(/<br\s*\/?>/g,"\n"),"text/html");return (d.body.textContent||"").replace(/\u00a0/g," ").replace(/[ \t]+\n/g,"\n").trim();}catch(e){return String(h||"");}}
+/* V\u00ednculos: men\u00e7\u00f5es de apontamento no HTML do coment\u00e1rio (span.hashtag-mention[data-hashtag-id] = id INTERNO do apontamento).
+   Devolve os N\u00daMEROS exibidos (valores de ID2N), sem o pr\u00f3prio apontamento (selfNum), sem ids desconhecidos e sem repeti\u00e7\u00e3o.
+   Devolve null se o HTML n\u00e3o p\u00f4de ser lido (a\u00ed o campo v n\u00e3o deve ser gravado). Men\u00e7\u00e3o de usu\u00e1rio (span.mention) \u00e9 ignorada. */
+function vincExtrai(html,ID2N,selfNum){
+  try{var d=new DOMParser().parseFromString(String(html||""),"text/html"),ns=d.querySelectorAll("span.hashtag-mention[data-hashtag-id]"),out=[],seen={};
+    for(var i=0;i<ns.length;i++){var id=ns[i].getAttribute("data-hashtag-id");
+      if(!Object.prototype.hasOwnProperty.call(ID2N,id))continue;
+      var n=ID2N[id];if(n==null||String(n)===String(selfNum)||seen[n])continue;seen[n]=1;out.push(n);}
+    return out;
+  }catch(e){return null;}
+}
+function semV(cs){return (cs||[]).map(function(c){var o=Object.assign({},c);delete o.v;return o;});}
 function dayBrt(iso){if(!iso)return null;var s=String(iso);if(/^\d{4}-\d{2}-\d{2}$/.test(s))return s;var b=brt(s);return b?b.dia:s.slice(0,10);}
 function fasePorTexto(t){var best=null;PHASE_RE.forEach(function(p){if(p[1].test(t))best=best||p[0];});return best;}
 var DOMINIO={"magnorealty.com.br":["MAG"],"magnogroup.com.br":["MAG"],"methafora.com.br":["ARQ"],"aspenengenharia.com":["EST"]};
@@ -1915,7 +2087,7 @@ async function gerarResumo(ds){
   }catch(e){return {r:base,claude:false,erro:(e&&e.code)||"upstream_error"};}
 }
 
-async function sincronizar(origem){
+async function sincronizar(origem,opts){
   if(SYNC.on||!S.db)return;
   var pid=S.cfg&&S.cfg.construflowProjeto; if(!pid){setSync(false,"Projeto do Construflow não configurado.");return;}
   setSync(true,"Conectando ao Construflow…");
@@ -1927,16 +2099,19 @@ async function sincronizar(origem){
     var DID={};(pr.disciplines||[]).forEach(function(d){DID[d.id]=String(d.abbreviation||"").trim();});
     var USR={},N2D={};(pr.users||[]).forEach(function(u){var nm=((u.name||"").trim()+" "+(u.lastName||"").trim()).replace(/\s+/g," ").trim();USR[u.id]=nm;N2D[nm]=discsAutor(nm,u.email);});
     var LB={};((pr.labels&&pr.labels.flatten)||[]).forEach(function(l){var m=String(l.abbreviationTree||"").match(/^(RES|CONF)\/(EV|EP|PL|AP|PE|EX)$/);if(m)LB[l.id]={t:m[1]==="RES"?"res":"conf",c:m[2]};});
+    var CHV=chaveMapa((pr.labels&&pr.labels.flatten)||[]), colLb=-1;
     var rows=[],after=null,dict=null,pg1={};
-    do{var inp={projectId:pid,first:200,include:["disciplineDates"]};if(after)inp.after=after;var p=await cf("list_issues_data",inp);
+    do{var inp={projectId:pid,first:200,include:["disciplineDates","labels"]};if(after)inp.after=after;var p=await cf("list_issues_data",inp);
       if(!p||!Array.isArray(p.rows))throw {code:"formato",etapa:"leitura dos apontamentos"};
-      rows=rows.concat(p.rows);dict=dict||p.dict;after=pagina(pg1,p.next&&p.next.after,"leitura dos apontamentos");}while(after);
+      rows=rows.concat(p.rows);dict=dict||p.dict;if(colLb<0&&Array.isArray(p.columns))colLb=p.columns.indexOf("labels");after=pagina(pg1,p.next&&p.next.after,"leitura dos apontamentos");}while(after);
     // F3: confere o formato das linhas antes de gravar qualquer coisa
     var ruins=rows.filter(function(r){return !Array.isArray(r)||r[0]==null||!(+r[1]>0)||typeof r[2]!=="string"||(r[8]!=null&&!Array.isArray(r[8]));});
     if(ruins.length)throw {code:"formato",etapa:"leitura dos apontamentos",message:ruins.length+" linha(s) em formato inesperado"};
     // Lista vazia com apontamentos ativos no app = falha da Construflow: não avança ultimaSync (perderia comentários).
     if(!rows.length&&(S.aps||[]).some(isOpen))throw {code:"vazio",etapa:"leitura dos apontamentos"};
     var ID2N={};rows.forEach(function(r){ID2N[r[0]]=r[1];});
+    // Apontamento-chave: sem coluna "labels" na resposta, mantém o que já está gravado (nunca zera por falha de leitura)
+    var temLb=colLb>=0;
     var labs={};for(var lid in LB){var q=await cf("list_issues_data",{projectId:pid,first:200,filter:{labelIds:[+lid]}});(q.rows||[]).forEach(function(r){(labs[r[0]]=labs[r[0]]||[]).push(LB[lid]);});}
     var desde=S.cfg.ultimaSync?new Date(new Date(S.cfg.ultimaSync).getTime()-36*3600000).toISOString():null;
     setSync(true,"Lendo anexos e descrições…");
@@ -1944,8 +2119,17 @@ async function sincronizar(origem){
       (iss.issues||[]).forEach(function(i){DESC[i.id]=txtHtml(i.description||"");var lg=legendas(i.description);ANX[i.id]=(i.images||[]).slice().sort(function(a,b){return (a.index||0)-(b.index||0);}).map(function(im){var t=String(im.title||"").trim(),mm=t.match(/^(FIGURA|IMAGEM|TABELA)\s*0*(\d+)/i),k=mm?mm[1].toUpperCase()+" "+parseInt(mm[2],10):null;return {titulo:t||"Imagem",url:im.markedUp||im.url||"",legenda:(k&&lg[k])||""};}).filter(function(x){return x.url;});});
       more2=!!(iss.pageInfo&&iss.pageInfo.hasNextPage);ia=more2?pagina(pg2,iss.pageInfo.endCursor,"anexos"):null;more2=!!ia;}}catch(e){ANX=null;}
     setSync(true,"Lendo comentários…");
-    var cms=[],cur=null,more=true,pg3={};
-    while(more){var ci={projectId:pid,first:50,exclude:["images","users"]};if(desde)ci.filter={updatedAtFrom:desde};if(cur)ci.after=cur;var cp=await cf("list_project_comments",ci);var cc=cp&&cp.project&&cp.project.comments||{};cms=cms.concat(cc.comments||[]);more=!!(cc.pageInfo&&cc.pageInfo.hasNextPage);cur=more?pagina(pg3,cc.pageInfo.endCursor,"comentários"):null;more=!!cur;}
+    async function lerComents(filtro){var out=[],cur=null,more=true,pg3={};
+      while(more){var ci={projectId:pid,first:50,exclude:["images","users"]};if(filtro)ci.filter=filtro;if(cur)ci.after=cur;var cp=await cf("list_project_comments",ci);var cc=cp&&cp.project&&cp.project.comments||{};out=out.concat(cc.comments||[]);more=!!(cc.pageInfo&&cc.pageInfo.hasNextPage);cur=more?pagina(pg3,cc.pageInfo.endCursor,"comentários"):null;more=!!cur;}
+      return out;}
+    var cms=await lerComents(desde?{updatedAtFrom:desde}:null);
+    // Vínculos: releitura completa (todas as páginas, com message) só atualiza o campo v; a lógica de cms (incremental) não muda.
+    var releitura=!!(opts&&opts.releitura), cmsV=cms;
+    if(releitura&&desde){setSync(true,"Relendo todo o histórico de comentários…");cmsV=await lerComents(null);}
+    var VMAP={},intNums={};
+    cmsV.forEach(function(c){var n=ID2N[c.issueId];if(n==null)return;
+      var apag=!!(c.deletedAt||c.isDeleted);if(!apag&&c.message==null)return;var v=apag?[]:vincExtrai(c.message,ID2N,n);if(v===null)return;
+      VMAP[c.id]=v;if(desde&&c.visibility!=="public")intNums[n]=1;});
     var byIssue={};cms.forEach(function(c){if(c.deletedAt)return;(byIssue[c.issueId]=byIssue[c.issueId]||[]).push(c);});
     var exist={},existN={};S.aps.forEach(function(a){if(a.construflowId)exist[a.construflowId]=a;existN[a.numero]=a;});
     var sairInterno={};
@@ -1966,13 +2150,15 @@ async function sincronizar(origem){
       var etapaCom=null, novosPub=0, visMud=false, complementar=ds.some(function(x){return PENDST[x.status]&&["ARQ","MAG","COORD"].indexOf(x.c)<0;});
       (byIssue[iid]||[]).sort(function(a,b){return String(a.createdAt).localeCompare(String(b.createdAt));}).forEach(function(c){
         var t=txtHtml(c.message), d=dayBrt(c.createdAtBrt||c.createdAt), a=USR[c.createdByUserId]||"Usuário "+c.createdByUserId;
-        if(c.visibility!=="public"){internos.push({n:code,c:{id:c.id,d:d,a:a,t:t}});if(oldIds[c.id])visMud=true;com=com.filter(function(x){return x.id!==c.id;});return;}
+        if(c.visibility!=="public"){var ic={id:c.id,d:d,a:a,t:t};if(VMAP[c.id])ic.v=VMAP[c.id];internos.push({n:code,c:ic});if(oldIds[c.id])visMud=true;com=com.filter(function(x){return x.id!==c.id;});return;}
         sairInterno[code]=(sairInterno[code]||[]).concat([c.id]); if(intIds[c.id])visMud=true;
-        var k=c.id,k2=d+"|"+t.slice(0,60); if(!seen[k]&&!seen[k2]){com.push({id:c.id,d:d,a:a,t:t,ds:nd(a)});seen[k]=1;}
+        var k=c.id,k2=d+"|"+t.slice(0,60); if(!seen[k]&&!seen[k2]){var nc={id:c.id,d:d,a:a,t:t,ds:nd(a)};if(VMAP[c.id])nc.v=VMAP[c.id];com.push(nc);seen[k]=1;}
         if(!oldIds[c.id]){novosPub++;novosComent++;}
         var e=etapaDoComentario(t,complementar); if(e)etapaCom=e;
       });
       com.forEach(function(x){if(!x.ds)x.ds=nd(x.a);});
+      // Vínculos: atualiza v de comentários já gravados (cópia; não mexe em t/d/a/ds nem na ordem); apagado → []
+      for(var vi=0;vi<com.length;vi++){var vv=com[vi].id!=null?VMAP[com[vi].id]:null;if(vv&&JSON.stringify(com[vi].v)!==JSON.stringify(vv))com[vi]=Object.assign({},com[vi],{v:vv});}
       com.sort(function(a,b){return String(a.d).localeCompare(String(b.d));});
       com.forEach(function(c){if(c.d)mov.push(c.d);});
       var ult=mov.sort().pop()||cday;
@@ -1991,10 +2177,13 @@ async function sincronizar(origem){
         if(etapaCom){var lab=etapaCom.t==="res"?lr:lc; if(lab&&lab.c!==etapaCom.c)alertas.push("etiqueta divergente do comentário");
           if(etapaCom.t==="res")er=etapaCom.c;else ec=etapaCom.c; orig="comentário";}
       }
+      var lids=temLb?(Array.isArray(r[colLb])?r[colLb].slice().sort(function(a,b){return a-b;}):[]):null;
       var doc={numero:code,construflowId:iid,titulo:String(tit).trim(),status:CFST[st]||"aberto",prioridade:CFPR[pri]||"Média",categoria:CATS[cat]||"",
         disciplinas:ds,direcionadas:direc,acompanhar:acomp,proximas:[],dataCriacao:cday,ultimoComentario:ult,
         prazoConstruflow:prz.sort()[0]||null,comentarios:com,respondidas:respd,anexos:(ANX&&ANX[iid])||(old&&old.anexos)||[],etapaResolucao:er,etapaConferencia:ec,etapaOrigem:orig,etapaAlertas:alertas,
         sincronizadoEm:new Date().toISOString(),fonte:"Construflow"};
+      /* sem a coluna labels na leitura: mantém o que já está gravado e não cria os campos */
+      if(lids){doc.etiquetas=lids;doc.chave=chaveCalc(lids,CHV);}else{if(old&&old.etiquetas)doc.etiquetas=old.etiquetas;if(old&&old.chave)doc.chave=old.chave;}
       built.push({code:code,iid:iid,doc:doc,old:old,novo:!old,novosPub:novosPub,visMud:visMud});
     });
     // proximas: pendentes + Validar sem comentário próprio; COORD se houver disciplina "respondida"
@@ -2058,7 +2247,10 @@ async function sincronizar(origem){
         if(an){ch.observacao=an.observacao;ch.realizadas=an.realizadas;ch.acoes=an.acoes;ch.analiseEm=hojeA;if(old.analisePendente)ch.analisePendente=null;
           if(an.complexidade&&old.complexidadeOrigem==="padrão"){ch.complexidade=an.complexidade;ch.complexidadeMotivo=an.complexidadeMotivo;ch.complexidadeOrigem="análise";}}
         else if(falhouAn[code]&&!old.analisePendente)ch.analisePendente=true;
-        if(Object.keys(ch).length){ch.sincronizadoEm=doc.sincronizadoEm;mud++;writes.push({n:code,upd:ch});}
+        if(Object.keys(ch).length){ch.sincronizadoEm=doc.sincronizadoEm;mud++;
+          /* rel=false: a única diferença está em v dos comentários, chave ou etiquetas; não regera o resumo semanal */
+          var rel=Object.keys(ch).some(function(k){if(k==="chave"||k==="etiquetas"||k==="sincronizadoEm")return false;if(k==="comentarios")return JSON.stringify(semV(ch[k]))!==JSON.stringify(semV(old[k]));return true;});
+          writes.push({n:code,upd:ch,rel:rel});}
       }
     });
     // B7 – gravação
@@ -2071,10 +2263,10 @@ async function sincronizar(origem){
     // comentários internos (coleção de raiz "interno"), com troca de visibilidade
     var icol=S.db.collection("interno");
     var gi={};internos.forEach(function(x){(gi[x.n]=gi[x.n]||[]).push(x.c);});
-    var nums={};Object.keys(sairInterno).concat(Object.keys(gi)).forEach(function(n){nums[n]=1;});
+    var nums={};Object.keys(sairInterno).concat(Object.keys(gi),Object.keys(intNums)).forEach(function(n){nums[n]=1;});
     for(var sn in nums){
       var pv=desde?((S.interno[sn]&&S.interno[sn].comentarios)||[]):[], sai=sairInterno[sn]||[];
-      var rest=pv.filter(function(c){return sai.indexOf(c.id)<0;}), sk={};rest.forEach(function(c){sk[c.id]=1;});
+      var rest=pv.filter(function(c){return sai.indexOf(c.id)<0;}).map(function(c){var vv=VMAP[c.id];return (vv&&JSON.stringify(c.v)!==JSON.stringify(vv))?Object.assign({},c,{v:vv}):c;}), sk={};rest.forEach(function(c){sk[c.id]=1;});
       var add=(gi[sn]||[]).filter(function(c){return !sk[c.id];});
       var nv=rest.concat(add);
       var antes=(S.interno[sn]&&S.interno[sn].comentarios)||[];
@@ -2087,7 +2279,7 @@ async function sincronizar(origem){
     var RES={gravado:false,claude:false};
     try{
       var wk=semanaAt(), jaRes=S.resumos[wk.id]||null;
-      if(!jaRes||writes.length||Object.keys(AN.res).length){
+      if(!jaRes||writes.some(function(w){return w.rel!==false;})||Object.keys(AN.res).length){
         setSync(true,"Atualizando o resumo da semana…");
         var dsem=dadosSemana(Object.keys(final).map(function(k){return final[k];}));
         var gr=await gerarResumo(dsem);
@@ -2101,9 +2293,11 @@ async function sincronizar(origem){
     }catch(e){RES.erro=(e&&e.code)||"erro";}
     // B8 – fechamento
     var agora=new Date().toISOString(), nAn=Object.keys(AN.res).length, nPend=AN.falhas.length;
-    await S.db.doc("empreendimentos/"+EMP).update({ultimaSync:agora,sincronizadoEm:agora,syncEmAndamento:null,syncBloqueada:null,
-      ultimaSyncResumo:{origem:origem,alterados:mud,novos:novos,comentarios:novosComent,statusAtualizados:autoOk,statusFalhas:autoFalha,analisados:nAn,analisePendente:nPend,reunioes:REU.feitas,resumoSemanal:RES.gravado}});
-    var msg="Sincronizado às "+fmtH(new Date())+": "+mud+" apontamentos atualizados, "+novos+" novos, "+novosComent+" comentários novos"+(autoOk?", "+autoOk+" status mudados para Validar no Construflow":"")+(nAn?", "+nAn+" analisados pelo Claude":"")+(REU.feitas.length?", reuniões: "+REU.feitas.join("; "):"")+".";
+    var fech={chaveLabels:{raiz:CHV.raiz,filhas:CHV.filhas,lidoEm:agora},ultimaSync:agora,sincronizadoEm:agora,syncEmAndamento:null,syncBloqueada:null,vinculosVerificadosEm:agora,
+      ultimaSyncResumo:{origem:origem,alterados:mud,novos:novos,comentarios:novosComent,statusAtualizados:autoOk,statusFalhas:autoFalha,analisados:nAn,analisePendente:nPend,reunioes:REU.feitas,resumoSemanal:RES.gravado}};
+    if(releitura)fech.vinculosReleituraEm=agora;
+    await S.db.doc("empreendimentos/"+EMP).update(fech);
+    var msg="Sincronizado às "+fmtH(new Date())+(releitura?" (com releitura completa dos comentários)":"")+": "+mud+" apontamentos atualizados, "+novos+" novos, "+novosComent+" comentários novos"+(autoOk?", "+autoOk+" status mudados para Validar no Construflow":"")+(nAn?", "+nAn+" analisados pelo Claude":"")+(REU.feitas.length?", reuniões: "+REU.feitas.join("; "):"")+".";
     var avisos=[];
     if(autoFalha.length)avisos.push("Não foi possível mudar o status: "+autoFalha.join(", "));
     if(nPend)avisos.push(nPend+" apontamento"+(nPend>1?"s ficaram":" ficou")+" sem análise"+(AN.erro?" porque "+(SMPL_MSG[AN.erro]||"o Claude não respondeu"):"")+"; a próxima sincronização tenta de novo");
@@ -2144,7 +2338,7 @@ async function sincronizarAgora(){
   if(SYNC.on||!S.db)return;
   var cfg=S.cfg||{}, now=new Date(), em=cfg.syncEmAndamento?new Date(cfg.syncEmAndamento):null;
   if(em&&(now-em)<90*60000){setSync(false,"Já há uma sincronização em andamento desde "+fmtH(em)+".");return;}
-  var r=await sincronizar("manual_app");
+  var r=await sincronizar("manual_app",{releitura:true});
   if(r===true){
     var msg=SYNC.msg, err=document.getElementById("syncMsg").className.indexOf("err")>=0;
     var d=await dispararTarefa(TAREFA_SITE_ID,"EXECUÇÃO MANUAL: o app foi sincronizado pelo botão Sincronizar em "+fmtD(new Date().toISOString())+" às "+fmtH(new Date())+" (horário de Brasília). Publique esta sincronização no site.");
@@ -2263,6 +2457,7 @@ function apRow(a,hl){
   if(D.length&&S.respInfo)infoRespondido(a,D).forEach(function(t){extras.push('<b class="okt">'+esc(t)+'</b>');});
   else if(mkData(a))extras.push('<b class="okt">marcado como respondido em '+fmtD(mkData(a)).slice(0,5)+'</b>');
   if(S.isAdmin&&isOpen(a)&&!espera(a)&&!emRevisao(a)){var n=dias(a);if(mostraDias(n))extras.push('<span class="dias f-'+faixa(n)+'">'+n+' d sem movimentação</span>');}
+  if(chaveDe(a).length)extras.unshift(chaveTag(a));
   if(a.prioridade==="Alta"&&isOpen(a))extras.unshift('<span class="pri">▲ Alta</span>');
   if(S.isAdmin&&S.interno[String(a.numero)])extras.push('<b style="color:var(--warn)">interno</b>');
   var url=cfLink(a);
@@ -2296,6 +2491,9 @@ function viewMinhaSemana(){
   var D=minhasDiscs();
   if(!D.length)return chooserHtml();
   var w=semanaAt(),r=classificar(D),pl=plano(),tot={res:0,meta:0},sex=sexta(w.ini);
+  r=chaveFiltraR(r);
+  var ck=r.atras.concat(r.semana).filter(function(a){return chaveDe(a).length;}).sort(byPrazo), ckSet={};ck.forEach(function(a){ckSet[a.numero]=1;});
+  var atrasR=r.atras.filter(function(a){return !ckSet[a.numero];}), semanaR=r.semana.filter(function(a){return !ckSet[a.numero];});
   D.forEach(function(c){if(c==="COORD")return;var st=statsDisc(c,w);tot.res+=st.res;tot.meta+=st.meta;});
   var N=r.semana.length, cx={baixa:0,media:0,alta:0};r.semana.forEach(function(a){cx[a.complexidade||"media"]++;});
   var h='<section class="view">';
@@ -2303,13 +2501,14 @@ function viewMinhaSemana(){
   h+='<h1 class="headline">'+headlineSem(r.atras.length,N,sex)+'</h1>';
   if(N){var cxs=[];["baixa","media","alta"].forEach(function(k){if(cx[k])cxs.push(cx[k]+" de "+({baixa:"baixa",media:"média",alta:"alta"})[k]+" complexidade");});
     h+='<p class="lede">'+(cxs.length===1&&cx.baixa===N?'Todos são de baixa complexidade: validações e definições que destravam o projeto.':esc(cxs.join(", "))+'.')+(pl?' Meta final: zerar as pendências até '+fmtD(pl.fim)+', '+esc(planoRot(pl))+'.':'')+'</p>';}
-  var rsem=respondidosSemana(D);
-  h+='<div class="cards c5">'+card("atras","Atrasados",r.atras.length,"crit")+card("semana","Vencem esta semana",N,"warn")+card("resp","Respondidos",rsem.length,"ok")+card("prox","Próximas semanas",r.prox.length,"")+card("espera","Ficam para outra etapa",r.espera.length,"mute")+'</div>';
+  var rsem=chaveFiltra(respondidosSemana(D));
+  h+='<div class="cards c5">'+card((r.atras.length&&!atrasR.length)?"chave":"atras","Atrasados",r.atras.length,"crit")+card((N&&!semanaR.length&&ck.length)?"chave":"semana","Vencem esta semana",N,"warn")+card("resp","Respondidos",rsem.length,"ok")+card("prox","Próximas semanas",r.prox.length,"")+card("espera","Ficam para outra etapa",r.espera.length,"mute")+'</div>'+chaveFiltroHtml();
   if(tot.meta)h+='<div class="metaline"><span>Você entregou <strong>'+tot.res+' de '+tot.meta+'</strong> nesta semana</span>'+mbar(tot.res,tot.meta)+'</div>';
   var nv=S.aps.filter(function(a){return isOpen(a)&&D.some(function(c){return involves(a,c);})&&(ehNovo(a)||comentNovos(a));}).length;
   if(S.lastVisit&&nv)h+='<p class="novos"><span class="dot"></span>'+nv+(nv===1?' apontamento com novidade':' apontamentos com novidades')+' desde sua última visita, em '+fmtD(S.lastVisit)+'.</p>';
-  if(r.atras.length)h+='<h3 id="b-atras">Atrasados <span class="n">'+r.atras.length+'</span></h3>'+listHtml(r.atras,D,"");
-  h+='<h3 id="b-semana">Vencem esta semana <span class="n">'+N+'</span></h3>'+listHtml(r.semana,D,"Nada vence para você nesta semana.");
+  if(ck.length)h+='<h3 id="b-chave">Apontamentos-chave pendentes <span class="n">'+ck.length+'</span></h3><p class="count">Atrasados ou com prazo até sexta; contam nos números acima e não se repetem nas listas abaixo.</p>'+listHtml(ck,D,"");
+  if(r.atras.length&&atrasR.length)h+='<h3 id="b-atras">Atrasados <span class="n">'+atrasR.length+(atrasR.length<r.atras.length?' de '+r.atras.length:'')+'</span></h3>'+listHtml(atrasR,D,"");
+  h+='<h3 id="b-semana">Vencem esta semana <span class="n">'+semanaR.length+(semanaR.length<N?' de '+N:'')+'</span></h3>'+listHtml(semanaR,D,N?"Os demais apontamentos desta semana são apontamentos-chave, listados acima.":"Nada vence para você nesta semana.");
   var emDia=!r.atras.length&&r.semana.every(function(a){return mkData(a);});
   if(emDia&&r.prox.length){var px=r.prox.filter(function(a){return prazoItem(a);})[0];
     h+='<div class="adiante"><div><b>'+(N?'Você terminou as demandas desta semana.':'Você está em dia com esta semana.')+'</b> Se quiser, adiante os apontamentos das próximas semanas'+(px?', começando pelos que vencem em '+fmtD(prazoItem(px)).slice(0,5):'')+'.</div><a class="btn ghost" href="#b-prox" data-jump="b-prox">Ver próximas semanas</a></div>';}
@@ -2340,12 +2539,14 @@ function viewPainelForn(){
   if(!D.length)return chooserHtml();
   var w=semanaAt(),pl=plano(),fa=faseAtual();
   var u=classificar(D), tot={res:0,meta:0};
-  var rows=D.map(function(c){var r=classificar([c]),st=statsDisc(c,w);tot.res+=st.res;tot.meta+=st.meta;
+  u=chaveFiltraR(u);
+  var rows=D.map(function(c){var r=chaveFiltraR(classificar([c])),st=statsDisc(c,w);tot.res+=st.res;tot.meta+=st.meta;
     return {c:c,atras:r.atras.length,semana:r.semana.length,prox:r.prox.length,espera:r.espera.length,resp:r.resp.length,pend:r.atras.length+r.semana.length+r.prox.length,res:st.res,meta:st.meta};});
   var pend=u.atras.length+u.semana.length+u.prox.length;
   var h='<section class="view"><h2>Painel '+(D.length>1?'das minhas disciplinas':'da minha disciplina')+'</h2>'+
     '<p class="lede">'+(fa?'Etapa atual: '+esc(fa.c)+' · '+esc(FN[fa.c]||fa.c)+'. ':'')+(pl?'Meta: zerar as pendências até '+fmtD(pl.fim)+', '+esc(planoRot(pl))+'.':'')+'</p>';
   h+='<div class="kpis"><div><b>'+pend+'</b><span>Para responder</span></div><div><b style="color:var(--crit)">'+u.atras.length+'</b><span>Atrasados</span></div><div><b style="color:var(--warn)">'+u.semana.length+'</b><span>Vencem esta semana</span></div><div><b>'+tot.res+(tot.meta?' / '+tot.meta:'')+'</b><span>Entregues nesta semana</span></div></div>';
+  h+=chaveFiltroHtml()+chaveBlocoHtml(S.aps.filter(function(a){return D.some(function(c){return involves(a,c);});}),D);
   h+='<h3>Por disciplina</h3><div class="dcards">'+rows.map(function(r){return '<div class="dcard" style="cursor:default"><div class="h">'+chip(r.c,true)+'<span class="nm">'+esc(DMAP[r.c]?DMAP[r.c].n:r.c)+'</span></div><div class="nums"><span><b>'+r.pend+'</b>para responder</span><span class="'+(r.atras?'hot':'')+'"><b>'+r.atras+'</b>'+(r.atras===1?'atrasado':'atrasados')+'</span><span><b>'+r.semana+'</b>vencem esta semana</span></div>'+(r.meta?'<div style="font-size:13px;color:var(--ink-2)">Entregues na semana: '+r.res+' de '+r.meta+'</div>'+mbar(r.res,r.meta):'')+'</div>';}).join("")+'</div><div class="scroll dtable"><table class="mx" style="min-width:640px"><thead><tr><th>Disciplina</th><th>Para responder</th><th>Atrasados</th><th>Vencem esta semana</th><th>Próximas semanas</th><th>Já respondidos</th><th>Outra etapa</th><th style="text-align:left">Entregues na semana</th></tr></thead><tbody>'+
     rows.map(function(r){return '<tr style="cursor:default"><td>'+chip(r.c)+' <span style="color:var(--ink-2);font-size:13px">'+esc(DMAP[r.c]?DMAP[r.c].n:r.c)+'</span></td><td><strong>'+r.pend+'</strong></td><td class="'+(r.atras?'hot':'z')+'">'+(r.atras||'–')+'</td><td>'+(r.semana||'–')+'</td><td>'+(r.prox||'–')+'</td><td class="'+(r.resp?'':'z')+'">'+(r.resp||'–')+'</td><td class="'+(r.espera?'':'z')+'">'+(r.espera||'–')+'</td><td style="text-align:left">'+(r.meta?'<div style="display:flex;gap:8px;align-items:center"><span style="white-space:nowrap">'+r.res+' de '+r.meta+'</span>'+mbar(r.res,r.meta)+'</div>':'–')+'</td></tr>';}).join("")+
     '</tbody></table></div>';
