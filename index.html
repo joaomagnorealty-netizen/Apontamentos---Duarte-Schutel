@@ -808,6 +808,11 @@ details.ri>.lnk{display:inline-block;margin-top:8px;margin-bottom:12px}
 .side .tabsw{position:static}
 .side .tabsw::after{display:none!important}
 .side nav.tabs{display:flex;flex-direction:column;gap:2px;margin:0;border:0;overflow:visible;padding:0}
+nav.tabs button[hidden]{display:none!important}
+.att-sub{margin:0;padding:10px 16px 6px;border-top:1px solid var(--rule-2);font:700 12px/1.2 var(--font);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2);display:flex;gap:8px;align-items:center}
+.att-sub .n{font-weight:700;color:var(--ink-3);letter-spacing:0}
+.amk.chv{background:var(--brand-bg);color:var(--brand-ink)} .att em.chv{color:var(--brand-ink)}
+.atx small .tag.chave{margin-right:6px;vertical-align:1px}
 .side nav.tabs button{display:flex;align-items:center;gap:12px;width:100%;padding:9px 10px!important;margin:0;border:0;border-radius:var(--r-sm);color:var(--side-ink);font-weight:700;font-size:14px;text-align:left;white-space:nowrap;position:relative}
 .side nav.tabs button:hover{background:var(--side-2);color:#fff}
 .side nav.tabs button[aria-selected="true"]{background:var(--brand);color:#fff;border:0}
@@ -1222,6 +1227,8 @@ var EM_GRUPOS=[
   {k:"EST",s:["EST"],nome:"Aspen"}
 ];
 var EM={aberto:null,editDest:false,msg:{}};
+/* E-mails da semana: só a Magno (Editor), também ao pré-visualizar como MAG. Fornecedores e site público nunca veem. */
+function emailsOk(){return !!S.realAdmin&&!ehSite()&&(!S.preview||S.preview==="MAG");}
 function emDest(){var d=S.interno&&S.interno._destinatarios;return (d&&d.grupos)||{};}
 function emAcao(a,c){var t=(a.acoes||[]).filter(function(x){return (x.disciplinas||[]).indexOf(c)>=0;}).map(function(x){return x.texto;});return t.length?t.slice(0,2).join(" "):(a.observacao||"Verificar o apontamento no Construflow.");}
 function emSemana(){
@@ -1431,9 +1438,9 @@ function render(){
   if(pr){pr.hidden=!S.realAdmin;var ps=document.getElementById("pvSel");
     ps.innerHTML='<option value="">Construtora (você)</option>'+DISC.map(function(d){return '<option value="'+esc(d.c)+'">Fornecedor '+esc(d.c)+'</option>';}).join("");ps.value=S.preview||"";}
   if(S.view==="semana")S.view="minha";
-  var tEm=document.getElementById("tabEmails");if(tEm)tEm.hidden=!S.isAdmin;
-  if(S.view==="emails"&&!S.isAdmin&&S.loaded)S.view="minha";
-  tabs.forEach(function(b){var v=b.getAttribute("data-v");if(v==="painel"){var tl=b.querySelector(".tl");if(tl)tl.textContent=S.isAdmin?"Painel geral":"Painel";}b.setAttribute("aria-selected",String(v===S.view));b.tabIndex=v===S.view?0:-1;});
+  var tEm=document.getElementById("tabEmails");if(tEm)tEm.hidden=!emailsOk();
+  if(S.view==="emails"&&!emailsOk()&&S.loaded)S.view="minha";
+  tabs.forEach(function(b){var v=b.getAttribute("data-v");if(v==="painel"){var tl=b.querySelector(".tl");if(tl)tl.textContent="Painel geral";}b.setAttribute("aria-selected",String(v===S.view));b.tabIndex=v===S.view?0:-1;});
   tabsContadores();
   shellSync();
   renderHeader();
@@ -1443,7 +1450,7 @@ function render(){
       : '<p class="lede">Carregando apontamentos…</p>')+'</section>';
     return;
   }
-  if(S.view==="painel") main.innerHTML=S.isAdmin?viewPainel():viewPainelForn();
+  if(S.view==="painel") main.innerHTML=painelGeral();
   else if(S.view==="lista") main.innerHTML=viewLista();
   else if(S.view==="reuniao") main.innerHTML=viewReuniao();
   else if(S.view==="plano") main.innerHTML=viewPlano();
@@ -1555,7 +1562,7 @@ function tabsSombra(){var w=document.getElementById("tabsw"),n=document.getEleme
 var VNOME={minha:"Minha semana",painel:"Painel geral",lista:"Todos os apontamentos",reuniao:"Reuniões",plano:"Plano semanal",emails:"E-mails da semana"};
 var VEYE={minha:"Sua rotina",painel:"Visão geral",lista:"Gestão",reuniao:"Alinhamento",plano:"Planejamento",emails:"Comunicação"};
 function empCurto(){var n=(S.cfg&&S.cfg.nome)||"";n=n.replace(/^MAGNO\s*[-–]\s*/i,"");n=n?n.toLowerCase().replace(/(^|\s)\S/g,function(c){return c.toUpperCase();}):((EMPS.filter(function(x){return x.slug===EMP;})[0]||{}).nome||EMP);return n;}
-function shellSync(){var cv=document.getElementById("crumbV");if(cv)cv.textContent=(S.view==="painel"&&!S.isAdmin)?"Painel":(VNOME[S.view]||"");}
+function shellSync(){var cv=document.getElementById("crumbV");if(cv)cv.textContent=VNOME[S.view]||"";}
 function eyebrowTela(){var h=main.querySelector("section.view>h2");if(h&&VEYE[S.view]&&!(h.previousElementSibling&&h.previousElementSibling.classList.contains("eyebrow")))h.insertAdjacentHTML("beforebegin",'<p class="eyebrow">'+esc(VEYE[S.view])+'</p>');}
 function sideMob(){try{return window.matchMedia("(max-width:860px)").matches;}catch(e){return false;}}
 function sideAbre(on){var sh=document.getElementById("shell"),sc=document.getElementById("sideScrim"),bg=document.getElementById("burger");if(!sh)return;
@@ -1628,6 +1635,10 @@ function etapaBox(){
   }
   return h+'</div>';
 }
+/* Painel geral igual para construtora e fornecedores (09/11/2026, pedido do usuário). Fornecedor: sem "Configurar etapa e plano"
+   (já restrito a S.isAdmin) e sem o atalho de inatividade da lista; dias sem movimentação visíveis só nesta tela (S.verDias).
+   viewPainelForn() fica no código, sem uso, para reverter se preciso. */
+function painelGeral(){if(S.isAdmin)return viewPainel();var v=S.verDias;S.verDias=true;try{return viewPainel();}finally{S.verDias=v;}}
 function viewPainel(){
   var open=S.aps.filter(ativo);
   var esp=S.aps.filter(aguardando), rvs=S.aps.filter(emRevisao).sort(ordRev);
@@ -1668,7 +1679,7 @@ function viewPainel(){
     '<a class="kl" href="#" data-atras="1" title="Ver os apontamentos atrasados"><b class="'+(atr?'crit':'')+'">'+atr+'</b><span>Atrasados</span><i>'+(atr?pct(atr)+' · ver lista':'nenhum atrasado')+'</i></a>'+
     '<div><b>'+alta+'</b><span>Prioridade alta</span><i>'+esc(prio)+'</i></div>'+
     '<div><b>'+crit+'</b><span>Mais de 30 dias sem movimentação</span><i>média de '+media.toFixed(0)+' dias</i></div></div>';
-  if(quase)h+='<div class="band" role="status"><span><b>'+quase+'</b> '+(quase===1?'apontamento vira crítico':'apontamentos viram críticos')+' (mais de 30 dias) nos próximos 7 dias.</span><a href="#" data-quase="1">Ver '+(quase===1?'o apontamento':'os apontamentos')+'</a></div>';
+  if(quase)h+='<div class="band" role="status"><span><b>'+quase+'</b> '+(quase===1?'apontamento vira crítico':'apontamentos viram críticos')+' (mais de 30 dias) nos próximos 7 dias.</span>'+(S.isAdmin?'<a href="#" data-quase="1">Ver '+(quase===1?'o apontamento':'os apontamentos')+'</a>':'')+'</div>';
   h+=atencaoHtml(open);
   h+=chaveFiltroHtml();
   h+='<h3>Evolução das pendências</h3>'+burnSVG(null)+
@@ -1695,10 +1706,16 @@ function atencaoHtml(open){
   function add(a,k,txt){if(a&&!usado[a.numero]){usado[a.numero]=1;it.push([a,k,txt]);}}
   add(atr[0],"crit",atr[0]?prazoInfo(atr[0]).rel:"");add(prox[0],"warn",prox[0]?prazoInfo(prox[0]).rel:"");
   var al=alta.filter(function(a){return !usado[a.numero];})[0];add(al,"pri",al?"prioridade alta"+(atrasadoPlano(al)?" · "+prazoInfo(al).rel:""):"");
-  if(!it.length)return "";
-  var IC={crit:'<circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/>',warn:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',pri:'<path d="M12 4 21 19H3z"/><path d="M12 10v4M12 16.5v.5"/>'};
-  return '<section class="att" aria-labelledby="attT"><header><h3 id="attT">Requer atenção</h3><span>'+atr.length+(atr.length===1?' atrasado':' atrasados')+' no total</span></header><ul>'+it.map(function(x){var a=x[0],p=prazoItem(a);
-    return '<li><button type="button" data-open="'+esc(a.numero)+'"><span class="amk '+x[1]+'"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">'+IC[x[1]]+'</svg></span><span class="atx"><strong>#'+esc(a.numero)+' · '+esc(tituloFmt(a.titulo))+'</strong><small>'+esc(proxEf(a).join(" · ")||"ninguém pendente")+(p?' · prazo '+fmtD(p).slice(0,5):'')+'</small></span><em class="'+x[1]+'">'+esc(x[2])+'</em></button></li>';}).join("")+'</ul></section>';
+  /* Apontamentos-chave pendentes (saíram da Minha semana em 09/11): todos os ativos com chave, por prazo. */
+  var ck=S.aps.filter(function(a){return ativo(a)&&chaveDe(a).length;}).sort(byPrazo);
+  if(!it.length&&!ck.length)return "";
+  var IC={crit:'<circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/>',warn:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',pri:'<path d="M12 4 21 19H3z"/><path d="M12 10v4M12 16.5v.5"/>',chv:'<circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M15 8l2 2"/>'};
+  function li(a,k,txt,extra){var p=prazoItem(a);
+    return '<li><button type="button" data-open="'+esc(a.numero)+'"><span class="amk '+k+'"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">'+IC[k]+'</svg></span><span class="atx"><strong>#'+esc(a.numero)+' · '+esc(tituloFmt(a.titulo))+'</strong><small>'+(extra||'')+esc(proxEf(a).join(" · ")||"ninguém pendente")+(p?' · prazo '+fmtD(p).slice(0,5):'')+'</small></span><em class="'+k+'">'+esc(txt)+'</em></button></li>';}
+  return '<section class="att" aria-labelledby="attT"><header><h3 id="attT">Requer atenção</h3><span>'+atr.length+(atr.length===1?' atrasado':' atrasados')+' no total</span></header>'+
+    (it.length?'<ul>'+it.map(function(x){return li(x[0],x[1],x[2]);}).join("")+'</ul>':'')+
+    (ck.length?'<h4 class="att-sub" id="attChv">Apontamentos-chave pendentes <span class="n">'+ck.length+'</span></h4><ul aria-labelledby="attChv">'+ck.map(function(a){var pi=prazoInfo(a);return li(a,pi.cls==="crit"?"crit":"chv",pi.rel||pi.dia||"",chaveTag(a)+' ');}).join("")+'</ul>':'')+
+    '</section>';
 }
 function filtered(){
   var f=S.f, q=f.q.trim().toLowerCase();
@@ -3048,7 +3065,7 @@ function apRow(a,hl){
   if(!isOpen(a)&&!S.respInfo)extras.push('<span>'+esc(STL[a.status]||a.status)+'</span>');
   if(D.length&&S.respInfo)infoRespondido(a,D).forEach(function(t){extras.push('<b class="okt">'+esc(t)+'</b>');});
   else if(mkData(a))extras.push('<b class="okt">marcado como respondido em '+fmtD(mkData(a)).slice(0,5)+'</b>');
-  if(S.isAdmin&&isOpen(a)&&!espera(a)&&!emRevisao(a)){var n=dias(a);if(mostraDias(n))extras.push('<span class="dias v-'+faixaVis(n)+'" title="'+esc(FAIXA_VIS[faixaVis(n)])+'">'+n+' d sem movimentação</span>');}
+  if((S.isAdmin||S.verDias)&&isOpen(a)&&!espera(a)&&!emRevisao(a)){var n=dias(a);if(mostraDias(n))extras.push('<span class="dias v-'+faixaVis(n)+'" title="'+esc(FAIXA_VIS[faixaVis(n)])+'">'+n+' d sem movimentação</span>');}
   if(chaveDe(a).length)extras.unshift(chaveTag(a));
   if(a.prioridade==="Alta"&&isOpen(a))extras.unshift('<span class="pri">▲ Alta</span>');
   if(S.isAdmin&&S.interno[String(a.numero)])extras.push('<b style="color:var(--warn)">interno</b>');
@@ -3083,8 +3100,6 @@ function viewMinhaSemana(){
   var D=minhasDiscs();
   if(!D.length)return chooserHtml();
   var w=semanaAt(),r=classificar(D),pl=plano(),tot={res:0,meta:0},sex=sexta(w.ini);
-  var ck=r.atras.concat(r.semana).filter(function(a){return chaveDe(a).length;}).sort(byPrazo);
-  r=chaveFiltraR(r);
   D.forEach(function(c){if(c==="COORD")return;var st=statsDisc(c,w);tot.res+=st.res;tot.meta+=st.meta;});
   var N=r.semana.length, cx={baixa:0,media:0,alta:0};r.semana.forEach(function(a){cx[a.complexidade||"media"]++;});
   var h='<section class="view">';
@@ -3092,8 +3107,8 @@ function viewMinhaSemana(){
   h+='<h1 class="headline">'+headlineSem(r.atras.length,N,sex)+'</h1>';
   if(N){var cxs=[];["baixa","media","alta"].forEach(function(k){if(cx[k])cxs.push(cx[k]+" de "+({baixa:"baixa",media:"média",alta:"alta"})[k]+" complexidade");});
     h+='<p class="lede">'+(cxs.length===1&&cx.baixa===N?'Todos são de baixa complexidade: validações e definições que destravam o projeto.':esc(cxs.join(", "))+'.')+(pl?' Meta final: zerar as pendências até '+fmtD(pl.fim)+', '+esc(planoRot(pl))+'.':'')+'</p>';}
-  var rsem=chaveFiltra(respondidosSemana(D));
-  h+='<div class="cards c5">'+card("atras","Atrasados",r.atras.length,"crit")+card("semana","Vencem esta semana",N,"warn")+card("resp","Respondidos",rsem.length,"ok")+card("prox","Próximas semanas",r.prox.length,"")+card("espera","Ficam para outra etapa",r.espera.length,"mute")+'</div>'+chaveFaixaHtml(ck,r.atras.length+r.semana.length);
+  var rsem=respondidosSemana(D);
+  h+='<div class="cards c5">'+card("atras","Atrasados",r.atras.length,"crit")+card("semana","Vencem esta semana",N,"warn")+card("resp","Respondidos",rsem.length,"ok")+card("prox","Próximas semanas",r.prox.length,"")+card("espera","Ficam para outra etapa",r.espera.length,"mute")+'</div>';
   if(tot.meta)h+='<div class="metaline"><span>Você entregou <strong>'+tot.res+' de '+tot.meta+'</strong> nesta semana</span>'+mbar(tot.res,tot.meta)+'</div>';
   var nv=S.aps.filter(function(a){return isOpen(a)&&D.some(function(c){return involves(a,c);})&&(ehNovo(a)||comentNovos(a));}).length;
   if(S.lastVisit&&nv)h+='<p class="novos"><span class="dot"></span>'+nv+(nv===1?' apontamento com novidade':' apontamentos com novidades')+' desde sua última visita, em '+fmtD(S.lastVisit)+'.</p>';
