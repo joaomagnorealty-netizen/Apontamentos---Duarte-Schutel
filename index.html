@@ -1255,6 +1255,7 @@ function bindView(){
   });
   [].forEach.call(main.querySelectorAll("[data-jump]"),function(el){el.addEventListener("click",function(e){e.preventDefault();var t=document.getElementById(el.getAttribute("data-jump"));if(!t)return;if(t.tagName==="DETAILS")t.open=true;t.scrollIntoView({behavior:"smooth",block:"start"});});});
   [].forEach.call(main.querySelectorAll("select[data-fk]"),function(el){el.addEventListener("change",function(){S.fChave=el.value;render();var n=document.getElementById("fk");if(n)n.focus();});});
+  [].forEach.call(main.querySelectorAll("[data-fk-off],[data-fk-set]"),function(b){b.addEventListener("click",function(e){e.preventDefault();S.fChave=b.getAttribute("data-fk-set")||"";render();});});
   [].forEach.call(main.querySelectorAll("[data-chv-d]"),function(b){b.addEventListener("click",function(){S.fChave=b.getAttribute("data-chv-e");S.f.disc=b.getAttribute("data-chv-d");S.f.discAll=false;S.f.faixa="";S.f.prazo="";S.f.prio="";S.f.q="";S.f.status="aberto";S.f.group=false;go("lista");});});
   var co=document.getElementById("chooseOk");if(co)co.addEventListener("click",function(){setMyDiscs([].map.call(main.querySelectorAll(".chk2 input:checked"),function(i){return i.value;}));});
   [].forEach.call(main.querySelectorAll(".lnk"),function(b){b.addEventListener("click",function(e){e.preventDefault();openAp(b.getAttribute("data-id"));});});
@@ -1802,12 +1803,19 @@ function chaveOk(a){var f=S.fChave;if(!f)return true;var c=chaveDe(a);return f==
 function chaveFiltra(arr){return S.fChave?arr.filter(chaveOk):arr;}
 function chaveFiltraR(r){if(S.fChave)Object.keys(r).forEach(function(k){if(Array.isArray(r[k]))r[k]=chaveFiltra(r[k]);});return r;}
 function chaveEntregas(){var h={};S.aps.forEach(function(a){chaveDe(a).forEach(function(e){h[e]=1;});});return ENTREGAS_CHAVE.filter(function(e){return h[e]||S.fChave===e;});}
-function chaveFiltroHtml(inline){
+function chaveAvisoHtml(n){return '<span class="msg" role="status">Mostrando só apontamentos-chave'+(S.fChave==="*"?'':' de '+esc(S.fChave))+' ('+n+'). <button type="button" class="btn ghost" data-fk-off="1">Mostrar todos</button></span>';}
+function chaveFiltroHtml(inline,n){
   var op=[["","Não filtrar"],["*","Todas as entregas"]].concat(chaveEntregas().map(function(e){return [e,e+" · "+(FN[e]||e)];}));
   var vazio=!S.aps.some(function(a){return chaveDe(a).length;});
   var sl='<label>Apontamentos-chave<select id="fk" data-fk>'+op.map(function(o){return '<option value="'+esc(o[0])+'"'+(o[0]===S.fChave?' selected':'')+'>'+esc(o[1])+'</option>';}).join("")+'</select></label>';
-  if(inline)return sl;
-  return '<div class="filters fkbar">'+sl+(S.fChave?'<span class="msg" role="status">'+(vazio?'Nenhum apontamento-chave marcado na Construflow.':'Mostrando só apontamentos-chave'+(S.fChave==="*"?'.':' de '+esc(S.fChave)+'.'))+'</span>':'')+'</div>';
+  if(inline)return sl+(S.fChave?'<button type="button" class="btn ghost" data-fk-off="1" style="align-self:flex-end">Mostrar todos</button>':'');
+  return '<div class="filters fkbar">'+sl+(S.fChave?(vazio?'<span class="msg" role="status">Nenhum apontamento-chave marcado na Construflow. <button type="button" class="btn ghost" data-fk-off="1">Mostrar todos</button></span>':chaveAvisoHtml(n==null?S.aps.filter(chaveOk).length:n)):'')+'</div>';
+}
+/* Minha semana: destaque compacto (complementar) quando há chave pendente; com filtro ligado, mostra a barra de aviso */
+function chaveFaixaHtml(ck,n){
+  if(S.fChave)return chaveFiltroHtml(false,n);
+  if(!ck.length)return "";
+  return '<p class="novos" role="status">Apontamentos-chave da etapa pendentes para você: '+ck.map(function(a){return '<a href="#" class="lnk" data-id="'+esc(a.numero)+'">#'+esc(a.numero)+'</a>';}).join(', ')+'. <a href="#" data-fk-set="*">Ver só os apontamentos-chave</a></p>';
 }
 /* Base do bloco = apontamentos-chave da entrega EXCETO reprovados (Y). resolvido = status geral resolvido OU todas as disciplinas direcionadas em Concluído.
    Os demais contam só sobre ativo(a) (mesma função do filtro status "aberto"), para o número do botão bater com a lista aberta pelo clique:
@@ -2491,9 +2499,8 @@ function viewMinhaSemana(){
   var D=minhasDiscs();
   if(!D.length)return chooserHtml();
   var w=semanaAt(),r=classificar(D),pl=plano(),tot={res:0,meta:0},sex=sexta(w.ini);
+  var ck=r.atras.concat(r.semana).filter(function(a){return chaveDe(a).length;}).sort(byPrazo);
   r=chaveFiltraR(r);
-  var ck=r.atras.concat(r.semana).filter(function(a){return chaveDe(a).length;}).sort(byPrazo), ckSet={};ck.forEach(function(a){ckSet[a.numero]=1;});
-  var atrasR=r.atras.filter(function(a){return !ckSet[a.numero];}), semanaR=r.semana.filter(function(a){return !ckSet[a.numero];});
   D.forEach(function(c){if(c==="COORD")return;var st=statsDisc(c,w);tot.res+=st.res;tot.meta+=st.meta;});
   var N=r.semana.length, cx={baixa:0,media:0,alta:0};r.semana.forEach(function(a){cx[a.complexidade||"media"]++;});
   var h='<section class="view">';
@@ -2502,13 +2509,12 @@ function viewMinhaSemana(){
   if(N){var cxs=[];["baixa","media","alta"].forEach(function(k){if(cx[k])cxs.push(cx[k]+" de "+({baixa:"baixa",media:"média",alta:"alta"})[k]+" complexidade");});
     h+='<p class="lede">'+(cxs.length===1&&cx.baixa===N?'Todos são de baixa complexidade: validações e definições que destravam o projeto.':esc(cxs.join(", "))+'.')+(pl?' Meta final: zerar as pendências até '+fmtD(pl.fim)+', '+esc(planoRot(pl))+'.':'')+'</p>';}
   var rsem=chaveFiltra(respondidosSemana(D));
-  h+='<div class="cards c5">'+card((r.atras.length&&!atrasR.length)?"chave":"atras","Atrasados",r.atras.length,"crit")+card((N&&!semanaR.length&&ck.length)?"chave":"semana","Vencem esta semana",N,"warn")+card("resp","Respondidos",rsem.length,"ok")+card("prox","Próximas semanas",r.prox.length,"")+card("espera","Ficam para outra etapa",r.espera.length,"mute")+'</div>'+chaveFiltroHtml();
+  h+='<div class="cards c5">'+card("atras","Atrasados",r.atras.length,"crit")+card("semana","Vencem esta semana",N,"warn")+card("resp","Respondidos",rsem.length,"ok")+card("prox","Próximas semanas",r.prox.length,"")+card("espera","Ficam para outra etapa",r.espera.length,"mute")+'</div>'+chaveFaixaHtml(ck,r.atras.length+r.semana.length);
   if(tot.meta)h+='<div class="metaline"><span>Você entregou <strong>'+tot.res+' de '+tot.meta+'</strong> nesta semana</span>'+mbar(tot.res,tot.meta)+'</div>';
   var nv=S.aps.filter(function(a){return isOpen(a)&&D.some(function(c){return involves(a,c);})&&(ehNovo(a)||comentNovos(a));}).length;
   if(S.lastVisit&&nv)h+='<p class="novos"><span class="dot"></span>'+nv+(nv===1?' apontamento com novidade':' apontamentos com novidades')+' desde sua última visita, em '+fmtD(S.lastVisit)+'.</p>';
-  if(ck.length)h+='<h3 id="b-chave">Apontamentos-chave pendentes <span class="n">'+ck.length+'</span></h3><p class="count">Atrasados ou com prazo até sexta; contam nos números acima e não se repetem nas listas abaixo.</p>'+listHtml(ck,D,"");
-  if(r.atras.length&&atrasR.length)h+='<h3 id="b-atras">Atrasados <span class="n">'+atrasR.length+(atrasR.length<r.atras.length?' de '+r.atras.length:'')+'</span></h3>'+listHtml(atrasR,D,"");
-  h+='<h3 id="b-semana">Vencem esta semana <span class="n">'+semanaR.length+(semanaR.length<N?' de '+N:'')+'</span></h3>'+listHtml(semanaR,D,N?"Os demais apontamentos desta semana são apontamentos-chave, listados acima.":"Nada vence para você nesta semana.");
+  if(r.atras.length)h+='<h3 id="b-atras">Atrasados <span class="n">'+r.atras.length+'</span></h3>'+listHtml(r.atras,D,"");
+  h+='<h3 id="b-semana">Vencem esta semana <span class="n">'+N+'</span></h3>'+listHtml(r.semana,D,"Nada vence para você nesta semana.");
   var emDia=!r.atras.length&&r.semana.every(function(a){return mkData(a);});
   if(emDia&&r.prox.length){var px=r.prox.filter(function(a){return prazoItem(a);})[0];
     h+='<div class="adiante"><div><b>'+(N?'Você terminou as demandas desta semana.':'Você está em dia com esta semana.')+'</b> Se quiser, adiante os apontamentos das próximas semanas'+(px?', começando pelos que vencem em '+fmtD(prazoItem(px)).slice(0,5):'')+'.</div><a class="btn ghost" href="#b-prox" data-jump="b-prox">Ver próximas semanas</a></div>';}
