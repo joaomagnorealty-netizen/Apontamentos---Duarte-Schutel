@@ -1191,7 +1191,7 @@ function renderHeader(){
   var bc=document.getElementById("basec"),df=S.loaded?syncDefasagem():null;if(bc)bc.classList.toggle("old",!!(df&&df.uteis>=2));
   dselBuild();
   var sr=document.getElementById("syncRow");
-  if(sr){sr.hidden=!S.isAdmin;var sm=document.getElementById("syncMsg");var cfg=S.cfg||{};
+  if(sr){sr.hidden=!S.isAdmin||ehWeb();var sm=document.getElementById("syncMsg");var cfg=S.cfg||{};
     if(!SYNC.on&&!SYNC.msg)sm.textContent=statusSync(cfg);
     document.getElementById("syncBtn").disabled=SYNC.on;}
   document.getElementById("who").textContent = S.isAdmin ? "Perfil construtora: pode editar prazos e observações" : "";
@@ -1207,7 +1207,7 @@ function syncDefasagem(){
 }
 function staleHtml(){
   var df=syncDefasagem();if(!df||df.uteis<2)return "";
-  var pode=S.realAdmin&&!S.preview&&!ehSite();
+  var pode=S.realAdmin&&!S.preview&&!ehSite()&&!ehWeb();
   return '<div class="band stale" role="status"><span><b>Dados de '+fmtD(df.iso)+', há '+df.dias+' dias sem sincronizar.</b> Prazos e atrasos podem não refletir o Construflow.'+(pode?'':' Se precisar de dados atualizados, fale com a coordenação.')+'</span>'+
     (pode?'<button type="button" class="btn sm" id="staleSync">Sincronizar agora</button>':'')+'</div>';
 }
@@ -1227,8 +1227,10 @@ var EM_GRUPOS=[
   {k:"EST",s:["EST"],nome:"Aspen"}
 ];
 var EM={aberto:null,editDest:false,msg:{}};
+/* Rotina "E-mail semanal" (claude.ai) em MODO TESTE: só rascunhos. Trocar para false quando o envio real for liberado. */
+var EM_AUTO_TESTE=true;
 /* E-mails da semana: só a Magno (Editor), também ao pré-visualizar como MAG. Fornecedores e site público nunca veem. */
-function emailsOk(){return !!S.realAdmin&&!ehSite()&&(!S.preview||S.preview==="MAG");}
+function emailsOk(){return !!S.realAdmin&&!ehSite()&&(!ehWeb()||window.claude.papel==="admin")&&(!S.preview||S.preview==="MAG");}
 function emDest(){var d=S.interno&&S.interno._destinatarios;return (d&&d.grupos)||{};}
 function emAcao(a,c){var t=(a.acoes||[]).filter(function(x){return (x.disciplinas||[]).indexOf(c)>=0;}).map(function(x){return x.texto;});return t.length?t.slice(0,2).join(" "):(a.observacao||"Verificar o apontamento no Construflow.");}
 function emSemana(){
@@ -1284,8 +1286,9 @@ function emEnviados(id){try{return JSON.parse(lsGet("ap-em-"+EMP+"-"+id)||"{}");
 function viewEmails(){
   var E=emSemana(),env=emEnviados(E.w.id),dest=emDest(),semDest=EM_GRUPOS.filter(function(g){return !(dest[g.k]||"").trim();});
   var h='<section class="view"><h2>E-mails da semana</h2><p class="lede">Lembretes da semana de '+fmtD(E.iniS)+' a '+fmtD(E.sexS)+' para cada grupo de fornecedores, com a mesma regra da aba Minha semana (atrasados e prazos até sexta). Dados da sincronização feita '+esc(E.syTxt)+'. Só a construtora vê esta aba.</p>'+
-    '<div class="notice" style="margin-top:10px"><strong>Como enviar:</strong> em cada grupo, clique em <b>Abrir no Outlook</b> (abre uma mensagem nova com destinatários e assunto), depois em <b>Copiar corpo</b> e cole no corpo da mensagem (Ctrl+V). Confira e envie. Se preferir, <b>Baixar rascunho</b> gera um arquivo .eml que o Outlook abre como rascunho pronto, e <b>Baixar todos</b> junta os rascunhos de todos os grupos num arquivo .zip.</div>'+
-    (E.emails.length?'<div class="row-btns" style="margin-top:12px"><button class="btn" type="button" id="emTodos">Baixar todos ('+E.emails.length+' e-mails em .zip)</button><span class="msg" id="emTodosMsg"></span></div>':'');
+    '<div class="notice" style="margin-top:10px"><strong>Envio automático:</strong> toda segunda-feira às 07:47, depois da sincronização, estes e-mails saem sozinhos pela conta projetos03@magnorealty.com.br para os destinatários cadastrados abaixo (um por grupo, sem cópia).'+
+    (EM_AUTO_TESTE?' <b>Em teste:</b> por enquanto são criados só como rascunhos no Outlook, com “[TESTE]” no assunto, para conferência.':'')+
+    ' Para reenviar um grupo à mão, use <b>Abrir no Outlook</b> e <b>Copiar corpo</b>, ou <b>Baixar rascunho</b> (.eml).</div>';
   if(semDest.length)h+='<p class="msg err" style="margin-top:10px">Sem destinatários cadastrados para: '+semDest.map(function(g){return g.k;}).join(", ")+'. Use “Editar destinatários”, abaixo.</p>';
   if(!E.emails.length)h+='<div class="empty" style="margin-top:14px">Nenhum apontamento atrasado ou com prazo nesta semana. Nenhum e-mail a enviar.</div>';
   E.emails.forEach(function(m,i){
@@ -1299,7 +1302,7 @@ function viewEmails(){
       '<span class="msg" id="emMsg'+i+'">'+esc(EM.msg[i]||"")+'</span></div>'+
       '<details'+(EM.aberto===i?' open':'')+' data-emdet="'+i+'"><summary>Ver o e-mail</summary><div class="emcorpo" id="emCorpo'+i+'">'+m.html+'</div></details></div>';
   });
-  h+='<details class="blk" id="emDestBox"'+(EM.editDest?' open':'')+'><summary>Editar destinatários</summary><p class="count">Separe os endereços com ponto e vírgula. Ficam guardados só para a construtora (não aparecem para fornecedores nem no site).</p><div class="metaform" style="flex-direction:column;align-items:stretch;max-width:760px">'+
+  h+='<details class="blk" id="emDestBox"'+(EM.editDest?' open':'')+'><summary>Editar destinatários</summary><p class="count">Separe os endereços com ponto e vírgula. Ficam guardados só para a construtora (não aparecem para fornecedores nem no site).</p>'+(ehWeb()?'<p class="msg err">Por enquanto, o envio automático usa a lista do app da Magno no Claude: altere lá também, até a integração automática entre os dois.</p>':'')+'<div class="metaform" style="flex-direction:column;align-items:stretch;max-width:760px">'+
     EM_GRUPOS.map(function(g){return '<label>'+esc(g.k)+' – '+esc(g.nome)+' ('+g.s.join(", ")+')<input type="text" data-dest="'+esc(g.k)+'" value="'+esc(dest[g.k]||"")+'" style="width:100%"></label>';}).join("")+
     '<div class="row-btns"><button class="btn" type="button" id="emDestSave">Salvar destinatários</button><span class="msg" id="emDestMsg"></span></div></div></details>';
   return h+'</section>';
@@ -1596,7 +1599,7 @@ function pmenuAbre(on){var ps=document.getElementById("psel"),pm=document.getEle
   if(on){var cur=S.aps?S.aps.filter(ativo).length:0,atr=S.aps?S.aps.filter(atrasadoPlano).length:0,fa=faseAtual();
     var thumb=function(nm){return '<span class="pth" aria-hidden="true">'+esc(nm.slice(0,2).toUpperCase())+'</span>';},im=document.querySelector("#empImg img");
     var it=EMPS.map(function(x){var at=x.slug===EMP;return '<button type="button" class="popt" data-emp="'+esc(x.slug)+'"'+(at?' aria-current="true"':'')+'>'+(at&&im?'<img class="pth" src="'+im.getAttribute("src")+'" alt="">':thumb(x.nome))+'<span><b>'+esc(at?empCurto():x.nome)+'</b><small>'+(at&&S.loaded?esc([fa?fa.c:"",cur+" ativos",atr+" atrasados"].filter(Boolean).join(" · ")):'')+'</small></span><em>'+(at?'Atual':'Abrir')+'</em></button>';});
-    if(S.realAdmin&&!ehSite())it=it.concat(EMPS_PREP.map(function(x){return '<div class="popt off" aria-disabled="true">'+thumb(x.nome)+'<span><b>'+esc(x.nome)+'</b><small>'+esc(x.nota||"")+'</small></span><em>Em preparação</em></div>';}));
+    if(S.realAdmin&&!ehSite()&&!ehWeb())it=it.concat(EMPS_PREP.map(function(x){return '<div class="popt off" aria-disabled="true">'+thumb(x.nome)+'<span><b>'+esc(x.nome)+'</b><small>'+esc(x.nota||"")+'</small></span><em>Em preparação</em></div>';}));
     pm.innerHTML='<p class="ph6">'+(S.realAdmin?'Empreendimentos':'Seus empreendimentos')+'</p>'+it.join("")+'<p class="pnote">'+(S.realAdmin?'Fornecedores veem só o empreendimento compartilhado com eles.':'Você vê os empreendimentos compartilhados com a sua conta.')+'</p>';}
   pm.hidden=!on;ps.setAttribute("aria-expanded",String(!!on));
   if(on){var f=pm.querySelector(".popt[aria-current]");if(f)f.focus();}}
@@ -2073,6 +2076,9 @@ function revHistTxt(x){
 }
 /* Quem pode adiar: Editor em qualquer apontamento; fornecedor nos apontamentos das disciplinas dele. Site público: ninguém. */
 function ehSite(){try{return /github\.io$/i.test(location.hostname);}catch(e){return false;}}
+/* Site com login (Supabase/Cloudflare): sem conectores (Sincronizar fica no artifact) e sem comentários internos.
+   E-mails da semana: só papel Administrador (destinatários na tabela config_admin). */
+function ehWeb(){return !!(window.claude&&window.claude.ambiente==="web");}
 function podeRevisar(a){if(!isOpen(a)||!S.db||ehSite())return false;if(S.isAdmin)return true;var D=minhasDiscs();return D.some(function(c){return involves(a,c);});}
 function revPor(){return S.realAdmin&&!S.preview?"Editor":"Fornecedor"+(minhasDiscs().length?" "+minhasDiscs().join("/"):"");}
 function revisaoBox(a){
