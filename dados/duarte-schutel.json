@@ -8617,7 +8617,7 @@
     "121092": "PE",
     "121093": "EX"
    },
-   "lidoEm": "2026-11-09T19:48:54.476Z",
+   "lidoEm": "2026-11-10T09:59:29.000Z",
    "raiz": 121088
   },
   "construflowProjeto": 10348,
@@ -8746,25 +8746,25 @@
    "fim": "2026-11-30",
    "geradoEm": "2026-10-19"
   },
-  "sincronizadoEm": "2026-11-09T19:48:54.476Z",
-  "ultimaSync": "2026-11-09T19:48:54.476Z",
+  "sincronizadoEm": "2026-11-10T09:59:29.000Z",
+  "ultimaSync": "2026-11-10T09:59:29.000Z",
   "ultimaSyncResumo": {
-   "alterados": 79,
+   "alterados": 0,
    "analisados": 0,
    "analisePendente": 0,
    "comentarios": 0,
    "novos": 0,
-   "origem": "manual_app",
+   "origem": "agendada",
    "prazosMeta": [],
-   "resumoSemanal": true,
+   "resumoSemanal": false,
    "reunioes": [],
    "statusAtualizados": 0,
    "statusFalhas": []
   },
   "vinculosReleituraEm": "2026-11-09T19:48:54.476Z",
-  "vinculosVerificadosEm": "2026-11-09T19:48:54.476Z"
+  "vinculosVerificadosEm": "2026-11-10T09:59:29.000Z"
  },
- "geradoEm": "2026-11-09T19:49:37+00:00",
+ "geradoEm": "2026-11-10T10:28:16+00:00",
  "plano_semanal": {
   "2026-S35": {
    "alertas": [],
