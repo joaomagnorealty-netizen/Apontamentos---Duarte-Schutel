@@ -1216,7 +1216,8 @@ function topAltura(){var t=document.getElementById("topin"),tb=document.getEleme
   if(tb){var tp=parseFloat(getComputedStyle(tb).top)||0;document.documentElement.style.setProperty("--stk",Math.max(0,tb.offsetHeight+tp)+"px");}}
 
 /* ---------- e-mails da semana (só construtora) ---------- */
-var EM_SITE="http://bit.ly/duarte-schutel-apontamentos";
+/* Site com login (Cloudflare Pages). O bit.ly antigo levava ao GitHub Pages da conta renomeada (404) — trocado em 2026-11-11. */
+var EM_SITE="https://apontamentos-magno.pages.dev";
 var EM_GRUPOS=[
   {k:"ARQ",s:["ARQ"],nome:"Methafora"},
   {k:"MAG",s:["MAG"],nome:"Magno"},
@@ -1729,7 +1730,7 @@ function filtered(){
     if(f.status==="resolvido"&&a.status!=="resolvido")return false;
     if(f.status==="reprovado"&&a.status!=="reprovado")return false;
     if(f.disc&&proxEf(a).indexOf(f.disc)<0&&!(f.discAll&&involves(a,f.disc)))return false;
-    if(S.isAdmin){if(f.faixa==="quase"){if(!quaseCritico(a))return false;}else if(f.faixa&&faixa(dias(a))!==f.faixa)return false;}
+    if(verDias()){if(f.faixa==="quase"){if(!quaseCritico(a))return false;}else if(f.faixa&&faixa(dias(a))!==f.faixa)return false;}
     if(f.prazo==="atrasado"&&!atrasadoPlano(a))return false;
     if(f.prio&&a.prioridade!==f.prio)return false;
     if(!chaveOk(a))return false;
@@ -1743,8 +1744,9 @@ function filtered(){
     return byDias(a,b);
   });
 }
-/* Fornecedor não vê dias sem movimentação: sem filtro de inatividade e ordenação padrão por prazo. */
-function sortEf(){return (!S.isAdmin&&(!S.f.sort||S.f.sort==="dias"))?"prazo":S.f.sort;}
+/* Dias sem movimentação: todos veem (decisão do usuário 2026-11-11). Fornecedor continua com ordenação padrão por prazo. */
+function verDias(){return true;}
+function sortEf(){return (!S.isAdmin&&!S.f.sort)?"prazo":S.f.sort;}
 function sel(id,label,opts,val){return '<label>'+label+'<select id="'+id+'">'+opts.map(function(o){return '<option value="'+esc(o[0])+'"'+(o[0]===val?' selected':'')+'>'+esc(o[1])+'</option>';}).join("")+'</select></label>';}
 function listMode(){var v=lsGet("ap-listmode-"+EMP);return (v==="tabela"||v==="cards")?v:(S.isAdmin?"tabela":"cards");}
 function estadoBadge(a){
@@ -1760,12 +1762,12 @@ function thSort(k,lb,cls){var on=sortEf()===k,dir=k==="dias"?"descending":"ascen
   return '<th'+(cls?' class="'+cls+'"':'')+(on?' aria-sort="'+dir+'"':'')+'><button type="button" class="ths'+(on?' on':'')+'" data-sort="'+k+'" title="Ordenar por '+esc(lb.toLowerCase())+'">'+esc(lb)+'<span aria-hidden="true">'+(on?(dir==="descending"?' ↓':' ↑'):' ↕')+'</span></button></th>';}
 function apTable(arr,hl,emptyMsg){
   if(!arr.length)return emptyMsg?'<div class="empty">'+esc(emptyMsg)+'</div>':'';
-  return '<table class="apt"><thead><tr>'+thSort("numero","Nº")+'<th>Título</th><th>Estado</th><th>Pendentes</th>'+thSort("prazo","Prazo")+(S.isAdmin?thSort("dias","Sem movimentação","r"):'')+'</tr></thead><tbody>'+arr.map(function(a){
+  return '<table class="apt"><thead><tr>'+thSort("numero","Nº")+'<th>Título</th><th>Estado</th><th>Pendentes</th>'+thSort("prazo","Prazo")+(verDias()?thSort("dias","Sem movimentação","r"):'')+'</tr></thead><tbody>'+arr.map(function(a){
     var p=prazoItem(a),pi=prazoInfo(a),ew=espera(a),n=dias(a),pend=proxEf(a);
     var rv=emRevisao(a);
     var pz=rv?'<span class="sub">Volta em '+fmtD(revAte(a))+'</span>':ew?'<span class="sub">'+esc(ew.lb)+'</span>':(p?'<span class="pz '+(pi.cls==="neu"?'':pi.cls)+'">'+fmtD(p).slice(0,5)+'</span><span class="sub">'+esc(pi.rel)+'</span>':'<span class="sub">Sem prazo</span>');
     var dd=(!isOpen(a)||rv||ew)?'<span class="sub">–</span>':'<span class="dias v-'+faixaVis(n)+'" title="'+esc(FAIXA_VIS[faixaVis(n)])+'">'+n+' d</span>';
-    return '<tr data-id="'+esc(a.numero)+'" tabindex="0"><td class="n">#'+esc(a.numero)+'</td><td class="t">'+esc(tituloFmt(a.titulo))+(a.prioridade==="Alta"&&isOpen(a)?' <span class="pri" title="Prioridade alta">▲ Alta</span>':'')+(chaveDe(a).length?' '+chaveTag(a):'')+(retornouRevisao(a)?' <b class="rvt">retornou da espera</b>':'')+'</td><td class="e">'+estadoBadge(a)+'</td><td class="c">'+(pend.length?chips(pend):'<span class="sub">ninguém pendente</span>')+'</td><td class="d">'+pz+'</td>'+(S.isAdmin?'<td class="r">'+dd+'</td>':'')+'</tr>';
+    return '<tr data-id="'+esc(a.numero)+'" tabindex="0"><td class="n">#'+esc(a.numero)+'</td><td class="t">'+esc(tituloFmt(a.titulo))+(a.prioridade==="Alta"&&isOpen(a)?' <span class="pri" title="Prioridade alta">▲ Alta</span>':'')+(chaveDe(a).length?' '+chaveTag(a):'')+(retornouRevisao(a)?' <b class="rvt">retornou da espera</b>':'')+'</td><td class="e">'+estadoBadge(a)+'</td><td class="c">'+(pend.length?chips(pend):'<span class="sub">ninguém pendente</span>')+'</td><td class="d">'+pz+'</td>'+(verDias()?'<td class="r">'+dd+'</td>':'')+'</tr>';
   }).join("")+'</tbody></table>';
 }
 /* ---------- B2: filtros compactos com chips de filtros ativos ---------- */
@@ -1777,7 +1779,7 @@ function filtrosAtivos(){
   if(f.disc)l.push(["disc","Disciplina: "+f.disc+(f.discAll?" (inclui onde acompanha)":"")]);
   if(f.prazo)l.push(["prazo","Prazo: atrasados"]);
   if(f.status&&f.status!=="aberto")l.push(["status","Situação: "+(SITU[f.status]||f.status)]);
-  if(S.isAdmin&&f.faixa)l.push(["faixa","Inatividade: "+(f.faixa==="quase"?"viram críticos em 7 dias":(FAIXA[f.faixa]||f.faixa))]);
+  if(verDias()&&f.faixa)l.push(["faixa","Inatividade: "+(f.faixa==="quase"?"viram críticos em 7 dias":(FAIXA[f.faixa]||f.faixa))]);
   if(S.fChave)l.push(["chave","Chave: "+(S.fChave==="*"?"todas as entregas":S.fChave)]);
   if(f.prio)l.push(["prio","Prioridade: "+f.prio]);
   return l;
@@ -1794,11 +1796,11 @@ function viewLista(){
     sel("fd","Disciplina a agir",dOpts,f.disc)+
     sel("fz","Prazo",[["","Todos"],["atrasado","Atrasados"]],f.prazo||"")+
     sel("fs","Situação",[["aberto","Ativos"],["aguardando","Aguardando etapa"],["revisao","Em espera para próxima revisão"],["resolvido","Resolvidos"],["reprovado","Reprovados"],["todos","Todos"]],f.status)+
-    sel("fo","Ordenar por",(S.isAdmin?[["dias","Dias sem movimentação"]]:[]).concat([["prazo","Prazo"],["numero","Número"],["criacao","Data de criação"]]),sortEf())+
+    sel("fo","Ordenar por",(verDias()?[["dias","Dias sem movimentação"]]:[]).concat([["prazo","Prazo"],["numero","Número"],["criacao","Data de criação"]]),sortEf())+
     '<div class="vmode" role="group" aria-label="Forma de exibição"><button type="button" data-lm="cards" aria-pressed="'+(lm==="cards")+'">Cartões</button><button type="button" data-lm="tabela" aria-pressed="'+(lm==="tabela")+'">Tabela</button></div>'+
     '</div>'+
     '<details class="maisf" id="maisF"'+((MAISF||nMais)?' open':'')+'><summary>Mais filtros e opções'+(nMais?' <span class="n">'+nMais+'</span>':'')+'</summary><div class="filters">'+
-    (S.isAdmin?sel("ff","Inatividade",[["","Todas"],["critico",FAIXA.critico],["atencao",FAIXA.atencao],["normal",FAIXA.normal],["quase","Viram críticos em 7 dias"]],f.faixa):"")+
+    (verDias()?sel("ff","Inatividade",[["","Todas"],["critico",FAIXA.critico],["atencao",FAIXA.atencao],["normal",FAIXA.normal],["quase","Viram críticos em 7 dias"]],f.faixa):"")+
     chaveFiltroHtml(true)+
     sel("fp","Prioridade",[["","Todas"],["Alta","Alta"],["Média","Média"],["Baixa","Baixa"]],f.prio)+
     '<label class="chk"><input type="checkbox" id="fg"'+(f.group?' checked':'')+'> Separar por disciplina</label>'+
@@ -1988,7 +1990,7 @@ function renderDrawer(){
   var head, body;
   {
     var n=dias(a),f=faixa(n);
-    head='<div class="t">'+(isOpen(a)?'':'<div class="num">'+esc(STL[a.status]||'')+'</div>')+'<h2 id="drTitle" class="dtit">#'+esc(a.numero)+' · '+esc(tituloFmt(a.titulo))+'</h2>'+'<div class="dmeta">'+estadoBadge(a)+(a.prioridade==="Alta"&&isOpen(a)?'<span class="pri">▲ Alta</span>':'')+(isOpen(a)&&!emRevisao(a)&&!espera(a)?'<span class="dm-i">'+(prazoItem(a)?'Prazo <b>'+fmtD(prazoItem(a))+'</b>':'Sem prazo')+'</span>':'')+(isOpen(a)&&proxEf(a).length?'<span class="dm-i">Pendentes '+chips(proxEf(a))+'</span>':'')+(S.isAdmin&&ativo(a)?'<span class="dias v-'+faixaVis(n)+'" title="'+esc(FAIXA_VIS[faixaVis(n)])+'">'+n+' d sem movimentação</span>':'')+'</div>'+(chaveDe(a).length?'<div class="dtags">'+chaveTag(a)+'</div>':'')+'</div>';
+    head='<div class="t">'+(isOpen(a)?'':'<div class="num">'+esc(STL[a.status]||'')+'</div>')+'<h2 id="drTitle" class="dtit">#'+esc(a.numero)+' · '+esc(tituloFmt(a.titulo))+'</h2>'+'<div class="dmeta">'+estadoBadge(a)+(a.prioridade==="Alta"&&isOpen(a)?'<span class="pri">▲ Alta</span>':'')+(isOpen(a)&&!emRevisao(a)&&!espera(a)?'<span class="dm-i">'+(prazoItem(a)?'Prazo <b>'+fmtD(prazoItem(a))+'</b>':'Sem prazo')+'</span>':'')+(isOpen(a)&&proxEf(a).length?'<span class="dm-i">Pendentes '+chips(proxEf(a))+'</span>':'')+(verDias()&&ativo(a)?'<span class="dias v-'+faixaVis(n)+'" title="'+esc(FAIXA_VIS[faixaVis(n)])+'">'+n+' d sem movimentação</span>':'')+'</div>'+(chaveDe(a).length?'<div class="dtags">'+chaveTag(a)+'</div>':'')+'</div>';
     var cfUrl=a.construflowId&&S.cfg&&S.cfg.construflowUrl?S.cfg.construflowUrl+"/"+a.construflowId:null;
     var info='<dl class="f">'+
       ((a.etapaResolucao||a.etapaConferencia)?'<dt>Etapas</dt><dd>'+(a.etapaResolucao?'<span class="tag">Resolver no '+esc(a.etapaResolucao)+'</span> ':'')+(a.etapaConferencia?'<span class="tag">Conferir no '+esc(a.etapaConferencia)+'</span>':'')+'</dd>':'')+
@@ -3071,7 +3073,7 @@ function apRow(a,hl){
   if(!isOpen(a)&&!S.respInfo)extras.push('<span>'+esc(STL[a.status]||a.status)+'</span>');
   if(D.length&&S.respInfo)infoRespondido(a,D).forEach(function(t){extras.push('<b class="okt">'+esc(t)+'</b>');});
   else if(mkData(a))extras.push('<b class="okt">marcado como respondido em '+fmtD(mkData(a)).slice(0,5)+'</b>');
-  if((S.isAdmin||S.verDias)&&isOpen(a)&&!espera(a)&&!emRevisao(a)){var n=dias(a);if(mostraDias(n))extras.push('<span class="dias v-'+faixaVis(n)+'" title="'+esc(FAIXA_VIS[faixaVis(n)])+'">'+n+' d sem movimentação</span>');}
+  if(verDias()&&isOpen(a)&&!espera(a)&&!emRevisao(a)){var n=dias(a);if(mostraDias(n))extras.push('<span class="dias v-'+faixaVis(n)+'" title="'+esc(FAIXA_VIS[faixaVis(n)])+'">'+n+' d sem movimentação</span>');}
   if(chaveDe(a).length)extras.unshift(chaveTag(a));
   if(a.prioridade==="Alta"&&isOpen(a))extras.unshift('<span class="pri">▲ Alta</span>');
   if(S.isAdmin&&S.interno[String(a.numero)])extras.push('<b style="color:var(--warn)">interno</b>');
