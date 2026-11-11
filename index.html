@@ -121,6 +121,20 @@ details.blk>summary .n{font-weight:500;color:var(--ink-3);font-size:14px}
 .reun li{margin:0 0 4px}
 .reun .rs{margin:10px 0 0;max-width:90ch}
 .reun ul.enc{list-style:none;padding-left:0}
+.rfonte{background:transparent;border:1.5px solid var(--ink);border-top-width:5px;padding:12px 14px 4px;margin:0 0 16px}
+.rfonte>header{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:0 0 10px}
+.rfonte>header h4{margin:0;font-family:var(--title);font-size:18px;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.rfonte>header p{margin:0;color:var(--ink-2);font-size:13px}
+.rfonte .reun{margin-bottom:8px}
+.rfonte .empty{margin-bottom:12px}
+.reun .ata-part{margin:8px 0 0;font-size:13px;color:var(--ink-2);max-width:95ch}
+.reun .ata-emp{margin:8px 0 2px;font-size:14px;font-weight:600}
+.reun .prz{font-size:12px;color:var(--ink-2);white-space:nowrap}
+.reun ul ul{margin-top:2px}
+.reun li.n1{margin-left:16px;list-style-type:circle}
+.reun li.n2{margin-left:32px;list-style-type:square}
+.rmais{margin:0 0 10px}
+.rmais>summary{cursor:pointer;font-size:14px;color:var(--ink-2);padding:6px 0;min-height:36px}
 .lnk{background:none;border:0;padding:0;color:var(--focus);text-decoration:underline;cursor:pointer;font:inherit}
 .flt{display:flex;flex-direction:column;gap:3px}
 .flt .cl{font-size:12px;color:var(--ink-3);margin:0}
@@ -1044,7 +1058,7 @@ var S = {
   aps: [], cfg: null, loaded: false, dbOk: null,
   view: null, myDiscs: [], lastVisit: null, isAdmin: false, uid: null,
   f: {disc:"", faixa:"", prio:"", status:"aberto", q:"", sort:"dias", group:false, prazo:""}, fChave: "",
-  interno: {}, revs: {}, resumos: {}, reunioes: {}, plano: {}, planoSem: null, planoResp: "", openId: null, db: null, user: null, editing: false, creating: false
+  interno: {}, revs: {}, resumos: {}, reunioes: {}, atas: {}, plano: {}, planoSem: null, planoResp: "", openId: null, db: null, user: null, editing: false, creating: false
 };
 
 /* ---------- helpers ---------- */
@@ -1881,7 +1895,7 @@ function bindView(){
   var co=document.getElementById("chooseOk");if(co)co.addEventListener("click",function(){setMyDiscs([].map.call(main.querySelectorAll(".chk2 input:checked"),function(i){return i.value;}));});
   [].forEach.call(main.querySelectorAll(".lnk"),function(b){b.addEventListener("click",function(e){e.preventDefault();openAp(b.getAttribute("data-id"));});});
   [].forEach.call(main.querySelectorAll("details.blk[id]"),function(d){d.addEventListener("toggle",function(){DET_ABERTO[d.id]=d.open;});});
-  [].forEach.call(main.querySelectorAll("details.reun"),function(d){d.addEventListener("toggle",function(){REU_ABERTAS[d.getAttribute("data-reun")]=d.open;});});
+  [].forEach.call(main.querySelectorAll("details.reun,details.rmais"),function(d){d.addEventListener("toggle",function(){REU_ABERTAS[d.getAttribute("data-reun")]=d.open;});});
   var rds=document.getElementById("rdSel");
   if(rds){rds.addEventListener("toggle",function(){REU.aberto=rds.open;});
     rds.querySelector(".dsel-list").addEventListener("change",function(){REU.discs=[].map.call(rds.querySelectorAll("input:checked"),function(i){return i.value;});REU.aberto=true;render();});
@@ -2288,7 +2302,38 @@ function burnSVG(D){
 
 var REU_ABERTAS={},DET_ABERTO={};
 function linkNums(t){return esc(t).replace(/#(\d{3,5})/g,function(m,n){return findAp(n)?'<button type="button" class="lnk" data-id="'+n+'">#'+n+'</button>':m;});}
+/* Reuniões: duas fontes em cards separados (decisão do usuário, 11/11/2026) */
 function reunioesHtml(){
+  var nC=Object.keys(S.reunioes||{}).length,nA=Object.keys(S.atas||{}).length;
+  return '<section class="rfonte" aria-labelledby="rfC"><header><h4 id="rfC">Comentários da Construflow</h4><p>'+(nC?nC+(nC>1?' reuniões':' reunião')+' · ':'')+'resumo automático dos comentários de reunião nos apontamentos</p></header>'+reunioesConstruflowHtml()+'</section>'+
+    '<section class="rfonte" aria-labelledby="rfA"><header><h4 id="rfA">Atas de reunião</h4><p>'+(nA?nA+(nA>1?' atas':' ata')+' · ':'')+'registro oficial das reuniões semanais (PDF da pasta do projeto)</p></header>'+atasHtml()+'</section>';
+}
+function ataItem(k){var a=S.atas[k]||{},nAc=0;
+  var emp=function(g,fn){return (g||[]).filter(function(x){return x&&(x.itens||[]).length;}).map(function(x){return '<p class="ata-emp">'+esc(x.empresa||"Sem empresa")+'</p><ul>'+x.itens.map(fn).join("")+'</ul>';}).join("");};
+  (a.acoes||[]).forEach(function(x){nAc+=(x.itens||[]).length;});
+  var acoes=emp(a.acoes,function(i){return '<li>'+linkNums(i.t||"")+(i.prazo?' <span class="prz">· até '+fmtD(i.prazo)+'</span>':'')+'</li>';});
+  var ant=emp(a.anteriores,function(i){return '<li>'+linkNums(i.t||"")+(i.status?' <span class="prz">— '+esc(i.status)+'</span>':'')+'</li>';});
+  var ali=(a.alinhamentos||[]).map(function(x){var s=(x.itens||[]).map(function(t){var m=/^(-{1,2}) /.exec(t=String(t||""));return '<li'+(m?' class="n'+m[1].length+'"':'')+'>'+linkNums(m?t.slice(m[0].length):t)+'</li>';}).join("");return '<li>'+linkNums(x.t||"")+(s?'<ul>'+s+'</ul>':'')+'</li>';}).join("");
+  var part=(a.participantes||[]).filter(function(p){return p&&p.empresa;}).map(function(p){return '<b>'+esc(p.empresa)+'</b>'+((p.pessoas||[]).length?': '+esc(p.pessoas.join(", ")):'');}).join(" · ");
+  var obs=(a.obs||[]).map(function(t){return '<li>'+esc(t)+'</li>';}).join("");
+  return '<details class="reun ata" data-reun="ata:'+esc(k)+'"'+(REU_ABERTAS["ata:"+k]?' open':'')+'><summary><strong>'+fmtD(a.data||k)+'</strong> · '+esc(a.titulo||"Reunião semanal")+' <span class="n">'+(nAc?nAc+(nAc===1?' ação':' ações'):'sem ações')+'</span></summary>'+
+    (a.resumo?'<p class="rs">'+linkNums(a.resumo)+'</p>':'')+
+    (part?'<p class="ata-part">Participantes — '+part+'</p>':'')+
+    ((a.pauta||[]).length?'<h4>Pauta</h4><ul>'+a.pauta.map(function(t){return '<li>'+esc(t)+'</li>';}).join("")+'</ul>':'')+
+    (acoes?'<h4>Ações</h4>'+acoes:'')+
+    (ant?'<h4>Ações da semana anterior</h4>'+ant:'')+
+    (ali?'<h4>Alinhamentos</h4><ul>'+ali+'</ul>':'')+
+    (obs?'<h4>Observações da importação</h4><ul>'+obs+'</ul>':'')+
+    '<p class="count">Fonte: ata em PDF'+(a.arquivo?' · '+esc(a.arquivo):'')+'</p></details>';
+}
+function atasHtml(){
+  var ks=Object.keys(S.atas||{}).sort().reverse();
+  if(!ks.length)return '<div class="empty">Nenhuma ata importada ainda. As atas aparecem aqui quando os PDFs da pasta do projeto forem carregados.</div>';
+  var h=ks.slice(0,6).map(ataItem).join("");
+  if(ks.length>6)h+='<details class="rmais" data-reun="ata:mais"'+(REU_ABERTAS["ata:mais"]?' open':'')+'><summary>Atas anteriores ('+(ks.length-6)+')</summary>'+ks.slice(6).map(ataItem).join("")+'</details>';
+  return h;
+}
+function reunioesConstruflowHtml(){
   var ks=Object.keys(S.reunioes||{}).sort().reverse();
   if(!ks.length)return '<div class="empty">Nenhuma reunião registrada ainda. Os resumos aparecem aqui a partir dos comentários de reunião no Construflow.</div>';
   return ks.slice(0,6).map(function(k,i){var r=S.reunioes[k];
@@ -3264,6 +3309,7 @@ function boot(){
     S.db=db;S.dbOk=true;
     db.doc("empreendimentos/"+EMP).onSnapshot(function(s){S.cfg=s.exists?s.data():null;if(S.cfg&&S.cfg.disciplinas&&S.cfg.disciplinas.length){setDisc(S.cfg.disciplinas);}if(S.loaded)agendarRender();else renderHeader();},function(){});
     db.collection("empreendimentos/"+EMP+"/reunioes").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.reunioes=m;if(S.loaded)agendarRender();},function(){});
+    db.collection("empreendimentos/"+EMP+"/atas").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.atas=m;if(S.loaded&&S.view==="reuniao")agendarRender();},function(){});
     db.collection("empreendimentos/"+EMP+"/plano_semanal").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.plano=m;if(S.loaded&&S.view==="plano")agendarRender();},function(){});
     db.collection("empreendimentos/"+EMP+"/revisoes").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.revs=m;if(S.loaded)agendarRender(true);},function(){});
     db.collection("empreendimentos/"+EMP+"/resumos").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.resumos=m;if(S.loaded)agendarRender();},function(){});
