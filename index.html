@@ -995,9 +995,17 @@ section.view>.eyebrow+h2{margin-top:0}
 "use strict";
 /* Empreendimentos: ativos têm banco e sincronização; "prep" só aparece para a construtora no seletor.
    Trocar de empreendimento recarrega a página com outro slug (nada muda no banco). Ver docs/design/REBRANDING_MANUS.md §4. */
-var EMPS=[{slug:"duarte-schutel",nome:"Duarte Schutel"}];
+var EMPS=[{slug:"duarte-schutel",nome:"Duarte Schutel"},{slug:"jurere",nome:"Jurerê"}];
+/* Artifact: fornecedores (Contribuidores) só veem o DS; os demais empreendimentos são só de Editores (regra de leitura admin no db). */
+/* Comentários internos: DS em interno/<nº> (legado); demais em interno/<slug>/itens/<nº> (mesma regra admin do db). */
+function intCol(){return EMP==="duarte-schutel"?"interno":"interno/"+EMP+"/itens";}
+function empVisivel(x){return ehWeb()||S.realAdmin||x.slug==="duarte-schutel";}
 var EMPS_PREP=[{slug:"elysse",nome:"Elysse",nota:"Ainda não sincronizado com a Construflow"}];
-function empInicial(){var q="";try{q=new URLSearchParams(location.search).get("emp")||"";}catch(e){}var v=q||lsGet("ap-emp");return EMPS.some(function(x){return x.slug===v;})?v:EMPS[0].slug;}
+/* Site com login: a casca (supabase-casca.js) entrega a lista de empreendimentos da conta e o ativo (?emp= / último usado / 1º).
+   Só vale no site (ehWeb); no artifact nada muda. Nomes: doc empreendimentos/<slug> (via casca) ou este mapa. */
+var EMP_NOMES={"duarte-schutel":"Duarte Schutel","jurere":"Jurerê"};
+if(ehWeb()&&window.claude.emp){EMPS=window.claude.empreendimentos.map(function(s){return {slug:s,nome:(window.claude.nomes||{})[s]||EMP_NOMES[s]||s};});}
+function empInicial(){if(ehWeb()&&window.claude.emp)return window.claude.emp;var q="";try{q=new URLSearchParams(location.search).get("emp")||"";}catch(e){}var v=q||lsGet("ap-emp");return EMPS.some(function(x){return x.slug===v;})?v:EMPS[0].slug;}
 var EMP = empInicial();
 var DISC = [
   {c:"ARQ", n:"Arquitetura", cor:"#7C9CC9"},
@@ -1015,9 +1023,11 @@ var DISC = [
   {c:"EXT", n:"Exaustão de garagem", cor:"#3F8F6F"},
   {c:"INT", n:"Interiores", cor:"#B0638E"},
   {c:"FUR", n:"Furações", cor:"#A75A2C"},
-  {c:"AMB", n:"Ambiental", cor:"#748E2A"}
+  {c:"AMB", n:"Ambiental", cor:"#748E2A"},
+  {c:"PIS", n:"Piscina", cor:"#1F7A99"},
+  {c:"PAI", n:"Paisagismo", cor:"#4F9A3A"}
 ];
-var COLORS = {"MAG":"#2B3337","ARQ MB+":"#3E5F8A","ARQ":"#7C9CC9","CNT":"#2B3337","CTN":"#5A6670","COORD":"#7A5BA6","EST":"#8C6A3E","ELT":"#D3A20F","TEL":"#3E9C96","HID":"#2C7DCB","PCI":"#C23B2E","SPDA":"#5E6B73","SPK":"#E0703A","PEP":"#9C7BC9","CLI":"#29AFC0","EXT":"#3F8F6F","INT":"#B0638E","PAI":"#4F9A3A","FUR":"#A75A2C","AMB":"#748E2A"};
+var COLORS = {"MAG":"#2B3337","ARQ MB+":"#3E5F8A","ARQ":"#7C9CC9","CNT":"#2B3337","CTN":"#5A6670","COORD":"#7A5BA6","EST":"#8C6A3E","ELT":"#D3A20F","TEL":"#3E9C96","HID":"#2C7DCB","PCI":"#C23B2E","SPDA":"#5E6B73","SPK":"#E0703A","PEP":"#9C7BC9","CLI":"#29AFC0","EXT":"#3F8F6F","INT":"#B0638E","PAI":"#4F9A3A","PIS":"#1F7A99","FUR":"#A75A2C","AMB":"#748E2A"};
 var DMAP = {}; DISC.forEach(function(d){DMAP[d.c]=d;});
 function setDisc(list){
   DISC=list.map(function(x){return {c:x.c,n:x.n||x.c,cor:COLORS[x.c]||"#888"};});
@@ -1218,18 +1228,34 @@ function topAltura(){var t=document.getElementById("topin"),tb=document.getEleme
 /* ---------- e-mails da semana (só construtora) ---------- */
 /* Site com login (Cloudflare Pages). O bit.ly antigo levava ao GitHub Pages da conta renomeada (404) — trocado em 2026-11-11. */
 var EM_SITE="https://apontamentos-magno.pages.dev";
-var EM_GRUPOS=[
-  {k:"ARQ",s:["ARQ"],nome:"Methafora"},
-  {k:"MAG",s:["MAG"],nome:"Magno"},
-  {k:"HID",s:["HID"],nome:"Premiere"},
-  {k:"PCI",s:["PCI","SPK"],nome:"Premiere"},
-  {k:"ELT",s:["ELT","TEL","SPDA"],nome:"Premiere"},
-  {k:"CLI",s:["CLI","EXT","PEP"],nome:"Premiere"},
-  {k:"EST",s:["EST"],nome:"Aspen"}
-];
+var EM_GRUPOS_POR={
+  "duarte-schutel":[
+    {k:"ARQ",s:["ARQ"],nome:"Methafora"},
+    {k:"MAG",s:["MAG"],nome:"Magno"},
+    {k:"HID",s:["HID"],nome:"Premiere"},
+    {k:"PCI",s:["PCI","SPK"],nome:"Premiere"},
+    {k:"ELT",s:["ELT","TEL","SPDA"],nome:"Premiere"},
+    {k:"CLI",s:["CLI","EXT","PEP"],nome:"Premiere"},
+    {k:"EST",s:["EST"],nome:"Aspen"}
+  ],
+  /* Jurerê (dados/importacao/destinatarios-jurere.json): PIS é grupo próprio; ELE = ELT (mesmo grupo ELT+TEL+SPDA).
+     Nomes de equipe = coluna "Empresa" da planilha (EST: FN estruturas; PIS: HDR Soluções). */
+  "jurere":[
+    {k:"ARQ",s:["ARQ"],nome:"Methafora"},
+    {k:"MAG",s:["MAG","CNT"],nome:"Magno"},   /* Jurerê: a Magno aparece na Construflow como CNT "Construtora" */
+    {k:"HID",s:["HID"],nome:"Premiere"},
+    {k:"PCI",s:["PCI","SPK"],nome:"Premiere"},
+    {k:"ELT",s:["ELT","ELE","TEL","SPDA"],nome:"Premiere"},
+    {k:"CLI",s:["CLI","EXT","PEP"],nome:"Premiere"},
+    {k:"EST",s:["EST"],nome:"FN estruturas"},
+    {k:"PIS",s:["PIS"],nome:"HDR Soluções"}
+  ]
+};
+var EM_ALIAS={"ELE":"ELT"};   /* disciplina sem cadastro própria → nome da equivalente (Jurerê: ELE = ELT) */
+function emGrupos(){return EM_GRUPOS_POR[EMP]||EM_GRUPOS_POR["duarte-schutel"];}
 var EM={aberto:null,editDest:false,msg:{}};
-/* Rotina "E-mail semanal" (claude.ai) em MODO TESTE: só rascunhos. Trocar para false quando o envio real for liberado. */
-var EM_AUTO_TESTE=true;
+/* Envio automático pelo GitHub Actions (repo privado apontamentos-dados, emails.yml). true = aviso "Em teste" na aba. */
+var EM_AUTO_TESTE=false;   /* envio real liberado pelo usuário em 2026-11-11 (GitHub Actions, variável EMAILS_MODO=envio) */
 /* E-mails da semana: só a Magno (Editor), também ao pré-visualizar como MAG. Fornecedores e site público nunca veem. */
 function emailsOk(){return !!S.realAdmin&&!ehSite()&&(!ehWeb()||window.claude.papel==="admin")&&(!S.preview||S.preview==="MAG");}
 function emDest(){var d=S.interno&&S.interno._destinatarios;return (d&&d.grupos)||{};}
@@ -1239,24 +1265,24 @@ function emSemana(){
   var cfg=S.cfg||{},sy=cfg.ultimaSync||cfg.sincronizadoEm,syTxt=sy?"em "+fmtD(sy)+" às "+fmtH(sy):"nesta semana";
   var dest=emDest(),out=[];
   var fur=classificar(["FUR"]),furItens=fur.atras.concat(fur.semana).filter(function(a){var p=proxEf(a).filter(function(c){return c!=="COORD";});return p.length===1&&p[0]==="FUR";});
-  EM_GRUPOS.forEach(function(g){
+  emGrupos().forEach(function(g){
     var secs=[],siglas=[],tot=0,atr=0;
     g.s.forEach(function(c){
       var r=classificar([c]),itens=r.atras.concat(r.semana);
       if(!itens.length)return;
       siglas.push(c);tot+=itens.length;atr+=r.atras.length;
-      secs.push({c:c,n:(DMAP[c]&&DMAP[c].n)||c,itens:itens,atras:r.atras.length,prox:r.prox.length});
+      secs.push({c:c,n:(DMAP[c]&&DMAP[c].n)||(DMAP[EM_ALIAS[c]]&&DMAP[EM_ALIAS[c]].n)||c,itens:itens,atras:r.atras.length,prox:r.prox.length});
     });
     if(g.k==="MAG"&&furItens.length){secs.push({c:"FUR",fur:true,n:"Furações sem responsável definido",itens:furItens,atras:furItens.filter(function(a){return prazoItem(a)<iniS;}).length,prox:0});tot+=furItens.length;}
     if(!secs.length)return;
-    var assunto="[Duarte Schutel] Apontamentos da semana "+fmtD(iniS).slice(0,5)+" a "+fmtD(sexS).slice(0,5)+" – "+(siglas.length?siglas.join(", "):"FUR");
+    var assunto="["+empCurto()+"] Apontamentos da semana "+fmtD(iniS).slice(0,5)+" a "+fmtD(sexS).slice(0,5)+" – "+(siglas.length?siglas.join(", "):"FUR");
     out.push({g:g,para:(dest[g.k]||"").trim(),assunto:assunto,secs:secs,tot:tot,atr:atr,html:emHtml(g,secs,iniS,sexS,syTxt),texto:emTexto(g,secs,iniS,sexS,syTxt)});
   });
   return {w:w,iniS:iniS,sexS:sexS,syTxt:syTxt,emails:out};
 }
 function emHtml(g,secs,iniS,sexS,syTxt){
   var T="#952B32",R="#B3261E",h='<div style="font-family:Arial,sans-serif;font-size:14px;color:#1F1F1F;line-height:1.45">'+
-    '<p>Olá, equipe '+esc(g.nome)+',</p><p>segue o lembrete dos apontamentos do Duarte Schutel com prazo nesta semana (até sexta, '+fmtD(sexS).slice(0,5)+'). A sincronização com o Construflow foi feita '+esc(syTxt)+'.</p>';
+    '<p>Olá, equipe '+esc(g.nome)+',</p><p>segue o lembrete dos apontamentos do '+esc(empCurto())+' com prazo nesta semana (até sexta, '+fmtD(sexS).slice(0,5)+'). A sincronização com o Construflow foi feita '+esc(syTxt)+'.</p>';
   secs.forEach(function(s){
     h+='<h3 style="color:'+T+';font-size:16px;margin:18px 0 4px">'+(s.fur?esc(s.n):esc(s.c)+' – '+esc(s.n))+'</h3>';
     if(!s.fur)h+='<p style="margin:0 0 8px">'+s.itens.length+' apontamento'+(s.itens.length>1?'s':'')+' para esta semana'+(s.atras?', dos quais '+s.atras+' atrasado'+(s.atras>1?'s':''):'')+'.</p>';
@@ -1274,7 +1300,7 @@ function emHtml(g,secs,iniS,sexS,syTxt){
   return h;
 }
 function emTexto(g,secs,iniS,sexS,syTxt){
-  var t="Olá, equipe "+g.nome+",\n\nsegue o lembrete dos apontamentos do Duarte Schutel com prazo nesta semana (até sexta, "+fmtD(sexS).slice(0,5)+"). A sincronização com o Construflow foi feita "+syTxt+".\n";
+  var t="Olá, equipe "+g.nome+",\n\nsegue o lembrete dos apontamentos do "+empCurto()+" com prazo nesta semana (até sexta, "+fmtD(sexS).slice(0,5)+"). A sincronização com o Construflow foi feita "+syTxt+".\n";
   secs.forEach(function(s){
     t+="\n"+(s.fur?s.n:s.c+" – "+s.n).toUpperCase()+"\n";
     s.itens.forEach(function(a){var p=prazoItem(a),lk=cfLink(a);
@@ -1285,7 +1311,7 @@ function emTexto(g,secs,iniS,sexS,syTxt){
 }
 function emEnviados(id){try{return JSON.parse(lsGet("ap-em-"+EMP+"-"+id)||"{}");}catch(e){return {};}}
 function viewEmails(){
-  var E=emSemana(),env=emEnviados(E.w.id),dest=emDest(),semDest=EM_GRUPOS.filter(function(g){return !(dest[g.k]||"").trim();});
+  var E=emSemana(),env=emEnviados(E.w.id),dest=emDest(),semDest=emGrupos().filter(function(g){return !(dest[g.k]||"").trim();});
   var h='<section class="view"><h2>E-mails da semana</h2><p class="lede">Lembretes da semana de '+fmtD(E.iniS)+' a '+fmtD(E.sexS)+' para cada grupo de fornecedores, com a mesma regra da aba Minha semana (atrasados e prazos até sexta). Dados da sincronização feita '+esc(E.syTxt)+'. Só a construtora vê esta aba.</p>'+
     '<div class="notice" style="margin-top:10px"><strong>Envio automático:</strong> toda segunda-feira às 07:47, depois da sincronização, estes e-mails saem sozinhos pela conta projetos03@magnorealty.com.br para os destinatários cadastrados abaixo (um por grupo, sem cópia).'+
     (EM_AUTO_TESTE?' <b>Em teste:</b> por enquanto são criados só como rascunhos no Outlook, com “[TESTE]” no assunto, para conferência.':'')+
@@ -1304,7 +1330,7 @@ function viewEmails(){
       '<details'+(EM.aberto===i?' open':'')+' data-emdet="'+i+'"><summary>Ver o e-mail</summary><div class="emcorpo" id="emCorpo'+i+'">'+m.html+'</div></details></div>';
   });
   h+='<details class="blk" id="emDestBox"'+(EM.editDest?' open':'')+'><summary>Editar destinatários</summary><p class="count">Separe os endereços com ponto e vírgula. Ficam guardados só para a construtora (não aparecem para fornecedores nem no site).</p>'+(ehWeb()?'<p class="msg err">Por enquanto, o envio automático usa a lista do app da Magno no Claude: altere lá também, até a integração automática entre os dois.</p>':'')+'<div class="metaform" style="flex-direction:column;align-items:stretch;max-width:760px">'+
-    EM_GRUPOS.map(function(g){return '<label>'+esc(g.k)+' – '+esc(g.nome)+' ('+g.s.join(", ")+')<input type="text" data-dest="'+esc(g.k)+'" value="'+esc(dest[g.k]||"")+'" style="width:100%"></label>';}).join("")+
+    emGrupos().map(function(g){return '<label>'+esc(g.k)+' – '+esc(g.nome)+' ('+g.s.join(", ")+')<input type="text" data-dest="'+esc(g.k)+'" value="'+esc(dest[g.k]||"")+'" style="width:100%"></label>';}).join("")+
     '<div class="row-btns"><button class="btn" type="button" id="emDestSave">Salvar destinatários</button><span class="msg" id="emDestMsg"></span></div></div></details>';
   return h+'</section>';
 }
@@ -1396,7 +1422,7 @@ function bindEmails(){
   if(sv)sv.addEventListener("click",function(){
     var g={};[].forEach.call(main.querySelectorAll("[data-dest]"),function(inp){var v=inp.value.split(/[;,\s]+/).filter(function(x){return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(x);});g[inp.getAttribute("data-dest")]=v.join("; ");});
     var msg=document.getElementById("emDestMsg");sv.disabled=true;msg.textContent="Salvando…";msg.className="msg";
-    S.db.doc("interno/_destinatarios").set({grupos:g,atualizadoEm:new Date().toISOString()}).then(function(){msg.textContent="Destinatários salvos.";sv.disabled=false;},function(e){msg.textContent="Não foi possível salvar ("+((e&&(e.code||e.message))||"erro")+").";msg.className="msg err";sv.disabled=false;});
+    S.db.doc(intCol()+"/_destinatarios").set({grupos:g,atualizadoEm:new Date().toISOString()}).then(function(){msg.textContent="Destinatários salvos.";sv.disabled=false;},function(e){msg.textContent="Não foi possível salvar ("+((e&&(e.code||e.message))||"erro")+").";msg.className="msg err";sv.disabled=false;});
   });
 }
 
@@ -1584,9 +1610,10 @@ function sideAbre(on){var sh=document.getElementById("shell"),sc=document.getEle
   document.addEventListener("keydown",function(e){if(e.key!=="Escape")return;if(sh.classList.contains("open")&&!dr.innerHTML)sideAbre(false);pmenuAbre(false);gresFecha();});
   /* seletor de empreendimento */
   var ps=document.getElementById("psel"),pm=document.getElementById("pmenu");
-  ps.addEventListener("click",function(e){e.stopPropagation();pmenuAbre(pm.hidden);});
+  if(ehWeb()&&EMPS.length<2){ps.style.cursor="default";ps.removeAttribute("aria-haspopup");var ch=ps.querySelector(".chev");if(ch)ch.style.display="none";}
+  ps.addEventListener("click",function(e){if(ehWeb()&&EMPS.length<2)return;e.stopPropagation();pmenuAbre(pm.hidden);});
   document.addEventListener("click",function(e){if(!pm.hidden&&!pm.contains(e.target))pmenuAbre(false);var gs=document.querySelector(".gsearch");if(gs&&!gs.contains(e.target))gresFecha();});
-  pm.addEventListener("click",function(e){var b=e.target.closest("[data-emp]");if(!b)return;var s=b.getAttribute("data-emp");if(s===EMP){pmenuAbre(false);return;}lsSet("ap-emp",s);location.reload();});
+  pm.addEventListener("click",function(e){var b=e.target.closest("[data-emp]");if(!b)return;var s=b.getAttribute("data-emp");if(s===EMP){pmenuAbre(false);return;}if(ehWeb()){window.claude.trocarEmp(s);return;}lsSet("ap-emp",s);location.reload();});
   /* busca global */
   var q=document.getElementById("gq");
   q.addEventListener("input",gresMonta);q.addEventListener("focus",function(){if(q.value)gresMonta();});
@@ -1599,7 +1626,7 @@ function sideAbre(on){var sh=document.getElementById("shell"),sc=document.getEle
 function pmenuAbre(on){var ps=document.getElementById("psel"),pm=document.getElementById("pmenu");if(!pm)return;
   if(on){var cur=S.aps?S.aps.filter(ativo).length:0,atr=S.aps?S.aps.filter(atrasadoPlano).length:0,fa=faseAtual();
     var thumb=function(nm){return '<span class="pth" aria-hidden="true">'+esc(nm.slice(0,2).toUpperCase())+'</span>';},im=document.querySelector("#empImg img");
-    var it=EMPS.map(function(x){var at=x.slug===EMP;return '<button type="button" class="popt" data-emp="'+esc(x.slug)+'"'+(at?' aria-current="true"':'')+'>'+(at&&im?'<img class="pth" src="'+im.getAttribute("src")+'" alt="">':thumb(x.nome))+'<span><b>'+esc(at?empCurto():x.nome)+'</b><small>'+(at&&S.loaded?esc([fa?fa.c:"",cur+" ativos",atr+" atrasados"].filter(Boolean).join(" · ")):'')+'</small></span><em>'+(at?'Atual':'Abrir')+'</em></button>';});
+    var it=EMPS.filter(empVisivel).map(function(x){var at=x.slug===EMP;return '<button type="button" class="popt" data-emp="'+esc(x.slug)+'"'+(at?' aria-current="true"':'')+'>'+(at&&im?'<img class="pth" src="'+im.getAttribute("src")+'" alt="">':thumb(x.nome))+'<span><b>'+esc(at?empCurto():x.nome)+'</b><small>'+(at&&S.loaded?esc([fa?fa.c:"",cur+" ativos",atr+" atrasados"].filter(Boolean).join(" · ")):'')+'</small></span><em>'+(at?'Atual':'Abrir')+'</em></button>';});
     if(S.realAdmin&&!ehSite()&&!ehWeb())it=it.concat(EMPS_PREP.map(function(x){return '<div class="popt off" aria-disabled="true">'+thumb(x.nome)+'<span><b>'+esc(x.nome)+'</b><small>'+esc(x.nota||"")+'</small></span><em>Em preparação</em></div>';}));
     pm.innerHTML='<p class="ph6">'+(S.realAdmin?'Empreendimentos':'Seus empreendimentos')+'</p>'+it.join("")+'<p class="pnote">'+(S.realAdmin?'Fornecedores veem só o empreendimento compartilhado com eles.':'Você vê os empreendimentos compartilhados com a sua conta.')+'</p>';}
   pm.hidden=!on;ps.setAttribute("aria-expanded",String(!!on));
@@ -2878,7 +2905,7 @@ async function sincronizar(origem,opts){
       if(w.set){await col.doc(String(w.n)).set(w.set);final[w.n]=w.set;}
       else{await col.doc(String(w.n)).update(w.upd);var f=Object.assign({},final[w.n]||{});for(var kk in w.upd){if(w.upd[kk]===null)delete f[kk];else f[kk]=w.upd[kk];}final[w.n]=f;}}
     // comentários internos (coleção de raiz "interno"), com troca de visibilidade
-    var icol=S.db.collection("interno");
+    var icol=S.db.collection(intCol());
     var gi={};internos.forEach(function(x){(gi[x.n]=gi[x.n]||[]).push(x.c);});
     var nums={};Object.keys(sairInterno).concat(Object.keys(gi),Object.keys(intNums)).forEach(function(n){nums[n]=1;});
     for(var sn in nums){
@@ -2994,7 +3021,9 @@ async function executarTarefa(pref){
   if(SYNC.on||!S.db)return;
   var cfg=S.cfg||{}, now=new Date(), em=cfg.syncEmAndamento?new Date(cfg.syncEmAndamento):null;
   if(em&&(now-em)<90*60000){setSync(false,"Já há uma sincronização em andamento desde "+fmtH(em)+".");return;}
-  var tid=cfg.tarefaSyncId||TAREFA_ID_PADRAO;
+  /* A rotina padrão é a do DS: outro empreendimento sem tarefaSyncId própria não dispara nada. */
+  var tid=cfg.tarefaSyncId||(EMP==="duarte-schutel"?TAREFA_ID_PADRAO:null);
+  if(!tid){setSync(false,pref+"A rotina de sincronização deste empreendimento ainda não foi configurada.",true);return;}
   setSync(true,"Solicitando a sincronização…");
   try{
     var mcp=await claude.use("mcp"); if(!mcp)throw {code:"no_mcp"};
@@ -3223,6 +3252,7 @@ function boot(){
     if(!u)return;
     return Promise.all([u.canEdit(),u.id()]).then(function(r){
       S.isAdmin=!!r[0];S.realAdmin=S.isAdmin;S.uid=r[1]||null;
+      if(!ehWeb()&&!S.realAdmin&&EMP!=="duarte-schutel"){lsSet("ap-emp","duarte-schutel");location.reload();return;}
       if(!S.view){S.view=S.isAdmin?"painel":"minha";}
       renderHeader();
     });
@@ -3243,7 +3273,7 @@ function boot(){
       agendarRender(true);
     },function(e){S.dbOk=false;S.loaded=false;render();});
     if(S.isAdmin){
-      db.collection("interno").onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.interno=m;if(S.loaded)agendarRender(true);},function(){});
+      db.collection(intCol()).onSnapshot(function(snap){var m={};snap.docs.forEach(function(d){m[d.id]=d.data();});S.interno=m;if(S.loaded)agendarRender(true);},function(){});
     }
     if(S.uid){db.doc("data/users/"+S.uid+"/marcados").get().then(function(s){var d=s.exists?s.data():null;if(d&&d.marcas){var ch=false;for(var k in d.marcas)if(!S.marks[k]){S.marks[k]=d.marcas[k];ch=true;}if(ch){lsSet("ap-mk-"+EMP,JSON.stringify(S.marks));render();}}}).catch(function(){});}
     if(S.uid&&!S.myDiscs.length){
