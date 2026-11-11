@@ -8764,7 +8764,26 @@
   "vinculosReleituraEm": "2026-11-09T19:48:54.476Z",
   "vinculosVerificadosEm": "2026-11-11T09:59:24.000Z"
  },
- "geradoEm": "2026-11-11T10:28:49+00:00",
+ "geradoEm": "2026-11-11T12:10:02+00:00",
+ "plano_historico": {
+  "2026-10-28": {
+   "arquivo": "DUAR - Cronograma - R00.pdf",
+   "comparacao": {
+    "datasAlteradas": [],
+    "impactoTermino": null,
+    "novas": [],
+    "removidas": [],
+    "resumo": "Primeira versão processada; sem comparação.",
+    "versaoAnterior": null
+   },
+   "data": "2026-10-28",
+   "etapas": 76,
+   "inicioProjeto": "2026-08-25",
+   "revisao": "R00",
+   "semanas": 90,
+   "terminoProjeto": "2028-05-11"
+  }
+ },
  "plano_semanal": {
   "2026-S35": {
    "alertas": [],
