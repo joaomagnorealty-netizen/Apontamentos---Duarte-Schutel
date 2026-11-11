@@ -8764,7 +8764,7 @@
   "vinculosReleituraEm": "2026-11-09T19:48:54.476Z",
   "vinculosVerificadosEm": "2026-11-11T09:59:24.000Z"
  },
- "geradoEm": "2026-11-11T12:10:02+00:00",
+ "geradoEm": "2026-11-11T19:29:11+00:00",
  "plano_historico": {
   "2026-10-28": {
    "arquivo": "DUAR - Cronograma - R00.pdf",
@@ -10686,6 +10686,27 @@
      "ate": "2026-11-04",
      "em": "2026-11-03T20:46:56.528Z",
      "por": "Editor"
+    }
+   ]
+  },
+  "5862": {
+   "numero": 5862,
+   "revisao": {
+    "ate": "2026-11-12",
+    "desde": "2026-11-11",
+    "em": "2026-11-11T18:51:37.137Z",
+    "motivo": "",
+    "por": "Editor",
+    "porId": "48f78469-9ca7-44a6-bb58-033dfcd6aa24"
+   },
+   "revisaoHist": [
+    {
+     "acao": "adiou",
+     "ate": "2026-11-12",
+     "em": "2026-11-11T18:51:37.566309+00:00",
+     "motivo": "",
+     "por": "Editor",
+     "porId": "48f78469-9ca7-44a6-bb58-033dfcd6aa24"
     }
    ]
   }
