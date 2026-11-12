@@ -302,15 +302,16 @@
    "acoes": [
     {
      "disciplinas": [
-      "ARQ"
+      "HID"
      ],
-     "texto": "ARQ avaliar a viabilidade do recuo para o caminhão de coleta"
+     "texto": "HID acompanhar o cálculo e o processo do depósito de lixo e o pedido de dispensa do recuo"
     }
    ],
    "acompanhar": [
+    "ARQ",
     "MAG"
    ],
-   "analiseEm": "2026-10-07",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Dimensionamento Contentores de lixo",
@@ -340,7 +341,18 @@
    ],
    "categoria": "Definição",
    "chave": [],
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3081998,
+     "t": "Conforme reunião - \nCalculo  feito pela A/S, processo também.\nFoi pedido a não necessidade de recuo.",
+     "v": []
+    }
+   ],
    "complexidade": "media",
    "complexidadeMotivo": "",
    "complexidadeOrigem": "análise",
@@ -348,8 +360,7 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-15",
    "direcionadas": [
-    "HID",
-    "ARQ"
+    "HID"
    ],
    "disciplinas": [
     {
@@ -362,7 +373,7 @@
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "MAG",
@@ -378,21 +389,22 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 1436,
-   "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
+   "observacao": "Em 11/11 a ARQ informou que, conforme reunião, o cálculo e o processo ficam com a A/S e foi pedida a dispensa do recuo para o caminhão de coleta. A ARQ passou a acompanhar; falta a HID dar andamento.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-30",
    "prioridade": "Média",
    "proximas": [
-    "HID",
-    "ARQ"
+    "HID"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "11/11 Definido em reunião: cálculo e processo com a A/S e pedido de dispensa do recuo"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
    "titulo": "DEPÓSITO DE LIXO",
-   "ultimoComentario": "2026-09-15"
+   "ultimoComentario": "2026-11-11"
   },
   "1491": {
    "acoes": [
@@ -410,7 +422,7 @@
     }
    ],
    "acompanhar": [],
-   "analiseEm": "2026-10-06",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Dimensionamento da central de GLP - aquecimento central",
@@ -455,6 +467,16 @@
      "id": 2906276,
      "t": "Seguiremos com a viabilidade de GN",
      "v": []
+    },
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3082091,
+     "t": "aguardando o retorno da viabilidade",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -477,9 +499,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "MAG",
@@ -495,31 +517,36 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 1491,
-   "observacao": "A Magno decidiu em 22/09 seguir com a viabilidade de gás natural (GN). O dimensionamento da central de GLP depende do retorno dessa viabilidade (ver #7356).",
+   "observacao": "A Magno decidiu em 22/09 seguir com a viabilidade de gás natural (GN) e, em 11/11, a ARQ informou que aguarda o retorno dessa viabilidade. O dimensionamento da central de GLP depende desse retorno (ver #7356).",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-11-06",
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ",
     "COORD"
    ],
    "realizadas": [
-    "22/09 MAG decidiu seguir com a viabilidade de GN"
+    "22/09 MAG decidiu seguir com a viabilidade de GN",
+    "11/11 ARQ informou que aguarda o retorno da viabilidade de GN"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
    "statusAuto": [
     {
      "c": "MAG",
      "em": "2026-10-07T13:53:28.725Z",
      "resposta": "2026-09-22"
+    },
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
     }
    ],
    "titulo": "DIMENSIONAMENTO E POSIÇÃO DA CENTRAL DE GLP",
-   "ultimoComentario": "2026-10-07"
+   "ultimoComentario": "2026-11-12"
   },
   "1775": {
    "acoes": [
@@ -531,13 +558,20 @@
     },
     {
      "disciplinas": [
+      "MAG",
       "ARQ"
      ],
-     "texto": "ARQ validar a quantidade de pontos de gás nas áreas comuns, considerando os estudos do 4º pavimento e da cobertura"
+     "texto": "MAG / ARQ definir em reunião o local do aquecedor nos apartamentos"
+    },
+    {
+     "disciplinas": [
+      "ARQ"
+     ],
+     "texto": "ARQ concluir o layout das áreas comuns e confirmar os pontos de gás"
     }
    ],
    "acompanhar": [],
-   "analiseEm": "2026-10-07",
+   "analiseEm": "2026-11-12",
    "anexos": [],
    "categoria": "Definição",
    "chave": [],
@@ -558,6 +592,16 @@
      ],
      "id": 2957526,
      "t": "Prever ponto de gás para a sala comercial, tendo em vista que poderá ser utilizado para ponto de alimentação média.\n\nSolicitamos que sejam feitos os cálculos de demanda considerando os aquecedores de passagem dos apartamentos.\n\nReferente as áreas comuns, estas podem sofrer alterações posteriormente com o estudo da nova área comum no 4° andar e modificação da área comum na cobertura. A princípio, podemos manter como foi proposto.",
+     "v": []
+    },
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3076508,
+     "t": "Estudo das áreas comuns em andamento - layout em definição\n\nIncluir como pauta de reunião discussão sobre o local do aquecedor nos apartamentos.",
      "v": []
     }
    ],
@@ -581,9 +625,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "MAG",
@@ -599,31 +643,36 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 1775,
-   "observacao": "Em 07/10 a Magno respondeu: prever ponto de gás na sala comercial, calcular a demanda com aquecedores de passagem nos apartamentos e manter por ora a proposta das áreas comuns, que pode mudar com os estudos do 4º pavimento e da cobertura. Falta a Arquitetura se manifestar e o PCI incorporar.",
+   "observacao": "Em 07/10 a Magno definiu ponto de gás na sala comercial e cálculo de demanda com aquecedores de passagem nos apartamentos. Em 11/11 a ARQ informou que o layout das áreas comuns ainda está em definição e pediu incluir na pauta de reunião o local do aquecedor nos apartamentos. Falta o PCI incorporar.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-23",
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ",
     "COORD"
    ],
    "realizadas": [
-    "07/10 MAG definiu ponto de gás na sala comercial, demanda com aquecedores de passagem e manutenção da proposta das áreas comuns"
+    "07/10 MAG definiu ponto de gás na sala comercial, demanda com aquecedores de passagem e manutenção da proposta das áreas comuns",
+    "11/11 ARQ informou estudo das áreas comuns em andamento e pediu pauta sobre o local do aquecedor nos aptos"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
    "statusAuto": [
     {
      "c": "MAG",
      "em": "2026-10-07",
      "resposta": "2026-10-07"
+    },
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
     }
    ],
    "titulo": "PONTOS DE CONSUMO DE GÁS",
-   "ultimoComentario": "2026-10-07"
+   "ultimoComentario": "2026-11-12"
   },
   "1875": {
    "acoes": [
@@ -1182,9 +1231,9 @@
    "acoes": [
     {
      "disciplinas": [
-      "ARQ"
+      "HID"
      ],
-     "texto": "ARQ validar a nomenclatura de apartamentos indicada na Figura 01 (a MAG já validou em 07/10)"
+     "texto": "HID adotar a numeração de blocos e apartamentos definida (Figura 01)"
     }
    ],
    "acompanhar": [
@@ -1196,7 +1245,7 @@
     "TEL",
     "INT"
    ],
-   "analiseEm": "2026-10-14",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Planta baixa do pavimento tipo identificando numeração de aptos.",
@@ -1216,6 +1265,16 @@
      "id": 2957540,
      "t": "Podemos manter a nomenclatura de acordo com o proposto pela ARQ.",
      "v": []
+    },
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3076541,
+     "t": "ARQ está ok",
+     "v": []
     }
    ],
    "complexidade": "baixa",
@@ -1232,9 +1291,9 @@
    "disciplinas": [
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "CLI",
@@ -1298,30 +1357,36 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 2140,
-   "observacao": "Em 07/10 a Magno validou a nomenclatura dos apartamentos proposta pela Arquitetura. Falta a Arquitetura validar; as demais disciplinas só acompanham e adotam a numeração definida.",
+   "observacao": "A Magno (07/10) e a ARQ (11/11) validaram a nomenclatura dos apartamentos proposta. Falta a HID adotar a numeração definida e a Coordenação validar a resposta da ARQ.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-23",
    "prioridade": "Média",
    "proximas": [
-    "ARQ",
-    "HID"
+    "HID",
+    "COORD"
    ],
    "realizadas": [
-    "07/10 MAG validou a nomenclatura proposta pela ARQ"
+    "07/10 MAG validou a nomenclatura proposta pela ARQ",
+    "11/11 ARQ validou a nomenclatura"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
    "statusAuto": [
     {
      "c": "MAG",
      "em": "2026-10-07",
      "resposta": "2026-10-07"
+    },
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
     }
    ],
    "titulo": "NUMERAÇÃO DE BLOCOS E APARTAMENTOS",
-   "ultimoComentario": "2026-10-07"
+   "ultimoComentario": "2026-11-12"
   },
   "2323": {
    "acoes": [
@@ -1329,13 +1394,19 @@
      "disciplinas": [
       "ARQ"
      ],
-     "texto": "ARQ prever bate-rodas de concreto nas vagas indicadas, se necessário (Figuras 02 e 03)"
+     "texto": "ARQ indicar os bate-rodas nas vagas no momento adequado do projeto (Figuras 02 e 03)"
+    },
+    {
+     "disciplinas": [
+      "PCI"
+     ],
+     "texto": "PCI conferir a proteção contra queda de veículos com bate-rodas"
     }
    ],
    "acompanhar": [
     "MAG"
    ],
-   "analiseEm": "2026-10-07",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Bate roda de concreto",
@@ -1355,7 +1426,18 @@
    ],
    "categoria": "Definição",
    "chave": [],
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3081923,
+     "t": "Definido em reunião que será bate rodas, ao invés de viga invertida. Será absorvido, ou indicado no momento correto do projeto.",
+     "v": []
+    }
+   ],
    "complexidade": "baixa",
    "complexidadeMotivo": "",
    "complexidadeOrigem": "análise",
@@ -1375,9 +1457,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "MAG",
@@ -1393,21 +1475,30 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 2323,
-   "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
+   "observacao": "Em 11/11 a ARQ informou que ficou definido em reunião usar bate-rodas no lugar de viga invertida, a ser indicado no momento adequado do projeto. Falta o PCI conferir a solução.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-23",
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ"
+    "COORD"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "11/11 Definido em reunião bate-rodas no lugar de viga invertida"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "PROTEÇÃO CONTRA QUEDAS DE VEÍCULOS",
-   "ultimoComentario": "2026-09-14"
+   "ultimoComentario": "2026-11-12"
   },
   "2479": {
    "acoes": [
@@ -1611,19 +1702,25 @@
      "disciplinas": [
       "ARQ"
      ],
-     "texto": "ARQ locar a área técnica de insuflamento abaixo do térreo, próxima à escada, com tomada de ar no térreo"
+     "texto": "ARQ concluir a revisão completa da escada, com a área técnica de insuflamento abaixo do térreo e tomada de ar no térreo"
     },
     {
      "disciplinas": [
       "PEP"
      ],
      "texto": "PEP considerar o duto de pressurização terminando no barrilete (Figura 05)"
+    },
+    {
+     "disciplinas": [
+      "MAG"
+     ],
+     "texto": "MAG validar a solução da escada pressurizada"
     }
    ],
    "acompanhar": [
     "CLI"
    ],
-   "analiseEm": "2026-10-06",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Sugestão da captação de ar no 1° pavimento e encaminhamento dos dutos",
@@ -1666,6 +1763,16 @@
      "id": 2940392,
      "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nValidado pela @Vanessa Lenhart | CLI que a área técnica de insuflamento não precisa necessariamente estar prevista na fachada, mas a tomada de ar sempre precisa ser prevista no térreo.\nNesse caso, a área técnica pode ser locada em qualquer pavimento abaixo do térreo, de preferência o mais próximo possível do corpo da escada, para evitar perda de área por conta do duto de pressurização.\nO duto de pressurização não precisa subir até a cobertura, como acontece em escadas enclausuradas ventiladas. O sistema termina na área técnica do barrilete, conforme FIGURA 05 do pavimento.",
      "v": []
+    },
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3082083,
+     "t": "Escada em revisão completa devido a todos os apontamentos relacionado",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -1682,9 +1789,9 @@
    "disciplinas": [
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "PEP",
@@ -1712,24 +1819,32 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 2612,
-   "observacao": "A CLI validou em 01/10 que a área técnica de insuflamento pode ficar abaixo do térreo, perto da escada, com tomada de ar no térreo, e o duto termina no barrilete.",
+   "observacao": "A CLI validou em 01/10 a área técnica de insuflamento abaixo do térreo, perto da escada, com tomada de ar no térreo. Em 11/11 a ARQ informou que a escada está em revisão completa por causa dos apontamentos relacionados; falta a PEP e a MAG darem andamento.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-30",
    "prioridade": "Média",
    "proximas": [
-    "ARQ",
     "PEP",
-    "MAG"
+    "MAG",
+    "COORD"
    ],
    "realizadas": [
-    "01/10 CLI validou a área técnica de insuflamento abaixo do térreo"
+    "01/10 CLI validou a área técnica de insuflamento abaixo do térreo",
+    "11/11 ARQ iniciou revisão completa da escada"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "ESCADA PRESSURIZADA",
-   "ultimoComentario": "2026-10-01"
+   "ultimoComentario": "2026-11-12"
   },
   "2697": {
    "acoes": [
@@ -1739,10 +1854,16 @@
       "MAG"
      ],
      "texto": "ARQ / MAG ajustar a porta de acesso à escada nos subsolos -03 e -02 ou indicar a previsão de sprinklers para aumentar o caminhamento máximo"
+    },
+    {
+     "disciplinas": [
+      "PCI"
+     ],
+     "texto": "PCI conferir o caminhamento máximo após a revisão da escada"
     }
    ],
    "acompanhar": [],
-   "analiseEm": "2026-10-07",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Tabela das Distância máximas permitidas",
@@ -1757,7 +1878,18 @@
    ],
    "categoria": "Definição",
    "chave": [],
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3082106,
+     "t": "Escada em revisão completa devido a todos os apontamentos relacionado",
+     "v": []
+    }
+   ],
    "complexidade": "media",
    "complexidadeMotivo": "",
    "complexidadeOrigem": "análise",
@@ -1778,9 +1910,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "MAG",
@@ -1796,22 +1928,31 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 2697,
-   "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
+   "observacao": "Em 11/11 a ARQ informou que a escada está em revisão completa por causa dos apontamentos relacionados. Falta a MAG definir o ajuste da porta de acesso nos subsolos -03 e -02 ou a previsão de sprinklers, e o PCI conferir.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-11-06",
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ",
-    "MAG"
+    "MAG",
+    "COORD"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "11/11 ARQ iniciou revisão completa da escada"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "DISTÂNCIAS MÁXIMAS",
-   "ultimoComentario": "2026-09-14"
+   "ultimoComentario": "2026-11-12"
   },
   "2891": {
    "acoes": [
@@ -2072,19 +2213,19 @@
    "acoes": [
     {
      "disciplinas": [
-      "ARQ"
+      "PCI"
      ],
-     "texto": "ARQ prever enchimento de cerca de 8 cm nas paredes da escada com instalações (Figuras 01 e 02)"
+     "texto": "PCI validar a composição da parede da escada com enchimento ou bloco extra"
     },
     {
      "disciplinas": [
-      "PCI"
+      "ARQ"
      ],
-     "texto": "PCI conferir o enchimento previsto pela arquitetura"
+     "texto": "ARQ manter o enchimento em todas as paredes com instalação hidráulica junto à escada"
     }
    ],
    "acompanhar": [],
-   "analiseEm": "2026-10-06",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Parede com instalação hidrossanitária – Garden e Pavimento Tipo (x24)",
@@ -2099,7 +2240,18 @@
    ],
    "categoria": "Definição",
    "chave": [],
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3081931,
+     "t": "Por favor validar a composição da parede da escada. Na arquitetura já foi sugerido enchimento. *não é perceptível no pdf atual, pois estamos com modelo de EP. Vide imagem abaixo.\n\nDeixar o apontamento ativo, como registro. Todas as paredes com instalação hidráulica coladas na escada devem ter um enchimento ou bloco extra.",
+     "v": []
+    }
+   ],
    "complexidade": "baixa",
    "complexidadeMotivo": "",
    "complexidadeOrigem": "análise",
@@ -2119,9 +2271,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     }
    ],
    "etapaAlertas": [],
@@ -2131,21 +2283,30 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 3264,
-   "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
+   "observacao": "Em 11/11 a ARQ informou que já sugeriu enchimento nas paredes da escada (ainda não visível no PDF do EP) e pediu validar a composição da parede. O apontamento fica ativo como registro: toda parede com instalação hidráulica junto à escada terá enchimento ou bloco extra.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-23",
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ"
+    "COORD"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "11/11 ARQ previu enchimento nas paredes da escada com instalações"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "INSTALAÇÕES NAS PAREDES DA ESCADA",
-   "ultimoComentario": "2026-09-14"
+   "ultimoComentario": "2026-11-12"
   },
   "3426": {
    "acoes": [
@@ -2156,7 +2317,9 @@
      "texto": "ARQ atender aos itens das escadas apontados e manter a conferência em todas as etapas (Figuras 01 a 03)"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ARQ"
+   ],
    "analiseEm": "2026-10-07",
    "anexos": [
     {
@@ -2185,8 +2348,7 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-14",
    "direcionadas": [
-    "PCI",
-    "ARQ"
+    "PCI"
    ],
    "disciplinas": [
     {
@@ -2199,7 +2361,7 @@
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     }
    ],
    "etapaAlertas": [],
@@ -2215,12 +2377,11 @@
    "prazoMeta": "2026-10-23",
    "prioridade": "Média",
    "proximas": [
-    "PCI",
-    "ARQ"
+    "PCI"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
    "titulo": "CARACTERÍSTICAS DAS ESCADAS",
    "ultimoComentario": "2026-09-14"
@@ -2947,19 +3108,13 @@
    "acoes": [
     {
      "disciplinas": [
-      "ARQ"
-     ],
-     "texto": "ARQ especificar o corrimão conforme a definição da Construtora"
-    },
-    {
-     "disciplinas": [
       "PCI"
      ],
      "texto": "PCI verificar o atendimento normativo do corrimão especificado"
     }
    ],
    "acompanhar": [],
-   "analiseEm": "2026-10-06",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Detalhe corrimão",
@@ -2984,6 +3139,16 @@
      "id": 2937857,
      "t": "Considerar corrimão de madeira em verniz e com suporte em alumínio na cor preto.",
      "v": []
+    },
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3081964,
+     "t": "OK",
+     "v": []
     }
    ],
    "complexidade": "baixa",
@@ -3005,9 +3170,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     }
    ],
    "etapaAlertas": [],
@@ -3017,23 +3182,31 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4252,
-   "observacao": "A Construtora definiu em 01/10 corrimão de madeira em verniz com suporte em alumínio preto.",
+   "observacao": "A Construtora definiu em 01/10 corrimão de madeira em verniz com suporte em alumínio preto, e a ARQ confirmou em 11/11. Falta o PCI verificar o atendimento normativo.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-23",
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ"
+    "COORD"
    ],
    "realizadas": [
-    "01/10 MAG definiu corrimão de madeira em verniz com suporte em alumínio preto"
+    "01/10 MAG definiu corrimão de madeira em verniz com suporte em alumínio preto",
+    "11/11 ARQ confirmou o corrimão definido"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "CORRIMÃO",
-   "ultimoComentario": "2026-10-01"
+   "ultimoComentario": "2026-11-12"
   },
   "4308": {
    "acoes": [
@@ -3375,13 +3548,13 @@
    "acoes": [
     {
      "disciplinas": [
-      "ARQ"
+      "PCI"
      ],
-     "texto": "ARQ prever os guarda-corpos conforme indicado no apontamento (Figuras 01 a 07)"
+     "texto": "PCI conferir os guarda-corpos previstos pela ARQ (Figuras 01 a 07)"
     }
    ],
    "acompanhar": [],
-   "analiseEm": "2026-10-07",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Prever guarda-corpo ou parede contínua no vão da escada",
@@ -3421,7 +3594,18 @@
    ],
    "categoria": "Definição",
    "chave": [],
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3081974,
+     "t": "Ok",
+     "v": []
+    }
+   ],
    "complexidade": "baixa",
    "complexidadeMotivo": "",
    "complexidadeOrigem": "análise",
@@ -3441,9 +3625,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     }
    ],
    "etapaAlertas": [],
@@ -3453,21 +3637,30 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4532,
-   "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
+   "observacao": "Em 11/11 a ARQ concordou com os guarda-corpos indicados no apontamento. Falta o PCI conferir.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-23",
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ"
+    "COORD"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "11/11 ARQ concordou com os guarda-corpos indicados"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "GUARDA-CORPOS E GUARDA-CORPOS DE VIDRO",
-   "ultimoComentario": "2026-09-14"
+   "ultimoComentario": "2026-11-12"
   },
   "4549": {
    "acoes": [
@@ -3612,14 +3805,25 @@
    "acoes": [
     {
      "disciplinas": [
-      "ARQ",
       "MAG"
      ],
-     "texto": "ARQ / MAG definir se o mezanino terá acesso ao público e prever os ajustes na escada (Figura 01)"
+     "texto": "MAG definir em reunião se o comércio fica só no térreo ou se o mezanino terá plataforma elevatória"
+    },
+    {
+     "disciplinas": [
+      "ARQ"
+     ],
+     "texto": "ARQ ajustar a escada e o mezanino conforme a decisão (Figura 01)"
+    },
+    {
+     "disciplinas": [
+      "PCI"
+     ],
+     "texto": "PCI conferir a escada do mezanino após a definição"
     }
    ],
    "acompanhar": [],
-   "analiseEm": "2026-10-07",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Ajuste degrau escada acesso ao mezanino da sala comercial",
@@ -3629,7 +3833,18 @@
    ],
    "categoria": "Definição",
    "chave": [],
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3082122,
+     "t": "A prefeitura já se pronunciou sobre o mezanino. Para a analista ele deveria ser acessível.\nPortanto devemos incluir plataforma elevatória.\n\nA MAGNO demonstrou interesse na possibilidade de fazer o comércio apenas no térreo - validar em reunião",
+     "v": []
+    }
+   ],
    "complexidade": "media",
    "complexidadeMotivo": "",
    "complexidadeOrigem": "análise",
@@ -3650,9 +3865,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "MAG",
@@ -3668,22 +3883,31 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4562,
-   "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
+   "observacao": "Em 11/11 a ARQ informou que a prefeitura considera que o mezanino deve ser acessível, o que exige plataforma elevatória, e que a Magno avalia fazer o comércio apenas no térreo, a validar em reunião. Falta a MAG decidir e o PCI conferir a escada.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-11-06",
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ",
-    "MAG"
+    "MAG",
+    "COORD"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "11/11 ARQ informou que a prefeitura exige acessibilidade no mezanino (plataforma elevatória)"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "ESCADA MEZANINO",
-   "ultimoComentario": "2026-09-14"
+   "ultimoComentario": "2026-11-12"
   },
   "4707": {
    "acoes": [
@@ -4333,19 +4557,19 @@
    "acoes": [
     {
      "disciplinas": [
-      "ARQ"
+      "PCI"
      ],
-     "texto": "ARQ prever barreira física no entorno da piscina descoberta da cobertura (Figuras 01 e 02)"
+     "texto": "PCI responder se a tela no vazio é necessária quando há guarda-corpo e conferir ralos de sucção, tampas e botoeira exigidos pela IN33"
     },
     {
      "disciplinas": [
-      "PCI"
+      "ARQ"
      ],
-     "texto": "PCI conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33"
+     "texto": "ARQ concluir o layout da piscina com a barreira física"
     }
    ],
    "acompanhar": [],
-   "analiseEm": "2026-10-06",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Sugestão posicionamento barreira física",
@@ -4360,7 +4584,18 @@
    ],
    "categoria": "Definição",
    "chave": [],
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3081989,
+     "t": "Layout da piscina em definição. \nTeremos barreira física com controle de acesso.\n\nNo caso de vazio, existe a necessidade da tela quando temos guarda corpo? Ela pode dificultar eventual manutenção daquela fachada.",
+     "v": []
+    }
+   ],
    "complexidade": "baixa",
    "complexidadeMotivo": "",
    "complexidadeOrigem": "análise",
@@ -4380,9 +4615,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     }
    ],
    "etapaAlertas": [],
@@ -4392,21 +4627,30 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 4923,
-   "observacao": "Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.",
+   "observacao": "Em 11/11 a ARQ informou que o layout da piscina está em definição e que haverá barreira física com controle de acesso. A ARQ perguntou se a tela no vazio é necessária quando há guarda-corpo, pois dificulta a manutenção da fachada; falta o PCI responder.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-23",
    "prioridade": "Média",
    "proximas": [
     "PCI",
-    "ARQ"
+    "COORD"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "11/11 ARQ definiu barreira física com controle de acesso na piscina"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "PISCINAS E ÁREA DE BANHO",
-   "ultimoComentario": "2026-09-14"
+   "ultimoComentario": "2026-11-12"
   },
   "5335": {
    "acoes": [
@@ -4673,7 +4917,9 @@
      "texto": "ARQ acompanhar as definições da MAG"
     }
    ],
-   "acompanhar": [],
+   "acompanhar": [
+    "ARQ"
+   ],
    "analiseEm": "2026-10-07",
    "anexos": [
     {
@@ -4694,7 +4940,6 @@
    "criadoPor": [],
    "dataCriacao": "2026-09-14",
    "direcionadas": [
-    "ARQ",
     "PCI",
     "SPK",
     "MAG"
@@ -4704,7 +4949,7 @@
      "c": "ARQ",
      "concluidoEm": null,
      "prazo": null,
-     "status": "todo"
+     "status": "follow"
     },
     {
      "c": "PCI",
@@ -4740,14 +4985,13 @@
    "prazoMeta": "2026-10-30",
    "prioridade": "Alta",
    "proximas": [
-    "ARQ",
     "PCI",
     "SPK",
     "MAG"
    ],
    "realizadas": [],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
    "titulo": "DEFINIÇÕES CHUVEIROS AUTOMÁTICOS",
    "ultimoComentario": "2026-09-14"
@@ -5271,6 +5515,20 @@
       "MAG"
      ],
      "texto": "MAG (Renato) confirmar com o Luiz a definição de uso e se a loja poderá ser subdividida"
+    },
+    {
+     "disciplinas": [
+      "MAG",
+      "ARQ"
+     ],
+     "texto": "MAG / ARQ validar em reunião a saída pela cobertura ou pela fachada"
+    },
+    {
+     "disciplinas": [
+      "HID",
+      "INT"
+     ],
+     "texto": "HID / INT prever as infraestruturas das lojas após as definições"
     }
    ],
    "acompanhar": [
@@ -5279,7 +5537,7 @@
     "TEL",
     "CLI"
    ],
-   "analiseEm": "2026-10-09",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Localização da loja no 1º pavimento.",
@@ -5301,6 +5559,16 @@
      "ds": [],
      "id": 2940325,
      "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\nAinda não foi definido o uso da loja comercial, nem se será mantido apenas 1 loja ou se poderá ser subdividida depois. Caso seja dividida, @André da Rosa Selhorst repassou que possivelmente deverá ser previsto no pós Habite-se.\n@Renato Lopez irá validar com o Luiz a definição de uso. André complementou que, para o produto de arquitetura, seria interessante prever um café.",
+     "v": []
+    },
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3082136,
+     "t": "Validar a saída pela cobertura ou pela fachada. Verificar em reunião",
      "v": []
     }
    ],
@@ -5343,9 +5611,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "CLI",
@@ -5373,25 +5641,33 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 6715,
-   "observacao": "Na reunião de 01/10 ficou pendente a definição de uso da loja e se ela poderá ser subdividida depois. Em 06/10 a Magno informou que vai operar a loja (ver #1274); falta a MAG confirmar com o Luiz a definição de uso e a possibilidade de subdivisão.",
+   "observacao": "Em 06/10 a Magno informou que vai operar a loja (ver #1274); falta confirmar com o Luiz a definição de uso e a possibilidade de subdivisão. Em 11/11 a ARQ pediu validar em reunião a saída pela cobertura ou pela fachada; HID e INT aguardam essas definições.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-11-06",
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ARQ",
     "INT",
-    "MAG"
+    "MAG",
+    "COORD"
    ],
    "realizadas": [
-    "06/10 Magno informou que vai operar a loja (ver #1274)"
+    "06/10 Magno informou que vai operar a loja (ver #1274)",
+    "11/11 ARQ pediu validar em reunião a saída pela cobertura ou pela fachada"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "INFRAS DAS LOJAS/SALAS COMERCIAIS",
-   "ultimoComentario": "2026-10-01"
+   "ultimoComentario": "2026-11-12"
   },
   "6984": {
    "acoes": [
@@ -6036,14 +6312,31 @@
       "ARQ"
      ],
      "texto": "ARQ manter a conferência da largura de circulação e corredores em todas as etapas do projeto"
+    },
+    {
+     "disciplinas": [
+      "PCI"
+     ],
+     "texto": "PCI conferir a largura de circulação e corredores"
     }
    ],
    "acompanhar": [],
-   "analiseEm": "2026-10-09",
+   "analiseEm": "2026-11-12",
    "anexos": [],
    "categoria": "Definição",
    "chave": [],
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3082036,
+     "t": "OK",
+     "v": []
+    }
+   ],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
    "construflowId": 1746130,
@@ -6062,9 +6355,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     }
    ],
    "etapaAlertas": [],
@@ -6074,21 +6367,30 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 7614,
-   "observacao": "Sem comentários na Construflow. Item de conferência contínua: a ARQ deve manter a largura de circulação e corredores em todas as etapas do projeto.",
+   "observacao": "Item de conferência contínua, confirmado pela ARQ em 11/11: a largura de circulação e corredores deve ser mantida em todas as etapas. Falta o PCI conferir.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-30",
    "prioridade": "Baixa",
    "proximas": [
     "PCI",
-    "ARQ"
+    "COORD"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "11/11 ARQ confirmou a conferência"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "LARGURA CIRCULAÇÃO E CORREDORES",
-   "ultimoComentario": "2026-09-14"
+   "ultimoComentario": "2026-11-12"
   },
   "7618": {
    "acoes": [
@@ -6156,9 +6458,7 @@
    "etapaConferencia": null,
    "etapaOrigem": "etiqueta",
    "etapaResolucao": "AP",
-   "etiquetas": [
-    117648
-   ],
+   "etiquetas": [],
    "fonte": "Construflow",
    "numero": 7618,
    "observacao": "Alinhado na reunião de 01/10 entre Magno e Methafora retirar o elevador de emergência dos subsolos, por causa da pressurização da escada (ver #1049). Falta a ARQ ajustar o projeto; etiqueta indica resolução no AP.",
@@ -6175,7 +6475,7 @@
     "01/10 Alinhada a retirada do elevador de emergência dos subsolos"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
    "titulo": "ELEVADOR DE EMERGÊNCIA",
    "ultimoComentario": "2026-10-01"
@@ -6236,9 +6536,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-11",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "MAG",
@@ -6268,23 +6568,29 @@
     "22/09 MAG definiu a passagem da tubulação de gás pelo vão da porta (Figura 01)"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
    "titulo": "CAMINHAMENTO DE GÁS - REDE SECUNDÁRIA",
-   "ultimoComentario": "2026-10-07"
+   "ultimoComentario": "2026-11-11"
   },
   "7738": {
    "acoes": [
     {
      "disciplinas": [
-      "MAG",
-      "ARQ"
+      "MAG"
      ],
-     "texto": "MAG / ARQ validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)"
+     "texto": "MAG validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)"
+    },
+    {
+     "disciplinas": [
+      "ELT",
+      "TEL"
+     ],
+     "texto": "ELT / TEL ajustar os quadros das unidades 03, 04 e 05 para a divisa do apartamento, conforme pedido da ARQ"
     }
    ],
    "acompanhar": [],
-   "analiseEm": "2026-10-09",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Posição para QDC (ELT) e VDI (TEL) para a unidade X01",
@@ -6319,7 +6625,18 @@
    ],
    "categoria": "Definição",
    "chave": [],
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-09-30",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 2934318,
+     "t": "Unidades 03, 04 e 05 deviam seguir o mesmo critério. Preferimos na divisa do apto é melhor para não atrapalhar alterações futuras",
+     "v": []
+    }
+   ],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
    "construflowId": 1746018,
@@ -6340,9 +6657,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "TEL",
@@ -6364,23 +6681,32 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 7738,
-   "observacao": "Sem comentários na Construflow. Aguardando MAG e ARQ validarem as posições sugeridas para os quadros de distribuição elétrica e VDI nas unidades privativas (Figuras 01 a 06).",
+   "observacao": "Em 30/09 (comentário revisado em 11/11) a ARQ respondeu que as unidades 03, 04 e 05 devem seguir o mesmo critério, com os quadros na divisa do apartamento para não atrapalhar alterações futuras. Falta a MAG validar as posições e ELT/TEL ajustarem os quadros; a Coordenação valida a resposta da ARQ.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-11-06",
    "prioridade": "Média",
    "proximas": [
     "ELT",
-    "ARQ",
     "TEL",
-    "MAG"
+    "MAG",
+    "COORD"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "30/09 ARQ pediu o mesmo critério nas unidades 03, 04 e 05, com quadros na divisa do apto"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.155Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-09-30"
+    }
+   ],
    "titulo": "DEFINIÇÃO DA POSIÇÃO DOS QUADROS DE DISTRIBUIÇÃO ELÉTRICA E VDI NAS UNIDADES PRIVATIVAS",
-   "ultimoComentario": "2026-09-14"
+   "ultimoComentario": "2026-11-12"
   },
   "8197": {
    "acoes": [
@@ -6798,9 +7124,15 @@
    "acoes": [
     {
      "disciplinas": [
-      "ARQ"
+      "MAG"
      ],
-     "texto": "ARQ avaliar os shafts propostos e retornar no apontamento"
+     "texto": "MAG definir o sistema de ar-condicionado para fechar os shafts da circulação"
+    },
+    {
+     "disciplinas": [
+      "HID"
+     ],
+     "texto": "HID ajustar os shafts da circulação após a definição do ar-condicionado"
     }
    ],
    "acompanhar": [
@@ -6809,7 +7141,7 @@
     "TEL",
     "MAG"
    ],
-   "analiseEm": "2026-10-09",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "",
@@ -6867,6 +7199,16 @@
      "id": 2940328,
      "t": "REUNIÃO 01/10 - APRESENTAÇÃO EP:\n@André da Rosa Selhorst irá avaliar os shafts propostos e retornar no apontamento.",
      "v": []
+    },
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3082047,
+     "t": "Aguardando definição do ar condicionado pela MAGNO",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -6906,9 +7248,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "MAG",
@@ -6924,21 +7266,30 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8478,
-   "observacao": "Na reunião de 01/10 a ARQ ficou de avaliar os shafts propostos na circulação dos pavimentos e retornar no apontamento.",
+   "observacao": "Na reunião de 01/10 a ARQ ficou de avaliar os shafts propostos na circulação. Em 11/11 a ARQ informou que aguarda a definição do ar-condicionado pela Magno; falta a HID dar andamento.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-30",
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ARQ"
+    "COORD"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "11/11 ARQ informou que aguarda a definição do ar-condicionado pela MAG"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "SHAFTS NA CIRCULAÇÃO DOS PAVIMENTOS",
-   "ultimoComentario": "2026-10-01"
+   "ultimoComentario": "2026-11-12"
   },
   "8547": {
    "acoes": [
@@ -6952,11 +7303,17 @@
      "disciplinas": [
       "ARQ"
      ],
-     "texto": "ARQ incorporar as sugestões conforme a opção escolhida pela MAG"
+     "texto": "ARQ concluir o estudo de duto até o teto ou saída pela fachada da loja"
+    },
+    {
+     "disciplinas": [
+      "CLI"
+     ],
+     "texto": "CLI incorporar a opção de renovação de ar escolhida"
     }
    ],
    "acompanhar": [],
-   "analiseEm": "2026-10-09",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Exemplo de insuflador com filtro incorporado para sistemas de renovação de ar. Fonte: Sicflux",
@@ -6966,7 +7323,18 @@
    ],
    "categoria": "Definição",
    "chave": [],
-   "comentarios": [],
+   "comentarios": [
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3082060,
+     "t": "Em estudo da viabilidade de duto até o teto, ou saida pela fachada da loja",
+     "v": []
+    }
+   ],
    "complexidade": "media",
    "complexidadeOrigem": "padrão",
    "construflowId": 1748870,
@@ -6980,9 +7348,9 @@
    "disciplinas": [
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "CLI",
@@ -7004,22 +7372,31 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 8547,
-   "observacao": "Sem comentários na Construflow. Aguardando a MAG validar as sugestões de renovação de ar mecânica, para a ARQ incorporar a opção escolhida.",
+   "observacao": "Em 11/11 a ARQ informou que estuda a viabilidade de duto até o teto ou saída pela fachada da loja. Falta a MAG validar as sugestões e a CLI incorporar a opção escolhida.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-30",
    "prioridade": "Média",
    "proximas": [
-    "ARQ",
     "CLI",
-    "MAG"
+    "MAG",
+    "COORD"
    ],
-   "realizadas": [],
+   "realizadas": [
+    "11/11 ARQ iniciou estudo de duto até o teto ou saída pela fachada da loja"
+   ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "RENOVAÇÃO DE AR MECÂNICA",
-   "ultimoComentario": "2026-09-15"
+   "ultimoComentario": "2026-11-12"
   },
   "8592": {
    "acoes": [
@@ -7768,12 +8145,18 @@
       "EST"
      ],
      "texto": "EST validar o acréscimo do volume de SPK no reservatório superior (ver #2005)"
+    },
+    {
+     "disciplinas": [
+      "HID"
+     ],
+     "texto": "HID confirmar o volume do reservatório superior"
     }
    ],
    "acompanhar": [
     "PCI"
    ],
-   "analiseEm": "2026-10-09",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "",
@@ -7818,6 +8201,16 @@
      "v": [
       2005
      ]
+    },
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3082172,
+     "t": "Volume do reservatório em validação",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -7846,9 +8239,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "EST",
@@ -7870,25 +8263,33 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 9098,
-   "observacao": "Validado com a Magno na reunião de 01/10 manter os acessos superiores do reservatório. Está em avaliação se o volume de SPK ficará junto do reservatório superior (ver #2005).",
+   "observacao": "Validado na reunião de 01/10 manter os acessos superiores do reservatório. Em 11/11 a ARQ informou que o volume do reservatório está em validação, inclusive se o volume de SPK ficará junto (ver #2005).",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-11-06",
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ARQ",
     "EST",
-    "MAG"
+    "MAG",
+    "COORD"
    ],
    "realizadas": [
-    "01/10 Validado manter os acessos superiores"
+    "01/10 Validado manter os acessos superiores",
+    "11/11 ARQ informou volume do reservatório em validação"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "RESERVATÓRIO SUPERIOR",
-   "ultimoComentario": "2026-10-01"
+   "ultimoComentario": "2026-11-12"
   },
   "9151": {
    "acoes": [
@@ -8395,10 +8796,10 @@
    "acoes": [
     {
      "disciplinas": [
-      "ARQ",
-      "MAG"
+      "MAG",
+      "ARQ"
      ],
-     "texto": "ARQ / MAG escolher a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada"
+     "texto": "MAG / ARQ definir em reunião a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada"
     },
     {
      "disciplinas": [
@@ -8417,7 +8818,7 @@
     "PCI",
     "ELT"
    ],
-   "analiseEm": "2026-10-09",
+   "analiseEm": "2026-11-12",
    "anexos": [
     {
      "legenda": "Dimensões dos reservatórios térmicos",
@@ -8453,6 +8854,16 @@
      "id": 2953539,
      "t": "REUNIÃO DE 06/10 - APRESENTAÇÃO EP:\n@Alex  Vieira repassou que foi validado com o Luiz de utilizar aquecedores de passagem nas unidades ao invés de aquecimento central. Ainda, nas unidades com aptos de 3 e 4 quartos deverá ser previsto um sistema de recirculação interna nos apartamentos.\n@Gustavo Neves | PCI repassou que haverá mudança nos shafts de gás, por conta dos medidores que serão maiores do que os previstos atualmente. Nesse caso, será necessário prever shafts espaçados no pavimento tipo para otimizar o sistema utilizando PEX.\nAlex questionou se os dutos do aquecedor poder ser destinados a outro ponto para não saírem nas fachadas. Gustavo retornou que é possível, mas é uma solução mais complexa.\nExistem diversos pontos dificultadores para considerar uma solução diferente da comum com dutos individuais saindo na fachada em cada pavimento. As propostas discutidas foram:\n1. Exaustão coletiva;\n2. Exaustão individual com o aquecedor na sacada sem terminal na fachada;\n3. Exaustão individual em átrio;\n4. Exaustão individual na fachada (padrão e recomendação).\nOs pontos de atenção de cada sugestão foram apresentados em reunião e a arquitetura e construtora ficaram de estudar as possibilidades e indicar qual das soluções gostariam que considerássemos em projeto e, após definição, a Première realizará uma análise detalhada dos ajustes necessários e propostas de solução para viabilizar tal solução.\nCaso seja considerada a saída dos dutos na fachada mesmo, existem duas possibilidades:\n- Terminal previsto abaixo da marquise, mas com 40 a 50cm de afastamento da aba;\n- Terminal previsto em recorte na aba.",
      "v": []
+    },
+    {
+     "a": "André da Rosa Selhorst",
+     "d": "2026-11-11",
+     "ds": [
+      "ARQ"
+     ],
+     "id": 3082074,
+     "t": "Definir em reunião com MAGNO a solução dos aquecedores",
+     "v": []
     }
    ],
    "complexidade": "media",
@@ -8481,9 +8892,9 @@
     },
     {
      "c": "ARQ",
-     "concluidoEm": null,
+     "concluidoEm": "2026-11-12",
      "prazo": null,
-     "status": "todo"
+     "status": "validate"
     },
     {
      "c": "ELT",
@@ -8505,26 +8916,34 @@
    "etiquetas": [],
    "fonte": "Construflow",
    "numero": 9636,
-   "observacao": "Na reunião de 01/10 a HID apontou as limitações do aquecimento central em prédio alto e a ARQ sugeriu boilers por zonas com pavimento técnico. Em 06/10 a Magno definiu aquecedores de passagem individuais, com recirculação interna nos aptos de 3 e 4 quartos; falta ARQ/MAG escolherem a solução de exaustão dos aquecedores.",
+   "observacao": "Em 06/10 a Magno definiu aquecedores de passagem individuais, com recirculação interna nos aptos de 3 e 4 quartos. Em 11/11 a ARQ pediu definir em reunião com a Magno a solução dos aquecedores. Falta definir a exaustão, a HID prever a recirculação e o PCI revisar os shafts de gás.",
    "prazo": null,
    "prazoConstruflow": null,
    "prazoMeta": "2026-10-30",
    "prioridade": "Média",
    "proximas": [
     "HID",
-    "ARQ",
-    "MAG"
+    "MAG",
+    "COORD"
    ],
    "realizadas": [
     "01/10 HID apontou as limitações do aquecimento central; ARQ sugeriu boilers por zonas com pavimento técnico",
     "06/10 Definido aquecedor de passagem individual no lugar do aquecimento central",
-    "06/10 Definida recirculação interna nos aptos de 3 e 4 quartos"
+    "06/10 Definida recirculação interna nos aptos de 3 e 4 quartos",
+    "11/11 ARQ pediu definir em reunião a solução dos aquecedores"
    ],
    "respondidas": {},
-   "sincronizadoEm": "2026-11-09T19:47:59.156Z",
+   "sincronizadoEm": "2026-11-12T10:01:58.000Z",
    "status": "aberto",
+   "statusAuto": [
+    {
+     "c": "ARQ",
+     "em": "2026-11-12",
+     "resposta": "2026-11-11"
+    }
+   ],
    "titulo": "SISTEMA DE AQUECIMENTO CENTRAL",
-   "ultimoComentario": "2026-10-06"
+   "ultimoComentario": "2026-11-12"
   },
   "9899": {
    "acoes": [
@@ -8617,7 +9036,7 @@
     "121092": "PE",
     "121093": "EX"
    },
-   "lidoEm": "2026-11-11T09:59:24.000Z",
+   "lidoEm": "2026-11-12T10:02:38.000Z",
    "raiz": 121088
   },
   "construflowProjeto": 10348,
@@ -8746,25 +9165,25 @@
    "fim": "2026-11-30",
    "geradoEm": "2026-10-19"
   },
-  "sincronizadoEm": "2026-11-11T09:59:24.000Z",
-  "ultimaSync": "2026-11-11T09:59:24.000Z",
+  "sincronizadoEm": "2026-11-12T10:02:38.000Z",
+  "ultimaSync": "2026-11-12T10:02:38.000Z",
   "ultimaSyncResumo": {
-   "alterados": 0,
-   "analisados": 0,
+   "alterados": 23,
+   "analisados": 19,
    "analisePendente": 0,
-   "comentarios": 0,
+   "comentarios": 19,
    "novos": 0,
    "origem": "agendada",
    "prazosMeta": [],
-   "resumoSemanal": false,
+   "resumoSemanal": true,
    "reunioes": [],
-   "statusAtualizados": 0,
+   "statusAtualizados": 18,
    "statusFalhas": []
   },
   "vinculosReleituraEm": "2026-11-09T19:48:54.476Z",
-  "vinculosVerificadosEm": "2026-11-11T09:59:24.000Z"
+  "vinculosVerificadosEm": "2026-11-12T10:02:38.000Z"
  },
- "geradoEm": "2026-11-11T19:29:11+00:00",
+ "geradoEm": "2026-11-12T10:29:06+00:00",
  "plano_historico": {
   "2026-10-28": {
    "arquivo": "DUAR - Cronograma - R00.pdf",
@@ -10481,22 +10900,22 @@
   },
   "2026-11-09": {
    "disciplinas": {
-    "ARQ": "#1775 validar a quantidade de pontos de gás nas áreas comuns, considerando os estudos do 4º pavimento e da cobertura\n#2062 prever as VPs nas esquadrias das áreas de serviço e, no final 07, aberturas na alvenaria junto à área técnica\n#2140 validar a nomenclatura de apartamentos indicada na Figura 01 (a MAG já validou em 07/10)\n#2323 prever bate-rodas de concreto nas vagas indicadas, se necessário (Figuras 02 e 03)\n#3264 prever enchimento de cerca de 8 cm nas paredes da escada com instalações (Figuras 01 e 02)\n#3426 atender aos itens das escadas apontados e manter a conferência em todas as etapas (Figuras 01 a 03)\n#4050 validar a posição sugerida para a central de alarme (Figuras 01 e 02), depois validar com Interiores\n#4252 especificar o corrimão conforme a definição da Construtora\n#4532 prever os guarda-corpos conforme indicado no apontamento (Figuras 01 a 07)\n#4923 prever barreira física no entorno da piscina descoberta da cobertura (Figuras 01 e 02)\n#1436 avaliar a viabilidade do recuo para o caminhão de coleta\n#2612 locar a área técnica de insuflamento abaixo do térreo, próxima à escada, com tomada de ar no térreo\n#3470 aumentar os shafts conforme indicado, depois da escolha da MAG\n#4549 consolidar a definição final das áreas comuns\n#5862 acompanhar as definições da MAG\n#7614 manter a conferência da largura de circulação e corredores em todas as etapas do projeto\n#7671 MAG definiu em 22/09 que a tubulação de gás da rede secundária passará pelo vão da porta (Figura 01). Falta o PCI incorporar em projeto e a coordenação validar a resposta da MAG.\n#8478 avaliar os shafts propostos e retornar no apontamento\n#8547 incorporar as sugestões conforme a opção escolhida pela MAG\n#9292 considerar a compartimentação horizontal junto com o reposicionamento das áreas técnicas\n#9636 / MAG escolher a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada\n#1491 A Magno decidiu em 22/09 seguir com a viabilidade de gás natural (GN). O dimensionamento da central de GLP depende do retorno dessa viabilidade (ver #7356).\n#2697 / MAG ajustar a porta de acesso à escada nos subsolos -03 e -02 ou indicar a previsão de sprinklers para aumentar o caminhamento máximo\n#4562 / MAG definir se o mezanino terá acesso ao público e prever os ajustes na escada (Figura 01)\n#5335 validar e prever os shafts sanitários sugeridos (Figuras 01 a 07)\n#6715 Na reunião de 01/10 ficou pendente a definição de uso da loja e se ela poderá ser subdividida depois. Em 06/10 a Magno informou que vai operar a loja (ver #1274); falta a MAG confirmar com o Luiz a definição de uso e a possibilidade de subdivisão.\n#7458 avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos\n#7738 MAG / ARQ validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)\n#8197 verificar e ajustar a escada do barrilete em projeto\n#8625 validar a localização das condensadoras ao lado do acesso de veículos do SS1\n#9098 Validado com a Magno na reunião de 01/10 manter os acessos superiores do reservatório. Está em avaliação se o volume de SPK ficará junto do reservatório superior (ver #2005).\n#1875 avaliar a compartimentação das vagas junto à circulação vertical com divisórias em alvenaria\n#2891 estudar novo local para o gerador\n#3616 avaliar o uso dos espaços indicados nos anexos (1PAV, SS1 e 3PAV) como hobby boxes, mantendo-os como área técnica só se necessário; retirar a alvenaria que separa as vagas próximas ao depósito de lixo temporário (anexo ALV)\n#6003 prever paredes com TRRF de 2 h e portas corta-fogo nos locais indicados (Figuras 01 e 02)\n#6984 Validado com a Magno na reunião de 06/10 que, se a ERPM ficar na entrada do subsolo 01 (ver #4727), o registro de corte geral de gás será previsto próximo dessa entrada. Falta o PCI incorporar em projeto.\n#7356 A Magno decidiu solicitar a viabilidade de GN à concessionária (registrado em 01/10, ver #1491). Aguardando o retorno da concessionária e a definição da posição da ERPM (ver #4727).\n#8710 MAG indicou em 30/09 usar o pé-direito duplo com reservatório conjunto de água potável e SPK. Na reunião de 01/10 a ARQ sugeriu reservatório inferior em 2 níveis para evitar perda de vagas, e a Première vai estudar essa opção na próxima etapa (AJEP).\n#9151 locar a casa de bombas da piscina em projeto\n#9300 definir a tipologia das paredes da escada: TRRF de 2 h nos subsolos -03 a -01 e 3 h nos demais pavimentos",
-    "CLI": "#5870 incorporar ponto elétrico somente na evaporadora\n#8547 aguardar MAG validar sugestões de renovação de ar para a ARQ incorporar\n#8625 avaliar viabilidade técnica da proposta",
-    "COORD": "#1775 validar a resposta da MAG\n#3230 validar a resposta da MAG\n#5870 validar a resposta da MAG\n#3470 validar a resposta da MAG\n#7671 validar a resposta da MAG\n#1491 validar a resposta da MAG\n#9477 validar a resposta da MAG\n#7400 validar a resposta da MAG",
-    "ELT": "#4308 incorporar: PVC embutido em áreas comuns e halls; aço aparente em garagens e alimentadores acima de Ø32 mm\n#4549 com TEL, refazer lançamento dos quadros de elétrica e VDI após consolidação das áreas comuns e reemitir\n#7738 aguardar MAG e ARQ validarem posições de QDC e VDI nas unidades privativas\n#1875 prever infraestrutura de recarga em todas as vagas (ver #4398)\n#2891 avaliar alternativas de local do gerador no 2º ou 3º pavimento\n#4398 prever infraestrutura de recarga em todas as vagas com gerenciador de demanda",
+    "ARQ": "#2062 prever as VPs nas esquadrias das áreas de serviço e, no final 07, aberturas na alvenaria junto à área técnica\n#4050 validar a posição sugerida para a central de alarme (Figuras 01 e 02), depois validar com Interiores\n#3470 aumentar os shafts conforme indicado, depois da escolha da MAG\n#4549 consolidar a definição final das áreas comuns\n#7671 MAG definiu em 22/09 que a tubulação de gás da rede secundária passará pelo vão da porta (Figura 01). Falta o PCI incorporar em projeto e a coordenação validar a resposta da MAG.\n#9292 considerar a compartimentação horizontal junto com o reposicionamento das áreas técnicas\n#5335 validar e prever os shafts sanitários sugeridos (Figuras 01 a 07)\n#7458 avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos\n#8197 verificar e ajustar a escada do barrilete em projeto\n#8625 validar a localização das condensadoras ao lado do acesso de veículos do SS1\n#1875 avaliar a compartimentação das vagas junto à circulação vertical com divisórias em alvenaria\n#2891 estudar novo local para o gerador\n#3616 avaliar o uso dos espaços indicados nos anexos (1PAV, SS1 e 3PAV) como hobby boxes, mantendo-os como área técnica só se necessário; retirar a alvenaria que separa as vagas próximas ao depósito de lixo temporário (anexo ALV)\n#6003 prever paredes com TRRF de 2 h e portas corta-fogo nos locais indicados (Figuras 01 e 02)\n#6984 Validado com a Magno na reunião de 06/10 que, se a ERPM ficar na entrada do subsolo 01 (ver #4727), o registro de corte geral de gás será previsto próximo dessa entrada. Falta o PCI incorporar em projeto.\n#7356 A Magno decidiu solicitar a viabilidade de GN à concessionária (registrado em 01/10, ver #1491). Aguardando o retorno da concessionária e a definição da posição da ERPM (ver #4727).\n#8710 MAG indicou em 30/09 usar o pé-direito duplo com reservatório conjunto de água potável e SPK. Na reunião de 01/10 a ARQ sugeriu reservatório inferior em 2 níveis para evitar perda de vagas, e a Première vai estudar essa opção na próxima etapa (AJEP).\n#9151 locar a casa de bombas da piscina em projeto\n#9300 definir a tipologia das paredes da escada: TRRF de 2 h nos subsolos -03 a -01 e 3 h nos demais pavimentos",
+    "CLI": "#5870 incorporar a definição de ponto elétrico somente na evaporadora\n#8547 incorporar a opção de renovação de ar escolhida\n#8625 avaliar a viabilidade técnica da proposta",
+    "COORD": "#1775 validar a resposta da ARQ\n#1775 validar a resposta da MAG\n#2140 validar a resposta da ARQ\n#2323 validar a resposta da ARQ\n#3230 validar a resposta da MAG\n#3264 validar a resposta da ARQ\n#4252 validar a resposta da ARQ\n#4532 validar a resposta da ARQ\n#4923 validar a resposta da ARQ\n#5870 validar a resposta da MAG\n#2612 validar a resposta da ARQ\n#3470 validar a resposta da MAG\n#7614 validar a resposta da ARQ\n#7671 validar a resposta da MAG\n#8478 validar a resposta da ARQ\n#8547 validar a resposta da ARQ\n#9636 validar a resposta da ARQ\n#1491 validar a resposta da ARQ\n#1491 validar a resposta da MAG\n#2697 validar a resposta da ARQ\n#4562 validar a resposta da ARQ\n#6715 validar a resposta da ARQ\n#7738 validar a resposta da ARQ\n#9098 validar a resposta da ARQ\n#9477 validar a resposta da MAG\n#7400 validar a resposta da MAG",
+    "ELT": "#4308 incorporar: embutido em PVC nas áreas comuns e halls; aparente em aço nas garagens e alimentadores acima de Ø32 mm\n#4549 refazer o lançamento dos quadros de elétrica e VDI após a consolidação das áreas comuns e reemitir o apontamento\n#7738 ajustar os quadros das unidades 03, 04 e 05 para a divisa do apartamento, conforme pedido da ARQ\n#1875 prever infraestrutura de recarga em todas as vagas (ver #4398)\n#2891 avaliar alternativas no 2º ou 3º pavimento\n#4398 prever infraestrutura de recarga em todas as vagas com gerenciador de demanda",
     "EST": "#7215 confirmar o atendimento ao TRRF indicado\n#8200 A sondagem ainda não foi feita porque o terreno está em negociação por permuta e tem edificações a demolir. Na reunião de 01/10 ficou alinhado que a Première precisa da validação da laje de subpressão até, no máximo, o início da revisão do AP.\n#7458 Na reunião de 06/10 a Magno confirmou SAVE em todos os pavimentos de garagem (ver #1875), o que exige sistema de extração de fumaça nas garagens (ver #3694). ARQ deve avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos.\n#9098 validar o acréscimo do volume de SPK no reservatório superior (ver #2005)\n#1875 A Construtora ajustou o acesso à escada nos subsolos 1 a 3. Em 01/10 a Magno pediu infraestrutura de recarga em todas as vagas, e a Arquitetura vai avaliar compartimentar as vagas junto à circulação vertical com divisórias de alvenaria.\n#8710 avaliar o reservatório em pé-direito duplo",
-    "HID": "#2140 Em 07/10 a Magno validou a nomenclatura dos apartamentos proposta pela Arquitetura. Falta a Arquitetura validar; as demais disciplinas só acompanham e adotam a numeração definida.\n#2508 A documentação da rede de esgoto da CASAN foi viabilizada em 30/09. HID está em Validar; falta a coordenação validar e encerrar.\n#3230 / PCI prever medidores de água e gás pré-equipados para telemetria\n#1436 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#3470 responder qual o modelo de caixa sifonada especial e como funcionaria\n#8200 A sondagem ainda não foi feita porque o terreno está em negociação por permuta e tem edificações a demolir. Na reunião de 01/10 ficou alinhado que a Première precisa da validação da laje de subpressão até, no máximo, o início da revisão do AP.\n#8478 Na reunião de 01/10 a ARQ ficou de avaliar os shafts propostos na circulação dos pavimentos e retornar no apontamento.\n#9636 prever recirculação interna nos aptos de 3 e 4 quartos\n#5335 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#6715 Na reunião de 01/10 ficou pendente a definição de uso da loja e se ela poderá ser subdividida depois. Em 06/10 a Magno informou que vai operar a loja (ver #1274); falta a MAG confirmar com o Luiz a definição de uso e a possibilidade de subdivisão.\n#8613 Na reunião de 01/10 a ARQ confirmou que haverá áreas comuns também no 4º pavimento, ainda não definidas. A definição será tratada junto com o sistema de aquecimento das áreas privativas (#9636).\n#9098 Validado com a Magno na reunião de 01/10 manter os acessos superiores do reservatório. Está em avaliação se o volume de SPK ficará junto do reservatório superior (ver #2005).\n#1269 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#3638 O topográfico inicial não traz cotas de fundo e topo nem as caixas e infraestruturas. A Magno vai solicitar novo levantamento.\n#8592 adotar a Opção 01 (divisão mais detalhada, por apartamento e por pavimento nas áreas comuns) na apresentação das pranchas de hidrossanitário\n#8710 estudar o reservatório inferior em 2 níveis com volume conjunto de água potável e SPK na etapa AJEP\n#9151 Sem comentários na Construflow. Aguardando a ARQ locar a casa de bombas da piscina e a MAG validar as informações e obter do fornecedor a infraestrutura e a potência dos equipamentos.",
-    "INT": "#6034 se contratado, emitir plantas de pontos antes do início do pré-executivo\n#6715 aguardar MAG confirmar uso da loja e possibilidade de subdivisão",
-    "MAG": "#2612 A CLI validou em 01/10 que a área técnica de insuflamento pode ficar abaixo do térreo, perto da escada, com tomada de ar no térreo, e o duto termina no barrilete.\n#5862 indicar se os sprinklers serão adotados para o SAVE ou para aumentar o caminhamento nos subsolos -03 e -02, e informar preferência de tipo de bomba\n#6034 confirmar a contratação dos projetos de interiores e luminotécnico ou disponibilizar imagens comerciais\n#8200 realizar a sondagem e validar a necessidade de laje de subpressão até o início da revisão do AP\n#8547 validar as sugestões para o sistema de renovação de ar em todos os locais indicados\n#9636 ARQ / MAG escolher a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada\n#2697 ARQ / MAG ajustar a porta de acesso à escada nos subsolos -03 e -02 ou indicar a previsão de sprinklers para aumentar o caminhamento máximo\n#4562 ARQ / MAG definir se o mezanino terá acesso ao público e prever os ajustes na escada (Figura 01)\n#6298 confirmar se haverá contratação do projeto de desempenho\n#6715 (Renato) confirmar com o Luiz a definição de uso e se a loja poderá ser subdividida\n#7458 Na reunião de 06/10 a Magno confirmou SAVE em todos os pavimentos de garagem (ver #1875), o que exige sistema de extração de fumaça nas garagens (ver #3694). ARQ deve avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos.\n#7738 / ARQ validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)\n#8613 Na reunião de 01/10 a ARQ confirmou que haverá áreas comuns também no 4º pavimento, ainda não definidas. A definição será tratada junto com o sistema de aquecimento das áreas privativas (#9636).\n#9098 Validado com a Magno na reunião de 01/10 manter os acessos superiores do reservatório. Está em avaliação se o volume de SPK ficará junto do reservatório superior (ver #2005).\n#1269 confirmar se haverá projeto específico de drenagem ou se faz parte do escopo de contenções\n#1875 A Construtora ajustou o acesso à escada nos subsolos 1 a 3. Em 01/10 a Magno pediu infraestrutura de recarga em todas as vagas, e a Arquitetura vai avaliar compartimentar as vagas junto à circulação vertical com divisórias de alvenaria.\n#2891 validar nos comentários as cargas consideradas no gerador\n#3638 solicitar novo levantamento topográfico com cotas de fundo e topo, caixas e infraestruturas, incluindo os postes (ver #4756)\n#7356 solicitar a viabilidade de GN à concessionária e repassar o retorno\n#8710 MAG indicou em 30/09 usar o pé-direito duplo com reservatório conjunto de água potável e SPK. Na reunião de 01/10 a ARQ sugeriu reservatório inferior em 2 níveis para evitar perda de vagas, e a Première vai estudar essa opção na próxima etapa (AJEP).\n#9151 confirmar e validar as informações, e obter do fornecedor da piscina a infraestrutura e a potência dos equipamentos",
-    "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#2062 incorporar as posições das ventilações permanentes\n#2323 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#3264 conferir o enchimento previsto pela arquitetura\n#3426 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#4923 conferir a barreira, os ralos de sucção, as tampas e a botoeira exigidos pela IN33\n#5862 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#5996 incorporar os materiais de gás e SHP validados pela MAG e ajustar o caminhamento da rede primária após a definição da nova localização da ERPM\n#7215 Sem comentários na Construflow. Aguardando a EST confirmar o atendimento ao TRRF indicado.\n#7614 Sem comentários na Construflow. Item de conferência contínua: a ARQ deve manter a largura de circulação e corredores em todas as etapas do projeto.\n#7671 incorporar no projeto o caminhamento da rede secundária pelo vão da porta (Figura 01)\n#9292 Na reunião de 06/10 a arquitetura ficou de considerar a compartimentação horizontal em projeto, junto com o reposicionamento das áreas técnicas (sala de insuflamento, gerador etc.).\n#1491 ajustar a solução de gás conforme a decisão por GN\n#2697 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#4562 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#7458 prever o sistema de extração de fumaça nas garagens (ver #3694)\n#8197 Na reunião de 01/10 a arquitetura ficou de verificar e ajustar a escada do barrilete em projeto. Aguardando o retorno da ARQ.\n#1875 considerar as exigências da IN23 com SAVE em todas as garagens (ver #7458 e #3694)\n#6003 Sem comentários na Construflow. Aguardando a ARQ prever paredes com TRRF de 2 h e portas corta-fogo nos locais indicados (Figuras 01 e 02).\n#6984 prever o registro de corte geral de gás próximo à entrada do subsolo 01 (ver #4727)\n#7356 prever a ERPM conforme o posicionamento em estudo (ver #4727)\n#7400 / ELT considerar iluminação de emergência por blocos autônomos\n#9300 conferir se a tipologia atende às espessuras indicadas",
+    "HID": "#2140 adotar a numeração de blocos e apartamentos definida (Figura 01)\n#2508 A documentação da rede de esgoto da CASAN foi viabilizada em 30/09. HID está em Validar; falta a coordenação validar e encerrar.\n#3230 prever medidores de água e gás pré-equipados para telemetria\n#1436 acompanhar o cálculo e o processo do depósito de lixo e o pedido de dispensa do recuo\n#3470 responder qual o modelo de caixa sifonada especial e como funcionaria\n#8200 A sondagem ainda não foi feita porque o terreno está em negociação por permuta e tem edificações a demolir. Na reunião de 01/10 ficou alinhado que a Première precisa da validação da laje de subpressão até, no máximo, o início da revisão do AP.\n#8478 ajustar os shafts da circulação após a definição do ar-condicionado\n#9636 prever recirculação interna nos aptos de 3 e 4 quartos\n#5335 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#6715 prever as infraestruturas das lojas após as definições\n#8613 Na reunião de 01/10 a ARQ confirmou que haverá áreas comuns também no 4º pavimento, ainda não definidas. A definição será tratada junto com o sistema de aquecimento das áreas privativas (#9636).\n#9098 confirmar o volume do reservatório superior\n#1269 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#3638 O topográfico inicial não traz cotas de fundo e topo nem as caixas e infraestruturas. A Magno vai solicitar novo levantamento.\n#8592 adotar a Opção 01 (divisão mais detalhada, por apartamento e por pavimento nas áreas comuns) na apresentação das pranchas de hidrossanitário\n#8710 estudar o reservatório inferior em 2 níveis com volume conjunto de água potável e SPK na etapa AJEP\n#9151 Sem comentários na Construflow. Aguardando a ARQ locar a casa de bombas da piscina e a MAG validar as informações e obter do fornecedor a infraestrutura e a potência dos equipamentos.",
+    "INT": "#6034 se contratado, emitir as plantas de pontos antes do início do pré-executivo\n#6715 prever as infraestruturas das lojas após as definições",
+    "MAG": "#2612 validar a solução da escada pressurizada\n#6034 confirmar a contratação dos projetos de interiores e luminotécnico ou disponibilizar imagens comerciais\n#8200 realizar a sondagem e validar a necessidade de laje de subpressão até o início da revisão do AP\n#8547 validar as sugestões para o sistema de renovação de ar em todos os locais indicados\n#9636 definir em reunião a solução de exaustão dos aquecedores: coletiva, sacada sem terminal, átrio ou fachada\n#2697 ajustar a porta de acesso à escada nos subsolos -03 e -02 ou indicar a previsão de sprinklers para aumentar o caminhamento máximo\n#4562 definir em reunião se o comércio fica só no térreo ou se o mezanino terá plataforma elevatória\n#6298 confirmar se haverá contratação do projeto de desempenho\n#6715 (Renato) confirmar com o Luiz a definição de uso e se a loja poderá ser subdividida; validar em reunião a saída pela cobertura ou pela fachada\n#7458 Na reunião de 06/10 a Magno confirmou SAVE em todos os pavimentos de garagem (ver #1875), o que exige sistema de extração de fumaça nas garagens (ver #3694). ARQ deve avaliar aberturas de ventilação natural nas garagens do 2º e 3º pavimentos.\n#7738 validar as posições sugeridas para os quadros de distribuição elétrica (QDC) e VDI nas unidades privativas (Figuras 01 a 06)\n#8613 Na reunião de 01/10 a ARQ confirmou que haverá áreas comuns também no 4º pavimento, ainda não definidas. A definição será tratada junto com o sistema de aquecimento das áreas privativas (#9636).\n#9098 Validado na reunião de 01/10 manter os acessos superiores do reservatório. Em 11/11 a ARQ informou que o volume do reservatório está em validação, inclusive se o volume de SPK ficará junto (ver #2005).\n#5862 indicar se os sprinklers serão adotados para o SAVE ou para aumentar o caminhamento nos subsolos -03 e -02, e informar preferência de tipo de bomba\n#1269 confirmar se haverá projeto específico de drenagem ou se faz parte do escopo de contenções\n#1875 A Construtora ajustou o acesso à escada nos subsolos 1 a 3. Em 01/10 a Magno pediu infraestrutura de recarga em todas as vagas, e a Arquitetura vai avaliar compartimentar as vagas junto à circulação vertical com divisórias de alvenaria.\n#2891 validar nos comentários as cargas consideradas no gerador\n#3638 solicitar novo levantamento topográfico com cotas de fundo e topo, caixas e infraestruturas, incluindo os postes (ver #4756)\n#7356 solicitar a viabilidade de GN à concessionária e repassar o retorno\n#8710 MAG indicou em 30/09 usar o pé-direito duplo com reservatório conjunto de água potável e SPK. Na reunião de 01/10 a ARQ sugeriu reservatório inferior em 2 níveis para evitar perda de vagas, e a Première vai estudar essa opção na próxima etapa (AJEP).\n#9151 confirmar e validar as informações, e obter do fornecedor da piscina a infraestrutura e a potência dos equipamentos",
+    "PCI": "#1775 prever ponto de gás na sala comercial e refazer o cálculo de demanda com aquecedores de passagem nos apartamentos\n#2062 incorporar as posições das ventilações permanentes\n#2323 conferir a proteção contra queda de veículos com bate-rodas\n#3264 validar a composição da parede da escada com enchimento ou bloco extra\n#3426 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#4050 incorporar as definições da MAG: SDAI da loja pela opção 02 e eletroduto flexível onde embutido e rígido onde aparente\n#4252 verificar o atendimento normativo do corrimão especificado\n#4532 conferir os guarda-corpos previstos pela ARQ (Figuras 01 a 07)\n#4923 responder se a tela no vazio é necessária quando há guarda-corpo e conferir ralos de sucção, tampas e botoeira exigidos pela IN33\n#5996 incorporar os materiais de gás e SHP validados pela MAG e ajustar o caminhamento da rede primária após a definição da nova localização da ERPM\n#7215 Sem comentários na Construflow. Aguardando a EST confirmar o atendimento ao TRRF indicado.\n#7614 conferir a largura de circulação e corredores\n#7671 incorporar no projeto o caminhamento da rede secundária pelo vão da porta (Figura 01)\n#9292 Na reunião de 06/10 a arquitetura ficou de considerar a compartimentação horizontal em projeto, junto com o reposicionamento das áreas técnicas (sala de insuflamento, gerador etc.).\n#1491 ajustar a solução de gás conforme a decisão por GN\n#2697 conferir o caminhamento máximo após a revisão da escada\n#4562 conferir a escada do mezanino após a definição\n#7458 prever o sistema de extração de fumaça nas garagens (ver #3694)\n#8197 Na reunião de 01/10 a arquitetura ficou de verificar e ajustar a escada do barrilete em projeto. Aguardando o retorno da ARQ.\n#5862 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#1875 considerar as exigências da IN23 com SAVE em todas as garagens (ver #7458 e #3694)\n#6003 Sem comentários na Construflow. Aguardando a ARQ prever paredes com TRRF de 2 h e portas corta-fogo nos locais indicados (Figuras 01 e 02).\n#6984 prever o registro de corte geral de gás próximo à entrada do subsolo 01 (ver #4727)\n#7356 prever a ERPM conforme o posicionamento em estudo (ver #4727)\n#7400 considerar iluminação de emergência por blocos autônomos\n#9300 conferir se a tipologia atende às espessuras indicadas",
     "PEP": "#2612 considerar o duto de pressurização terminando no barrilete (Figura 05)",
-    "SPDA": "#9477 incorporar captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação",
-    "SPK": "#5862 responder o apontamento (sem comentários até agora)\n#1875 acompanhar ajuste do acesso às escadas e avaliação de compartimentação das vagas pela ARQ",
-    "TEL": "#4549 com ELT, refazer lançamento dos quadros de elétrica e VDI após consolidação das áreas comuns e reemitir\n#7738 aguardar MAG e ARQ validarem posições de QDC e VDI nas unidades privativas\n#4398 acompanhar: infraestrutura em todas as vagas com recarga mínima por gerenciador de demanda"
+    "SPDA": "#9477 incorporar a captação em barra chata de alumínio, descidas embutidas com rebar e aterramento pela fundação",
+    "SPK": "#5862 Sem comentários na Construflow até 06/10/2026. Aguardando a primeira resposta das disciplinas pendentes.\n#1875 A Construtora ajustou o acesso à escada nos subsolos 1 a 3. Em 01/10 a Magno pediu infraestrutura de recarga em todas as vagas, e a Arquitetura vai avaliar compartimentar as vagas junto à circulação vertical com divisórias de alvenaria.",
+    "TEL": "#4549 refazer o lançamento dos quadros de elétrica e VDI após a consolidação das áreas comuns e reemitir o apontamento\n#7738 ajustar os quadros das unidades 03, 04 e 05 para a divisa do apartamento, conforme pedido da ARQ\n#4398 A Magno definiu infraestrutura em todas as vagas, atendidas com recarga mínima por gerenciador de demanda."
    },
-   "geradoEm": "2026-11-09T19:48:54.213Z",
-   "geral": "Vencem 56 apontamentos na semana de 09/11 a 13/11, dos quais 42 estão atrasados. O #1875 (SAVE/IN23) envolve mais disciplinas, com MAG, ARQ, PCI, ELT, EST e SPK. Com quatro disciplinas cada vêm #6715, #9098, #8710, #7738, #7458 e #5862. As respostas se concentram na ARQ (40 apontamentos), seguida de PCI (26), MAG (21) e HID (17). Muitos itens dependem de decisões da MAG e de retorno da ARQ.",
+   "geradoEm": "2026-11-12T10:01:58.000Z",
+   "geral": "Vencem 56 apontamentos na semana de 09/11 a 13/11, dos quais 41 estão atrasados. O #1875 envolve mais disciplinas pendentes (ARQ, ELT, EST, PCI, SPK, MAG). As respostas se concentram em PCI (26 apontamentos), seguida de MAG (21), ARQ (19) e HID (17). Em 11/11 a ARQ respondeu 18 apontamentos, que passaram para validação da Coordenação (26 validações pendentes no total).",
    "semana": "2026-11-09"
   }
  },
@@ -10697,7 +11116,8 @@
     "em": "2026-11-11T18:51:37.137Z",
     "motivo": "",
     "por": "Editor",
-    "porId": "48f78469-9ca7-44a6-bb58-033dfcd6aa24"
+    "porId": "48f78469-9ca7-44a6-bb58-033dfcd6aa24",
+    "retornouEm": "2026-11-12"
    },
    "revisaoHist": [
     {
@@ -10707,6 +11127,12 @@
      "motivo": "",
      "por": "Editor",
      "porId": "48f78469-9ca7-44a6-bb58-033dfcd6aa24"
+    },
+    {
+     "acao": "retornou",
+     "ate": "2026-11-12",
+     "em": "2026-11-12T10:01:58.000Z",
+     "por": "rotina"
     }
    ]
   }
